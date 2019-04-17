@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233E92265BBCC009EE218 /* AppDelegate.swift */; };
+		720233EC2265BBCC009EE218 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233EB2265BBCC009EE218 /* ViewController.swift */; };
+		720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720233ED2265BBCD009EE218 /* Assets.xcassets */; };
+		720233F12265BBCD009EE218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720233EF2265BBCD009EE218 /* Main.storyboard */; };
+		720234632265BDC0009EE218 /* MixerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345A2265BDBF009EE218 /* MixerBlock.swift */; };
+		720234642265BDC0009EE218 /* FilterBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345B2265BDBF009EE218 /* FilterBlock.swift */; };
+		720234652265BDC0009EE218 /* ComplexFilterBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345C2265BDBF009EE218 /* ComplexFilterBlock.swift */; };
+		720234662265BDC0009EE218 /* AMDemodulatorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345D2265BDBF009EE218 /* AMDemodulatorBlock.swift */; };
+		720234672265BDC0009EE218 /* FilterCoefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345E2265BDBF009EE218 /* FilterCoefficients.swift */; };
+		720234682265BDC0009EE218 /* FMDemodulatorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345F2265BDBF009EE218 /* FMDemodulatorBlock.swift */; };
+		720234692265BDC0009EE218 /* FFTBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234602265BDBF009EE218 /* FFTBlock.swift */; };
+		7202346A2265BDC0009EE218 /* ToneDecoderBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234612265BDBF009EE218 /* ToneDecoderBlock.swift */; };
+		7202346B2265BDC0009EE218 /* SquelchBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234622265BDBF009EE218 /* SquelchBlock.swift */; };
+		720234702265BDC9009EE218 /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346C2265BDC9009EE218 /* Samples.swift */; };
+		720234712265BDC9009EE218 /* RadioBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346D2265BDC9009EE218 /* RadioBlock.swift */; };
+		720234722265BDC9009EE218 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346E2265BDC9009EE218 /* Radio.swift */; };
+		720234732265BDC9009EE218 /* SoftwareDefinedRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346F2265BDC9009EE218 /* SoftwareDefinedRadio.swift */; };
+		7202347D22670573009EE218 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202347A22670573009EE218 /* ChartColors.swift */; };
+		7202347E22670573009EE218 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202347B22670573009EE218 /* Chart.swift */; };
+		7202347F22670573009EE218 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202347C22670573009EE218 /* ChartSeries.swift */; };
+		720234D722671345009EE218 /* SwiftChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720234D02267132B009EE218 /* SwiftChart.framework */; };
+		720234D822671345009EE218 /* SwiftChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720234D02267132B009EE218 /* SwiftChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		720234DA22671349009EE218 /* SDRDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720234CE22671328009EE218 /* SDRDevice.framework */; };
+		720234DB22671349009EE218 /* SDRDevice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720234CE22671328009EE218 /* SDRDevice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		720234DF226713C5009EE218 /* dfgdfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 720234DE226713C5009EE218 /* dfgdfg.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		720234D922671345009EE218 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				720234DB22671349009EE218 /* SDRDevice.framework in Embed Frameworks */,
+				720234D822671345009EE218 /* SwiftChart.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		720233E62265BBCC009EE218 /* ViScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		720233E92265BBCC009EE218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		720233EB2265BBCC009EE218 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		720233ED2265BBCD009EE218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		720233F02265BBCD009EE218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		720233F22265BBCD009EE218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		720233F32265BBCD009EE218 /* ViScope.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ViScope.entitlements; sourceTree = "<group>"; };
+		7202345A2265BDBF009EE218 /* MixerBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixerBlock.swift; sourceTree = "<group>"; };
+		7202345B2265BDBF009EE218 /* FilterBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBlock.swift; sourceTree = "<group>"; };
+		7202345C2265BDBF009EE218 /* ComplexFilterBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexFilterBlock.swift; sourceTree = "<group>"; };
+		7202345D2265BDBF009EE218 /* AMDemodulatorBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMDemodulatorBlock.swift; sourceTree = "<group>"; };
+		7202345E2265BDBF009EE218 /* FilterCoefficients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCoefficients.swift; sourceTree = "<group>"; };
+		7202345F2265BDBF009EE218 /* FMDemodulatorBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDemodulatorBlock.swift; sourceTree = "<group>"; };
+		720234602265BDBF009EE218 /* FFTBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTBlock.swift; sourceTree = "<group>"; };
+		720234612265BDBF009EE218 /* ToneDecoderBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToneDecoderBlock.swift; sourceTree = "<group>"; };
+		720234622265BDBF009EE218 /* SquelchBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquelchBlock.swift; sourceTree = "<group>"; };
+		7202346C2265BDC9009EE218 /* Samples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
+		7202346D2265BDC9009EE218 /* RadioBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioBlock.swift; sourceTree = "<group>"; };
+		7202346E2265BDC9009EE218 /* Radio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
+		7202346F2265BDC9009EE218 /* SoftwareDefinedRadio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadio.swift; sourceTree = "<group>"; };
+		7202347A22670573009EE218 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
+		7202347B22670573009EE218 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		7202347C22670573009EE218 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
+		720234CE22671328009EE218 /* SDRDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDRDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		720234D02267132B009EE218 /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		720234DD226713C5009EE218 /* dfgdfg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dfgdfg.h; sourceTree = "<group>"; };
+		720234DE226713C5009EE218 /* dfgdfg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dfgdfg.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		720233E32265BBCC009EE218 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720234DA22671349009EE218 /* SDRDevice.framework in Frameworks */,
+				720234D722671345009EE218 /* SwiftChart.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		720233DD2265BBCC009EE218 = {
+			isa = PBXGroup;
+			children = (
+				720233E82265BBCC009EE218 /* ViScope */,
+				720233E72265BBCC009EE218 /* Products */,
+				720234CD22671328009EE218 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		720233E72265BBCC009EE218 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				720233E62265BBCC009EE218 /* ViScope.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		720233E82265BBCC009EE218 /* ViScope */ = {
+			isa = PBXGroup;
+			children = (
+				720234792267052F009EE218 /* SwiftChart */,
+				7202344C2265BC7C009EE218 /* SDR */,
+				720233E92265BBCC009EE218 /* AppDelegate.swift */,
+				720233EB2265BBCC009EE218 /* ViewController.swift */,
+				720233ED2265BBCD009EE218 /* Assets.xcassets */,
+				720233EF2265BBCD009EE218 /* Main.storyboard */,
+				720233F22265BBCD009EE218 /* Info.plist */,
+				720233F32265BBCD009EE218 /* ViScope.entitlements */,
+			);
+			path = ViScope;
+			sourceTree = "<group>";
+		};
+		7202344C2265BC7C009EE218 /* SDR */ = {
+			isa = PBXGroup;
+			children = (
+				720234592265BDB1009EE218 /* DSP */,
+				7202346E2265BDC9009EE218 /* Radio.swift */,
+				7202346D2265BDC9009EE218 /* RadioBlock.swift */,
+				7202346C2265BDC9009EE218 /* Samples.swift */,
+				7202346F2265BDC9009EE218 /* SoftwareDefinedRadio.swift */,
+				720234DD226713C5009EE218 /* dfgdfg.h */,
+				720234DE226713C5009EE218 /* dfgdfg.c */,
+			);
+			path = SDR;
+			sourceTree = "<group>";
+		};
+		720234592265BDB1009EE218 /* DSP */ = {
+			isa = PBXGroup;
+			children = (
+				7202345D2265BDBF009EE218 /* AMDemodulatorBlock.swift */,
+				7202345C2265BDBF009EE218 /* ComplexFilterBlock.swift */,
+				720234602265BDBF009EE218 /* FFTBlock.swift */,
+				7202345B2265BDBF009EE218 /* FilterBlock.swift */,
+				7202345E2265BDBF009EE218 /* FilterCoefficients.swift */,
+				7202345F2265BDBF009EE218 /* FMDemodulatorBlock.swift */,
+				7202345A2265BDBF009EE218 /* MixerBlock.swift */,
+				720234622265BDBF009EE218 /* SquelchBlock.swift */,
+				720234612265BDBF009EE218 /* ToneDecoderBlock.swift */,
+			);
+			path = DSP;
+			sourceTree = "<group>";
+		};
+		720234792267052F009EE218 /* SwiftChart */ = {
+			isa = PBXGroup;
+			children = (
+				7202347B22670573009EE218 /* Chart.swift */,
+				7202347A22670573009EE218 /* ChartColors.swift */,
+				7202347C22670573009EE218 /* ChartSeries.swift */,
+			);
+			name = SwiftChart;
+			path = ../../SwiftChart/SwiftChart/SwiftChart;
+			sourceTree = "<group>";
+		};
+		720234CD22671328009EE218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				720234D02267132B009EE218 /* SwiftChart.framework */,
+				720234CE22671328009EE218 /* SDRDevice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		720233E52265BBCC009EE218 /* ViScope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 720233F62265BBCD009EE218 /* Build configuration list for PBXNativeTarget "ViScope" */;
+			buildPhases = (
+				720233E22265BBCC009EE218 /* Sources */,
+				720233E32265BBCC009EE218 /* Frameworks */,
+				720233E42265BBCC009EE218 /* Resources */,
+				720234D922671345009EE218 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViScope;
+			productName = ViScope;
+			productReference = 720233E62265BBCC009EE218 /* ViScope.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		720233DE2265BBCC009EE218 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Davorin Mađarić";
+				TargetAttributes = {
+					720233E52265BBCC009EE218 = {
+						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = 720233E12265BBCC009EE218 /* Build configuration list for PBXProject "ViScope" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 720233DD2265BBCC009EE218;
+			productRefGroup = 720233E72265BBCC009EE218 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				720233E52265BBCC009EE218 /* ViScope */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		720233E42265BBCC009EE218 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */,
+				720233F12265BBCD009EE218 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		720233E22265BBCC009EE218 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7202347E22670573009EE218 /* Chart.swift in Sources */,
+				720234692265BDC0009EE218 /* FFTBlock.swift in Sources */,
+				720234702265BDC9009EE218 /* Samples.swift in Sources */,
+				720233EC2265BBCC009EE218 /* ViewController.swift in Sources */,
+				720234632265BDC0009EE218 /* MixerBlock.swift in Sources */,
+				720234652265BDC0009EE218 /* ComplexFilterBlock.swift in Sources */,
+				720234722265BDC9009EE218 /* Radio.swift in Sources */,
+				720234712265BDC9009EE218 /* RadioBlock.swift in Sources */,
+				7202346A2265BDC0009EE218 /* ToneDecoderBlock.swift in Sources */,
+				7202347D22670573009EE218 /* ChartColors.swift in Sources */,
+				720234682265BDC0009EE218 /* FMDemodulatorBlock.swift in Sources */,
+				720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */,
+				7202346B2265BDC0009EE218 /* SquelchBlock.swift in Sources */,
+				720234DF226713C5009EE218 /* dfgdfg.c in Sources */,
+				720234662265BDC0009EE218 /* AMDemodulatorBlock.swift in Sources */,
+				720234642265BDC0009EE218 /* FilterBlock.swift in Sources */,
+				720234732265BDC9009EE218 /* SoftwareDefinedRadio.swift in Sources */,
+				720234672265BDC0009EE218 /* FilterCoefficients.swift in Sources */,
+				7202347F22670573009EE218 /* ChartSeries.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		720233EF2265BBCD009EE218 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				720233F02265BBCD009EE218 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		720233F42265BBCD009EE218 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		720233F52265BBCD009EE218 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		720233F72265BBCD009EE218 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ViScope/ViScope.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68VR5CE66Z;
+				INFOPLIST_FILE = ViScope/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ViScope/waveSDR",
+					"$(PROJECT_DIR)/ViScope/SDR/RTLSDR",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.ViScope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		720233F82265BBCD009EE218 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ViScope/ViScope.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68VR5CE66Z;
+				INFOPLIST_FILE = ViScope/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ViScope/waveSDR",
+					"$(PROJECT_DIR)/ViScope/SDR/RTLSDR",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.ViScope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		720233E12265BBCC009EE218 /* Build configuration list for PBXProject "ViScope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				720233F42265BBCD009EE218 /* Debug */,
+				720233F52265BBCD009EE218 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		720233F62265BBCD009EE218 /* Build configuration list for PBXNativeTarget "ViScope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				720233F72265BBCD009EE218 /* Debug */,
+				720233F82265BBCD009EE218 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 720233DE2265BBCC009EE218 /* Project object */;
+}
