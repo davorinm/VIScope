@@ -204,15 +204,15 @@ open class Chart: UIView {
     
     // MARK: - Private variables
     
-    fileprivate var highlightShapeLayer: CAShapeLayer!
-    fileprivate var layerStore: [CALayer] = []
+    private var highlightShapeLayer: CAShapeLayer!
+    private var layerStore: [CALayer] = []
     
-    fileprivate var drawingHeight: CGFloat!
-    fileprivate var drawingWidth: CGFloat!
+    private var drawingHeight: CGFloat!
+    private var drawingWidth: CGFloat!
     
     // Minimum and maximum values represented in the chart
-    fileprivate var min: ChartPoint!
-    fileprivate var max: ChartPoint!
+    private var min: ChartPoint!
+    private var max: ChartPoint!
     
     // Represent a set of points corresponding to a segment line on the chart.
     typealias ChartLineSegment = [ChartPoint]
@@ -286,7 +286,7 @@ open class Chart: UIView {
         return series.data[dataIndex!].y
     }
     
-    fileprivate func drawIBPlaceholder() {
+    private func drawIBPlaceholder() {
         let placeholder = UIView(frame: self.frame)
         placeholder.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1)
         let label = UILabel()
@@ -299,9 +299,11 @@ open class Chart: UIView {
         
         placeholder.addSubview(label)
         addSubview(placeholder)
+        
+        self.backgroundColor = UIColor.lightGray
     }
     
-    fileprivate func drawChart() {
+    private func drawChart() {
         
         drawingHeight = bounds.height - bottomInset - topInset
         drawingWidth = bounds.width
@@ -355,7 +357,7 @@ open class Chart: UIView {
     
     // MARK: - Scaling
     
-    fileprivate func getMinMax() -> (min: ChartPoint, max: ChartPoint) {
+    private func getMinMax() -> (min: ChartPoint, max: ChartPoint) {
         // Start with user-provided values
         
         var min = (x: minX, y: minY)
@@ -405,7 +407,7 @@ open class Chart: UIView {
         )
     }
     
-    fileprivate func scaleValuesOnXAxis(_ values: [Double]) -> [Double] {
+    private func scaleValuesOnXAxis(_ values: [Double]) -> [Double] {
         let width = Double(drawingWidth)
         
         var factor: Double
@@ -419,7 +421,7 @@ open class Chart: UIView {
         return scaled
     }
     
-    fileprivate func scaleValuesOnYAxis(_ values: [Double]) -> [Double] {
+    private func scaleValuesOnYAxis(_ values: [Double]) -> [Double] {
         let height = Double(drawingHeight)
         var factor: Double
         if max.y - min.y == 0 {
@@ -433,7 +435,7 @@ open class Chart: UIView {
         return scaled
     }
     
-    fileprivate func scaleValueOnYAxis(_ value: Double) -> Double {
+    private func scaleValueOnYAxis(_ value: Double) -> Double {
         let height = Double(drawingHeight)
         var factor: Double
         if max.y - min.y == 0 {
@@ -446,7 +448,7 @@ open class Chart: UIView {
         return scaled
     }
     
-    fileprivate func getZeroValueOnYAxis(zeroLevel: Double) -> Double {
+    private func getZeroValueOnYAxis(zeroLevel: Double) -> Double {
         if min.y > zeroLevel {
             return scaleValueOnYAxis(min.y)
         } else {
@@ -456,7 +458,7 @@ open class Chart: UIView {
     
     // MARK: - Drawings
     
-    fileprivate func drawLine(_ xValues: [Double], yValues: [Double], seriesIndex: Int) {
+    private func drawLine(_ xValues: [Double], yValues: [Double], seriesIndex: Int) {
         // YValues are "reverted" from top to bottom, so 'above' means <= level
         let isAboveZeroLine = yValues.max()! <= self.scaleValueOnYAxis(series[seriesIndex].colors.zeroLevel)
         
@@ -496,7 +498,7 @@ open class Chart: UIView {
         layerStore.append(gradient)
     }
     
-    fileprivate func drawArea(_ xValues: [Double], yValues: [Double], seriesIndex: Int) {
+    private func drawArea(_ xValues: [Double], yValues: [Double], seriesIndex: Int) {
         // YValues are "reverted" from top to bottom, so 'above' means <= level
         let isAboveZeroLine = yValues.max()! <= self.scaleValueOnYAxis(series[seriesIndex].colors.zeroLevel)
         let area = CGMutablePath()
@@ -525,7 +527,7 @@ open class Chart: UIView {
         areaPath = area
     }
     
-    fileprivate func drawAxes() {
+    private func drawAxes() {
         let context = UIGraphicsGetCurrentContext()!
         context.setStrokeColor(axesColor.cgColor)
         context.setLineWidth(0.5)
@@ -559,7 +561,7 @@ open class Chart: UIView {
         context.strokePath()
     }
     
-    fileprivate func drawLabelsAndGridOnXAxis() {
+    private func drawLabelsAndGridOnXAxis() {
         let context = UIGraphicsGetCurrentContext()!
         context.setStrokeColor(gridColor.cgColor)
         context.setLineWidth(0.5)
@@ -630,7 +632,7 @@ open class Chart: UIView {
         }
     }
     
-    fileprivate func drawLabelsAndGridOnYAxis() {
+    private func drawLabelsAndGridOnYAxis() {
         let context = UIGraphicsGetCurrentContext()!
         context.setStrokeColor(gridColor.cgColor)
         context.setLineWidth(0.5)
@@ -688,7 +690,7 @@ open class Chart: UIView {
     
     // MARK: - Touch events
     
-    fileprivate func drawHighlightLineFromLeftPosition(_ left: CGFloat) {
+    private func drawHighlightLineFromLeftPosition(_ left: CGFloat) {
         if let shapeLayer = highlightShapeLayer {
             // Use line already created
             let path = CGMutablePath()
@@ -771,17 +773,17 @@ open class Chart: UIView {
     
     // MARK: - Utilities
     
-    fileprivate func valueFromPointAtX(_ x: CGFloat) -> Double {
+    private func valueFromPointAtX(_ x: CGFloat) -> Double {
         let value = ((max.x-min.x) / Double(drawingWidth)) * Double(x) + min.x
         return value
     }
     
-    fileprivate func valueFromPointAtY(_ y: CGFloat) -> Double {
+    private func valueFromPointAtY(_ y: CGFloat) -> Double {
         let value = ((max.y - min.y) / Double(drawingHeight)) * Double(y) + min.y
         return -value
     }
     
-    fileprivate class func findClosestInValues(
+    private class func findClosestInValues(
         _ values: [Double],
         forValue value: Double
         ) -> (
@@ -816,7 +818,7 @@ open class Chart: UIView {
      Segment a line in multiple lines when the line touches the x-axis, i.e. separating
      positive from negative values.
      */
-    fileprivate class func segmentLine(_ line: ChartLineSegment, zeroLevel: Double) -> [ChartLineSegment] {
+    private class func segmentLine(_ line: ChartLineSegment, zeroLevel: Double) -> [ChartLineSegment] {
         var segments: [ChartLineSegment] = []
         var segment: ChartLineSegment = []
         
@@ -843,7 +845,7 @@ open class Chart: UIView {
     /**
      Return the intersection of a line between two points and 'y = level' line
      */
-    fileprivate class func intersectionWithLevel(_ p1: ChartPoint, and p2: ChartPoint, level: Double) -> ChartPoint {
+    private class func intersectionWithLevel(_ p1: ChartPoint, and p2: ChartPoint, level: Double) -> ChartPoint {
         let dy1 = level - p1.y
         let dy2 = level - p2.y
         return ChartPoint(x: (p2.x * dy1 - p1.x * dy2) / (dy1 - dy2), y: level, color: nil)

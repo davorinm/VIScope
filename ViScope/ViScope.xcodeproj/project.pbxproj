@@ -67,13 +67,11 @@
 		7202346D2265BDC9009EE218 /* RadioBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioBlock.swift; sourceTree = "<group>"; };
 		7202346E2265BDC9009EE218 /* Radio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
 		7202346F2265BDC9009EE218 /* SoftwareDefinedRadio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadio.swift; sourceTree = "<group>"; };
-		7202347A22670573009EE218 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
-		7202347B22670573009EE218 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
-		7202347C22670573009EE218 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
 		720234CE22671328009EE218 /* SDRDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDRDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		720234DD226713C5009EE218 /* dfgdfg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dfgdfg.h; sourceTree = "<group>"; };
 		720234DE226713C5009EE218 /* dfgdfg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dfgdfg.c; sourceTree = "<group>"; };
 		7293B8822268655D00820CED /* MainViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
+		7293B89422687FB500820CED /* SwiftChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftChart.framework; path = "../../../Library/Developer/Xcode/DerivedData/ViScope-cwspimtklgmqrhbbdoliwrhzaeqv/Build/Products/Debug/SwiftChart.framework"; sourceTree = "<group>"; };
 		72F671FD2268646300D61EE8 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/ViScope-cwspimtklgmqrhbbdoliwrhzaeqv/Build/Products/Debug/Charts.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,10 +108,9 @@
 		720233E82265BBCC009EE218 /* ViScope */ = {
 			isa = PBXGroup;
 			children = (
-				720234792267052F009EE218 /* SwiftChart */,
 				7202344C2265BC7C009EE218 /* SDR */,
-				720233E92265BBCC009EE218 /* AppDelegate.swift */,
 				72F670C222685CC000D61EE8 /* UI */,
+				720233E92265BBCC009EE218 /* AppDelegate.swift */,
 				720233ED2265BBCD009EE218 /* Assets.xcassets */,
 				720233F22265BBCD009EE218 /* Info.plist */,
 				720233F32265BBCD009EE218 /* ViScope.entitlements */,
@@ -151,20 +148,10 @@
 			path = DSP;
 			sourceTree = "<group>";
 		};
-		720234792267052F009EE218 /* SwiftChart */ = {
-			isa = PBXGroup;
-			children = (
-				7202347B22670573009EE218 /* Chart.swift */,
-				7202347A22670573009EE218 /* ChartColors.swift */,
-				7202347C22670573009EE218 /* ChartSeries.swift */,
-			);
-			name = SwiftChart;
-			path = ../../SwiftChart/SwiftChart/SwiftChart;
-			sourceTree = "<group>";
-		};
 		720234CD22671328009EE218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7293B89422687FB500820CED /* SwiftChart.framework */,
 				72F671FD2268646300D61EE8 /* Charts.framework */,
 				720234CE22671328009EE218 /* SDRDevice.framework */,
 			);
