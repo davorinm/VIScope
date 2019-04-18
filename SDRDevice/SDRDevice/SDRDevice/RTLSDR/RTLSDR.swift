@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import RTLSDRlib
+import LibRTLSDR
 
 final class RTLSDR: SDRDevice {
-    var delegate: SDRDeviceDelegate?
-    
+    var rawSamples: ((SDRDevice, [UInt8]) -> Void)?
     
     
     // MARK: - Type Properties
@@ -516,8 +515,7 @@ final class RTLSDR: SDRDevice {
                         // convert buffer to Swift [UInt8]
                         let samples: [UInt8] = Array(bufferPointer)
                     
-                    
-                        selfRTLSDR.delegate?.sdrDevice(selfRTLSDR, rawSamples: samples)
+                        selfRTLSDR.rawSamples?(selfRTLSDR, samples)
                     
                 },
                 // end call back closure

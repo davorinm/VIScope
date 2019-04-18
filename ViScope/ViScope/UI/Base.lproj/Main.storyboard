@@ -694,7 +694,7 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="2hp-nT-MNM" kind="relationship" relationship="window.shadowedContentViewController" id="adj-n4-xWH"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="hep-7E-Xu3"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -706,55 +706,137 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="658" height="590"/>
+                        <rect key="frame" x="0.0" y="0.0" width="658" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VzF-FJ-X0r" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="20" width="618" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </customView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="rda-aH-ubG">
+                                <rect key="frame" x="10" y="320" width="638" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="KZJ-5j-2zp"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="2hp-nT-MNM" kind="embed" id="il0-iz-OTH"/>
+                                </connections>
+                            </containerView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="7H9-8r-b9d">
+                                <rect key="frame" x="10" y="10" width="638" height="300"/>
+                                <connections>
+                                    <segue destination="YVY-D7-Mhk" kind="embed" id="9po-sd-2WU"/>
+                                </connections>
+                            </containerView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="rda-aH-ubG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="8qT-ZO-WHc"/>
+                            <constraint firstItem="rda-aH-ubG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="I4Y-1U-Diu"/>
+                            <constraint firstAttribute="trailing" secondItem="rda-aH-ubG" secondAttribute="trailing" constant="10" id="K4x-FR-kdS"/>
+                            <constraint firstAttribute="bottom" secondItem="7H9-8r-b9d" secondAttribute="bottom" constant="10" id="NRm-Ag-W89"/>
+                            <constraint firstItem="7H9-8r-b9d" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="WwY-lx-WlW"/>
+                            <constraint firstItem="7H9-8r-b9d" firstAttribute="top" secondItem="rda-aH-ubG" secondAttribute="bottom" constant="10" id="yKw-vI-Rkj"/>
+                            <constraint firstAttribute="trailing" secondItem="7H9-8r-b9d" secondAttribute="trailing" constant="10" id="z6P-dp-zPf"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="chartView" destination="VzF-FJ-X0r" id="hba-Jl-3Hh"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="929"/>
         </scene>
-        <!--Main View Controller2-->
+        <!--Tuner View Controller-->
         <scene sceneID="MhU-Zw-OzZ">
             <objects>
-                <viewController id="2hp-nT-MNM" customClass="MainViewController2" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2hp-nT-MNM" customClass="TunerViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Ayx-fl-SL8">
-                        <rect key="frame" x="0.0" y="0.0" width="658" height="590"/>
+                        <rect key="frame" x="0.0" y="0.0" width="658" height="150"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLB-Qr-unv" customClass="Chart" customModule="SwiftChart">
-                                <rect key="frame" x="20" y="20" width="618" height="267"/>
+                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SK-ZN-bpC">
+                                <rect key="frame" x="73" y="15" width="240" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="gridColor">
-                                        <color key="value" name="systemRedColor" catalog="System" colorSpace="catalog"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="axesColor">
-                                        <color key="value" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </customView>
+                                <clipView key="contentView" ambiguous="YES" id="eSh-Jc-0ho">
+                                    <rect key="frame" x="1" y="1" width="238" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <ruleEditor ambiguous="YES" nestingMode="compound" canRemoveAllRows="YES" rowHeight="32" id="OkT-h7-6IK">
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="133"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </ruleEditor>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Hu4-mU-x80">
+                                    <rect key="frame" x="-100" y="-100" width="223" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fh6-at-qlM">
+                                    <rect key="frame" x="224" y="1" width="15" height="118"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="chart" destination="NLB-Qr-unv" id="RX7-rO-f9y"/>
-                    </connections>
                 </viewController>
                 <customObject id="xmM-IT-Lp5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="937"/>
+            <point key="canvasLocation" x="1026" y="703"/>
+        </scene>
+        <!--Spectrum View Controller-->
+        <scene sceneID="mcQ-yE-sMY">
+            <objects>
+                <viewController id="YVY-D7-Mhk" customClass="SpectrumViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="W6i-rr-Gdt">
+                        <rect key="frame" x="0.0" y="0.0" width="649" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="iJu-sm-3IM">
+                                <rect key="frame" x="0.0" y="0.0" width="649" height="300"/>
+                                <subviews>
+                                    <customView id="ncT-FX-Re1">
+                                        <rect key="frame" x="0.0" y="0.0" width="649" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="Chart" customModule="SwiftChart">
+                                                <rect key="frame" x="0.0" y="150" width="649" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="cgC-Qp-Onc"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="D7B-AP-LPe" customClass="Chart" customModule="SwiftChart">
+                                                <rect key="frame" x="0.0" y="0.0" width="649" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="AsM-Wl-HtF"/>
+                                                </constraints>
+                                            </customView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="D7B-AP-LPe" secondAttribute="trailing" id="0yj-JR-6Oc"/>
+                                            <constraint firstItem="D7B-AP-LPe" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="36U-DB-e2o"/>
+                                            <constraint firstItem="D7B-AP-LPe" firstAttribute="top" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="JYL-pf-mw1"/>
+                                            <constraint firstAttribute="bottom" secondItem="D7B-AP-LPe" secondAttribute="bottom" id="djh-k9-dDT"/>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" id="f9M-Ga-c4l"/>
+                                            <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" id="odS-wv-0Ms"/>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="oyr-dV-6p1"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="251"/>
+                                </holdingPriorities>
+                            </splitView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="iJu-sm-3IM" secondAttribute="bottom" id="LIg-vq-Yn6"/>
+                            <constraint firstAttribute="trailing" secondItem="iJu-sm-3IM" secondAttribute="trailing" id="TMq-RR-Shh"/>
+                            <constraint firstItem="iJu-sm-3IM" firstAttribute="top" secondItem="W6i-rr-Gdt" secondAttribute="top" id="fjD-wa-2Wi"/>
+                            <constraint firstItem="iJu-sm-3IM" firstAttribute="leading" secondItem="W6i-rr-Gdt" secondAttribute="leading" id="rBW-k1-V2b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spectrumChart" destination="4zG-bH-4xS" id="dLw-UZ-QRf"/>
+                        <outlet property="waterfallChart" destination="D7B-AP-LPe" id="Jey-ZG-bSc"/>
+                    </connections>
+                </viewController>
+                <customObject id="KL0-Bi-hTw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.5" y="1027"/>
         </scene>
     </scenes>
 </document>

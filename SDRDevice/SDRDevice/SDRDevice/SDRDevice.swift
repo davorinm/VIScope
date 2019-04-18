@@ -7,12 +7,8 @@
 
 import Foundation
 
-public protocol SDRDeviceDelegate {
-    func sdrDevice(_ device: SDRDevice, rawSamples: [UInt8])
-//    func sdrDevice(_ device: SDRDevice, normalizedSamples: [Float])
-}
 public protocol SDRDevice: class {
-    var delegate: SDRDeviceDelegate? { get set }
+    var rawSamples: ((_ device: SDRDevice, _ rawSamples: [UInt8]) -> Void)? { get set }
     
     func minimumFrequency() -> Int
     func maximumFrequency() -> Int
@@ -39,10 +35,4 @@ public protocol SDRDevice: class {
     func startSampleStream()
     func stopSampleStream()
     
-}
-
-public class SDRDevices {
-    public class func deviceList() -> [SDRDevice] {
-        return RTLSDR.deviceList()
-    }
 }
