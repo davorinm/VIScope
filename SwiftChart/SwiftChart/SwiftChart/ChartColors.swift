@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 Giampaolo Bellavite. All rights reserved.
 //
 
-import AppKit
+import Foundation
 
 /**
 Shorthands for various colors to use in the charts.
