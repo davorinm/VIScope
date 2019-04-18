@@ -357,25 +357,4 @@ extension Radio {
             }
         }
     }
-    
-    //--------------------------------------------------------------------------
-    //
-    // getRadioStatusForKey()
-    //
-    // queires radio blocks asking for a specific key to get status data
-    //
-    //--------------------------------------------------------------------------
-    
-    func getRadioStatusFor(key: String) -> Any? {
-        
-        for block in _blocks {
-            if let valueForKey = block.getStatusFor(key: key) {
-                return valueForKey
-            }
-        }
-        
-        return nil
-        
-    }
-
 }

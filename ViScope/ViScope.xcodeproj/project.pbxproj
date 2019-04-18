@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233E92265BBCC009EE218 /* AppDelegate.swift */; };
-		720233EC2265BBCC009EE218 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233EB2265BBCC009EE218 /* ViewController.swift */; };
+		720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233EB2265BBCC009EE218 /* MainViewController.swift */; };
 		720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720233ED2265BBCD009EE218 /* Assets.xcassets */; };
 		720233F12265BBCD009EE218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720233EF2265BBCD009EE218 /* Main.storyboard */; };
 		720234632265BDC0009EE218 /* MixerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345A2265BDBF009EE218 /* MixerBlock.swift */; };
@@ -24,14 +24,11 @@
 		720234712265BDC9009EE218 /* RadioBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346D2265BDC9009EE218 /* RadioBlock.swift */; };
 		720234722265BDC9009EE218 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346E2265BDC9009EE218 /* Radio.swift */; };
 		720234732265BDC9009EE218 /* SoftwareDefinedRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346F2265BDC9009EE218 /* SoftwareDefinedRadio.swift */; };
-		7202347D22670573009EE218 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202347A22670573009EE218 /* ChartColors.swift */; };
-		7202347E22670573009EE218 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202347B22670573009EE218 /* Chart.swift */; };
-		7202347F22670573009EE218 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202347C22670573009EE218 /* ChartSeries.swift */; };
-		720234D722671345009EE218 /* SwiftChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720234D02267132B009EE218 /* SwiftChart.framework */; };
-		720234D822671345009EE218 /* SwiftChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720234D02267132B009EE218 /* SwiftChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		720234DA22671349009EE218 /* SDRDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720234CE22671328009EE218 /* SDRDevice.framework */; };
 		720234DB22671349009EE218 /* SDRDevice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720234CE22671328009EE218 /* SDRDevice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		720234DF226713C5009EE218 /* dfgdfg.c in Sources */ = {isa = PBXBuildFile; fileRef = 720234DE226713C5009EE218 /* dfgdfg.c */; };
+		7293B8832268655D00820CED /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7293B8822268655D00820CED /* MainViewController2.swift */; };
+		7293B88F2268727400820CED /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F671FD2268646300D61EE8 /* Charts.framework */; };
+		7293B8902268727400820CED /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72F671FD2268646300D61EE8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +39,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				720234DB22671349009EE218 /* SDRDevice.framework in Embed Frameworks */,
-				720234D822671345009EE218 /* SwiftChart.framework in Embed Frameworks */,
+				7293B8902268727400820CED /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,7 +49,7 @@
 /* Begin PBXFileReference section */
 		720233E62265BBCC009EE218 /* ViScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720233E92265BBCC009EE218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		720233EB2265BBCC009EE218 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		720233EB2265BBCC009EE218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		720233ED2265BBCD009EE218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		720233F02265BBCD009EE218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		720233F22265BBCD009EE218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,9 +71,10 @@
 		7202347B22670573009EE218 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		7202347C22670573009EE218 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
 		720234CE22671328009EE218 /* SDRDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDRDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		720234D02267132B009EE218 /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		720234DD226713C5009EE218 /* dfgdfg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dfgdfg.h; sourceTree = "<group>"; };
 		720234DE226713C5009EE218 /* dfgdfg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dfgdfg.c; sourceTree = "<group>"; };
+		7293B8822268655D00820CED /* MainViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
+		72F671FD2268646300D61EE8 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/ViScope-cwspimtklgmqrhbbdoliwrhzaeqv/Build/Products/Debug/Charts.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				720234DA22671349009EE218 /* SDRDevice.framework in Frameworks */,
-				720234D722671345009EE218 /* SwiftChart.framework in Frameworks */,
+				7293B88F2268727400820CED /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,9 +113,8 @@
 				720234792267052F009EE218 /* SwiftChart */,
 				7202344C2265BC7C009EE218 /* SDR */,
 				720233E92265BBCC009EE218 /* AppDelegate.swift */,
-				720233EB2265BBCC009EE218 /* ViewController.swift */,
+				72F670C222685CC000D61EE8 /* UI */,
 				720233ED2265BBCD009EE218 /* Assets.xcassets */,
-				720233EF2265BBCD009EE218 /* Main.storyboard */,
 				720233F22265BBCD009EE218 /* Info.plist */,
 				720233F32265BBCD009EE218 /* ViScope.entitlements */,
 			);
@@ -168,10 +165,20 @@
 		720234CD22671328009EE218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				720234D02267132B009EE218 /* SwiftChart.framework */,
+				72F671FD2268646300D61EE8 /* Charts.framework */,
 				720234CE22671328009EE218 /* SDRDevice.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72F670C222685CC000D61EE8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				720233EF2265BBCD009EE218 /* Main.storyboard */,
+				720233EB2265BBCC009EE218 /* MainViewController.swift */,
+				7293B8822268655D00820CED /* MainViewController2.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,25 +253,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7202347E22670573009EE218 /* Chart.swift in Sources */,
 				720234692265BDC0009EE218 /* FFTBlock.swift in Sources */,
 				720234702265BDC9009EE218 /* Samples.swift in Sources */,
-				720233EC2265BBCC009EE218 /* ViewController.swift in Sources */,
+				720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */,
 				720234632265BDC0009EE218 /* MixerBlock.swift in Sources */,
 				720234652265BDC0009EE218 /* ComplexFilterBlock.swift in Sources */,
 				720234722265BDC9009EE218 /* Radio.swift in Sources */,
 				720234712265BDC9009EE218 /* RadioBlock.swift in Sources */,
 				7202346A2265BDC0009EE218 /* ToneDecoderBlock.swift in Sources */,
-				7202347D22670573009EE218 /* ChartColors.swift in Sources */,
 				720234682265BDC0009EE218 /* FMDemodulatorBlock.swift in Sources */,
 				720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */,
+				7293B8832268655D00820CED /* MainViewController2.swift in Sources */,
 				7202346B2265BDC0009EE218 /* SquelchBlock.swift in Sources */,
-				720234DF226713C5009EE218 /* dfgdfg.c in Sources */,
 				720234662265BDC0009EE218 /* AMDemodulatorBlock.swift in Sources */,
 				720234642265BDC0009EE218 /* FilterBlock.swift in Sources */,
 				720234732265BDC9009EE218 /* SoftwareDefinedRadio.swift in Sources */,
 				720234672265BDC0009EE218 /* FilterCoefficients.swift in Sources */,
-				7202347F22670573009EE218 /* ChartSeries.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

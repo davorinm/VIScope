@@ -6,10 +6,12 @@
 //
 
 import Foundation
-
-
+import RTLSDRlib
 
 final class RTLSDR: SDRDevice {
+    var delegate: SDRDeviceDelegate?
+    
+    
     
     // MARK: - Type Properties
 

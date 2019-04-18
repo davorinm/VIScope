@@ -126,8 +126,8 @@ class FFTBlock: RadioBlock {
             // post fft message with samples
             if let queue = self.notifyQueue {
                 queue.async {
-                    let userInfo: [String : Any] = [fftSamplesUpdatedKey : dbs]
-                    NotificationCenter.default.post(name: .fftSamplesUpdatedNotification, object: self, userInfo: userInfo)
+//                    let userInfo: [String : Any] = [fftSamplesUpdatedKey : dbs]
+//                    NotificationCenter.default.post(name: .fftSamplesUpdatedNotification, object: self, userInfo: userInfo)
                 }
             }
         }

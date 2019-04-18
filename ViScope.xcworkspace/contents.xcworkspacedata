@@ -5,7 +5,7 @@
       location = "group:ViScope/ViScope.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SwiftChart/SwiftChart.xcodeproj">
+      location = "group:Charts/Charts.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:SDRDevice/SDRDevice.xcodeproj">

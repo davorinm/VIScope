@@ -8,8 +8,7 @@
 import Foundation
 import Accelerate
 
-class ToneDecoderBlock: RadioBlock {
-    
+class ToneDecoderBlock: RadioBlock {    
     enum ToneDecoderState {
         case    idle
         case    running
@@ -38,12 +37,7 @@ class ToneDecoderBlock: RadioBlock {
     var delayTwo:       [Double]    = []
     var power:          [Double]    = []
     var relativePower:  [Int]       = []
-    var tone:           Double      = 0.0 {
-        didSet {
-            let userInfo: [String : Any] = [toneDecoderUpdatedKey : tone]
-            NotificationCenter.default.post(name: .toneDecoderUpdatedNotification, object: self, userInfo: userInfo)
-        }
-    }
+    var tone:           Double      = 0.0
     
     var tempSampleCount: Int = 0
 
@@ -215,21 +209,4 @@ class ToneDecoderBlock: RadioBlock {
         }
         
     }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-    
-    func getStatusFor(key: String) -> Any? {
-        
-        if key == toneDecoderKey {
-            return self.tone
-        }
-
-        return nil
-    }
-
-
 }

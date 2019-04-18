@@ -96,8 +96,8 @@ class SquelchBlock: RadioBlock {
     
         if let queue = self.notifyQueue {
             queue.async {
-                let userInfo: [String : Any] = [averageDBUpdatedKey : self.averageDB]
-                NotificationCenter.default.post(name: .averageDBUpdatedNotification, object: self, userInfo: userInfo)
+//                let userInfo: [String : Any] = [averageDBUpdatedKey : self.averageDB]
+//                NotificationCenter.default.post(name: .averageDBUpdatedNotification, object: self, userInfo: userInfo)
             }
         }
 
@@ -120,8 +120,8 @@ class SquelchBlock: RadioBlock {
             lastSquelchPercent = squelchPercent
             if let queue = self.notifyQueue {
                 queue.async {
-                    let userInfo: [String : Any] = [squelchPercentUpdatedKey : self.squelchPercent]
-                    NotificationCenter.default.post(name: .squelchPercentUpdatedNotification, object: self, userInfo: userInfo)
+//                    let userInfo: [String : Any] = [squelchPercentUpdatedKey : self.squelchPercent]
+//                    NotificationCenter.default.post(name: .squelchPercentUpdatedNotification, object: self, userInfo: userInfo)
                 }
             }
         }
@@ -133,25 +133,5 @@ class SquelchBlock: RadioBlock {
         }
         
     }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-    
-    func getStatusFor(key: String) -> Any? {
-        
-        if key == averageDBKey {
-            return self.averageDB
-        }
-        
-        if key == squelchPercentKey {
-            return self.squelchPercent
-        }
-        
-        return nil
-    }
-
 }
 

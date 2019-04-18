@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		720234A822671268009EE218 /* SDRDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 720234A622671268009EE218 /* SDRDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		720234BD226712B7009EE218 /* SDRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234BC226712B6009EE218 /* SDRDevice.swift */; };
-		720234C4226712D0009EE218 /* RTLSDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234BF226712CF009EE218 /* RTLSDR.swift */; };
-		720234C5226712D0009EE218 /* librtlsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 720234C0226712CF009EE218 /* librtlsdr.a */; };
-		720234C6226712D0009EE218 /* rtl-sdr_export.h in Headers */ = {isa = PBXBuildFile; fileRef = 720234C1226712CF009EE218 /* rtl-sdr_export.h */; };
-		720234C7226712D0009EE218 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 720234C2226712CF009EE218 /* libusb-1.0.a */; };
-		720234C8226712D0009EE218 /* rtl-sdr.h in Headers */ = {isa = PBXBuildFile; fileRef = 720234C3226712CF009EE218 /* rtl-sdr.h */; };
+		7293B8862268684B00820CED /* RTLSDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F670B92268568200D61EE8 /* RTLSDR.swift */; };
+		7293B88A2268723300820CED /* librtlsdr.a in Resources */ = {isa = PBXBuildFile; fileRef = 72F670BB2268568200D61EE8 /* librtlsdr.a */; };
+		7293B88B2268723300820CED /* libusb-1.0.a in Resources */ = {isa = PBXBuildFile; fileRef = 72F670BD2268568200D61EE8 /* libusb-1.0.a */; };
+		7293B88D2268724F00820CED /* librtlsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F670BB2268568200D61EE8 /* librtlsdr.a */; };
+		7293B88E2268724F00820CED /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F670BD2268568200D61EE8 /* libusb-1.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +21,13 @@
 		720234A622671268009EE218 /* SDRDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDRDevice.h; sourceTree = "<group>"; };
 		720234A722671268009EE218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720234BC226712B6009EE218 /* SDRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDRDevice.swift; sourceTree = "<group>"; };
-		720234BF226712CF009EE218 /* RTLSDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLSDR.swift; sourceTree = "<group>"; };
-		720234C0226712CF009EE218 /* librtlsdr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librtlsdr.a; sourceTree = "<group>"; };
-		720234C1226712CF009EE218 /* rtl-sdr_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr_export.h"; sourceTree = "<group>"; };
-		720234C2226712CF009EE218 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
-		720234C3226712CF009EE218 /* rtl-sdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr.h"; sourceTree = "<group>"; };
-		720234E022671402009EE218 /* SDRDevice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDRDevice-Bridging-Header.h"; sourceTree = "<group>"; };
+		7293B8882268704000820CED /* SDRDevice.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SDRDevice.xcconfig; sourceTree = "<group>"; };
+		72F670B92268568200D61EE8 /* RTLSDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLSDR.swift; sourceTree = "<group>"; };
+		72F670BA2268568200D61EE8 /* rtl-sdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr.h"; sourceTree = "<group>"; };
+		72F670BB2268568200D61EE8 /* librtlsdr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librtlsdr.a; sourceTree = "<group>"; };
+		72F670BC2268568200D61EE8 /* rtl-sdr_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr_export.h"; sourceTree = "<group>"; };
+		72F670BD2268568200D61EE8 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
+		72F670BE2268568200D61EE8 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,8 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720234C7226712D0009EE218 /* libusb-1.0.a in Frameworks */,
-				720234C5226712D0009EE218 /* librtlsdr.a in Frameworks */,
+				7293B88D2268724F00820CED /* librtlsdr.a in Frameworks */,
+				7293B88E2268724F00820CED /* libusb-1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +48,7 @@
 			children = (
 				720234A522671268009EE218 /* SDRDevice */,
 				720234A422671268009EE218 /* Products */,
+				7293B88C2268724F00820CED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,7 +65,7 @@
 			children = (
 				720234AE22671296009EE218 /* SDRDevice */,
 				720234A622671268009EE218 /* SDRDevice.h */,
-				720234E022671402009EE218 /* SDRDevice-Bridging-Header.h */,
+				7293B8882268704000820CED /* SDRDevice.xcconfig */,
 				720234A722671268009EE218 /* Info.plist */,
 			);
 			path = SDRDevice;
@@ -72,20 +74,36 @@
 		720234AE22671296009EE218 /* SDRDevice */ = {
 			isa = PBXGroup;
 			children = (
-				720234BE226712C5009EE218 /* RTLSDR */,
+				72F670C02268568200D61EE8 /* RTLSDR */,
 				720234BC226712B6009EE218 /* SDRDevice.swift */,
 			);
 			path = SDRDevice;
 			sourceTree = "<group>";
 		};
-		720234BE226712C5009EE218 /* RTLSDR */ = {
+		7293B88C2268724F00820CED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				720234BF226712CF009EE218 /* RTLSDR.swift */,
-				720234C0226712CF009EE218 /* librtlsdr.a */,
-				720234C2226712CF009EE218 /* libusb-1.0.a */,
-				720234C1226712CF009EE218 /* rtl-sdr_export.h */,
-				720234C3226712CF009EE218 /* rtl-sdr.h */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72F670BF2268568200D61EE8 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				72F670BE2268568200D61EE8 /* module.modulemap */,
+				72F670BA2268568200D61EE8 /* rtl-sdr.h */,
+				72F670BB2268568200D61EE8 /* librtlsdr.a */,
+				72F670BC2268568200D61EE8 /* rtl-sdr_export.h */,
+				72F670BD2268568200D61EE8 /* libusb-1.0.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		72F670C02268568200D61EE8 /* RTLSDR */ = {
+			isa = PBXGroup;
+			children = (
+				72F670BF2268568200D61EE8 /* lib */,
+				72F670B92268568200D61EE8 /* RTLSDR.swift */,
 			);
 			path = RTLSDR;
 			sourceTree = "<group>";
@@ -97,9 +115,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720234C8226712D0009EE218 /* rtl-sdr.h in Headers */,
 				720234A822671268009EE218 /* SDRDevice.h in Headers */,
-				720234C6226712D0009EE218 /* rtl-sdr_export.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +177,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7293B88A2268723300820CED /* librtlsdr.a in Resources */,
+				7293B88B2268723300820CED /* libusb-1.0.a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720234C4226712D0009EE218 /* RTLSDR.swift in Sources */,
+				7293B8862268684B00820CED /* RTLSDR.swift in Sources */,
 				720234BD226712B7009EE218 /* SDRDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +320,7 @@
 		};
 		720234AC22671268009EE218 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7293B8882268704000820CED /* SDRDevice.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -323,11 +342,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDRDevice/SDRDevice/RTLSDR",
+					"$(PROJECT_DIR)/SDRDevice/SDRDevice/RTLSDR/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SDRDevice;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SDRDevice/SDRDevice/SDRDevice-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -335,6 +354,7 @@
 		};
 		720234AD22671268009EE218 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7293B8882268704000820CED /* SDRDevice.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -356,11 +376,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDRDevice/SDRDevice/RTLSDR",
+					"$(PROJECT_DIR)/SDRDevice/SDRDevice/RTLSDR/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SDRDevice;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SDRDevice/SDRDevice/SDRDevice-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

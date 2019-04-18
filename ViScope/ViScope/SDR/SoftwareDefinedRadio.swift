@@ -8,6 +8,7 @@
 import Foundation
 import Accelerate
 import AVFoundation
+import SDRDevice
 
 class SoftwareDefinedRadio: SDRDeviceDelegate {
     
@@ -176,7 +177,7 @@ class SoftwareDefinedRadio: SDRDeviceDelegate {
         //
         //----------------------------------------------------------------------
 
-        let rtlsdrList = RTLSDR.deviceList()
+        let rtlsdrList = SDRDevices.deviceList()
         deviceList  += rtlsdrList
         deviceCount  = deviceList.count
         
@@ -396,23 +397,7 @@ class SoftwareDefinedRadio: SDRDeviceDelegate {
         self.radio?.samplesOut = processAudio
         self.radio?.updateSquelch(value: squelchValue)
         
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-    
-    func getStatusFor(key: String) -> Any? {
-        
-        if let value = self.radio?.getRadioStatusFor(key: key) {
-            return value
-        }
-        return nil
-        
-    }
-    
+    }    
 }
 
 extension SoftwareDefinedRadio {

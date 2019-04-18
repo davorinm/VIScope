@@ -1,0 +1,4 @@
+module RTLSDRlib {
+    header "rtl-sdr.h"
+    export *
+}

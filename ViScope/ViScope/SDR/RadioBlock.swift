@@ -37,9 +37,5 @@ protocol RadioBlock {
     func samplesIn(_ samples: Samples)
     
     // call to unlink output samples reference
-    func unlink()
-    
-    // function to get status values
-    func getStatusFor(key: String) -> Any?
-    
+    func unlink()    
 }

@@ -1,0 +1,12 @@
+//
+//  Unsaft.xcconfig
+//  Modulemap
+//
+//  Created by What on 2018/12/23.
+//  Copyright © 2018 dumbass. All rights reserved.
+//
+
+SWIFT_INCLUDE_PATHS = $(SRCROOT)/SDRDevice/SDRDevice/RTLSDR/
+
+HEADER_SEARCH_PATHS = $(SRCROOT)/SDRDevice/SDRDevice/RTLSDR/lib/
+

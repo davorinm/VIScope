@@ -7,27 +7,11 @@
 
 import Foundation
 
-//------------------------------------------------------------------------------
-//
-// This module describes the API for a generic SDR hardware device
-//
-// All SDR device modules must follow the protocol and override the class
-// methods, making the SDRDevice class nothing but an abstract
-//
-//------------------------------------------------------------------------------
-
-protocol SDRDeviceDelegate {
+public protocol SDRDeviceDelegate {
     func sdrDevice(_ device: SDRDevice, rawSamples: [UInt8])
 //    func sdrDevice(_ device: SDRDevice, normalizedSamples: [Float])
 }
-
-//------------------------------------------------------------------------------
-//
-//
-//
-//------------------------------------------------------------------------------
-
-protocol SDRDevice: class {
+public protocol SDRDevice: class {
     var delegate: SDRDeviceDelegate? { get set }
     
     func minimumFrequency() -> Int
@@ -55,4 +39,10 @@ protocol SDRDevice: class {
     func startSampleStream()
     func stopSampleStream()
     
+}
+
+public class SDRDevices {
+    public class func deviceList() -> [SDRDevice] {
+        return RTLSDR.deviceList()
+    }
 }
