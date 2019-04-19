@@ -52,7 +52,6 @@
 			children = (
 				720234A522671268009EE218 /* SDRDevice */,
 				720234A422671268009EE218 /* Products */,
-				7293B88C2268724F00820CED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,13 +82,6 @@
 				1E66E8E62269184C00F93A46 /* SDRDevices.swift */,
 			);
 			path = SDRDevice;
-			sourceTree = "<group>";
-		};
-		7293B88C2268724F00820CED /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		72F670BF2268568200D61EE8 /* lib */ = {
