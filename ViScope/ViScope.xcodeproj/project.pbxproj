@@ -13,10 +13,6 @@
 		1E66E8E322690FC200F93A46 /* SoftwareDefinedRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8E222690FC200F93A46 /* SoftwareDefinedRadio.swift */; };
 		1E66E8EB2269224600F93A46 /* ObservableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8E92269224600F93A46 /* ObservableEvent.swift */; };
 		1E66E8EC2269224600F93A46 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8EA2269224600F93A46 /* Disposable.swift */; };
-		1E66E8EE226924C800F93A46 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E66E8E822691AFC00F93A46 /* Charts.framework */; };
-		1E66E8EF226924C800F93A46 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1E66E8E822691AFC00F93A46 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1E66E8F0226924DA00F93A46 /* SwiftChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E66E8DC2268F7A100F93A46 /* SwiftChart.framework */; };
-		1E66E8F1226924DA00F93A46 /* SwiftChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1E66E8DC2268F7A100F93A46 /* SwiftChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233E92265BBCC009EE218 /* AppDelegate.swift */; };
 		720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233EB2265BBCC009EE218 /* MainViewController.swift */; };
 		720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720233ED2265BBCD009EE218 /* Assets.xcassets */; };
@@ -35,6 +31,8 @@
 		720234722265BDC9009EE218 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346E2265BDC9009EE218 /* Radio.swift */; };
 		720234732265BDC9009EE218 /* SoftwareDefinedRadioOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346F2265BDC9009EE218 /* SoftwareDefinedRadioOld.swift */; };
 		7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7293B8822268655D00820CED /* SpectrumViewController.swift */; };
+		7293B8B62269A08A00820CED /* SDRDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 720234CE22671328009EE218 /* SDRDevice.framework */; };
+		7293B8B72269A08A00820CED /* SDRDevice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 720234CE22671328009EE218 /* SDRDevice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,9 +42,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7293B8B72269A08A00820CED /* SDRDevice.framework in Embed Frameworks */,
 				1E66E8D82268F3C800F93A46 /* SDRDevice.framework in Embed Frameworks */,
-				1E66E8EF226924C800F93A46 /* Charts.framework in Embed Frameworks */,
-				1E66E8F1226924DA00F93A46 /* SwiftChart.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,10 +51,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1E66E8DC2268F7A100F93A46 /* SwiftChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftChart.framework; path = "../../../Library/Developer/Xcode/DerivedData/ViScope-gcerkagsvcxfxebogrqevuodrwnf/Build/Products/Debug/SwiftChart.framework"; sourceTree = "<group>"; };
+		1E66E8DC2268F7A100F93A46 /* SwiftChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E66E8DE2269062300F93A46 /* TunerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewController.swift; sourceTree = "<group>"; };
 		1E66E8E222690FC200F93A46 /* SoftwareDefinedRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadio.swift; sourceTree = "<group>"; };
-		1E66E8E822691AFC00F93A46 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/ViScope-gcerkagsvcxfxebogrqevuodrwnf/Build/Products/Debug/Charts.framework"; sourceTree = "<group>"; };
+		1E66E8E822691AFC00F93A46 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E66E8E92269224600F93A46 /* ObservableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableEvent.swift; sourceTree = "<group>"; };
 		1E66E8EA2269224600F93A46 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		720233E62265BBCC009EE218 /* ViScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,9 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7293B8B62269A08A00820CED /* SDRDevice.framework in Frameworks */,
 				1E66E8D72268F3C800F93A46 /* SDRDevice.framework in Frameworks */,
-				1E66E8EE226924C800F93A46 /* Charts.framework in Frameworks */,
-				1E66E8F0226924DA00F93A46 /* SwiftChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
