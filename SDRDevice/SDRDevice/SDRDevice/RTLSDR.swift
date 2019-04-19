@@ -74,8 +74,6 @@ final class RTLSDR: SDRDevice {
     let usbSerial:          String
     let name:               String
     
-//    override var delegate:           SDRDeviceDelegate?
-    
     var tuner:              String = ""
     var isInitalized:       Bool   = false
     

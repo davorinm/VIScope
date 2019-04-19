@@ -1,0 +1,4 @@
+module LibUSB {
+    header "libusb.h"
+    export *
+}

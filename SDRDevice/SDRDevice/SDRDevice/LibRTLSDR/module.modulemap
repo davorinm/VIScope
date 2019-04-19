@@ -2,8 +2,3 @@ module LibRTLSDR {
     header "rtl-sdr.h"
     export *
 }
-
-module LibUSB {
-    header "libusb.h"
-    export *
-}
