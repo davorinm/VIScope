@@ -7,12 +7,17 @@
 //
 
 import Cocoa
+import SDRDevice
 
 class TunerViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        SDRDevices.registerUsbEvents()
+        
+        // NSComboBox
+        // https://www.raywenderlich.com/759-macos-controls-tutorial-part-1-2
     }
-    
 }

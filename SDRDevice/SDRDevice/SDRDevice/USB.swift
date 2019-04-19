@@ -9,6 +9,8 @@
 import Foundation
 import LibUSB
 
+// https://github.com/libusb/libusb/blob/master/examples/hotplugtest.c
+
 class USB {
     static let shared = USB()
     
@@ -20,9 +22,17 @@ class USB {
     private let product_id: Int32 = LIBUSB_HOTPLUG_MATCH_ANY
     private let class_id: Int32 = LIBUSB_HOTPLUG_MATCH_ANY
     
-    // MARK: - USB init
+    // MARK: - 
     
-    private init() {
+    private init() { }
+    
+    deinit {
+        usbExit()
+    }
+    
+    // MARK: - Public
+    
+    func registerEvents() {
         usbInit()
         usbCheckCapability()
         usbRegisterEventDeviceArrived()
@@ -35,11 +45,7 @@ class USB {
         }
     }
     
-    deinit {
-        usbExit()
-    }
-    
-    // MARK: - USB functions
+    // MARK: - USB helpers
     
     private func usbInit() -> Bool {
         let rc = libusb_init(handle)

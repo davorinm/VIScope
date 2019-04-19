@@ -12,4 +12,8 @@ public class SDRDevices {
     public class func deviceList() -> [SDRDevice] {
         return RTLSDR.deviceList()
     }
+    
+    public class func registerUsbEvents() {
+        USB.shared.registerEvents()
+    }
 }
