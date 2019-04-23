@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SDRDevice.xcodeproj">
+      location = "self:SDR.xcodeproj">
    </FileRef>
 </Workspace>

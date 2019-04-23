@@ -13,7 +13,7 @@ class SpectrumViewController: NSViewController, ChartDelegate {
     @IBOutlet private weak var spectrumChart: Chart!
     @IBOutlet private weak var waterfallChart: Chart!
     
-    private var fftDisposable: Disposable?
+    private let model = SpectrumViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,19 +28,13 @@ class SpectrumViewController: NSViewController, ChartDelegate {
         initializeSpectrumChart()
         initializeWaterfallChart()
         
-        fftDisposable = SoftwareDefinedRadio.shared.fft.subscribe { [unowned self] (fft) in
-            
-            let series = ChartSeries(fft)
-            series.area = true
-            
-            self.spectrumChart.series = [series]
-        }
+        model.load()
     }
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
         
-        fftDisposable = nil
+        model.unload()
     }
     
     // MARK: - Charts Init

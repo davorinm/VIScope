@@ -9,7 +9,7 @@
 import Foundation
 
 public class SDRDevices {
-    public class func deviceList() -> [SDRDevice] {
+    public class func devicesList() -> [SDRDevice] {
         return RTLSDR.deviceList()
     }
     

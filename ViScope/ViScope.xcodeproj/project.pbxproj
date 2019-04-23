@@ -7,32 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E33929C226C875A00AD052F /* SpectrumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E33929B226C875A00AD052F /* SpectrumViewModel.swift */; };
+		1E3392A0226C879E00AD052F /* TunerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E33929F226C879E00AD052F /* TunerViewModel.swift */; };
 		1E66E8DF2269062300F93A46 /* TunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8DE2269062300F93A46 /* TunerViewController.swift */; };
-		1E66E8E322690FC200F93A46 /* SoftwareDefinedRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8E222690FC200F93A46 /* SoftwareDefinedRadio.swift */; };
 		1E66E8EB2269224600F93A46 /* ObservableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8E92269224600F93A46 /* ObservableEvent.swift */; };
 		1E66E8EC2269224600F93A46 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8EA2269224600F93A46 /* Disposable.swift */; };
 		720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233E92265BBCC009EE218 /* AppDelegate.swift */; };
 		720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233EB2265BBCC009EE218 /* MainViewController.swift */; };
 		720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720233ED2265BBCD009EE218 /* Assets.xcassets */; };
 		720233F12265BBCD009EE218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720233EF2265BBCD009EE218 /* Main.storyboard */; };
-		720234632265BDC0009EE218 /* MixerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345A2265BDBF009EE218 /* MixerBlock.swift */; };
-		720234642265BDC0009EE218 /* FilterBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345B2265BDBF009EE218 /* FilterBlock.swift */; };
-		720234652265BDC0009EE218 /* ComplexFilterBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345C2265BDBF009EE218 /* ComplexFilterBlock.swift */; };
-		720234662265BDC0009EE218 /* AMDemodulatorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345D2265BDBF009EE218 /* AMDemodulatorBlock.swift */; };
-		720234672265BDC0009EE218 /* FilterCoefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345E2265BDBF009EE218 /* FilterCoefficients.swift */; };
-		720234682265BDC0009EE218 /* FMDemodulatorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202345F2265BDBF009EE218 /* FMDemodulatorBlock.swift */; };
-		720234692265BDC0009EE218 /* FFTBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234602265BDBF009EE218 /* FFTBlock.swift */; };
-		7202346A2265BDC0009EE218 /* ToneDecoderBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234612265BDBF009EE218 /* ToneDecoderBlock.swift */; };
-		7202346B2265BDC0009EE218 /* SquelchBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234622265BDBF009EE218 /* SquelchBlock.swift */; };
-		720234702265BDC9009EE218 /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346C2265BDC9009EE218 /* Samples.swift */; };
-		720234712265BDC9009EE218 /* RadioBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346D2265BDC9009EE218 /* RadioBlock.swift */; };
-		720234722265BDC9009EE218 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346E2265BDC9009EE218 /* Radio.swift */; };
-		720234732265BDC9009EE218 /* SoftwareDefinedRadioOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202346F2265BDC9009EE218 /* SoftwareDefinedRadioOld.swift */; };
 		7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7293B8822268655D00820CED /* SpectrumViewController.swift */; };
 		72C79A192269A5D100E9A4E1 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A182269A5D100E9A4E1 /* Charts.framework */; };
 		72C79A1A2269A5D100E9A4E1 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A182269A5D100E9A4E1 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		72C79A1C2269A5D200E9A4E1 /* SDRDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDRDevice.framework */; };
-		72C79A1D2269A5D200E9A4E1 /* SDRDevice.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDRDevice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72C79A1C2269A5D200E9A4E1 /* SDR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDR.framework */; };
+		72C79A1D2269A5D200E9A4E1 /* SDR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72C79A1F2269A5D200E9A4E1 /* SwiftChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */; };
 		72C79A202269A5D200E9A4E1 /* SwiftChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -44,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				72C79A1D2269A5D200E9A4E1 /* SDRDevice.framework in Embed Frameworks */,
+				72C79A1D2269A5D200E9A4E1 /* SDR.framework in Embed Frameworks */,
 				72C79A1A2269A5D100E9A4E1 /* Charts.framework in Embed Frameworks */,
 				72C79A202269A5D200E9A4E1 /* SwiftChart.framework in Embed Frameworks */,
 			);
@@ -54,8 +42,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E33929B226C875A00AD052F /* SpectrumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumViewModel.swift; sourceTree = "<group>"; };
+		1E33929F226C879E00AD052F /* TunerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewModel.swift; sourceTree = "<group>"; };
 		1E66E8DE2269062300F93A46 /* TunerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewController.swift; sourceTree = "<group>"; };
-		1E66E8E222690FC200F93A46 /* SoftwareDefinedRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadio.swift; sourceTree = "<group>"; };
 		1E66E8E92269224600F93A46 /* ObservableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableEvent.swift; sourceTree = "<group>"; };
 		1E66E8EA2269224600F93A46 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		720233E62265BBCC009EE218 /* ViScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,22 +54,9 @@
 		720233F02265BBCD009EE218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		720233F22265BBCD009EE218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720233F32265BBCD009EE218 /* ViScope.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ViScope.entitlements; sourceTree = "<group>"; };
-		7202345A2265BDBF009EE218 /* MixerBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixerBlock.swift; sourceTree = "<group>"; };
-		7202345B2265BDBF009EE218 /* FilterBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBlock.swift; sourceTree = "<group>"; };
-		7202345C2265BDBF009EE218 /* ComplexFilterBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexFilterBlock.swift; sourceTree = "<group>"; };
-		7202345D2265BDBF009EE218 /* AMDemodulatorBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMDemodulatorBlock.swift; sourceTree = "<group>"; };
-		7202345E2265BDBF009EE218 /* FilterCoefficients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCoefficients.swift; sourceTree = "<group>"; };
-		7202345F2265BDBF009EE218 /* FMDemodulatorBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDemodulatorBlock.swift; sourceTree = "<group>"; };
-		720234602265BDBF009EE218 /* FFTBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTBlock.swift; sourceTree = "<group>"; };
-		720234612265BDBF009EE218 /* ToneDecoderBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToneDecoderBlock.swift; sourceTree = "<group>"; };
-		720234622265BDBF009EE218 /* SquelchBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquelchBlock.swift; sourceTree = "<group>"; };
-		7202346C2265BDC9009EE218 /* Samples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
-		7202346D2265BDC9009EE218 /* RadioBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioBlock.swift; sourceTree = "<group>"; };
-		7202346E2265BDC9009EE218 /* Radio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
-		7202346F2265BDC9009EE218 /* SoftwareDefinedRadioOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadioOld.swift; sourceTree = "<group>"; };
 		7293B8822268655D00820CED /* SpectrumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumViewController.swift; sourceTree = "<group>"; };
 		72C79A182269A5D100E9A4E1 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72C79A1B2269A5D200E9A4E1 /* SDRDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDRDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72C79A1B2269A5D200E9A4E1 /* SDR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72C79A1C2269A5D200E9A4E1 /* SDRDevice.framework in Frameworks */,
+				72C79A1C2269A5D200E9A4E1 /* SDR.framework in Frameworks */,
 				72C79A192269A5D100E9A4E1 /* Charts.framework in Frameworks */,
 				72C79A1F2269A5D200E9A4E1 /* SwiftChart.framework in Frameworks */,
 			);
@@ -98,6 +74,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E33929D226C878900AD052F /* Spectrum */ = {
+			isa = PBXGroup;
+			children = (
+				7293B8822268655D00820CED /* SpectrumViewController.swift */,
+				1E33929B226C875A00AD052F /* SpectrumViewModel.swift */,
+			);
+			path = Spectrum;
+			sourceTree = "<group>";
+		};
+		1E33929E226C878E00AD052F /* Tuner */ = {
+			isa = PBXGroup;
+			children = (
+				1E66E8DE2269062300F93A46 /* TunerViewController.swift */,
+				1E33929F226C879E00AD052F /* TunerViewModel.swift */,
+			);
+			path = Tuner;
+			sourceTree = "<group>";
+		};
 		1E66E8ED2269224C00F93A46 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				1E66E8ED2269224C00F93A46 /* Tools */,
-				7202344C2265BC7C009EE218 /* SDR */,
 				72F670C222685CC000D61EE8 /* UI */,
 				720233E92265BBCC009EE218 /* AppDelegate.swift */,
 				720233ED2265BBCD009EE218 /* Assets.xcassets */,
@@ -138,40 +131,11 @@
 			path = ViScope;
 			sourceTree = "<group>";
 		};
-		7202344C2265BC7C009EE218 /* SDR */ = {
-			isa = PBXGroup;
-			children = (
-				720234592265BDB1009EE218 /* DSP */,
-				7202346E2265BDC9009EE218 /* Radio.swift */,
-				7202346D2265BDC9009EE218 /* RadioBlock.swift */,
-				7202346C2265BDC9009EE218 /* Samples.swift */,
-				7202346F2265BDC9009EE218 /* SoftwareDefinedRadioOld.swift */,
-				1E66E8E222690FC200F93A46 /* SoftwareDefinedRadio.swift */,
-			);
-			path = SDR;
-			sourceTree = "<group>";
-		};
-		720234592265BDB1009EE218 /* DSP */ = {
-			isa = PBXGroup;
-			children = (
-				7202345D2265BDBF009EE218 /* AMDemodulatorBlock.swift */,
-				7202345C2265BDBF009EE218 /* ComplexFilterBlock.swift */,
-				720234602265BDBF009EE218 /* FFTBlock.swift */,
-				7202345B2265BDBF009EE218 /* FilterBlock.swift */,
-				7202345E2265BDBF009EE218 /* FilterCoefficients.swift */,
-				7202345F2265BDBF009EE218 /* FMDemodulatorBlock.swift */,
-				7202345A2265BDBF009EE218 /* MixerBlock.swift */,
-				720234622265BDBF009EE218 /* SquelchBlock.swift */,
-				720234612265BDBF009EE218 /* ToneDecoderBlock.swift */,
-			);
-			path = DSP;
-			sourceTree = "<group>";
-		};
 		720234CD22671328009EE218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */,
-				72C79A1B2269A5D200E9A4E1 /* SDRDevice.framework */,
+				72C79A1B2269A5D200E9A4E1 /* SDR.framework */,
 				72C79A182269A5D100E9A4E1 /* Charts.framework */,
 			);
 			name = Frameworks;
@@ -180,10 +144,10 @@
 		72F670C222685CC000D61EE8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1E33929D226C878900AD052F /* Spectrum */,
+				1E33929E226C878E00AD052F /* Tuner */,
 				720233EF2265BBCD009EE218 /* Main.storyboard */,
 				720233EB2265BBCC009EE218 /* MainViewController.swift */,
-				7293B8822268655D00820CED /* SpectrumViewController.swift */,
-				1E66E8DE2269062300F93A46 /* TunerViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -265,25 +229,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720234692265BDC0009EE218 /* FFTBlock.swift in Sources */,
-				720234702265BDC9009EE218 /* Samples.swift in Sources */,
 				720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */,
-				720234632265BDC0009EE218 /* MixerBlock.swift in Sources */,
-				720234652265BDC0009EE218 /* ComplexFilterBlock.swift in Sources */,
+				1E3392A0226C879E00AD052F /* TunerViewModel.swift in Sources */,
 				1E66E8DF2269062300F93A46 /* TunerViewController.swift in Sources */,
-				720234722265BDC9009EE218 /* Radio.swift in Sources */,
-				720234712265BDC9009EE218 /* RadioBlock.swift in Sources */,
-				7202346A2265BDC0009EE218 /* ToneDecoderBlock.swift in Sources */,
-				720234682265BDC0009EE218 /* FMDemodulatorBlock.swift in Sources */,
 				720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */,
+				1E33929C226C875A00AD052F /* SpectrumViewModel.swift in Sources */,
 				7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */,
-				7202346B2265BDC0009EE218 /* SquelchBlock.swift in Sources */,
-				720234662265BDC0009EE218 /* AMDemodulatorBlock.swift in Sources */,
-				720234642265BDC0009EE218 /* FilterBlock.swift in Sources */,
-				720234732265BDC9009EE218 /* SoftwareDefinedRadioOld.swift in Sources */,
-				1E66E8E322690FC200F93A46 /* SoftwareDefinedRadio.swift in Sources */,
 				1E66E8EC2269224600F93A46 /* Disposable.swift in Sources */,
-				720234672265BDC0009EE218 /* FilterCoefficients.swift in Sources */,
 				1E66E8EB2269224600F93A46 /* ObservableEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,11 +383,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ViScope/waveSDR",
-					"$(PROJECT_DIR)/ViScope/SDR/RTLSDR",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.ViScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -456,11 +403,6 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ViScope/waveSDR",
-					"$(PROJECT_DIR)/ViScope/SDR/RTLSDR",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.ViScope;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol SDRDevice: class {
+    var name: String { get }
     var rawSamples: ((_ device: SDRDevice, _ rawSamples: [UInt8]) -> Void)? { get set }
     
     func minimumFrequency() -> Int
