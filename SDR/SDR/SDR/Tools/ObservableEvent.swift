@@ -109,13 +109,13 @@ public class ObservableProperty<Value>: ObservableEvent<Value> {
     
     // MARK: - Subscribers with raise
     
-    func subscribeWithRaise(_ observer: AnyObject, _ handler: @escaping (Value) -> ()) {
+    public func subscribeWithRaise(_ observer: AnyObject, _ handler: @escaping (Value) -> ()) {
         handler(self.value)
         
         super.subscribe(observer, handler)
     }
     
-    func subscribeWithRaise(_ handler: @escaping (Value) -> ()) -> Disposable {
+    public func subscribeWithRaise(_ handler: @escaping (Value) -> ()) -> Disposable {
         handler(self.value)
         
         let disposable = super.subscribe(handler)

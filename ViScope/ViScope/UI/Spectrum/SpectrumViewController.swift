@@ -8,33 +8,31 @@
 
 import AppKit
 import SwiftChart
+import SDR
 
 class SpectrumViewController: NSViewController, ChartDelegate {
-    @IBOutlet private weak var spectrumChart: Chart!
+    @IBOutlet private weak var spectrumChart: SpectrogramView!
     @IBOutlet private weak var waterfallChart: Chart!
-    
-    private let model = SpectrumViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        spectrumChart.delegate = self
-        waterfallChart.delegate = self
+//        spectrumChart.delegate = self
+//        waterfallChart.delegate = self
+        
+        SDR.samples.subscribe(self) { [unowned self] (samples) in
+            print("samples in")
+            
+            self.spectrumChart.data = samples.sampes()
+        }
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
         
+        
         initializeSpectrumChart()
         initializeWaterfallChart()
-        
-        model.load()
-    }
-    
-    override func viewWillDisappear() {
-        super.viewWillDisappear()
-        
-        model.unload()
     }
     
     // MARK: - Charts Init

@@ -9,7 +9,7 @@ import Foundation
 import LibRTLSDR
 
 final class RTLSDR: SDRDevice {
-    var rawSamples: ((SDRDevice, [UInt8]) -> Void)?
+    let rawSamples: ObservableEvent<[UInt8]> = ObservableEvent()
     
     
     // MARK: - Type Properties
@@ -496,32 +496,26 @@ final class RTLSDR: SDRDevice {
     func readAsyncFromDevice() {
  
         asyncReadQueue.async {
-        
+            
             let rtlSdrContext = UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque())
             
             
-            rtlsdr_read_async(self.librtlsdrPointer,
-                // use a closure as the callback function
-                {
-                    (buffer: UnsafeMutablePointer<UInt8>?, length: UInt32, ctx: UnsafeMutableRawPointer?) -> Void in
-                    
-                        let selfRTLSDR =  Unmanaged<RTLSDR>.fromOpaque(ctx!).takeUnretainedValue()
-                                        
-                        // get a buffer pointer with length to samples
-                        let bufferPointer = UnsafeMutableBufferPointer(start: buffer, count: Int(length))
-                    
-                        // convert buffer to Swift [UInt8]
-                        let samples: [UInt8] = Array(bufferPointer)
-                    
-                        selfRTLSDR.rawSamples?(selfRTLSDR, samples)
-                    
-                },
-                // end call back closure
-                rtlSdrContext, UInt32(0), UInt32(self.bufferSize)
-            )
-            
+            rtlsdr_read_async(self.librtlsdrPointer, { (buffer: UnsafeMutablePointer<UInt8>?, length: UInt32, ctx: UnsafeMutableRawPointer?) -> Void in
+                
+                let selfRTLSDR =  Unmanaged<RTLSDR>.fromOpaque(ctx!).takeUnretainedValue()
+                
+                // get a buffer pointer with length to samples
+                let bufferPointer = UnsafeMutableBufferPointer(start: buffer, count: Int(length))
+                
+                // convert buffer to Swift [UInt8]
+                let samples: [UInt8] = Array(bufferPointer)
+                
+                
+                selfRTLSDR.rawSamples.raise(samples)
+                
+                
+            }, rtlSdrContext, UInt32(0), UInt32(self.bufferSize))
         }
-        
     }
     
     // init() is marked private as the only time an object is initalized will

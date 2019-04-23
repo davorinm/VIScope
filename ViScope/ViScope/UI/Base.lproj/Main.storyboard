@@ -757,10 +757,26 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </comboBoxCell>
                             </comboBox>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Op-Qx-ShY">
+                                <rect key="frame" x="20" y="43" width="314" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="bum-la-liW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-6g-EHK">
+                                <rect key="frame" x="18" y="18" width="622" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="jYb-64-u5U"/>
+                            </slider>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="devicesComboBox" destination="ImM-ml-Oig" id="VW1-bH-LyJ"/>
+                        <outlet property="frequencySlider" destination="PaA-6g-EHK" id="qzW-Dm-usM"/>
+                        <outlet property="frequencyTextField" destination="5Op-Qx-ShY" id="D88-rn-bRx"/>
                     </connections>
                 </viewController>
                 <customObject id="xmM-IT-Lp5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -772,34 +788,25 @@
             <objects>
                 <viewController id="YVY-D7-Mhk" customClass="SpectrumViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="W6i-rr-Gdt">
-                        <rect key="frame" x="0.0" y="0.0" width="649" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="iJu-sm-3IM">
-                                <rect key="frame" x="0.0" y="0.0" width="649" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
                                 <subviews>
                                     <customView id="ncT-FX-Re1">
-                                        <rect key="frame" x="0.0" y="0.0" width="649" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="Chart" customModule="SwiftChart">
-                                                <rect key="frame" x="0.0" y="150" width="649" height="150"/>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="SpectrogramView" customModule="ViScope" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="cgC-Qp-Onc"/>
-                                                </constraints>
-                                            </customView>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="D7B-AP-LPe" customClass="Chart" customModule="SwiftChart">
-                                                <rect key="frame" x="0.0" y="0.0" width="649" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="AsM-Wl-HtF"/>
+                                                    <constraint firstAttribute="height" constant="350" id="cgC-Qp-Onc"/>
                                                 </constraints>
                                             </customView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="D7B-AP-LPe" secondAttribute="trailing" id="0yj-JR-6Oc"/>
-                                            <constraint firstItem="D7B-AP-LPe" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="36U-DB-e2o"/>
-                                            <constraint firstItem="D7B-AP-LPe" firstAttribute="top" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="JYL-pf-mw1"/>
-                                            <constraint firstAttribute="bottom" secondItem="D7B-AP-LPe" secondAttribute="bottom" id="djh-k9-dDT"/>
+                                            <constraint firstAttribute="bottom" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="8eW-ui-uaj"/>
                                             <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" id="f9M-Ga-c4l"/>
                                             <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" id="odS-wv-0Ms"/>
                                             <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="oyr-dV-6p1"/>
@@ -820,7 +827,6 @@
                     </view>
                     <connections>
                         <outlet property="spectrumChart" destination="4zG-bH-4xS" id="dLw-UZ-QRf"/>
-                        <outlet property="waterfallChart" destination="D7B-AP-LPe" id="Jey-ZG-bSc"/>
                     </connections>
                 </viewController>
                 <customObject id="KL0-Bi-hTw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

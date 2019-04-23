@@ -9,54 +9,43 @@
 import Cocoa
 import SDR
 
-class TunerViewController: NSViewController, NSComboBoxDelegate, NSComboBoxDataSource {
+class TunerViewController: NSViewController, NSComboBoxDelegate {
     @IBOutlet private weak var devicesComboBox: NSComboBox!
-    
-    private let model = TunerViewModel()
+    @IBOutlet private weak var frequencyTextField: NSTextField!
+    @IBOutlet private weak var frequencySlider: NSSlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         devicesComboBox.delegate = self
-        devicesComboBox.dataSource = self
         
-        model.load()
-        // Do view setup here.
+        SDR.devices.subscribeWithRaise(self) { [unowned self]  (devices) in
+            self.devicesComboBox.removeAllItems()
+            self.devicesComboBox.addItems(withObjectValues: devices)
+        }
         
-        SDR.registerUsbEvents()
-        
-        // NSComboBox
-        // https://www.raywenderlich.com/759-macos-controls-tutorial-part-1-2
+        SDR.selectedDevice.subscribeWithRaise(self) { [unowned self]  (device) in
+            guard let device = device else {
+                return
+            }
+            
+            self.frequencySlider.minValue = Double(device.minimumFrequency())
+            self.frequencySlider.maxValue = Double(device.maximumFrequency())
+            self.frequencySlider.doubleValue = Double(device.tunedFrequency())
+        }
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        devicesComboBox.removeAllItems()
-        for device in SDR.devicesList() {
-            
-            
-            
-            devicesComboBox.addItem(withObjectValue: device.name)
-        }
-    }
-    
-    // MARK: - NSComboBoxDataSource
-    
-    func numberOfItems(in comboBox: NSComboBox) -> Int {
-        return model.numberOfDevices()
-    }
-    
-    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
-        let device = model.deviceAt(index)
-        return device.name
+        
     }
     
     // MARK: - NSComboBoxDelegate
     
     func comboBoxSelectionDidChange(_ notification: Notification) {
         if let comboBox = notification.object as? NSComboBox {
-            model.deviceSelected(comboBox.indexOfSelectedItem)
+            SDR.selectDevice(comboBox.indexOfSelectedItem)
         }
     }
 }

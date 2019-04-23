@@ -156,7 +156,7 @@ class ComplexFilterBlock: RadioBlock {
         )
             
         // pack output samples into samples object
-        let outSamples = Samples(samplesType: .complex, realArray: realOutSamples, imagArray: imagOutSamples)
+        let outSamples = Samples(realArray: realOutSamples, imagArray: imagOutSamples)
         
         // the reference to samplesOut may become nil at any time so
         // check to make sure it exists before sending samples out

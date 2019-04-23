@@ -8,7 +8,7 @@
 import Foundation
 import Accelerate
 
-struct Samples {
+public struct Samples {
     
     enum SamplesType {
         case real
@@ -43,9 +43,9 @@ struct Samples {
     //
     //--------------------------------------------------------------------------
 
-    init(samplesType: SamplesType, realArray: [Float], imagArray: [Float], audio: [Float] = Array()) {
+    init(realArray: [Float], imagArray: [Float], audio: [Float] = Array()) {
         
-        self.type   = samplesType
+        self.type   = .complex
         self.real   = realArray
         self.imag   = imagArray
         self.audio  = audio

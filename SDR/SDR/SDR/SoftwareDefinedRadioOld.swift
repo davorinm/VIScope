@@ -8,7 +8,6 @@
 import Foundation
 import Accelerate
 import AVFoundation
-import SDRDevice
 
 class SoftwareDefinedRadioOld {
     
@@ -172,7 +171,7 @@ class SoftwareDefinedRadioOld {
         //
         //----------------------------------------------------------------------
 
-        let rtlsdrList = SDRDevices.deviceList()
+        let rtlsdrList = RTLSDR.deviceList()
         deviceList  += rtlsdrList
         deviceCount  = deviceList.count
         
@@ -330,7 +329,7 @@ class SoftwareDefinedRadioOld {
             vDSP_vsadd(&(floatSamples) + 1, strideOfTwo, &zeroScaler, &imagSamples, strideOfOne, (sampleLength / 2) )
         
             // create samples object
-            let samples = Samples(samplesType: .complex, realArray: realSamples, imagArray: imagSamples)
+            let samples = Samples(realArray: realSamples, imagArray: imagSamples)
             
             // send samples to start of DSP chain
             guard let radio = self.radio else {
