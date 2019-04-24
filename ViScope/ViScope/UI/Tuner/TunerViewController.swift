@@ -10,7 +10,6 @@ import Cocoa
 import SDR
 
 class TunerViewController: NSViewController, NSComboBoxDelegate {
-    @IBOutlet private weak var devicesComboBox: NSComboBox!
     @IBOutlet private weak var frequencyTextField: NSTextField!
     @IBOutlet private weak var frequencySlider: NSSlider!
     
@@ -19,12 +18,9 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
         
         devicesComboBox.delegate = self
         
-        SDR.devices.subscribeWithRaise(self) { [unowned self]  (devices) in
-            self.devicesComboBox.removeAllItems()
-            self.devicesComboBox.addItems(withObjectValues: devices)
-        }
         
-        SDR.selectedDevice.subscribeWithRaise(self) { [unowned self]  (device) in
+        
+        SDR.selectedDevices.subscribeWithRaise(self) { [unowned self]  (device) in
             guard let device = device else {
                 return
             }
@@ -39,13 +35,5 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
         super.viewWillAppear()
         
         
-    }
-    
-    // MARK: - NSComboBoxDelegate
-    
-    func comboBoxSelectionDidChange(_ notification: Notification) {
-        if let comboBox = notification.object as? NSComboBox {
-            SDR.selectDevice(comboBox.indexOfSelectedItem)
-        }
     }
 }

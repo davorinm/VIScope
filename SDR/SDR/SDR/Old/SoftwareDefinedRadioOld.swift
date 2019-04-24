@@ -95,7 +95,7 @@ class SoftwareDefinedRadioOld {
         }
     }
     
-    var radio:                  Radio? {
+    var radio:                  RadioOld? {
         didSet {
             // since the radio blocks contain hard links to the next, the teardown()
             // methed is used to tell each block to unlink itself from the
@@ -378,13 +378,13 @@ class SoftwareDefinedRadioOld {
         
         switch mode {
             case "AM":
-                self.radio = Radio.amDemodulator(sampleRateIn: sampleRate, sampleRateOut: SoftwareDefinedRadioOld.audioSampleRate, frequency: localOscillator)
+                self.radio = RadioOld.amDemodulator(sampleRateIn: sampleRate, sampleRateOut: SoftwareDefinedRadioOld.audioSampleRate, frequency: localOscillator)
             case "NFM":
-                self.radio = Radio.nfmDemodulator(sampleRateIn: sampleRate, sampleRateOut: SoftwareDefinedRadioOld.audioSampleRate, frequency: localOscillator)
+                self.radio = RadioOld.nfmDemodulator(sampleRateIn: sampleRate, sampleRateOut: SoftwareDefinedRadioOld.audioSampleRate, frequency: localOscillator)
             case "WFM":
-                self.radio = Radio.wfmDemodulator(sampleRateIn: sampleRate, sampleRateOut: SoftwareDefinedRadioOld.audioSampleRate, frequency: localOscillator)
+                self.radio = RadioOld.wfmDemodulator(sampleRateIn: sampleRate, sampleRateOut: SoftwareDefinedRadioOld.audioSampleRate, frequency: localOscillator)
             default:
-                self.radio = Radio.nfmDemodulator(sampleRateIn: sampleRate, sampleRateOut: SoftwareDefinedRadioOld.audioSampleRate, frequency: localOscillator)
+                self.radio = RadioOld.nfmDemodulator(sampleRateIn: sampleRate, sampleRateOut: SoftwareDefinedRadioOld.audioSampleRate, frequency: localOscillator)
         }
         
         // configure radio output method

@@ -1,5 +1,5 @@
 //
-//  Radio.swift
+//  RadioOld.swift
 //  waveSDR
 //
 //  Copyright © 2017 GetOffMyHack. All rights reserved.
@@ -15,7 +15,7 @@ import AVFoundation
 //
 //******************************************************************************
 //
-// Radio Class
+// RadioOld Class
 //
 // A chain of Radio blocks to perform a start to finsh DSP chain
 //
@@ -26,7 +26,7 @@ import AVFoundation
 //
 //
 
-class Radio: RadioBlock {
+class RadioOld: RadioBlock {
 
     var name:           String              = "Radio"
     
@@ -153,19 +153,6 @@ class Radio: RadioBlock {
         // append to private blocks array
         _blocks.append(inBlock)
     }
-    
-    //--------------------------------------------------------------------------
-    //
-    // getStatusForKey()
-    //
-    // return status information for requested key
-    //
-    //--------------------------------------------------------------------------
-    
-    func getStatusFor(key: String) -> Any? {
-        return nil
-    }
-
 }
 
 //
@@ -179,7 +166,7 @@ class Radio: RadioBlock {
 //
 
 
-extension Radio {
+extension RadioOld {
     
     //--------------------------------------------------------------------------
     //
@@ -187,7 +174,7 @@ extension Radio {
     //
     //--------------------------------------------------------------------------
 
-    class func nfmDemodulator(sampleRateIn inRate: Int, sampleRateOut outRate: Int, frequency: Int) -> Radio {
+    class func nfmDemodulator(sampleRateIn inRate: Int, sampleRateOut outRate: Int, frequency: Int) -> RadioOld {
         
         let ctcssTones: [Double] = [
             67.0,  69.3,  71.9,  74.4,  77.0,  79.7,  82.5,  85.4,  88.5,  91.5,
@@ -197,7 +184,7 @@ extension Radio {
             203.5, 206.5, 210.7, 218.1, 225.7, 229.1, 233.6, 241.8, 250.3, 254.1
         ]
         
-        let nfmRadio:       Radio           = Radio()
+        let nfmRadio:       RadioOld           = RadioOld()
         let queue:          DispatchQueue   = DispatchQueue(label: "com.getoffmyhack.waveSDR.notifyQueue", attributes: DispatchQueue.Attributes.concurrent)
         
         let fft:            RadioBlock  = FFTBlock(withNotifyQueue: queue)
@@ -224,9 +211,9 @@ extension Radio {
     //
     //--------------------------------------------------------------------------
 
-    class func wfmDemodulator(sampleRateIn inRate: Int, sampleRateOut outRate: Int, frequency: Int) -> Radio {
+    class func wfmDemodulator(sampleRateIn inRate: Int, sampleRateOut outRate: Int, frequency: Int) -> RadioOld {
         
-        let wfmRadio:       Radio           = Radio()
+        let wfmRadio:       RadioOld           = RadioOld()
         let queue:          DispatchQueue   = DispatchQueue(label: "com.getoffmyhack.waveSDR.notifyQueue", attributes: DispatchQueue.Attributes.concurrent)
         
         let fft:            RadioBlock  = FFTBlock(withNotifyQueue: queue)
@@ -253,9 +240,9 @@ extension Radio {
     //
     //--------------------------------------------------------------------------
 
-    class func amDemodulator(sampleRateIn: Int, sampleRateOut: Int, frequency: Int) -> Radio {
+    class func amDemodulator(sampleRateIn: Int, sampleRateOut: Int, frequency: Int) -> RadioOld {
         
-        let amRadio:        Radio           = Radio()
+        let amRadio:        RadioOld           = RadioOld()
         let queue:          DispatchQueue   = DispatchQueue(label: "com.getoffmyhack.waveSDR.notifyQueue", attributes: DispatchQueue.Attributes.concurrent)
         
         let fft:            RadioBlock  = FFTBlock(withNotifyQueue: queue)
@@ -286,7 +273,7 @@ extension Radio {
 //******************************************************************************
 //
 
-extension Radio {
+extension RadioOld {
     
     //--------------------------------------------------------------------------
     //

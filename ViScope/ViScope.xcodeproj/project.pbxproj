@@ -20,6 +20,8 @@
 		72C79A1D2269A5D200E9A4E1 /* SDR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72C79A1F2269A5D200E9A4E1 /* SwiftChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */; };
 		72C79A202269A5D200E9A4E1 /* SwiftChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72E4594522706882001F123E /* AvailableDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4594422706882001F123E /* AvailableDevicesViewController.swift */; };
+		72E45948227068D6001F123E /* BindedDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E45946227068D6001F123E /* BindedDevicesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +54,8 @@
 		72C79A182269A5D100E9A4E1 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C79A1B2269A5D200E9A4E1 /* SDR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72E4594422706882001F123E /* AvailableDevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDevicesViewController.swift; sourceTree = "<group>"; };
+		72E45946227068D6001F123E /* BindedDevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindedDevicesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +128,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		72E4594222706814001F123E /* AvailableDevices */ = {
+			isa = PBXGroup;
+			children = (
+				72E4594422706882001F123E /* AvailableDevicesViewController.swift */,
+			);
+			path = AvailableDevices;
+			sourceTree = "<group>";
+		};
+		72E4594322706823001F123E /* BindedDevices */ = {
+			isa = PBXGroup;
+			children = (
+				72E45946227068D6001F123E /* BindedDevicesViewController.swift */,
+			);
+			path = BindedDevices;
+			sourceTree = "<group>";
+		};
 		72F670C222685CC000D61EE8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1E33929D226C878900AD052F /* Spectrum */,
+				72E4594222706814001F123E /* AvailableDevices */,
+				72E4594322706823001F123E /* BindedDevices */,
 				1E33929E226C878E00AD052F /* Tuner */,
+				1E33929D226C878900AD052F /* Spectrum */,
 				720233EF2265BBCD009EE218 /* Main.storyboard */,
 				720233EB2265BBCC009EE218 /* MainViewController.swift */,
 			);
@@ -215,7 +237,9 @@
 				1EBC53E6226FC16C009C02C6 /* SpectrogramView.swift in Sources */,
 				720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */,
 				1E66E8DF2269062300F93A46 /* TunerViewController.swift in Sources */,
+				72E45948227068D6001F123E /* BindedDevicesViewController.swift in Sources */,
 				720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */,
+				72E4594522706882001F123E /* AvailableDevicesViewController.swift in Sources */,
 				7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
