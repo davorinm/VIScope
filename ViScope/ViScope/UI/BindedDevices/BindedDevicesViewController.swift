@@ -7,8 +7,9 @@
 //
 
 import Cocoa
+import SDR
 
-class BindedDevicesViewController: NSViewController {
+class BindedDevicesViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet private weak var tableView: NSTableView!
     
     override func viewDidLoad() {
@@ -16,6 +17,25 @@ class BindedDevicesViewController: NSViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        SDR.bindedDevices.subscribeWithRaise(self) { [unowned self] (devices) in
+            
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    // MARK: - NSTableViewDataSource
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        
+        
+        
+        return 44
     }
     
 }

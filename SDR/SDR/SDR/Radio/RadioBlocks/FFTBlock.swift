@@ -9,13 +9,6 @@ import Foundation
 import Accelerate
 
 class FFTBlock: RadioBlock {
-    func samplesIn(_ samplesIn: SDRSamples, _ samplesOut: ((SDRSamples) -> Void)) {
-        <#code#>
-    }
-    
-    func samplesIn(_ samplesIn: [Int], _ samplesOut: ((SDRSamples) -> Void)) {
-        <#code#>
-    }
     
     var queue: OperationQueue?
     
@@ -49,28 +42,16 @@ class FFTBlock: RadioBlock {
     //--------------------------------------------------------------------------
 
     func samplesIn(_ samplesIn: SDRSamples, _ samplesOut: ((SDRSamples) -> Void)) {
+        let sI = samplesIn.samples().map { Float($0.i) }
+        let sQ = samplesIn.samples().map { Float($0.q) }
+
         
-        queue?.addOperation({
-            self.process()
-        })
         
-        // drop into it's own queue
-        processQueue.async {
-            
-            
-        }
         
-        // the reference to samplesOut may become nil at any time so
-        // check to make sure it exists before sending samples out
-        if(samplesOut != nil) {
-            self.samplesOut!(samples)
-        }
-    }
-    
-    private func process() {
-        self.realSamples.append(contentsOf: samples.real)
-        self.imagSamples.append(contentsOf: samples.imag)
+        self.realSamples.append(contentsOf: sI)
+        self.imagSamples.append(contentsOf: sQ)
         
+        // TODO: Implement buffer, fill buffer to fft size, then take those samples out, what is left takes another pass
         let dropCount = self.realSamples.count - self.fftSize
         self.realSamples = Array(self.realSamples.dropFirst(dropCount))
         self.imagSamples = Array(self.imagSamples.dropFirst(dropCount))
@@ -87,6 +68,7 @@ class FFTBlock: RadioBlock {
         vDSP_vmul(inSamples.imagp, vDSP_Stride(1), &self.hannWindow, vDSP_Stride(1), inSamples.imagp, vDSP_Stride(1), vDSP_Length(self.fftSize))
         
         // perform the fft
+        // TODO: use vDSP_DFT_Execute as described in docs
         vDSP_fft_zip(self.fftSetup, &inSamples, vDSP_Stride(1), vDSP_Length(log2(Float(self.fftSize))), FFTDirection(kFFTDirection_Forward))
         
         // normalize fft results ?????
@@ -121,11 +103,16 @@ class FFTBlock: RadioBlock {
         }
         
         // post fft message with samples
-        if let queue = self.notifyQueue {
-            queue.async {
+//        if let queue = self.notifyQueue {
+//            queue.async {
                 //                    let userInfo: [String : Any] = [fftSamplesUpdatedKey : dbs]
                 //                    NotificationCenter.default.post(name: .fftSamplesUpdatedNotification, object: self, userInfo: userInfo)
-            }
-        }
+//            }
+//        }
+        
+        
+        // the reference to samplesOut may become nil at any time so
+        // check to make sure it exists before sending samples out
+        samplesOut(samplesIn)
     }
 }

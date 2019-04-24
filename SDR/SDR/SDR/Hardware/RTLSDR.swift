@@ -547,6 +547,8 @@ final class RTLSDR: SDRDevice {
         usbSerial         = String(cString: serial)
         usbName           = usbManufacture + " " + usbProduct + " SN: " + usbSerial
         
+        // TODO: Check name and usbName
+        
         // Initalize vars
         
         asyncReadQueue  = DispatchQueue(label: "\(asyncReadQueueLabel).\(devID)")

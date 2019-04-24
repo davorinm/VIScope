@@ -16,19 +16,18 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        devicesComboBox.delegate = self
         
         
         
-        SDR.selectedDevices.subscribeWithRaise(self) { [unowned self]  (device) in
-            guard let device = device else {
-                return
-            }
-            
-            self.frequencySlider.minValue = Double(device.minimumFrequency())
-            self.frequencySlider.maxValue = Double(device.maximumFrequency())
-            self.frequencySlider.doubleValue = Double(device.tunedFrequency())
-        }
+//        SDR.selectedDevices.subscribeWithRaise(self) { [unowned self]  (device) in
+//            guard let device = device else {
+//                return
+//            }
+//            
+//            self.frequencySlider.minValue = Double(device.minimumFrequency())
+//            self.frequencySlider.maxValue = Double(device.maximumFrequency())
+//            self.frequencySlider.doubleValue = Double(device.tunedFrequency())
+//        }
     }
     
     override func viewWillAppear() {

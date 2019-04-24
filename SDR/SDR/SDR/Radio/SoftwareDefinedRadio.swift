@@ -12,25 +12,28 @@ class SoftwareDefinedRadio {
     /// Singelton of shared SDR
     static let shared = SoftwareDefinedRadio()
     
-    let devices: ObservableProperty<[String]> = ObservableProperty(value: [])
-    let selectedDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
+    let availableDevices: ObservableProperty<[String]> = ObservableProperty(value: [])
+    let bindedDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
     let samples: ObservableEvent<SDRSamples> = ObservableEvent()
     
     var radio: Radio?
     
     private init() {
+        
+        radio = prepareChain()
+        
+        
+        
         USB.shared.registerEvents()
         
-        devices.value = RTLSDR.deviceList().map { $0.name }
+        availableDevices.value = RTLSDR.deviceList().map { $0.name }
     }
     
     // MARK: - Devices
     
-    func selectDevice(_ index: Int) {
+    func bindDevice(_ index: Int) {
         let device = RTLSDR.deviceList()[index]
-        selectedDevices.value.append(contentsOf: device)
-        
-        radio = prepareChain()
+        bindedDevices.value.append(device)
         
         
         device.rawSamples.subscribe(self) { [unowned self] (samples) in
@@ -38,10 +41,6 @@ class SoftwareDefinedRadio {
         }
         
         device.startSampleStream()
-    }
-    
-    func tunedFrequency(_ frequency: Int) {
-        selectedDevice.value?.tunedFrequency(frequency: frequency)
     }
     
     func prepareChain() -> Radio {
@@ -52,6 +51,6 @@ class SoftwareDefinedRadio {
         radio.addBlock(normalize)
         radio.addBlock(fft)
         
-        
+        return radio
     }
 }

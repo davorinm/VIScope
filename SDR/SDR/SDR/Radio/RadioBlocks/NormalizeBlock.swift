@@ -9,22 +9,20 @@
 import Foundation
 import Accelerate
 
-class NormalizeBlock: RadioBlock {
+class NormalizeBlock: Operation, RadioBlock {
     var queue: OperationQueue?
-    
-    
     
     init(bits: Int) {
         
         
-        
+        // TODO: Implement
     }
     
-    func samplesIn(_ samplesIn: SDRSamples, _ samplesOut: ((SDRSamples) -> Void)) {
-        <#code#>
+    override func main() {
+        // TODO: Implement operation
     }
     
-    func samplesIn(_ rawSamples: [Int], _ samplesOut: ((_ samples: SDRSamples) -> Void)) {
+    func samplesIn(_ rawSamples: [UInt8], _ samplesOut: ((_ samples: SDRSamples) -> Void)) {
         // get samples count
         let sampleLength = vDSP_Length(rawSamples.count)
         let sampleCount  = rawSamples.count
@@ -49,17 +47,11 @@ class NormalizeBlock: RadioBlock {
         vDSP_vsdivD(doubleSamples, strideOfOne, &divScaler, &doubleSamples, strideOfOne, sampleLength)
         
         // create samples object
-        guard let sdrSamples = SDRSamples(doubleSamples) else {
+        guard let sdrSamples = SDRSamples(normalizedSamples: doubleSamples) else {
             print("ERROR SDRSamples(doubleSamples")
             return
         }
         
-        samples.raise(sdrSamples)
-        
-        
-        
-        
+        samplesOut(sdrSamples)
     }
-    
-    
 }

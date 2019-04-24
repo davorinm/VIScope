@@ -18,7 +18,7 @@ class AvailableDevicesViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SDR.availableDevicesNames.subscribeWithRaise(self) { [unowned self]  (devices) in
+        SDR.availableDevices.subscribeWithRaise(self) { [unowned self]  (devices) in
             self.popupButton.removeAllItems()
             self.popupButton.addItems(withTitles: devices)
         }
@@ -31,6 +31,6 @@ class AvailableDevicesViewController: NSViewController {
     }
     
     @IBAction func selectionButtonAction(_ sender: Any) {
-        SDR.selectDevice(popupButton.indexOfSelectedItem)
+        SDR.bindDevice(popupButton.indexOfSelectedItem)
     }
 }

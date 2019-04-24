@@ -20,11 +20,7 @@ public struct SDRSamples {
         samplesArray = stride(from: 0, to: inSamples.count, by: 2).map { SDRSample(i: inSamples[$0], q: inSamples[$0 + 1]) }
     }
     
-    init?(rawSamples inSamples: [UInt8]) {
-        samplesArray = stride(from: 0, to: inSamples.count, by: 2).map { SDRSample(i: inSamples[$0], q: inSamples[$0 + 1]) }
-    }
-    
-    public func sampwles() -> [SDRSample] {
+    public func samples() -> [SDRSample] {
         return samplesArray
     }
 }

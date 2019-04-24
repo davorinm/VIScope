@@ -164,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 720233F62265BBCD009EE218 /* Build configuration list for PBXNativeTarget "ViScope" */;
 			buildPhases = (
+				1E6628DA2270ECF800E01E64 /* Tag Processor */,
 				720233E22265BBCC009EE218 /* Sources */,
 				720233E32265BBCC009EE218 /* Frameworks */,
 				720233E42265BBCC009EE218 /* Resources */,
@@ -228,6 +229,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E6628DA2270ECF800E01E64 /* Tag Processor */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Tag Processor";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		720233E22265BBCC009EE218 /* Sources */ = {
