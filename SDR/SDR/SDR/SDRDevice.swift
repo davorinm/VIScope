@@ -1,5 +1,12 @@
 import Foundation
 
+// TODO: Divide SDRDevice to public and internal protocols
+// SDRDevice -> public
+// SDRDeviceInternal -> private
+
+// TODO: Change func getters to readonly properties
+// TODO: Changable properties to readonly observers
+
 public protocol SDRDevice: class {
     var name: String { get }
     var rawSamples: ObservableEvent<[UInt8]> { get }

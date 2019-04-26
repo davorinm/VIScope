@@ -32,7 +32,7 @@ class SpectrumViewController: NSViewController, ChartDelegate {
 //        spectrumChart.delegate = self
 //        waterfallChart.delegate = self
         
-        SDR.samples.subscribe(self) { [unowned self] (samples) in
+        SDR.spectrumData.subscribe(self) { [unowned self] (samples) in
             print("samples in")
             
             self.spectrumChart.data = samples.samples()

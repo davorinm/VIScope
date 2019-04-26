@@ -8,25 +8,64 @@
 
 import Foundation
 
+https://github.com/FutureKit/FutureKit/blob/master/FutureKit/FutureFIFO.swift
+
+https://albertodebortoli.com/2018/02/12/the-easiest-promises-in-swift/
+https://github.com/mxcl/PromiseKit
+
+class StuffMaker {
+    func iBuildStuffWithFutures() -> Future<NSData> {
+        let p = Promise<NSData>()
+        dispatch_async(self.mycustomqueue)  {
+            // do stuff to make your NSData
+            if (SUCCESS) {
+                let goodStuff = NSData()
+                p.completeWithSuccess(goodStuff)
+            }
+            else {
+                p.completeWithFail(NSError())
+            }
+        }
+        return p.future()
+    }
+}
+
 class SoftwareDefinedRadio {
-    /// Singelton of shared SDR
+    /// Singelton of shared SoftwareDefinedRadio
     static let shared = SoftwareDefinedRadio()
     
-    let availableDevices: ObservableProperty<[String]> = ObservableProperty(value: [])
+    let availableDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
     let bindedDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
-    let samples: ObservableEvent<SDRSamples> = ObservableEvent()
+    let spectrumData: ObservableEvent<SDRSamples> = ObservableEvent()
     
-    var radio: Radio?
+    private var devices: [SDRDevice] = []
+    private var radio: Radio?
     
     private init() {
-        
+        devices = RTLSDR.deviceList()
         radio = prepareChain()
         
+        USB.shared.onChange = { [unowned self] in
+            self.devices = RTLSDR.deviceList()
+        }
+        
+        availableDevices.value = devices
         
         
-        USB.shared.registerEvents()
         
-        availableDevices.value = RTLSDR.deviceList().map { $0.name }
+        
+        let ttt = FutureChain.create().then { (Int) -> Future<Int> in
+            
+            return Future { _ in
+                
+            }
+            
+            }.then { (val: Int) -> Future<Double> in
+                return 5.5
+        }
+        
+        
+        
     }
     
     // MARK: - Devices

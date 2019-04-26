@@ -24,6 +24,16 @@ class USB {
     private var deviceArrivedCallbackHandle: libusb_hotplug_callback_handle = 0
     private var deviceLeftCallbackHandle: libusb_hotplug_callback_handle = 0
     
+    var onChange: (() -> Void)? {
+        didSet {
+            if onChange == nil {
+                unregisterEvents()
+            } else {
+                registerEvents()
+            }
+        }
+    }
+    
     // MARK: - 
     
     private init() { }
@@ -34,7 +44,7 @@ class USB {
     
     // MARK: - Public
     
-    func registerEvents() {
+    private func registerEvents() {
         usbInit()
         usbCheckCapability()
         usbRegisterEventDeviceArrived()
@@ -45,6 +55,10 @@ class USB {
                 self.usbHandleEvents()
             }
         }
+    }
+    
+    private func unregisterEvents() {
+        
     }
     
     // MARK: - USB helpers
