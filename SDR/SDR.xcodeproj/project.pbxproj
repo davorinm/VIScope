@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E339269226C82DF00AD052F /* SDR.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E339267226C82DF00AD052F /* SDR.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E33929A226C85D400AD052F /* SDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E33928D226C83BC00AD052F /* SDR.swift */; };
+		1E50C1B6227793E000764168 /* NoiseSDRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E50C1B5227793E000764168 /* NoiseSDRDevice.swift */; };
 		1E9CD74E226F311B00CD679C /* RTLSDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CD740226F311B00CD679C /* RTLSDR.swift */; };
 		1E9CD74F226F311B00CD679C /* rtl-sdr.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9CD743226F311B00CD679C /* rtl-sdr.h */; };
 		1E9CD750226F311B00CD679C /* librtlsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9CD744226F311B00CD679C /* librtlsdr.a */; };
@@ -42,6 +43,7 @@
 		1E33928C226C83BC00AD052F /* SoftwareDefinedRadioOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadioOld.swift; sourceTree = "<group>"; };
 		1E33928D226C83BC00AD052F /* SDR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDR.swift; sourceTree = "<group>"; };
 		1E339293226C840400AD052F /* SDRDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDRDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E50C1B5227793E000764168 /* NoiseSDRDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseSDRDevice.swift; sourceTree = "<group>"; };
 		1E9CD740226F311B00CD679C /* RTLSDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTLSDR.swift; sourceTree = "<group>"; };
 		1E9CD743226F311B00CD679C /* rtl-sdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtl-sdr.h"; sourceTree = "<group>"; };
 		1E9CD744226F311B00CD679C /* librtlsdr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librtlsdr.a; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				1E9CD749226F311B00CD679C /* LibUSB */,
 				1E9CD741226F311B00CD679C /* RTLSDR */,
 				1E9CD740226F311B00CD679C /* RTLSDR.swift */,
+				1E50C1B5227793E000764168 /* NoiseSDRDevice.swift */,
 				1E9CD747226F311B00CD679C /* USB.swift */,
 			);
 			path = Hardware;
@@ -297,6 +300,7 @@
 				1EBC53E4226FB05C009C02C6 /* SDRSamples.swift in Sources */,
 				1E33929A226C85D400AD052F /* SDR.swift in Sources */,
 				72E4593F2270492E001F123E /* NormalizeBlock.swift in Sources */,
+				1E50C1B6227793E000764168 /* NoiseSDRDevice.swift in Sources */,
 				1E9CD752226F311B00CD679C /* USB.swift in Sources */,
 				72E4594122705593001F123E /* FFTBlock.swift in Sources */,
 				72EB3EE12273069700CDA861 /* Future.swift in Sources */,

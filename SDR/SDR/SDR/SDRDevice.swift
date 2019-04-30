@@ -7,22 +7,19 @@ import Foundation
 // TODO: Change func getters to readonly properties
 // TODO: Changable properties to readonly observers
 
-public protocol SDRDevice: class {
+public protocol SDRDevice {
     var name: String { get }
     var rawSamples: ObservableEvent<[UInt8]> { get }
     
-    func minimumFrequency() -> Int
-    func maximumFrequency() -> Int
+    var minimumFrequency: Int { get }
+    var maximumFrequency: Int { get }
     
-    func sampleRate() -> Int
-    func sampleRate(rate: Int)
+    var sampleRate: Int { get set }
     func sampleRateList() -> [Int]
     
-    func tunedFrequency() -> Int
-    func tunedFrequency(frequency: Int)
+    var tunedFrequency: Int { get set }
     
-    func frequencyCorrection() -> Int
-    func frequencyCorrection(correction: Int)
+    var frequencyCorrection: Int { get set }
     
     func tunerGainArray() -> [Int]
     func tunerAutoGain() -> Bool

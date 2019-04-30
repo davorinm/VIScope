@@ -17,7 +17,7 @@ public class SDR {
     }
     
     /// Spectrum data from SDR
-    public class var spectrumData: ObservableEvent<SDRSamples> {
+    public class var spectrumData: ObservableEvent<[Double]> {
         return SoftwareDefinedRadio.shared.spectrumData
     }
 }

@@ -9,31 +9,40 @@
 import Foundation
 import SDR
 
+enum DevicesViewMode: Int, CaseIterable {
+    case available = 0
+    case binded
+}
+
 class DevicesViewModel {
-    var updateItems: ((_ items: [String]) -> Void)?
-    
-    private var items: [String] = [] {
+    var modeChanged: ((_ mode: DevicesViewMode) -> Void)?
+    var updateItems: (() -> Void)?
+
+    private var devicesDisposable: Disposable?    
+    private var mode: DevicesViewMode!
+    private(set) var items: [SDRDevice] = [] {
         didSet {
-            updateItems?(items)
-        }
-    }
-    
-    init() {
-        SDR.availableDevices.subscribeWithRaise(self) { [unowned self]  (devices) in
-            if self.items == devices {
-                print("Devices array are same")
-                return
-            }
-            
-            self.items = devices
+            updateItems?()
         }
     }
     
     func load() {
-        updateItems?(items)
+        // Initial mode setting
+        setMode(.available)
     }
     
-    func selectItem(_ index: Int) {
-        SDR.bindDevice(index)
+    func setMode(_ mode: DevicesViewMode) {
+        switch mode {
+        case .available:
+            devicesDisposable = SDR.availableDevices.subscribeWithRaise { (devices) in
+                self.items = devices
+            }
+        case .binded:
+            devicesDisposable = SDR.bindedDevices.subscribeWithRaise { (devices) in
+                self.items = devices
+            }
+        }
+        
+        modeChanged?(mode)
     }
 }

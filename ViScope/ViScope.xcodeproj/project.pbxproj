@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E66E8DF2269062300F93A46 /* TunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8DE2269062300F93A46 /* TunerViewController.swift */; };
-		1EBC53E6226FC16C009C02C6 /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53E5226FC16C009C02C6 /* SpectrogramView.swift */; };
+		1EBE49C32278656E00C1C00F /* DMSpectrum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E50C1B42277926D00764168 /* DMSpectrum.framework */; };
+		1EBE49C42278656E00C1C00F /* DMSpectrum.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1E50C1B42277926D00764168 /* DMSpectrum.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233E92265BBCC009EE218 /* AppDelegate.swift */; };
 		720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233EB2265BBCC009EE218 /* MainViewController.swift */; };
 		720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720233ED2265BBCD009EE218 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1EBE49C42278656E00C1C00F /* DMSpectrum.framework in Embed Frameworks */,
 				72C79A1D2269A5D200E9A4E1 /* SDR.framework in Embed Frameworks */,
 				72C79A1A2269A5D100E9A4E1 /* Charts.framework in Embed Frameworks */,
 				72C79A202269A5D200E9A4E1 /* SwiftChart.framework in Embed Frameworks */,
@@ -47,8 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E50C1B42277926D00764168 /* DMSpectrum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DMSpectrum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E66E8DE2269062300F93A46 /* TunerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewController.swift; sourceTree = "<group>"; };
-		1EBC53E5226FC16C009C02C6 /* SpectrogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramView.swift; sourceTree = "<group>"; };
 		720233E62265BBCC009EE218 /* ViScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720233E92265BBCC009EE218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		720233EB2265BBCC009EE218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EBE49C32278656E00C1C00F /* DMSpectrum.framework in Frameworks */,
 				72C79A1C2269A5D200E9A4E1 /* SDR.framework in Frameworks */,
 				72C79A192269A5D100E9A4E1 /* Charts.framework in Frameworks */,
 				72C79A1F2269A5D200E9A4E1 /* SwiftChart.framework in Frameworks */,
@@ -88,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				7293B8822268655D00820CED /* SpectrumViewController.swift */,
-				1EBC53E5226FC16C009C02C6 /* SpectrogramView.swift */,
 			);
 			path = Spectrum;
 			sourceTree = "<group>";
@@ -136,6 +138,7 @@
 				72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */,
 				72C79A1B2269A5D200E9A4E1 /* SDR.framework */,
 				72C79A182269A5D100E9A4E1 /* Charts.framework */,
+				1E50C1B42277926D00764168 /* DMSpectrum.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -284,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EBC53E6226FC16C009C02C6 /* SpectrogramView.swift in Sources */,
 				720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */,
 				72EB3ECF2272E0FE00CDA861 /* DevicesViewModel.swift in Sources */,
 				72EB3ED52272F01B00CDA861 /* BindedDeviceCell.swift in Sources */,

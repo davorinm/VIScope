@@ -95,35 +95,35 @@ final class RTLSDR: SDRDevice {
     private var librtlsdrPointer:       OpaquePointer?  = nil
     private var librtlsdrIndex:         UInt32          = 0
     
-    private var bufferSize:             Int          = 16384 * 2
+    private var bufferSize:             Int          = 16384 * 2 // TODO: Check buffer size
     
     private var sampleBuffer:           [UInt8]
     
     private var _isConfigured:          Bool    = false
     
-    private var _sampleRate:            Int     = 0 {
+    var sampleRate: Int = 0 {
         didSet {
             if(self.isOpen() == true) {
-                let rate = UInt32(self._sampleRate)
+                let rate = UInt32(self.sampleRate)
                 rtlsdr_set_sample_rate(self.librtlsdrPointer, rate)
             }
         }
     }
     
-    private var _tunedFrequency:        Int     = 0 {
+    var tunedFrequency: Int = 0 {
         didSet {
 //            print("Set freq: \(self._tunedFrequency) - \(self.description)")
             if(self.isOpen() == true) {
-                let frequency = UInt32(self._tunedFrequency)
+                let frequency = UInt32(self.tunedFrequency)
                 rtlsdr_set_center_freq(self.librtlsdrPointer, frequency)
             }
         }
     }
     
-    private var _correction:            Int     = 0 {
+    var frequencyCorrection: Int = 0 {
         didSet {
             if(self.isOpen() == true) {
-                let correction = Int32(self._correction)
+                let correction = Int32(self.frequencyCorrection)
                 rtlsdr_set_freq_correction(self.librtlsdrPointer, correction)
             }
         }
@@ -176,55 +176,13 @@ final class RTLSDR: SDRDevice {
     //
     //--------------------------------------------------------------------------
     
-    func minimumFrequency() -> Int {
-        
-        // hardcoded for the R820T tuner
-        return 24000000
-        
-    }
+    // hardcoded for the R820T tuner
+    let minimumFrequency: Int = 24000000
     
-    //--------------------------------------------------------------------------
-    //
-    // maximumFrequency()
-    //
-    // return maximum supported frequency
-    //
-    //--------------------------------------------------------------------------
+    // hardcoded for the R820T tuner
+    let maximumFrequency: Int = 1766000000
     
-    func maximumFrequency() -> Int {
-        
-        // hardcoded for the R820T tuner
-        return 1766000000
-        
-    }
     
-    //--------------------------------------------------------------------------
-    //
-    // sampleRate() -> UInt
-    //
-    // return current sample rate
-    //
-    //--------------------------------------------------------------------------
-    
-    func sampleRate() -> Int {
-        
-        return self._sampleRate
-        
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    // sampleRate(rate: UInt)
-    //
-    // set device sample rate
-    //
-    //--------------------------------------------------------------------------
-    
-    func sampleRate(rate: Int) {
-        
-            _sampleRate = rate
-
-    }
     
     //--------------------------------------------------------------------------
     //
@@ -238,62 +196,6 @@ final class RTLSDR: SDRDevice {
         
         return RTLSDR._sampleRates
 
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    // tunedFrequency() -> UInt
-    //
-    // return current frequency
-    //
-    //--------------------------------------------------------------------------
-
-    func tunedFrequency() -> Int {
-        
-        return _tunedFrequency
-        
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    // tunedFrequency(frequency: UInt)
-    //
-    // set tuner frequency
-    //
-    //--------------------------------------------------------------------------
-    
-    func tunedFrequency(frequency: Int) {
-    
-        self._tunedFrequency = frequency
-        
-    }
-
-    //--------------------------------------------------------------------------
-    //
-    // frequencyCorrection() -> Int
-    //
-    // return current frequency correction
-    //
-    //--------------------------------------------------------------------------
-    
-    func frequencyCorrection() -> Int {
-        
-        return _correction
-        
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    // frequencyCorrection(frequency: UInt)
-    //
-    // set frequency correction
-    //
-    //--------------------------------------------------------------------------
-    
-    func frequencyCorrection(correction: Int) {
-        
-        self._correction = correction
-        
     }
     
     //--------------------------------------------------------------------------
@@ -441,14 +343,14 @@ final class RTLSDR: SDRDevice {
         // -- the instance properties all have observers that will
         //    call the needed librtlsdr function to set the parameter
         
-        let sr                  = self._sampleRate
-        self._sampleRate        = sr
+        let sr                  = self.sampleRate
+        self.sampleRate        = sr
         
-        let ppm                 = self._correction
-        self._correction        = ppm
+        let ppm                 = self.frequencyCorrection
+        self.frequencyCorrection        = ppm
         
-        let freq                = self._tunedFrequency
-        self._tunedFrequency    = freq
+        let freq                = self.tunedFrequency
+        self.tunedFrequency    = freq
         
         let auto = self._tunerAutoGain
         self._tunerAutoGain = auto
@@ -554,7 +456,7 @@ final class RTLSDR: SDRDevice {
         asyncReadQueue  = DispatchQueue(label: "\(asyncReadQueueLabel).\(devID)")
         sampleBuffer    = [UInt8](repeating: 0, count: bufferSize)
         
-        _sampleRate = Int(RTLSDR._sampleRates.max()!)
+        sampleRate = Int(RTLSDR._sampleRates.max()!)
 
     }
     

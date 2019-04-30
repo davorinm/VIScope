@@ -13,4 +13,7 @@
    <FileRef
       location = "group:SwiftChart/SwiftChart.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:DMSpectrum/DMSpectrum.xcodeproj">
+   </FileRef>
 </Workspace>

@@ -789,10 +789,9 @@
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="jYb-64-u5U"/>
                             </slider>
                             <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vXO-hj-vqX">
-                                <rect key="frame" x="540" y="51" width="153" height="41"/>
+                                <rect key="frame" x="540" y="66" width="153" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="bgj-pl-fsG"/>
-                                    <constraint firstAttribute="height" constant="35" id="gbZ-Bc-BS9"/>
                                 </constraints>
                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="10" id="zGl-AX-hh6">
                                     <font key="font" metaFont="system"/>
@@ -835,15 +834,24 @@
                                         <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="SpectrogramView" customModule="ViScope" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="SpectrumView" customModule="DMSpectrum">
+                                                <rect key="frame" x="0.0" y="190" width="649" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="160" id="Mua-Ho-T2C"/>
+                                                </constraints>
+                                            </customView>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="LXE-A6-9BI" customClass="HistogramView" customModule="DMSpectrum">
+                                                <rect key="frame" x="0.0" y="0.0" width="649" height="190"/>
                                             </customView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="8eW-ui-uaj"/>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" id="f9M-Ga-c4l"/>
-                                            <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" id="odS-wv-0Ms"/>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="oyr-dV-6p1"/>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" id="8mB-fU-r53"/>
+                                            <constraint firstItem="LXE-A6-9BI" firstAttribute="top" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="XRQ-nV-uUQ"/>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="ds4-TK-iKx"/>
+                                            <constraint firstAttribute="trailing" secondItem="LXE-A6-9BI" secondAttribute="trailing" id="g9a-bx-ZQ2"/>
+                                            <constraint firstAttribute="bottom" secondItem="LXE-A6-9BI" secondAttribute="bottom" id="qqx-VL-qrM"/>
+                                            <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" id="v20-O3-5hW"/>
+                                            <constraint firstItem="LXE-A6-9BI" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="y29-Ir-b8B"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
@@ -860,12 +868,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="spectrumChart" destination="4zG-bH-4xS" id="dLw-UZ-QRf"/>
+                        <outlet property="spectrumChart" destination="4zG-bH-4xS" id="Cwn-bz-Jmp"/>
+                        <outlet property="waterfallChart" destination="LXE-A6-9BI" id="uNH-1F-TOB"/>
                     </connections>
                 </viewController>
                 <customObject id="KL0-Bi-hTw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341" y="588"/>
+            <point key="canvasLocation" x="1340.5" y="588"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="L79-B2-xX1">
@@ -880,7 +889,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Tab" identifier="" image="NSAddTemplate" id="7Ra-Zf-JSc">
-                                        <view key="view" id="dWV-jW-64N">
+                                        <view key="view" ambiguous="YES" id="dWV-jW-64N">
                                             <rect key="frame" x="10" y="33" width="434" height="175"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -897,7 +906,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="View" identifier="" image="NSApplicationIcon" id="Niw-6A-Nve">
-                                        <view key="view" ambiguous="YES" id="V6y-Wv-YY6">
+                                        <view key="view" id="V6y-Wv-YY6">
                                             <rect key="frame" x="10" y="33" width="434" height="175"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
@@ -933,57 +942,79 @@
             <objects>
                 <viewController id="SQm-yh-swl" customClass="DevicesViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="DXp-u0-xGm">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deo-xl-Occ">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dup-F2-BGk">
+                                <rect key="frame" x="97" y="567" width="57" height="23"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="capsule" trackingMode="selectOne" id="1lw-gj-Ej1">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="First"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="modeSelectorChanged:" target="SQm-yh-swl" id="hA1-aE-ueo"/>
+                                </connections>
+                            </segmentedControl>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="deo-xl-Occ">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="558"/>
                                 <clipView key="contentView" id="a1q-6J-BXP">
-                                    <rect key="frame" x="1" y="0.0" width="448" height="299"/>
+                                    <rect key="frame" x="1" y="1" width="248" height="556"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="LqY-X1-e1S" id="d2o-Fl-IL1">
-                                            <rect key="frame" x="0.0" y="0.0" width="448" height="274"/>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="d2o-Fl-IL1">
+                                            <rect key="frame" x="0.0" y="0.0" width="248" height="556"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="245" minWidth="10" maxWidth="300" id="F1L-oD-KK9">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </tableHeaderCell>
+                                                    <customCell key="dataCell" alignment="left" id="fT2-NC-rRA"/>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
+                                                </tableColumn>
+                                            </tableColumns>
                                         </tableView>
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ZKY-j7-WSR">
-                                    <rect key="frame" x="1" y="284" width="448" height="15"/>
+                                    <rect key="frame" x="1" y="541" width="248" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Tsv-IU-Vy1">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <tableHeaderView key="headerView" id="LqY-X1-e1S">
-                                    <rect key="frame" x="0.0" y="0.0" width="448" height="25"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableHeaderView>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="deo-xl-Occ" secondAttribute="bottom" id="LpD-KC-npf"/>
-                            <constraint firstItem="deo-xl-Occ" firstAttribute="top" secondItem="DXp-u0-xGm" secondAttribute="top" id="XGr-6D-KMD"/>
-                            <constraint firstItem="deo-xl-Occ" firstAttribute="leading" secondItem="DXp-u0-xGm" secondAttribute="leading" id="dR9-tk-P6s"/>
-                            <constraint firstAttribute="trailing" secondItem="deo-xl-Occ" secondAttribute="trailing" id="o5c-Pw-dZx"/>
+                            <constraint firstItem="deo-xl-Occ" firstAttribute="leading" secondItem="DXp-u0-xGm" secondAttribute="leading" id="7pi-bU-GaY"/>
+                            <constraint firstAttribute="bottom" secondItem="deo-xl-Occ" secondAttribute="bottom" id="Wma-i9-UMA"/>
+                            <constraint firstItem="dup-F2-BGk" firstAttribute="centerX" secondItem="DXp-u0-xGm" secondAttribute="centerX" id="YKl-eO-rrK"/>
+                            <constraint firstItem="deo-xl-Occ" firstAttribute="top" secondItem="dup-F2-BGk" secondAttribute="bottom" constant="10" id="izd-Nx-Kj3"/>
+                            <constraint firstAttribute="trailing" secondItem="deo-xl-Occ" secondAttribute="trailing" id="khx-Hf-ikq"/>
+                            <constraint firstItem="dup-F2-BGk" firstAttribute="top" secondItem="DXp-u0-xGm" secondAttribute="top" constant="10" id="ygh-JF-uq0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="d2o-Fl-IL1" id="MTk-fy-IHq"/>
+                        <outlet property="modeSelectorControl" destination="dup-F2-BGk" id="2rh-xA-eDP"/>
+                        <outlet property="tableView" destination="d2o-Fl-IL1" id="uBX-QN-rPR"/>
                     </connections>
                 </viewController>
                 <customObject id="2y8-qP-Hz7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1241" y="-313"/>
         </scene>
-        <!--View Controller-->
+        <!--Demodulator View Controller-->
         <scene sceneID="I2K-4A-YCi">
             <objects>
-                <viewController id="cvi-I0-cCp" sceneMemberID="viewController">
+                <viewController id="cvi-I0-cCp" customClass="DemodulatorViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="uU4-4p-dFf">
                         <rect key="frame" x="0.0" y="0.0" width="353" height="622"/>
                         <autoresizingMask key="autoresizingMask"/>

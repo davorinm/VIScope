@@ -6,8 +6,8 @@
 //  Copyright © 2019 Davorin Mađarić. All rights reserved.
 //
 
-import AppKit
-import SwiftChart
+import Cocoa
+import DMSpectrum
 import SDR
 
 //https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/signal_extraction_from_noise
@@ -22,64 +22,29 @@ import SDR
 //
 //https://github.com/christopherhelf/Swift-FFT-Example/blob/master/ffttest/fft.swift
 
-class SpectrumViewController: NSViewController, ChartDelegate {
-    @IBOutlet private weak var spectrumChart: SpectrogramView!
-    @IBOutlet private weak var waterfallChart: Chart!
+class SpectrumViewController: NSViewController {
+    @IBOutlet private weak var spectrumChart: SpectrumView!
+    @IBOutlet private weak var waterfallChart: HistogramView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        spectrumChart.delegate = self
-//        waterfallChart.delegate = self
-        
-        SDR.spectrumData.subscribe(self) { [unowned self] (samples) in
+        SDR.spectrumData.subscribe(self) { [unowned self] (spectrum) in
             print("samples in")
             
-            self.spectrumChart.data = samples.samples()
+            self.spectrumChart.setData(spectrum)
+            self.waterfallChart.addData(spectrum)
         }
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        
-        initializeSpectrumChart()
-        initializeWaterfallChart()
     }
     
-    // MARK: - Charts Init
-    
-    private func initializeSpectrumChart() {
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
         
-    }
-    
-    private func initializeWaterfallChart() {
-        
-    }
-    
-    // MARK: - ChartDelegate
-    
-    func didTouchChart(_ chart: Chart, indexes: Array<Int?>, x: Double, left: CGFloat) {
-        
-        if let value = chart.valueForSeries(0, atIndex: indexes[0]) {
-            print(value)
-        }
-        
-    }
-    
-    func didFinishTouchingChart(_ chart: Chart) {
-        
-    }
-    
-    func didEndTouchingChart(_ chart: Chart) {
-        
-    }
-    
-    // MARK: - Helpers
-    
-    func getStockValues() -> [Int] {
-        let array = (0..<300).map { _ in Int.random(in: 0 ..< 10) }
-        return array
     }
 }
 
