@@ -9,50 +9,43 @@
 import Cocoa
 
 public final class SpectrumView: NSView {
-    private var data: [Double] = []
+    private let shapeLayer = CAShapeLayer()
     
-    private var context: CGContext? {
-        return NSGraphicsContext.current?.cgContext
+    public override var frame: NSRect {
+        didSet {
+            shapeLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        }
+    }
+    
+    public override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        
+        setup()
+    }
+    
+    required init?(coder decoder: NSCoder) {
+        super.init(coder: decoder)
+        
+        setup()
+    }
+    
+    private func setup() {
+        wantsLayer = true
+        layer!.addSublayer(shapeLayer)
+        shapeLayer.fillColor = nil
+        shapeLayer.strokeColor = NSColor.red.cgColor
+        shapeLayer.lineWidth = 1
     }
     
     public func setData(_ samples: [Double]) {
-        data = samples
-        
-        DispatchQueue.main.async {
-            self.setNeedsDisplay(self.bounds)
-        }
-    }
-    
-    override public func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        
-        guard data.count > 0 else {
-            return
+        let path = CGMutablePath()
+        let xScale = shapeLayer.frame.width / CGFloat(samples.count)
+        let points = samples.enumerated().map {
+            return CGPoint(x: xScale * CGFloat($0.offset),
+                           y: shapeLayer.frame.height * CGFloat(1.0 - ($0.element.isFinite ? $0.element : 0)))
         }
         
-        // Create sparkline path
-        let bezierPath = NSBezierPath()
-        bezierPath.lineWidth = 1
-        
-        let ttt = self.bounds.width / CGFloat(data.count)
-        
-        // Add data points to path
-        for (i, dat) in data.enumerated() {
-            
-            let xPos = CGFloat(i) * ttt
-            let yPos = CGFloat(dat) * (self.bounds.height )
-            
-            let point = CGPoint(x: xPos, y: yPos);
-            
-            if i == 0 { // starting point
-                bezierPath.move(to: point)
-            } else {
-                bezierPath.line(to: point)
-            }
-        }
-        
-        // Draw sparkline
-        NSColor.red.setStroke()
-        bezierPath.stroke()
+        path.addLines(between: points)
+        shapeLayer.path = path
     }
 }
