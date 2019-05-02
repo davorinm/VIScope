@@ -17,6 +17,8 @@ public final class SpectrumView: NSView {
         }
     }
     
+    // MARK: - Init
+    
     public override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
@@ -36,6 +38,8 @@ public final class SpectrumView: NSView {
         shapeLayer.strokeColor = NSColor.red.cgColor
         shapeLayer.lineWidth = 1
     }
+    
+    // MARK: - Data
     
     public func setData(_ samples: [Double]) {
         let path = CGMutablePath()

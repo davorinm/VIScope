@@ -29,9 +29,7 @@ class SpectrumViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SDR.spectrumData.subscribe(self) { [unowned self] (spectrum) in
-            print("samples in")
-            
+        SDR.spectrumData.subscribe(self) { [unowned self] (spectrum) in            
             self.spectrumChart.setData(spectrum)
             self.waterfallChart.addData(spectrum)
         }
