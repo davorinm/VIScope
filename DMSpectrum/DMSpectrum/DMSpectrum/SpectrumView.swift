@@ -10,10 +10,12 @@ import Cocoa
 
 public final class SpectrumView: NSView {
     private let shapeLayer = CAShapeLayer()
+    private let gradientLayer = CAGradientLayer()
     
     public override var frame: NSRect {
         didSet {
             shapeLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
+            gradientLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
         }
     }
     
@@ -33,10 +35,21 @@ public final class SpectrumView: NSView {
     
     private func setup() {
         wantsLayer = true
-        layer!.addSublayer(shapeLayer)
-        shapeLayer.fillColor = nil
-        shapeLayer.strokeColor = NSColor.red.cgColor
+        
+        // Chart shape layer
+        shapeLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        shapeLayer.fillColor = NSColor.clear.cgColor
+        shapeLayer.strokeColor = NSColor.black.cgColor
         shapeLayer.lineWidth = 1
+        
+        // Gradient mask layer
+        gradientLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        gradientLayer.colors = [NSColor.red.cgColor, NSColor.green.cgColor, NSColor.blue.cgColor]
+        gradientLayer.mask = shapeLayer
+        
+        layer!.addSublayer(gradientLayer)
     }
     
     // MARK: - Data
