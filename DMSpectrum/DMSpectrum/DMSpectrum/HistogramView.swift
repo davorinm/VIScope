@@ -14,6 +14,8 @@ public final class HistogramView: NSView {
     private var metalView: MTKView!
     private var metalRender: MetalRender!
     
+    private let colors: Colors = Colors()
+    
     private var data: [[UInt8]] = []
     private var pixels: Data = Data()
     
@@ -56,17 +58,9 @@ public final class HistogramView: NSView {
     // MARK: - Data
     
     public func addData(_ samples: [Double]) {
-        // Map Double to RGBA
-        let pixelDataTemp: [[UInt8]] = samples.map { (val) -> [UInt8] in
-            
-            let r = UInt8(val * 255)
-            let g = UInt8(0.5 * 255)
-            let b = UInt8(0.5 * 255)
-            let a = UInt8(1 * 255)
-            
-            
-            //            let res: UInt32 = UInt32(r << 24 | g << 16 | b << 8 | a)
-            return [r, g, b, a]
+        // Map Double to RGBA color for sample value
+        let pixelDataTemp: [[UInt8]] = samples.map { [unowned self] (val) -> [UInt8] in
+            return self.colors.colorForValue2(val)
         }
         
         // Another pixel data single array

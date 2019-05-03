@@ -46,7 +46,7 @@ public final class SpectrumView: NSView {
         gradientLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        gradientLayer.colors = [NSColor.red.cgColor, NSColor.green.cgColor, NSColor.blue.cgColor]
+        gradientLayer.colors = [NSColor.blue.cgColor, NSColor.green.cgColor, NSColor.red.cgColor]
         gradientLayer.mask = shapeLayer
         
         layer!.addSublayer(gradientLayer)

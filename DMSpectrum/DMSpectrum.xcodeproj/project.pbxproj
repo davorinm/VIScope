@@ -11,6 +11,7 @@
 		1E50C1AE22778CA000764168 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E50C1AB22778CA000764168 /* SpectrumView.swift */; };
 		1E50C1AF22778CA000764168 /* GraphUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E50C1AC22778CA000764168 /* GraphUtility.swift */; };
 		1EF76E5F227AFB85001A1EB2 /* HistogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF76E5E227AFB85001A1EB2 /* HistogramView.swift */; };
+		1EF76E61227CCA0C001A1EB2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF76E60227CCA0C001A1EB2 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		1E50C1AB22778CA000764168 /* SpectrumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
 		1E50C1AC22778CA000764168 /* GraphUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphUtility.swift; sourceTree = "<group>"; };
 		1EF76E5E227AFB85001A1EB2 /* HistogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramView.swift; sourceTree = "<group>"; };
+		1EF76E60227CCA0C001A1EB2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				1E50C1AB22778CA000764168 /* SpectrumView.swift */,
 				1EF76E5E227AFB85001A1EB2 /* HistogramView.swift */,
 				1E50C1AC22778CA000764168 /* GraphUtility.swift */,
+				1EF76E60227CCA0C001A1EB2 /* Colors.swift */,
 			);
 			path = DMSpectrum;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E50C1AE22778CA000764168 /* SpectrumView.swift in Sources */,
+				1EF76E61227CCA0C001A1EB2 /* Colors.swift in Sources */,
 				1E50C1AF22778CA000764168 /* GraphUtility.swift in Sources */,
 				1EF76E5F227AFB85001A1EB2 /* HistogramView.swift in Sources */,
 			);
