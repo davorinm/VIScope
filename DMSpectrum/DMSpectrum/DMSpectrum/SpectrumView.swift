@@ -54,7 +54,7 @@ public final class SpectrumView: NSView {
     
     // MARK: - Data
     
-    public func setData(_ samples: [Double]) {
+    public func setData(_ samples: [Float]) {
         let path = CGMutablePath()
         let xScale = shapeLayer.frame.width / CGFloat(samples.count)
         let points = samples.enumerated().map {

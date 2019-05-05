@@ -59,10 +59,10 @@ public final class HistogramView: NSView {
     
     // MARK: - Data
     
-    public func addData(_ samples: [Double]) {
+    public func addData(_ samples: [Float]) {
         // Map Double to RGBA color for sample value
         let pixelDataTemp: [[UInt8]] = samples.map { [unowned self] (val) -> [UInt8] in
-            return self.colors.colorForValue2(val)
+            return self.colors.colorForValue(val)
         }
         
         // Another pixel data single array
@@ -73,23 +73,17 @@ public final class HistogramView: NSView {
         
         data.insert(pixelData, at: 0)
         
-        if data.count > 200 {
+        if data.count > 400 {
             data.removeLast()
         }
         
         // Create single array
         var fff: [UInt8] = data.flatMap { $0 }
-        
-        
-        
-        
-        
         pixels = Data(bytes: &fff, count: fff.count)
         
         
         // Generate image
-        let imageSize = CGSize(width: data[0].count / 4,
-                          height: data.count)
+        let imageSize = CGSize(width: data[0].count / 4, height: data.count)
         
         let image = CIImage(bitmapData: pixels,
                        bytesPerRow: data[0].count,
@@ -97,10 +91,13 @@ public final class HistogramView: NSView {
                        format: CIFormat.RGBA8,
                        colorSpace: CGColorSpaceCreateDeviceRGB())
         
+        // Scale image
         let scale = metalView.drawableSize.width / imageSize.width
+        let aspectRatio = 1
         
         transformFilter.setValue(image, forKey: kCIInputImageKey)
         transformFilter.setValue(scale, forKey: kCIInputScaleKey)
+        transformFilter.setValue(aspectRatio, forKey: kCIInputAspectRatioKey)
         let outputImage = transformFilter.value(forKey: kCIOutputImageKey) as! CIImage
         
         // Draw

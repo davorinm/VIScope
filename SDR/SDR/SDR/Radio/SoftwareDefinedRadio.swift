@@ -36,22 +36,17 @@ class SoftwareDefinedRadio {
     
     let availableDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
     let bindedDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
-    let spectrumData: ObservableEvent<[Double]> = ObservableEvent()
+    let spectrumData: ObservableEvent<[Float]> = ObservableEvent()
     
-    private var devices: [SDRDevice] = []
     private var radio: Radio?
     
-    private var scheduledTimer: Timer!
-    
     private init() {
-        devices = RTLSDR.deviceList() + [NoiseSDRDevice()]
+        self.updateDevices()
         radio = prepareChain()
         
         USB.shared.onChange = { [unowned self] in
             self.updateDevices()
         }
-        
-        availableDevices.value = devices
         
         
         
@@ -67,26 +62,18 @@ class SoftwareDefinedRadio {
 //        }
         
         
-        
-        scheduledTimer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { [weak self] (timer) in
-            if let data = self?.testSpectrumData() {
-                self?.spectrumData.raise(data)
-            }
-        }
     }
     
     // MARK: -
     
     private func updateDevices() {
-        devices = RTLSDR.deviceList() + [NoiseSDRDevice()]
+        availableDevices.value = RTLSDR.deviceList() + [NoiseSDRDevice()]
     }
     
     // MARK: - Devices
     
-    func bindDevice(_ index: Int) {
-        let device = RTLSDR.deviceList()[index]
+    func bindDevice(_ device: SDRDevice) {
         bindedDevices.value.append(device)
-        
         
         device.rawSamples.subscribe(self) { [unowned self] (samples) in
             self.radio?.samplesIn(samples)
@@ -98,23 +85,23 @@ class SoftwareDefinedRadio {
     func prepareChain() -> Radio {
         let normalize = NormalizeBlock(bits: 8)
         let fft = FFTBlock()
+        fft.fftData = { [unowned self] (data) in
+            
+            
+            self.spectrumData.raise(data)
+            
+        }
+        
+        
+        
+        
+        
+        
         
         let radio = Radio()
         radio.addBlock(normalize)
         radio.addBlock(fft)
         
         return radio
-    }
-    
-    // MARK: - Test
-    
-    private func testSpectrumData() -> [Double] {
-        let array = (0..<1000).map { _ in Int.random(in: 0 ..< 1000) }
-        
-        let mapped = array.map { (val) -> Double in
-            return Double(val) / 1000
-        }
-        
-        return mapped
     }
 }

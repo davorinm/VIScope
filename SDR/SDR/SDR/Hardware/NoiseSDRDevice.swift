@@ -20,6 +20,21 @@ class NoiseSDRDevice: SDRDevice {
     
     var sampleRate: Int = 0
     
+    
+    
+    
+    private var scheduledTimer: Timer!
+    
+    init() {
+        
+        
+        
+        
+        
+        
+        
+    }
+    
     func sampleRateList() -> [Int] {
         return [2000000]
     }
@@ -57,17 +72,44 @@ class NoiseSDRDevice: SDRDevice {
     }
     
     func startSampleStream() {
-        
+        scheduledTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] (timer) in
+            if let data = self?.generateSamples() {
+                self?.rawSamples.raise(data)
+            }
+        }
     }
     
     func stopSampleStream() {
-        
+        scheduledTimer.invalidate()
+        scheduledTimer = nil
     }
     
     // MARK: - Private
     
     private func generateSamples() -> [UInt8] {
-        let array = (0..<300).map { _ in UInt8.random(in: 0 ..< 10) }
+        let array = (0..<8000).map { _ in UInt8.random(in: 0 ..< 100) }
         return array
+    }
+    
+    // MARK: - Test
+    
+    let π = M_PI
+    let sampleCount = 1024
+    
+    private func testSpectrumData() -> [Double] {
+        //        let array = (0..<1000).map { _ in Int.random(in: 0 ..< 1000) }
+        //
+        //        let mapped = array.map { (val) -> Double in
+        //            return Double(val) / 1000
+        //        }
+        //
+        //        return mapped
+        
+        
+        
+        let t = (0..<sampleCount).map({ 2*π * Double($0) / Double(sampleCount - 1) })
+        let y = t.map({ ((sin($0) + 1) / 2) })
+        
+        return y
     }
 }

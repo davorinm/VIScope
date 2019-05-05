@@ -12,12 +12,12 @@ public class SDR {
     }
     
     /// Bind device from availableDevices list
-    public class func bindDevice(_ index: Int) {
-        SoftwareDefinedRadio.shared.bindDevice(index)
+    public class func bindDevice(_ device: SDRDevice) {
+        SoftwareDefinedRadio.shared.bindDevice(device)
     }
     
     /// Spectrum data from SDR
-    public class var spectrumData: ObservableEvent<[Double]> {
+    public class var spectrumData: ObservableEvent<[Float]> {
         return SoftwareDefinedRadio.shared.spectrumData
     }
 }

@@ -14,17 +14,20 @@ class Colors {
     private let green = NSColor.green
     private let blue = NSColor.blue
     
-    private let colorMap: [(UInt8, UInt8, UInt8)] = []
+    private var colorMap: [(CGFloat, CGFloat, CGFloat)] = []
     
     init() {
-        
-        
-        
-        
-        
+        colorMap = [
+            (red.redComponent, red.greenComponent, red.blueComponent),
+            (green.redComponent, green.greenComponent, green.blueComponent),
+            (blue.redComponent, blue.greenComponent, blue.blueComponent)
+        ]
     }
     
-    func colorForValue(_ value: Double) -> [UInt8] {
+    func colorForValue(_ value: Float) -> [UInt8] {
+        
+        
+        
         
         
         
@@ -33,7 +36,7 @@ class Colors {
         // 1 = red
         // 0.5 = green
         // 0 = blue
-        
+//        vcv
         
         let r = UInt8(ccc.redComponent * 255)
         let g = UInt8(ccc.greenComponent * 255)
@@ -306,8 +309,8 @@ class Colors {
         ( 0.99324789,  0.90615657,  0.1439362 )
     ]
     
-    func colorForValue2(_ value: Double) -> [UInt8] {
-        var index = Int(round(value * Double(colorMapTemp.count - 1)))
+    func colorForValue2(_ value: Float) -> [UInt8] {
+        var index = Int(round(value * Float(colorMapTemp.count - 1)))
         if index < 0 {
             index = 0
         } else if index >= colorMapTemp.count {
