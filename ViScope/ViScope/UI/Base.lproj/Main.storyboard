@@ -780,7 +780,7 @@
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" drawsBackground="YES" id="bum-la-liW">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -824,34 +824,37 @@
             <objects>
                 <viewController id="YVY-D7-Mhk" customClass="SpectrumViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="W6i-rr-Gdt">
-                        <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="649" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="iJu-sm-3IM">
-                                <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
+                                <rect key="frame" x="0.0" y="0.0" width="649" height="270"/>
                                 <subviews>
                                     <customView id="ncT-FX-Re1">
-                                        <rect key="frame" x="0.0" y="0.0" width="649" height="350"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="649" height="270"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="SpectrumView" customModule="DMSpectrum">
-                                                <rect key="frame" x="0.0" y="190" width="649" height="160"/>
+                                                <rect key="frame" x="5" y="105" width="639" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="Mua-Ho-T2C"/>
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="LXE-A6-9BI" customClass="HistogramView" customModule="DMSpectrum">
-                                                <rect key="frame" x="0.0" y="0.0" width="649" height="190"/>
+                                                <rect key="frame" x="5" y="5" width="639" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Vd3-Rf-jdn"/>
+                                                </constraints>
                                             </customView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" id="8mB-fU-r53"/>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" constant="5" id="8mB-fU-r53"/>
                                             <constraint firstItem="LXE-A6-9BI" firstAttribute="top" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="XRQ-nV-uUQ"/>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="ds4-TK-iKx"/>
-                                            <constraint firstAttribute="trailing" secondItem="LXE-A6-9BI" secondAttribute="trailing" id="g9a-bx-ZQ2"/>
-                                            <constraint firstAttribute="bottom" secondItem="LXE-A6-9BI" secondAttribute="bottom" id="qqx-VL-qrM"/>
-                                            <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" id="v20-O3-5hW"/>
-                                            <constraint firstItem="LXE-A6-9BI" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="y29-Ir-b8B"/>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" constant="5" id="ds4-TK-iKx"/>
+                                            <constraint firstAttribute="trailing" secondItem="LXE-A6-9BI" secondAttribute="trailing" constant="5" id="g9a-bx-ZQ2"/>
+                                            <constraint firstAttribute="bottom" secondItem="LXE-A6-9BI" secondAttribute="bottom" constant="5" id="qqx-VL-qrM"/>
+                                            <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" constant="5" id="v20-O3-5hW"/>
+                                            <constraint firstItem="LXE-A6-9BI" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" constant="5" id="y29-Ir-b8B"/>
                                         </constraints>
                                     </customView>
                                 </subviews>

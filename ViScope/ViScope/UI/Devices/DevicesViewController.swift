@@ -80,7 +80,7 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let item = viewModel.items[row]
         
-        if item.isOpen() {
+        if item.binded {
             if let cell = tableView.makeView(withIdentifier: bindedDeviceCell, owner: nil) as? BindedDeviceCell {
                 cell.setup(item)
                 return cell
