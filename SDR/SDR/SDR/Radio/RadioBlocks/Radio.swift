@@ -9,16 +9,13 @@
 import Foundation
 
 class Radio {
-    private lazy var processQueue: OperationQueue = {
-        var queue = OperationQueue()
-        queue.name = "Radio Process Queue"
-        queue.maxConcurrentOperationCount = 1
-        return queue
-    }()
+    private let processQueue: DispatchQueue = DispatchQueue(label: "Radio")
     
     private var blocks: [RadioBlock] = []
     
     func addBlock(_ radioBlock: RadioBlock) {
+        blocks.append(radioBlock)
+        
 //        radioBlock.queue = processQueue
 //        radioBlock.completionBlock = {
 //            
@@ -29,9 +26,33 @@ class Radio {
 //        }
 //        
 //        blocks.append(radioBlock)
+        
+        
+        
+        
+        let f = Future<([UInt8])> { comp in
+            
+            
+            
+            comp(Promise.success(()))
+        }
     }
     
     func samplesIn(_ rawSamples: [UInt8]) {
+        processQueue.async { [unowned self] in
         
+            for block in self.blocks {
+                block.samplesIn(<#T##samplesIn: [Int]##[Int]#>, <#T##samplesOut: ((SDRSamples) -> Void)##((SDRSamples) -> Void)##(SDRSamples) -> Void#>)
+                
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+        }
     }
 }

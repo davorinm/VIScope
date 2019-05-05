@@ -20,6 +20,8 @@ class FFTBlock: RadioBlock {
     var imagSamples:    [Float]
     var hannWindow:     [Float]
     
+    var fftData: (([Float]) -> Void)?
+    
     init() {
         //    class func fastFourier(_ fftSetup: FFTSetup, samples: NSDictionary, fftSize: Int) -> [Float] {
         
@@ -103,6 +105,10 @@ class FFTBlock: RadioBlock {
         }
         
         // post fft message with samples
+        
+        
+        fftData?(dbs)
+        
 //        if let queue = self.notifyQueue {
 //            queue.async {
                 //                    let userInfo: [String : Any] = [fftSamplesUpdatedKey : dbs]
