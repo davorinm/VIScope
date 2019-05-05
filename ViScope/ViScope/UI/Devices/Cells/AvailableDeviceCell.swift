@@ -7,9 +7,9 @@
 //
 
 import Cocoa
-import SDR
 
 class AvailableDeviceCell: NSTableCellView {
+    private var bindDevice: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,13 +21,16 @@ class AvailableDeviceCell: NSTableCellView {
         super.prepareForReuse()
         
         print("prepareForReuse")
+        bindDevice = nil
     }
     
-    func setup(_ item: SDRDevice) {
-        
-        print("setup item SDRDevice")
-        
-        
+    func setup(_ item: DevicesItem) {
+        bindDevice = item.bindDevice
     }
     
+    // MARK: - Actions
+    
+    @IBAction func bindButtonPressed(_ sender: Any) {
+        bindDevice?()
+    }
 }

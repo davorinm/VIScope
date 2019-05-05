@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import SDR
 
 class BindedDeviceCell: NSTableCellView {
     
@@ -23,7 +22,7 @@ class BindedDeviceCell: NSTableCellView {
         print("prepareForReuse")
     }
 
-    func setup(_ item: SDRDevice) {
+    func setup(_ item: DevicesItem) {
         
         print("setup item SDRDevice")
         

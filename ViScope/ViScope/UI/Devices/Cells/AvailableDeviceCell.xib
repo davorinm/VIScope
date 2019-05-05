@@ -39,10 +39,13 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="xGQ-rK-Uth"/>
                     </constraints>
-                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ilx-BI-bPN">
+                    <buttonCell key="cell" type="push" title="Bind" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ilx-BI-bPN">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="bindButtonPressed:" target="guA-vz-EiE" id="sCe-ob-dZQ"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
