@@ -19,6 +19,8 @@ public final class HistogramView: NSView {
     private var data: [[UInt8]] = []
     private var pixels: Data = Data()
     
+    private let transformFilter = CIFilter(name: "CILanczosScaleTransform")!
+    
     // MARK: - Init
     
     public override init(frame frameRect: NSRect) {
@@ -51,8 +53,8 @@ public final class HistogramView: NSView {
         metalView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(metalView)
         
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[metalView]|", options: [], metrics: nil, views: ["metalView" : metalView]))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[metalView]|", options: [], metrics: nil, views: ["metalView" : metalView]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[metalView]|", options: [], metrics: nil, views: ["metalView" : metalView!]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[metalView]|", options: [], metrics: nil, views: ["metalView" : metalView!]))
     }
     
     // MARK: - Data
@@ -85,28 +87,25 @@ public final class HistogramView: NSView {
         pixels = Data(bytes: &fff, count: fff.count)
         
         
-        metalRender.setImage(generateImage())
-        
-//        DispatchQueue.main.async {
-            self.metalView.draw()
-//        }
-    }
-    
-    // MARK: - Drawing
-    
-    private func generateImage() -> CIImage? {
-        guard data.count > 0 else {
-            return nil
-        }
-        
-        let size = CGSize(width: data[0].count / 4,
+        // Generate image
+        let imageSize = CGSize(width: data[0].count / 4,
                           height: data.count)
         
-        return CIImage(bitmapData: pixels,
+        let image = CIImage(bitmapData: pixels,
                        bytesPerRow: data[0].count,
-                       size: size,
+                       size: imageSize,
                        format: CIFormat.RGBA8,
                        colorSpace: CGColorSpaceCreateDeviceRGB())
+        
+        let scale = metalView.drawableSize.width / imageSize.width
+        
+        transformFilter.setValue(image, forKey: kCIInputImageKey)
+        transformFilter.setValue(scale, forKey: kCIInputScaleKey)
+        let outputImage = transformFilter.value(forKey: kCIOutputImageKey) as! CIImage
+        
+        // Draw
+        metalRender.setImage(outputImage)
+        metalView.draw()
     }
 }
 
@@ -123,7 +122,7 @@ private class MetalRender: NSObject, MTKViewDelegate {
         super.init()
     }
     
-    func setImage(_ image: CIImage?) {
+    func setImage(_ image: CIImage) {
         self.image = image
     }
     
@@ -132,7 +131,7 @@ private class MetalRender: NSObject, MTKViewDelegate {
     }
     
     func draw(in view: MTKView) {
-        guard let drawImage: CIImage = self.image else {
+        guard let drawImage = self.image else {
             return
         }
         
@@ -144,13 +143,13 @@ private class MetalRender: NSObject, MTKViewDelegate {
             return
         }
         
-        let bounds = CGRect(x: 0, y: 0, width: 500, height: 500)
-        let colorSpace = drawImage.colorSpace ?? CGColorSpaceCreateDeviceRGB()
-        
-        context.render(drawImage, to: texture, commandBuffer: commandBuffer, bounds: bounds, colorSpace: colorSpace)
+        context.render(drawImage,
+                       to: texture,
+                       commandBuffer: commandBuffer,
+                       bounds: drawImage.extent,
+                       colorSpace: drawImage.colorSpace ?? CGColorSpaceCreateDeviceRGB())
         
         commandBuffer.present(view.currentDrawable!)
         commandBuffer.commit()
     }
-    
 }
