@@ -9,20 +9,13 @@
 import Foundation
 import Accelerate
 
-class NormalizeBlock: Operation, RadioBlock {
-    var queue: OperationQueue?
+class NormalizeBlock {
     
     init(bits: Int) {
-        
-        
         // TODO: Implement
     }
     
-    override func main() {
-        // TODO: Implement operation
-    }
-    
-    func samplesIn(_ rawSamples: [UInt8], _ samplesOut: ((_ samples: SDRSamples) -> Void)) {
+    func process(_ rawSamples: [UInt8]) -> [Float] {
         // get samples count
         let sampleLength = vDSP_Length(rawSamples.count)
         let sampleCount  = rawSamples.count
@@ -31,27 +24,22 @@ class NormalizeBlock: Operation, RadioBlock {
         let strideOfOne = vDSP_Stride(1)
         
         // create scalers
-        var addScaler:  Double = -127.5
-        var divScaler:  Double = 127.5
+        var addScaler:  Float = -127.5
+        var divScaler:  Float = 127.5
         
         // create Double array
-        var doubleSamples: [Double] = [Double](repeating: 0.0, count: sampleCount)
+        var normalizedSamples: [Float] = [Float](repeating: 0.0, count: sampleCount)
         
         // convert the raw UInt8 values into Doubles
-        vDSP_vfltu8D(rawSamples, strideOfOne, &doubleSamples, strideOfOne, sampleLength)
+        vDSP_vfltu8(rawSamples, strideOfOne, &normalizedSamples, strideOfOne, sampleLength)
         
         // convert 0.0 ... 255.0 -> -127.5 ... 127.5
-        vDSP_vsaddD(doubleSamples, strideOfOne, &addScaler, &doubleSamples, strideOfOne, sampleLength)
+        vDSP_vsadd(normalizedSamples, strideOfOne, &addScaler, &normalizedSamples, strideOfOne, sampleLength)
         
         // normalize values to -1.0 -> 1.0
-        vDSP_vsdivD(doubleSamples, strideOfOne, &divScaler, &doubleSamples, strideOfOne, sampleLength)
+        vDSP_vsdiv(normalizedSamples, strideOfOne, &divScaler, &normalizedSamples, strideOfOne, sampleLength)
         
         // create samples object
-        guard let sdrSamples = SDRSamples(normalizedSamples: doubleSamples) else {
-            print("ERROR SDRSamples(doubleSamples")
-            return
-        }
-        
-        samplesOut(sdrSamples)
+        return normalizedSamples
     }
 }

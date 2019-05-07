@@ -22,7 +22,6 @@
 		1EBC53D0226F940F009C02C6 /* SDRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53CF226F940F009C02C6 /* SDRDevice.swift */; };
 		1EBC53D2226F96B6009C02C6 /* ObservableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */; };
 		1EBC53D4226F96BE009C02C6 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D3226F96BE009C02C6 /* Disposable.swift */; };
-		1EBC53D9226FAD65009C02C6 /* RadioBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E33928A226C83BC00AD052F /* RadioBlock.swift */; };
 		1EBC53E4226FB05C009C02C6 /* SDRSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53E3226FB05C009C02C6 /* SDRSamples.swift */; };
 		72E4593A22703DD1001F123E /* SoftwareDefinedRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4593922703DD1001F123E /* SoftwareDefinedRadio.swift */; };
 		72E4593C2270405F001F123E /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4593B2270405F001F123E /* Radio.swift */; };
@@ -30,7 +29,6 @@
 		72E4594122705593001F123E /* FFTBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E339281226C83BC00AD052F /* FFTBlock.swift */; };
 		72EB3EDF2273067900CDA861 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3EDE2273067900CDA861 /* LinkedList.swift */; };
 		72EB3EE3227306B200CDA861 /* FifoQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3EE2227306B200CDA861 /* FifoQueue.swift */; };
-		72EB3F2222818D3000CDA861 /* OperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3F2122818D3000CDA861 /* OperationTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +38,6 @@
 		1E339268226C82DF00AD052F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E339281226C83BC00AD052F /* FFTBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTBlock.swift; sourceTree = "<group>"; };
 		1E339289226C83BC00AD052F /* RadioOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioOld.swift; sourceTree = "<group>"; };
-		1E33928A226C83BC00AD052F /* RadioBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioBlock.swift; sourceTree = "<group>"; };
 		1E33928B226C83BC00AD052F /* Samples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
 		1E33928C226C83BC00AD052F /* SoftwareDefinedRadioOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadioOld.swift; sourceTree = "<group>"; };
 		1E33928D226C83BC00AD052F /* SDR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDR.swift; sourceTree = "<group>"; };
@@ -65,7 +62,6 @@
 		72E4593E2270492E001F123E /* NormalizeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizeBlock.swift; sourceTree = "<group>"; };
 		72EB3EDE2273067900CDA861 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		72EB3EE2227306B200CDA861 /* FifoQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifoQueue.swift; sourceTree = "<group>"; };
-		72EB3F2122818D3000CDA861 /* OperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				72E4594022704A27001F123E /* RadioBlocks */,
-				72EB3F2122818D3000CDA861 /* OperationTest.swift */,
 				72E4593922703DD1001F123E /* SoftwareDefinedRadio.swift */,
 			);
 			path = Radio;
@@ -208,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				72E4593B2270405F001F123E /* Radio.swift */,
-				1E33928A226C83BC00AD052F /* RadioBlock.swift */,
 				72E4593E2270492E001F123E /* NormalizeBlock.swift */,
 				1E339281226C83BC00AD052F /* FFTBlock.swift */,
 			);
@@ -307,13 +301,11 @@
 				1E50C1B6227793E000764168 /* NoiseSDRDevice.swift in Sources */,
 				1E9CD752226F311B00CD679C /* USB.swift in Sources */,
 				72E4594122705593001F123E /* FFTBlock.swift in Sources */,
-				1EBC53D9226FAD65009C02C6 /* RadioBlock.swift in Sources */,
 				1E9CD74E226F311B00CD679C /* RTLSDR.swift in Sources */,
 				1EBC53D4226F96BE009C02C6 /* Disposable.swift in Sources */,
 				72EB3EDF2273067900CDA861 /* LinkedList.swift in Sources */,
 				72EB3EE3227306B200CDA861 /* FifoQueue.swift in Sources */,
 				1EBC53D0226F940F009C02C6 /* SDRDevice.swift in Sources */,
-				72EB3F2222818D3000CDA861 /* OperationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

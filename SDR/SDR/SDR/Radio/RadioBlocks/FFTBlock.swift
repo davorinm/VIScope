@@ -8,13 +8,15 @@
 import Foundation
 import Accelerate
 
-class FFTBlock: RadioBlock {
+class FFTBlock {
     
     var queue: OperationQueue?
     
     var fftSetup:       FFTSetup
     var fftSize:        Int = 131072 //2^17
 //    var fftSizeArray:   [Float] = [32768, 65536, 131072, 262144]
+    
+    var samplesBufferSize = 500000
 
     var realSamples:    [Float]
     var imagSamples:    [Float]
@@ -33,8 +35,10 @@ class FFTBlock: RadioBlock {
         self.hannWindow = [Float](repeating: 0.0, count: fftSize)
         vDSP_hann_window(&hannWindow, vDSP_Length(fftSize), 0)
         
-        self.realSamples = [Float](repeating: 0.0, count: fftSize)
-        self.imagSamples = [Float](repeating: 0.0, count: fftSize)
+        self.realSamples = []
+        self.realSamples.reserveCapacity(samplesBufferSize)
+        self.imagSamples = []
+        self.imagSamples.reserveCapacity(samplesBufferSize)
     }
     
     //--------------------------------------------------------------------------
@@ -43,24 +47,29 @@ class FFTBlock: RadioBlock {
     //
     //--------------------------------------------------------------------------
 
-    func samplesIn(_ samplesIn: SDRSamples, _ samplesOut: ((SDRSamples) -> Void)) {
-        let sI = samplesIn.samples().map { Float($0.i) }
-        let sQ = samplesIn.samples().map { Float($0.q) }
-
-        
-        
-        
-        self.realSamples.append(contentsOf: sI)
-        self.imagSamples.append(contentsOf: sQ)
+    func process(_ samples: [Float]) -> [Float] {
+        //
+        for (i, sample) in samples.enumerated() {
+            if i % 2 == 0 {
+                self.realSamples.append(sample)
+            } else {
+                self.imagSamples.append(sample)
+            }
+        }
         
         // TODO: Implement buffer, fill buffer to fft size, then take those samples out, what is left takes another pass
-        let dropCount = self.realSamples.count - self.fftSize
-        self.realSamples = Array(self.realSamples.dropFirst(dropCount))
-        self.imagSamples = Array(self.imagSamples.dropFirst(dropCount))
         
         // copy samples
-        var real = self.realSamples
-        var imag = self.imagSamples
+        
+        if self.realSamples.count < self.fftSize || self.imagSamples.count < self.fftSize {
+            return samples
+        }
+        
+        var real = Array(self.realSamples[0..<self.fftSize])
+        var imag = Array(self.imagSamples[0..<self.fftSize])
+        
+        self.realSamples.removeFirst(self.fftSize)
+        self.imagSamples.removeFirst(self.fftSize)
         
         // create DSPSPlitComplex for FFT
         var inSamples:  DSPSplitComplex = DSPSplitComplex(realp: &real, imagp: &imag)
@@ -106,8 +115,8 @@ class FFTBlock: RadioBlock {
         
         // post fft message with samples
         
-        
-        fftData?(dbs)
+        fftData?(inMagnitudes)
+//        fftData?(dbs)
         
 //        if let queue = self.notifyQueue {
 //            queue.async {
@@ -116,9 +125,6 @@ class FFTBlock: RadioBlock {
 //            }
 //        }
         
-        
-        // the reference to samplesOut may become nil at any time so
-        // check to make sure it exists before sending samples out
-        samplesOut(samplesIn)
+        return samples
     }
 }

@@ -38,19 +38,15 @@ class SoftwareDefinedRadio {
     let bindedDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
     let spectrumData: ObservableEvent<[Float]> = ObservableEvent()
     
-    private var radio: Radio?
-    
-    let test = OperationTest()
+    private let radio: Radio
     
     private init() {
+        self.radio = Radio(spectrumData: spectrumData)
         self.updateDevices()
-        radio = prepareChain()
         
         USB.shared.onChange = { [unowned self] in
             self.updateDevices()
         }
-        
-        test.run
     }
     
     // MARK: -
@@ -65,32 +61,9 @@ class SoftwareDefinedRadio {
         bindedDevices.value.append(device)
         
         device.rawSamples.subscribe(self) { [unowned self] (samples) in
-            self.radio?.samplesIn(samples)
+            self.radio.samplesIn(samples)
         }
         
         device.startSampleStream()
-    }
-    
-    func prepareChain() -> Radio {
-        let normalize = NormalizeBlock(bits: 8)
-        let fft = FFTBlock()
-        fft.fftData = { [unowned self] (data) in
-            
-            
-            self.spectrumData.raise(data)
-            
-        }
-        
-        
-        
-        
-        
-        
-        
-        let radio = Radio()
-        radio.addBlock(normalize)
-        radio.addBlock(fft)
-        
-        return radio
     }
 }

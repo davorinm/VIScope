@@ -9,50 +9,44 @@
 import Foundation
 
 class Radio {
+    private let spectrumData: ObservableEvent<[Float]>
     private let processQueue: DispatchQueue = DispatchQueue(label: "Radio")
     
-    private var blocks: [RadioBlock] = []
+//    private var blocks: [RadioBlock] = []
+//    private let radioPipeline: Future<SDRSamples>
     
-    func addBlock(_ radioBlock: RadioBlock) {
-        blocks.append(radioBlock)
+    
+    private var chain: (([UInt8]) -> [Float])?
+    
+    init(spectrumData: ObservableEvent<[Float]>) {
+        self.spectrumData = spectrumData
         
-//        radioBlock.queue = processQueue
-//        radioBlock.completionBlock = {
-//            
-//        }
-//        
-//        if let previousRadioBlock = blocks.last {
-//            radioBlock.addDependency(previousRadioBlock)
-//        }
-//        
-//        blocks.append(radioBlock)
-        
-        
-        
-        
-        let f = Future<([UInt8])> { comp in
-            
-            
-            
-            comp(Promise.success(()))
+        let normalize = NormalizeBlock(bits: 8)
+        let fft = FFTBlock()
+        fft.fftSize = 16000
+        fft.fftData = { [unowned self] (data) in
+            self.spectrumData.raise(data)
         }
+        
+        chain = normalize.process --> fft.process        
     }
-    
+
     func samplesIn(_ rawSamples: [UInt8]) {
         processQueue.async { [unowned self] in
-        
-            for block in self.blocks {
-                block.samplesIn(<#T##samplesIn: [Int]##[Int]#>, <#T##samplesOut: ((SDRSamples) -> Void)##((SDRSamples) -> Void)##(SDRSamples) -> Void#>)
-                
-                
-                
-            }
+            self.chain?(rawSamples)
             
             
-            
-            
-            
-            
+//            self.radioPipeline.perform(SDRSamples.raw(rawSamples), { (promise) in
+//                switch promise {
+//                case .success(_):
+//                    break
+//                case .failure(_):
+//                    break
+//                }
+//            })
         }
     }
 }
+
+
+

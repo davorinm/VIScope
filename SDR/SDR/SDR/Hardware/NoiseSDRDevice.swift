@@ -87,7 +87,7 @@ class NoiseSDRDevice: SDRDevice {
     // MARK: - Private
     
     private func generateSamples() -> [UInt8] {
-        let array = (0..<8000).map { _ in UInt8.random(in: 0 ..< 100) }
+        let array = (0..<32000).map { _ in UInt8.random(in: 100 ..< 155) }
         return array
     }
     
