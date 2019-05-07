@@ -40,6 +40,8 @@ class SoftwareDefinedRadio {
     
     private var radio: Radio?
     
+    let test = OperationTest()
+    
     private init() {
         self.updateDevices()
         radio = prepareChain()
@@ -48,20 +50,7 @@ class SoftwareDefinedRadio {
             self.updateDevices()
         }
         
-        
-        
-        
-//        let ttt = FutureChain.create().then { (Int) -> Future<Int> in
-//            
-//            return Future { _ in
-//                
-//            }
-//            
-//            }.then { (val: Int) -> Future<Double> in
-//                return 5.5
-//        }
-        
-        
+        test.run
     }
     
     // MARK: -
