@@ -10,8 +10,8 @@ import Cocoa
 import DMSpectrum
 import SDR
 
-//https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/signal_extraction_from_noise
-//https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/equalizing_audio_with_vdsp
+https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/signal_extraction_from_noise
+https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/equalizing_audio_with_vdsp
 //
 //
 //https://www.objc.io/issues/16-swift/rapid-prototyping-in-swift-playgrounds/

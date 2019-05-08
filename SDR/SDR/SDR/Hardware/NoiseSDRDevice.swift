@@ -84,7 +84,11 @@ class NoiseSDRDevice: SDRDevice {
         scheduledTimer = nil
     }
     
-    // MARK: - Private
+    // MARK: - Random
+    
+    private func ttt() {
+        let level = ((Float32(arc4random()) / exp2(32)) - Float32(0.5)) * Float32(2)
+    }
     
     private func generateSamples() -> [UInt8] {
         let array = (0..<32000).map { _ in UInt8.random(in: 100 ..< 155) }

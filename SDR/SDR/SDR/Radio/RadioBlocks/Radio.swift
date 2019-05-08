@@ -27,8 +27,9 @@ class Radio {
         fft.fftData = { [unowned self] (data) in
             self.spectrumData.raise(data)
         }
+        let filter = ComplexFilterBlock(sampleRateIn: 2400000, sampleRateOut: 48000, cutoffFrequency: 5000, kernelLength: 300)
         
-        chain = normalize.process --> fft.process        
+        chain = normalize.process --> fft.process --> filter.process
     }
 
     func samplesIn(_ rawSamples: [UInt8]) {

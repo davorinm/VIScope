@@ -23,6 +23,12 @@
 		1EBC53D2226F96B6009C02C6 /* ObservableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */; };
 		1EBC53D4226F96BE009C02C6 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D3226F96BE009C02C6 /* Disposable.swift */; };
 		1EBC53E4226FB05C009C02C6 /* SDRSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53E3226FB05C009C02C6 /* SDRSamples.swift */; };
+		726A828F2282D033008926D0 /* MixerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A828E2282D033008926D0 /* MixerBlock.swift */; };
+		726A82912282DB76008926D0 /* AudioBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A82902282DB76008926D0 /* AudioBlock.swift */; };
+		726A82932282E0E2008926D0 /* RealFilterBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A82922282E0E2008926D0 /* RealFilterBlock.swift */; };
+		726A82952282E0FC008926D0 /* FilterCoefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A82942282E0FC008926D0 /* FilterCoefficients.swift */; };
+		727CB9A52282BF8E00A45F8C /* ComplexFilterBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CB9A42282BF8E00A45F8C /* ComplexFilterBlock.swift */; };
+		727CB9A72282BFFB00A45F8C /* FMSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CB9A62282BFFB00A45F8C /* FMSynthesizer.swift */; };
 		72E4593A22703DD1001F123E /* SoftwareDefinedRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4593922703DD1001F123E /* SoftwareDefinedRadio.swift */; };
 		72E4593C2270405F001F123E /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4593B2270405F001F123E /* Radio.swift */; };
 		72E4593F2270492E001F123E /* NormalizeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4593E2270492E001F123E /* NormalizeBlock.swift */; };
@@ -57,6 +63,12 @@
 		1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableEvent.swift; sourceTree = "<group>"; };
 		1EBC53D3226F96BE009C02C6 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		1EBC53E3226FB05C009C02C6 /* SDRSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRSamples.swift; sourceTree = "<group>"; };
+		726A828E2282D033008926D0 /* MixerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerBlock.swift; sourceTree = "<group>"; };
+		726A82902282DB76008926D0 /* AudioBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBlock.swift; sourceTree = "<group>"; };
+		726A82922282E0E2008926D0 /* RealFilterBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealFilterBlock.swift; sourceTree = "<group>"; };
+		726A82942282E0FC008926D0 /* FilterCoefficients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCoefficients.swift; sourceTree = "<group>"; };
+		727CB9A42282BF8E00A45F8C /* ComplexFilterBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexFilterBlock.swift; sourceTree = "<group>"; };
+		727CB9A62282BFFB00A45F8C /* FMSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSynthesizer.swift; sourceTree = "<group>"; };
 		72E4593922703DD1001F123E /* SoftwareDefinedRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadio.swift; sourceTree = "<group>"; };
 		72E4593B2270405F001F123E /* Radio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
 		72E4593E2270492E001F123E /* NormalizeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizeBlock.swift; sourceTree = "<group>"; };
@@ -130,6 +142,7 @@
 		1E339299226C85C900AD052F /* Radio */ = {
 			isa = PBXGroup;
 			children = (
+				727CB9A62282BFFB00A45F8C /* FMSynthesizer.swift */,
 				72E4594022704A27001F123E /* RadioBlocks */,
 				72E4593922703DD1001F123E /* SoftwareDefinedRadio.swift */,
 			);
@@ -205,6 +218,11 @@
 				72E4593B2270405F001F123E /* Radio.swift */,
 				72E4593E2270492E001F123E /* NormalizeBlock.swift */,
 				1E339281226C83BC00AD052F /* FFTBlock.swift */,
+				727CB9A42282BF8E00A45F8C /* ComplexFilterBlock.swift */,
+				726A82922282E0E2008926D0 /* RealFilterBlock.swift */,
+				726A82942282E0FC008926D0 /* FilterCoefficients.swift */,
+				726A828E2282D033008926D0 /* MixerBlock.swift */,
+				726A82902282DB76008926D0 /* AudioBlock.swift */,
 			);
 			path = RadioBlocks;
 			sourceTree = "<group>";
@@ -296,14 +314,20 @@
 				72E4593C2270405F001F123E /* Radio.swift in Sources */,
 				1EBC53D2226F96B6009C02C6 /* ObservableEvent.swift in Sources */,
 				1EBC53E4226FB05C009C02C6 /* SDRSamples.swift in Sources */,
+				726A82932282E0E2008926D0 /* RealFilterBlock.swift in Sources */,
 				1E33929A226C85D400AD052F /* SDR.swift in Sources */,
+				727CB9A72282BFFB00A45F8C /* FMSynthesizer.swift in Sources */,
+				726A828F2282D033008926D0 /* MixerBlock.swift in Sources */,
 				72E4593F2270492E001F123E /* NormalizeBlock.swift in Sources */,
 				1E50C1B6227793E000764168 /* NoiseSDRDevice.swift in Sources */,
 				1E9CD752226F311B00CD679C /* USB.swift in Sources */,
 				72E4594122705593001F123E /* FFTBlock.swift in Sources */,
 				1E9CD74E226F311B00CD679C /* RTLSDR.swift in Sources */,
+				726A82912282DB76008926D0 /* AudioBlock.swift in Sources */,
 				1EBC53D4226F96BE009C02C6 /* Disposable.swift in Sources */,
 				72EB3EDF2273067900CDA861 /* LinkedList.swift in Sources */,
+				727CB9A52282BF8E00A45F8C /* ComplexFilterBlock.swift in Sources */,
+				726A82952282E0FC008926D0 /* FilterCoefficients.swift in Sources */,
 				72EB3EE3227306B200CDA861 /* FifoQueue.swift in Sources */,
 				1EBC53D0226F940F009C02C6 /* SDRDevice.swift in Sources */,
 			);

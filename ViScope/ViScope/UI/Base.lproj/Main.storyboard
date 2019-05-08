@@ -879,67 +879,6 @@
             </objects>
             <point key="canvasLocation" x="1340.5" y="588"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="L79-B2-xX1">
-            <objects>
-                <viewController id="9IT-Lj-1jf" sceneMemberID="viewController">
-                    <view key="view" id="9Iy-CG-3A8">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <tabView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKy-tl-FN2">
-                                <rect key="frame" x="-2" y="-5" width="454" height="221"/>
-                                <font key="font" metaFont="system"/>
-                                <tabViewItems>
-                                    <tabViewItem label="Tab" identifier="" image="NSAddTemplate" id="7Ra-Zf-JSc">
-                                        <view key="view" ambiguous="YES" id="dWV-jW-64N">
-                                            <rect key="frame" x="10" y="33" width="434" height="175"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyD-lm-MIQ">
-                                                    <rect key="frame" x="85" y="86" width="37" height="17"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="tJK-4W-Edf">
-                                                        <font key="font" usesAppearanceFont="YES"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                            </subviews>
-                                        </view>
-                                    </tabViewItem>
-                                    <tabViewItem label="View" identifier="" image="NSApplicationIcon" id="Niw-6A-Nve">
-                                        <view key="view" id="V6y-Wv-YY6">
-                                            <rect key="frame" x="10" y="33" width="434" height="175"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </view>
-                                    </tabViewItem>
-                                    <tabViewItem label="Item 2" identifier="" id="YCG-wk-vVr">
-                                        <view key="view" id="rrY-io-RKw">
-                                            <rect key="frame" x="10" y="33" width="434" height="175"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </view>
-                                    </tabViewItem>
-                                    <tabViewItem label="Item 3" identifier="" id="g4K-co-hMI">
-                                        <view key="view" id="7yM-wZ-tta">
-                                            <rect key="frame" x="10" y="33" width="434" height="175"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </view>
-                                    </tabViewItem>
-                                </tabViewItems>
-                            </tabView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="MKy-tl-FN2" secondAttribute="bottom" constant="5" id="Iqk-ZK-lCR"/>
-                            <constraint firstAttribute="trailing" secondItem="MKy-tl-FN2" secondAttribute="trailing" constant="5" id="dMH-tn-vNE"/>
-                            <constraint firstItem="MKy-tl-FN2" firstAttribute="leading" secondItem="9Iy-CG-3A8" secondAttribute="leading" constant="5" id="fi5-vH-HJb"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <customObject id="Qdt-7P-sbP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="700" y="1662"/>
-        </scene>
         <!--Devices View Controller-->
         <scene sceneID="gGg-Iu-QYn">
             <objects>
@@ -1048,8 +987,4 @@
             <point key="canvasLocation" x="1192.5" y="1346"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSApplicationIcon" width="32" height="32"/>
-    </resources>
 </document>
