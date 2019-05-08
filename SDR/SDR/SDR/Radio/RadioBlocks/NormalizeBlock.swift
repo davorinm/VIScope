@@ -15,7 +15,7 @@ class NormalizeBlock {
         // TODO: Implement
     }
     
-    func process(_ rawSamples: [UInt8]) -> DSPSplitComplex {
+    func process(_ rawSamples: [UInt8]) -> SDRCplxSamples {
         // get samples count
         let sampleLength = vDSP_Length(rawSamples.count)
         let sampleCount  = rawSamples.count
@@ -50,8 +50,8 @@ class NormalizeBlock {
         // their own arrays
         vDSP_vsadd(&(normalizedSamples) + 0, strideOfTwo, &zeroScaler, &real, strideOfOne, (sampleLength / 2) )
         vDSP_vsadd(&(normalizedSamples) + 1, strideOfTwo, &zeroScaler, &imag, strideOfOne, (sampleLength / 2) )
-                
+        
         // create samples object
-        return DSPSplitComplex(realp: &real, imagp: &imag)
+        return SDRCplxSamples(real: real, imag: imag)
     }
 }

@@ -45,7 +45,7 @@ class ComplexFilterBlock {
     //
     //--------------------------------------------------------------------------
     
-    init (sampleRateIn: Int, sampleRateOut: Int, cutoffFrequency: Int, kernelLength: Int) {
+    init(sampleRateIn: Int, sampleRateOut: Int, cutoffFrequency: Int, kernelLength: Int) {
         self.inRate         = sampleRateIn
         self.outRate        = sampleRateOut
         self.downRatio      = sampleRateIn / sampleRateOut
@@ -58,9 +58,9 @@ class ComplexFilterBlock {
         self.imagLastSamples   = [Float](repeating :0.0, count: self.kernel.count)
     }
     
-    func samplesIn(_ samples: [Float]) -> [Float] {
-        
+    func process(_ samples: SDRCplxSamples) -> SDRCplxSamples {
         var samples = samples
+
         
         // compute size of output buffer being: out = in.count / downRatio
         // if not evenly divisible, the remaining samples will be left over
@@ -124,7 +124,7 @@ class ComplexFilterBlock {
         )
         
         // pack output samples into samples object
-        let outSamples = Samples(samplesType: .complex, realArray: realOutSamples, imagArray: imagOutSamples)
+        let outSamples = SDRCplxSamples(real: realOutSamples, imag: imagOutSamples)
         
         return outSamples
     }

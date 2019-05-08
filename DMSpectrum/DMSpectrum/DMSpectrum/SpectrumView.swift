@@ -14,8 +14,11 @@ public final class SpectrumView: NSView {
     
     public override var frame: NSRect {
         didSet {
-            shapeLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
-            gradientLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
+            shapeLayer.frame = bounds
+            gradientLayer.frame = bounds
+//            layer!.frame = frame
+//
+//            print("frame \(frame)")
         }
     }
     
@@ -50,6 +53,8 @@ public final class SpectrumView: NSView {
         gradientLayer.mask = shapeLayer
         
         layer!.addSublayer(gradientLayer)
+//        layer!.frame = frame
+        layer!.anchorPoint = CGPoint(x: 0, y: 0)
     }
     
     // MARK: - Data
@@ -57,9 +62,10 @@ public final class SpectrumView: NSView {
     public func setData(_ samples: [Float]) {
         let path = CGMutablePath()
         let xScale = shapeLayer.frame.width / CGFloat(samples.count)
-        let points = samples.enumerated().map {
+        let points: [CGPoint] = samples.enumerated().compactMap {
             return CGPoint(x: xScale * CGFloat($0.offset),
-                           y: shapeLayer.frame.height * CGFloat(1.0 - ($0.element.isFinite ? $0.element : 0)))
+                           y: shapeLayer.frame.height * CGFloat(1.0 - $0.element))
+           
         }
         
         path.addLines(between: points)

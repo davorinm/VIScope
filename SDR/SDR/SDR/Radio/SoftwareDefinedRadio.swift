@@ -51,7 +51,7 @@ class SoftwareDefinedRadio {
         
         
         // Play a bell sound:
-        FMSynthesizer.shared.play(carrierFrequency: 440.0, modulatorFrequency: 679.0, modulatorAmplitude: 0.8)
+        //FMSynthesizer.shared.play(carrierFrequency: 440.0, modulatorFrequency: 679.0, modulatorAmplitude: 0.8)
     }
     
     // MARK: -

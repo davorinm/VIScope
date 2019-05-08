@@ -32,12 +32,11 @@ class MixerBlock {
         self.δ                  = 2 * π * Float(self.localOscillator) / Float(self.sampleRate)
     }
     
-    func process(_ samples: [Float]) -> [Float] {
-        
+    func process(_ samples: SDRCplxSamples) -> SDRCplxSamples {
         var samples = samples
         
-        if(localOscillator != 0) {
-            var inSamples = samples.asDSPSplitComplex()
+        if (localOscillator != 0) {
+            var inSamples = samples.asSplitComplex()
             
             //             δ=2πf/fs
             //             ϕ[n]=(ϕ[n−1]+δ) mod 2π

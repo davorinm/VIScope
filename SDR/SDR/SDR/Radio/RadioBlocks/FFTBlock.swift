@@ -47,15 +47,10 @@ class FFTBlock {
     //
     //--------------------------------------------------------------------------
 
-    func process(_ samples: [Float]) -> [Float] {
-        //
-        for (i, sample) in samples.enumerated() {
-            if i % 2 == 0 {
-                self.realSamples.append(sample)
-            } else {
-                self.imagSamples.append(sample)
-            }
-        }
+    func process(_ samples: SDRCplxSamples) -> SDRCplxSamples {
+        // Add Samples
+        self.realSamples.append(contentsOf: samples.real)
+        self.imagSamples.append(contentsOf: samples.imag)
         
         // TODO: Implement buffer, fill buffer to fft size, then take those samples out, what is left takes another pass
         
@@ -90,7 +85,6 @@ class FFTBlock {
         
         // get magnitudes
         var magnitudes = [Float](repeating: 0.0, count: self.fftSize)
-        var dbs        = [Float](repeating: 0.0, count: self.fftSize)
         vDSP_zvmags(&inSamples, 1, &magnitudes, 1, vDSP_Length(self.fftSize))
         
         
@@ -103,6 +97,7 @@ class FFTBlock {
         
         // convert to dbFS
         var dbScale: Float32 = 1
+        var dbs        = [Float](repeating: 0.0, count: self.fftSize)
         vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, vDSP_Length(self.fftSize), 0)
         
         // re-arrange values to match -n/2 <-> n/2
@@ -115,7 +110,7 @@ class FFTBlock {
         
         // post fft message with samples
         
-        fftData?(inMagnitudes)
+        fftData?(dbs)
 //        fftData?(dbs)
         
 //        if let queue = self.notifyQueue {

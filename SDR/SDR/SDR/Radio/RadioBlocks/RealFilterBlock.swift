@@ -38,11 +38,6 @@ class RealFilterBlock {
     //--------------------------------------------------------------------------
 
     init (sampleRateIn: Int, sampleRateOut: Int, cutoffFrequency: Int, kernelLength: Int, name: String?) {
-        
-        if let inName = name {
-            self.name = inName
-        }
-        
         self.inRate         = sampleRateIn
         self.outRate        = sampleRateOut
         self.downRatio      = sampleRateIn / sampleRateOut
@@ -52,10 +47,9 @@ class RealFilterBlock {
         
         // start the last samples buffer with 0s
         self.realLastSamples   = [Float](repeating :0.0, count: self.kernel.count)
-        
     }
 
-    func samplesIn(_ samples: Samples) -> [Float] {
+    func samplesIn(_ samples: [Float]) -> [Float] {
         
         var samples = samples
         
@@ -79,50 +73,29 @@ class RealFilterBlock {
         let inBufferSize = (self.downRatio * (outBufferSize - 1)) + self.kernelLength
         
         // insert unconsumed samples from last block
-        samples.audio.insert(contentsOf: self.realLastSamples, at: 0)
+        samples.insert(contentsOf: self.realLastSamples, at: 0)
 
         // clear the last samples buffer
         self.realLastSamples.removeAll(keepingCapacity: true)
 
         // get the needed number of samples for vDSP_desamp: source[ 0 ... (DF * (N-1) + P)]
-        var realSamples: [Float] = Array(samples.audio.prefix(upTo: inBufferSize))
+        var realSamples: [Float] = Array(samples.prefix(upTo: inBufferSize))
         
         // get the remaining samples which will be: source[ (DF * N) ... lastIndex]
-        realLastSamples = Array(samples.audio.dropFirst(self.downRatio * outBufferSize))
+        realLastSamples = Array(samples.dropFirst(self.downRatio * outBufferSize))
         
 
         // perform the decimation with FIR filter
         vDSP_desamp(
             &realSamples,
-            vDSP_Stride(self.downRatio      ),
+            vDSP_Stride(self.downRatio),
             &kernel,
             &realOutSamples,
-            vDSP_Length(outBufferSize       ),
-            vDSP_Length(self.kernelLength   )
+            vDSP_Length(outBufferSize),
+            vDSP_Length(self.kernelLength)
         )
         
-        // pack output samples into samples object
-        samples.audio = realOutSamples
-        
-        // the reference to samplesOut may become nil at any time so
-        // check to make sure it exists before sending samples out
-        if(samplesOut != nil) {
-            self.samplesOut!(samples)
-        }
-        
+        // Return output samples
+        return realOutSamples
     }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-    
-    func getStatusFor(key: String) -> Any? {
-        return nil
-    }
-
-    
 }
-
-

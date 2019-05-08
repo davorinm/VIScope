@@ -7,11 +7,28 @@
 //
 
 import Foundation
+import Accelerate
 
-//public struct SDRSample {
-//    public let i: Double
-//    public let q: Double
-//}
+struct SDRCplxSamples {
+    var real: [Float]
+    var imag: [Float]
+    var count: Int {
+        return self.real.count
+    }
+    
+    init(real: [Float], imag: [Float]) {
+        self.real = real
+        self.imag = imag
+        
+        if self.real.count != self.imag.count {
+            assertionFailure("Samples count error")
+        }
+    }
+    
+    mutating func asSplitComplex() -> DSPSplitComplex {
+        return DSPSplitComplex(realp: &self.real, imagp: &self.imag)
+    }
+}
 
 //public enum SDRSamples {
 //    case raw([UInt8])
