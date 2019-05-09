@@ -44,7 +44,7 @@ class SpectralView: UIView {
         
         var x: CGFloat = 0.0
         
-        let count = fft.numberOfBands
+        let count = fft.bandMagnitudes.count
         
         // Draw the spectrum.
         let maxDB: Float = 64.0
@@ -53,7 +53,7 @@ class SpectralView: UIView {
         let colWidth = tempi_round_device_scale(d: viewWidth / CGFloat(count))
         
         for i in 0..<count {
-            let magnitude = fft.magnitudeAtBand(i)
+            let magnitude = fft.bandMagnitudes[i]
             
             // Incoming magnitudes are linear, making it impossible to see very low or very high values. Decibels to the rescue!
             var magnitudeDB = TempiFFT.toDB(magnitude)

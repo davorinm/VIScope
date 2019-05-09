@@ -33,13 +33,13 @@ Note that TempiFFT expects a mono signal (i.e. numChannels == 1) which is ideal 
 import Foundation
 import Accelerate
 
-@objc enum TempiFFTWindowType: NSInteger {
+enum TempiFFTWindowType {
     case none
     case hanning
     case hamming
 }
 
-@objc class TempiFFT : NSObject {
+class TempiFFT {
     
     /// The length of the sample buffer we'll be analyzing.
     private(set) var size: Int

@@ -32,22 +32,26 @@ class Radio {
             let range = max - min
             
             
-            let samples2: [Float] = samples.enumerated().compactMap {
+            let mappedSamples: [Float] = samples.enumerated().compactMap {
+                // TODO: Make real interpolation of samples
                 if $0.offset % 22 != 0 {
                     return nil
                 }
                 
+                // Scaling 0...1
                 let scaledValue = ($0.element - min) / range;
                 return scaledValue
             }
             
+            
             // Return on main thread
             DispatchQueue.main.async {
-                self.spectrumData.raise(samples2)
+                self.spectrumData.raise(mappedSamples)
             }
         }
         let filter = ComplexFilterBlock(sampleRateIn: 2400000, sampleRateOut: 48000, cutoffFrequency: 5000, kernelLength: 300)
         
+        // TODO: Stop using "-->" and use block chainig - linked list...
         chain = normalize.process --> fft.process --> filter.process
     }
 

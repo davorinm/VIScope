@@ -44,5 +44,12 @@ class SpectrumViewController: NSViewController {
         super.viewWillDisappear()
         
     }
+    
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        
+        print("SpectrumViewController viewDidLayout")
+        // TODO: If this works, report width for samples intepolation... or maybe should we be doing this in charts?!?
+    }
 }
 
