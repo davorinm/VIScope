@@ -1,0 +1,911 @@
+date,time,program,excercise,superset,set,reps,seconds,isrest,kg,lb,kmh,mph,seckm,secmiles,rpe,rpm,resistance,equipmentprogram,degrees,onesided,diameter,setting,chestpad,attachment
+02/12/2015,21:55:33,Shoulder Relax,Reverse Crunch,,1,40,,,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Reverse Crunch,,3,50,,,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Crunch,,1,50,,,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Crunch,,3,30,,,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Crunch,,5,30,,,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Side Bend,,1,50,,,9.07,20,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Side Bend,,3,50,,,9.07,20,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Seated Flye Machine,,1,12,,,15.88,35,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Seated Flye Machine,,3,12,,,18.14,40,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Bench Press,,1,12,,,45.36,100,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Bench Press,,3,12,,,49.9,110,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Bench Press,,5,12,,,49.9,110,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Bench Press,,7,12,,,49.9,110,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Bench Press,,9,10,,,49.9,110,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Bench Press,,1,12,,,27.22,60,,,,,,,,,0,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Bench Press,,3,12,,,27.22,60,,,,,,,,,0,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Bench Press,,5,12,,,27.22,60,,,,,,,,,0,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Bench Press,,7,12,,,31.75,70,,,,,,,,,0,,,,,
+02/12/2015,21:55:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Bench Press,,9,12,,,31.75,70,,,,,,,,,0,,,,,
+02/12/2015,21:55:33,Shoulder Relax,Lat Pull-Down,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Lat Pull-Down,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Lat Pull-Down,,5,12,,,20.41,45,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Lat Pull-Down,,7,12,,,20.41,45,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Lat Pull-Down,,9,12,,,20.41,45,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,18.14,40,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Curl,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Curl,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Dumbbell Curl,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Back Squat,,1,12,,,50,110.23,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Back Squat,,3,12,,,50,110.23,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+02/12/2015,21:55:33,Shoulder Relax,Static Triceps Push-Down With Rope,,1,30,,,11.34,25,,,,,,,,,,,,,,rope
+02/12/2015,21:55:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+02/12/2015,21:55:33,Shoulder Relax,Static Triceps Push-Down With Rope,,3,20,,,11.34,25,,,,,,,,,,,,,,rope
+02/12/2015,21:55:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+02/12/2015,21:55:33,Shoulder Relax,Static Triceps Push-Down With Rope,,5,20,,,11.34,25,,,,,,,,,,,,,,rope
+02/12/2015,21:55:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+09/12/2015,22:19:11,Shoulder Relax,Reverse Crunch,,1,60,,,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Reverse Crunch,,3,40,,,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Crunch,,1,35,,,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Crunch,,3,35,,,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Crunch,,5,35,,,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Side Bend,,1,50,,,9.07,20,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Side Bend,,3,50,,,9.07,20,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Seated Flye Machine,,1,12,,,15.88,35,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Seated Flye Machine,,3,12,,,18.14,40,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Bench Press,,1,12,,,40.82,90,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Bench Press,,3,12,,,49.9,110,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Bench Press,,5,12,,,49.9,110,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Bench Press,,7,12,,,58.97,130,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Bench Press,,9,12,,,58.97,130,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Bench Press,,1,12,,,31.75,70,,,,,,,,,0,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Bench Press,,3,12,,,36.29,80,,,,,,,,,0,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Bench Press,,5,12,,,36.29,80,,,,,,,,,0,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Bench Press,,7,12,,,36.29,80,,,,,,,,,0,,,,,
+09/12/2015,22:19:11,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Bench Press,,9,12,,,36.29,80,,,,,,,,,0,,,,,
+09/12/2015,22:19:11,Shoulder Relax,Lat Pull-Down,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Lat Pull-Down,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Lat Pull-Down,,5,12,,,20.41,45,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Lat Pull-Down,,7,12,,,20.41,45,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Lat Pull-Down,,9,10,,,20.41,45,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Curl,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Curl,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Dumbbell Curl,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Back Squat,,1,12,,,50,110.23,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Back Squat,,3,12,,,50,110.23,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+09/12/2015,22:19:11,Shoulder Relax,Static Triceps Push-Down With Rope,,1,30,,,11.34,25,,,,,,,,,,,,,,rope
+09/12/2015,22:19:11,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+09/12/2015,22:19:11,Shoulder Relax,Static Triceps Push-Down With Rope,,3,25,,,11.34,25,,,,,,,,,,,,,,rope
+09/12/2015,22:19:11,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+09/12/2015,22:19:11,Shoulder Relax,Static Triceps Push-Down With Rope,,5,20,,,11.34,25,,,,,,,,,,,,,,rope
+09/12/2015,22:19:11,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+14/12/2015,19:20:20,Shoulder Relax,Reverse Crunch,,1,100,,,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Reverse Crunch,,3,40,,,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Crunch,,1,35,,,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Crunch,,3,35,,,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Crunch,,5,35,,,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Side Bend,,1,30,,,9.07,20,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Side Bend,,3,30,,,9.07,20,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Side Bend,,5,30,,,9.07,20,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Side Bend,,7,30,,,9.07,20,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Seated Flye Machine,,1,12,,,15.88,35,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Seated Flye Machine,,3,12,,,15.88,35,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Bench Press,,1,12,,,40.82,90,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Bench Press,,3,12,,,40.82,90,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Bench Press,,5,9,,,49.9,110,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Bench Press,,7,10,,,49.9,110,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Bench Press,,9,12,,,49.9,110,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Bench Press,,1,12,,,31.75,70,,,,,,,,,0,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Bench Press,,3,8,,,31.75,70,,,,,,,,,0,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Bench Press,,5,12,,,36.29,80,,,,,,,,,0,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Bench Press,,7,12,,,36.29,80,,,,,,,,,0,,,,,
+14/12/2015,19:20:20,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Bench Press,,9,12,,,36.29,80,,,,,,,,,0,,,,,
+14/12/2015,19:20:20,Shoulder Relax,Lat Pull-Down,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Lat Pull-Down,,3,10,,,18.14,40,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Lat Pull-Down,,5,10,,,18.14,40,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Lat Pull-Down,,7,10,,,18.14,40,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Lat Pull-Down,,9,10,,,20.41,45,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Curl,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Curl,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Dumbbell Curl,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Back Squat,,1,12,,,50,110.23,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Back Squat,,3,12,,,50,110.23,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+14/12/2015,19:20:20,Shoulder Relax,Static Triceps Push-Down With Rope,,1,30,,,11.34,25,,,,,,,,,,,,,,rope
+14/12/2015,19:20:20,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+14/12/2015,19:20:20,Shoulder Relax,Static Triceps Push-Down With Rope,,3,25,,,11.34,25,,,,,,,,,,,,,,rope
+14/12/2015,19:20:20,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+14/12/2015,19:20:20,Shoulder Relax,Static Triceps Push-Down With Rope,,5,20,,,11.34,25,,,,,,,,,,,,,,rope
+14/12/2015,19:20:20,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+14/12/2015,22:12:44,Shoulder Relax,Reverse Crunch,,1,50,,,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Reverse Crunch,,3,50,,,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Crunch,,1,30,,,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Crunch,,3,35,,,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Crunch,,5,30,,,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Side Bend,,1,50,,,9.07,20,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Side Bend,,3,50,,,9.07,20,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Seated Flye Machine,,1,12,,,15.88,35,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Seated Flye Machine,,3,12,,,18.14,40,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Bench Press,,1,12,,,49.9,110,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Bench Press,,3,12,,,49.9,110,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Bench Press,,5,12,,,49.9,110,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Bench Press,,7,12,,,54.43,120,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Bench Press,,9,6,,,58.97,130,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Bench Press,,1,12,,,27.22,60,,,,,,,,,0,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Bench Press,,3,12,,,27.22,60,,,,,,,,,0,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Bench Press,,5,12,,,31.75,70,,,,,,,,,0,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Bench Press,,7,12,,,31.75,70,,,,,,,,,0,,,,,
+14/12/2015,22:12:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Bench Press,,9,12,,,31.75,70,,,,,,,,,0,,,,,
+14/12/2015,22:12:44,Shoulder Relax,Lat Pull-Down,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Lat Pull-Down,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Lat Pull-Down,,5,12,,,20.41,45,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Lat Pull-Down,,7,8,,,20.41,45,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Lat Pull-Down,,9,9,,,20.41,45,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Curl,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Curl,,7,12,,,27.22,60,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Dumbbell Curl,,9,12,,,27.22,60,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Back Squat,,1,12,,,40,88.18,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Back Squat,,3,12,,,40,88.18,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+14/12/2015,22:12:44,Shoulder Relax,Static Triceps Push-Down With Rope,,1,40,,,11.34,25,,,,,,,,,,,,,,rope
+14/12/2015,22:12:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+14/12/2015,22:12:44,Shoulder Relax,Static Triceps Push-Down With Rope,,3,25,,,11.34,25,,,,,,,,,,,,,,rope
+14/12/2015,22:12:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+14/12/2015,22:12:44,Shoulder Relax,Static Triceps Push-Down With Rope,,5,18,,,11.34,25,,,,,,,,,,,,,,rope
+14/12/2015,22:12:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+18/12/2015,21:21:49,Shoulder Relax,Reverse Crunch,,1,50,,,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Reverse Crunch,,3,50,,,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Crunch,,1,40,,,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Crunch,,3,40,,,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Crunch,,5,25,,,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Side Bend,,1,40,,,9.07,20,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Side Bend,,3,40,,,9.07,20,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Seated Flye Machine,,1,12,,,15.88,35,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Seated Flye Machine,,3,12,,,18.14,40,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Bench Press,,1,12,,,49.9,110,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Bench Press,,3,12,,,58.97,130,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Bench Press,,5,12,,,63.5,140,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Bench Press,,7,12,,,68.04,150,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Bench Press,,9,9,,,77.11,170,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,10,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Bench Press,,11,5,,,77.11,170,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,12,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Bench Press,,13,6,,,77.11,170,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,14,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Bench Press,,15,12,,,58.97,130,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Bench Press,,1,12,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Bench Press,,3,12,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Bench Press,,5,12,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Bench Press,,7,12,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,21:21:49,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Bench Press,,9,9,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,21:21:49,Shoulder Relax,Lat Pull-Down,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Lat Pull-Down,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Lat Pull-Down,,5,10,,,20.41,45,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Lat Pull-Down,,7,10,,,20.41,45,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Lat Pull-Down,,9,12,,,20.41,45,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Curl,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Curl,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Dumbbell Curl,,9,10,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Back Squat,,1,12,,,40,88.18,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Back Squat,,3,12,,,40,88.18,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+18/12/2015,21:21:49,Shoulder Relax,Static Triceps Push-Down With Rope,,1,40,,,11.34,25,,,,,,,,,,,,,,rope
+18/12/2015,21:21:49,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+18/12/2015,21:21:49,Shoulder Relax,Static Triceps Push-Down With Rope,,3,25,,,11.34,25,,,,,,,,,,,,,,rope
+18/12/2015,21:21:49,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+18/12/2015,21:21:49,Shoulder Relax,Static Triceps Push-Down With Rope,,5,18,,,11.34,25,,,,,,,,,,,,,,rope
+18/12/2015,21:21:49,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+18/12/2015,22:59:44,Shoulder Relax,Reverse Crunch,,1,50,,,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Reverse Crunch,,3,50,,,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Crunch,,1,30,,,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Crunch,,3,35,,,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Crunch,,5,30,,,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Side Bend,,1,50,,,9.07,20,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Side Bend,,3,50,,,9.07,20,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Seated Flye Machine,,1,12,,,15.88,35,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Seated Flye Machine,,3,12,,,18.14,40,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Bench Press,,1,12,,,49.9,110,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Bench Press,,3,12,,,58.97,130,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Bench Press,,5,12,,,63.5,140,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Bench Press,,7,8,,,68.04,150,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Bench Press,,9,10,,,72.57,160,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Bench Press,,10,8,,,77.11,170,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,11,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Bench Press,,12,7,,,77.11,170,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Bench Press,,13,12,,,58.97,130,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,14,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,15,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,16,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Bench Press,,1,12,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Bench Press,,3,8,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Bench Press,,5,10,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Bench Press,,7,10,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,22:59:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Bench Press,,9,12,,,31.75,70,,,,,,,,,0,,,,,
+18/12/2015,22:59:44,Shoulder Relax,Lat Pull-Down,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Lat Pull-Down,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Lat Pull-Down,,5,12,,,20.41,45,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Lat Pull-Down,,7,12,,,20.41,45,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Lat Pull-Down,,9,12,,,20.41,45,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Curl,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Curl,,7,12,,,27.22,60,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Dumbbell Curl,,9,12,,,27.22,60,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Back Squat,,1,12,,,40,88.18,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Back Squat,,3,12,,,40,88.18,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+18/12/2015,22:59:44,Shoulder Relax,Static Triceps Push-Down With Rope,,1,40,,,11.34,25,,,,,,,,,,,,,,rope
+18/12/2015,22:59:44,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+18/12/2015,22:59:44,Shoulder Relax,Static Triceps Push-Down With Rope,,3,25,,,11.34,25,,,,,,,,,,,,,,rope
+18/12/2015,22:59:44,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+18/12/2015,22:59:44,Shoulder Relax,Static Triceps Push-Down With Rope,,5,18,,,11.34,25,,,,,,,,,,,,,,rope
+18/12/2015,22:59:44,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+21/12/2015,21:40:33,Shoulder Relax,Reverse Crunch,,1,50,,,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Reverse Crunch,,3,50,,,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Crunch,,1,30,,,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Crunch,,3,35,,,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Crunch,,5,30,,,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Side Bend,,1,50,,,9.07,20,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Side Bend,,3,50,,,9.07,20,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Seated Flye Machine,,1,12,,,15.88,35,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Seated Flye Machine,,3,12,,,18.14,40,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Bench Press,,1,12,,,49.9,110,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Bench Press,,3,12,,,58.97,130,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Bench Press,,5,12,,,68.04,150,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Bench Press,,7,8,,,77.11,170,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Bench Press,,9,7,,,77.11,170,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Bench Press,,10,10,,,68.04,150,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,11,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Bench Press,,12,10,,,58.97,130,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,13,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Bench Press,,14,12,,,58.97,130,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,15,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,16,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Bench Press,,1,12,,,31.75,70,,,,,,,,,0,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Bench Press,,3,12,,,31.75,70,,,,,,,,,0,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Bench Press,,5,12,,,31.75,70,,,,,,,,,0,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Bench Press,,7,10,,,31.75,70,,,,,,,,,0,,,,,
+21/12/2015,21:40:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Bench Press,,9,12,,,31.75,70,,,,,,,,,0,,,,,
+21/12/2015,21:40:33,Shoulder Relax,Lat Pull-Down,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Lat Pull-Down,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Lat Pull-Down,,5,12,,,20.41,45,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Lat Pull-Down,,7,6,,,20.41,45,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Lat Pull-Down,,9,10,,,20.41,45,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Curl,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Curl,,7,12,,,27.22,60,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Dumbbell Curl,,9,10,,,27.22,60,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Back Squat,,1,12,,,40,88.18,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Back Squat,,3,12,,,40,88.18,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+21/12/2015,21:40:33,Shoulder Relax,Static Triceps Push-Down With Rope,,1,30,,,11.34,25,,,,,,,,,,,,,,rope
+21/12/2015,21:40:33,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+21/12/2015,21:40:33,Shoulder Relax,Static Triceps Push-Down With Rope,,3,25,,,11.34,25,,,,,,,,,,,,,,rope
+21/12/2015,21:40:33,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+21/12/2015,21:40:33,Shoulder Relax,Static Triceps Push-Down With Rope,,5,25,,,11.34,25,,,,,,,,,,,,,,rope
+21/12/2015,21:40:33,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+25/12/2015,22:39:55,Shoulder Relax,Reverse Crunch,,1,50,,,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Reverse Crunch,,3,50,,,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Crunch,,1,30,,,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Crunch,,3,35,,,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Crunch,,5,30,,,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Side Bend,,1,40,,,9.07,20,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Side Bend,,3,40,,,9.07,20,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Seated Flye Machine,,1,20,,,15.88,35,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Seated Flye Machine,,3,20,,,18.14,40,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Bench Press,,1,12,,,49.9,110,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Bench Press,,3,12,,,58.97,130,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Bench Press,,5,12,,,77.11,170,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Bench Press,,7,12,,,77.11,170,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Bench Press,,9,12,,,77.11,170,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Bench Press,,10,10,,,77.11,170,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,11,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Bench Press,,12,10,,,77.11,170,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,13,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Bench Press,,14,12,,,58.97,130,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,15,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,16,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Bench Press,,1,12,,,31.75,70,,,,,,,,,0,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Bench Press,,3,12,,,31.75,70,,,,,,,,,0,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Bench Press,,5,12,,,31.75,70,,,,,,,,,0,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Bench Press,,7,12,,,31.75,70,,,,,,,,,0,,,,,
+25/12/2015,22:39:55,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Bench Press,,9,12,,,31.75,70,,,,,,,,,0,,,,,
+25/12/2015,22:39:55,Shoulder Relax,Lat Pull-Down,,1,12,,,20.41,45,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Lat Pull-Down,,3,12,,,20.41,45,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Lat Pull-Down,,5,12,,,20.41,45,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Lat Pull-Down,,7,12,,,20.41,45,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Lat Pull-Down,,9,12,,,20.41,45,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Curl,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Curl,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Dumbbell Curl,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Back Squat,,1,12,,,40,88.18,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Back Squat,,3,12,,,40,88.18,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+25/12/2015,22:39:55,Shoulder Relax,Static Triceps Push-Down With Rope,,1,40,,,11.34,25,,,,,,,,,,,,,,rope
+25/12/2015,22:39:55,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+25/12/2015,22:39:55,Shoulder Relax,Static Triceps Push-Down With Rope,,3,25,,,11.34,25,,,,,,,,,,,,,,rope
+25/12/2015,22:39:55,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+25/12/2015,22:39:55,Shoulder Relax,Static Triceps Push-Down With Rope,,5,20,,,11.34,25,,,,,,,,,,,,,,rope
+25/12/2015,22:39:55,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+28/12/2015,22:16:45,Shoulder Relax,Reverse Crunch,,1,50,,,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Reverse Crunch,,3,50,,,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Crunch,,1,30,,,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Crunch,,3,35,,,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Crunch,,5,30,,,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Side Bend,,1,40,,,9.07,20,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Side Bend,,3,40,,,9.07,20,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Seated Flye Machine,,1,12,,,20.41,45,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Seated Flye Machine,,3,12,,,20.41,45,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Bench Press,,1,12,,,49.9,110,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Bench Press,,3,12,,,58.97,130,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Bench Press,,5,10,,,77.11,170,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Bench Press,,7,12,,,77.11,170,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Bench Press,,9,10,,,77.11,170,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,10,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Bench Press,,11,10,,,77.11,170,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,12,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Bench Press,,13,10,,,77.11,170,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,14,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Bench Press,,15,12,,,58.97,130,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,16,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Bench Press,,1,12,,,31.75,70,,,,,,,,,0,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Bench Press,,3,12,,,31.75,70,,,,,,,,,0,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Bench Press,,5,12,,,31.75,70,,,,,,,,,0,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Bench Press,,7,12,,,31.75,70,,,,,,,,,0,,,,,
+28/12/2015,22:16:45,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Bench Press,,9,16,,,31.75,70,,,,,,,,,0,,,,,
+28/12/2015,22:16:45,Shoulder Relax,Lat Pull-Down,,1,12,,,20.41,45,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Lat Pull-Down,,3,12,,,20.41,45,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Lat Pull-Down,,5,12,,,20.41,45,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Lat Pull-Down,,7,12,,,20.41,45,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Lat Pull-Down,,9,12,,,20.41,45,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Curl,,1,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Curl,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Dumbbell Curl,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Back Squat,,1,12,,,40,88.18,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Back Squat,,3,12,,,40,88.18,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+28/12/2015,22:16:45,Shoulder Relax,Static Triceps Push-Down With Rope,,1,40,,,11.34,25,,,,,,,,,,,,,,rope
+28/12/2015,22:16:45,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+28/12/2015,22:16:45,Shoulder Relax,Static Triceps Push-Down With Rope,,3,30,,,11.34,25,,,,,,,,,,,,,,rope
+28/12/2015,22:16:45,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+28/12/2015,22:16:45,Shoulder Relax,Static Triceps Push-Down With Rope,,5,20,,,11.34,25,,,,,,,,,,,,,,rope
+28/12/2015,22:16:45,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope
+30/12/2015,21:50:48,Shoulder Relax,Reverse Crunch,,1,50,,,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Reverse Crunch,,3,50,,,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Crunch,,1,30,,,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Crunch,,3,35,,,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Crunch,,5,30,,,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Side Bend,,1,40,,,9.07,20,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,2,,30,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Side Bend,,3,40,,,9.07,20,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,4,,30,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Side Bend,,5,40,,,9.07,20,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,6,,30,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Side Bend,,7,40,,,9.07,20,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,8,,30,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Seated Flye Machine,,1,12,,,20.41,45,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Seated Flye Machine,,3,12,,,20.41,45,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Seated Flye Machine,,5,12,,,18.14,40,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Seated Flye Machine,,7,12,,,18.14,40,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Seated Flye Machine,,9,12,,,20.41,45,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Bench Press,,1,12,,,49.9,110,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Bench Press,,3,12,,,58.97,130,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Bench Press,,5,12,,,77.11,170,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Bench Press,,7,12,,,77.11,170,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Bench Press,,9,10,,,77.11,170,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,10,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Bench Press,,11,12,,,77.11,170,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,12,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Bench Press,,13,9,,,77.11,170,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,14,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Bench Press,,15,12,,,58.97,130,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,16,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Bench Press,,1,12,,,27.22,60,,,,,,,,,0,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Bench Press,,3,12,,,27.22,60,,,,,,,,,0,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Bench Press,,5,12,,,27.22,60,,,,,,,,,0,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Bench Press,,7,12,,,31.75,70,,,,,,,,,0,,,,,
+30/12/2015,21:50:48,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Bench Press,,9,12,,,31.75,70,,,,,,,,,0,,,,,
+30/12/2015,21:50:48,Shoulder Relax,Lat Pull-Down,,1,12,,,20.41,45,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,2,,60,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Lat Pull-Down,,3,12,,,20.41,45,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,4,,60,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Lat Pull-Down,,5,20,,,15.88,35,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,6,,60,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Lat Pull-Down,,7,12,,,15.88,35,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,8,,60,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Lat Pull-Down,,9,12,,,20.41,45,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Standing Dumbbell Shoulder Press,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Standing Dumbbell Shoulder Press,,3,12,,,18.14,40,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Standing Dumbbell Shoulder Press,,5,12,,,18.14,40,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Standing Dumbbell Shoulder Press,,7,12,,,18.14,40,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Standing Dumbbell Shoulder Press,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Curl,,1,12,,,18.14,40,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,2,,90,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Curl,,3,12,,,22.68,50,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,4,,90,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Curl,,5,12,,,22.68,50,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,6,,90,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Curl,,7,12,,,22.68,50,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,8,,90,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Curl,,9,12,,,22.68,50,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,10,,90,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Dumbbell Curl,,11,12,,,18.14,40,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Back Squat,,1,12,,,40,88.18,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Back Squat,,3,12,,,40,88.18,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Back Squat,,5,12,,,50,110.23,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Back Squat,,7,12,,,50,110.23,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,,,8,,45,rest,,,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Back Squat,,9,12,,,50,110.23,,,,,,,,,,,,,,latbar
+30/12/2015,21:50:48,Shoulder Relax,Static Triceps Push-Down With Rope,,1,50,,,11.34,25,,,,,,,,,,,,,,rope
+30/12/2015,21:50:48,Shoulder Relax,,,2,,45,rest,,,,,,,,,,,,,,,,rope
+30/12/2015,21:50:48,Shoulder Relax,Static Triceps Push-Down With Rope,,3,25,,,11.34,25,,,,,,,,,,,,,,rope
+30/12/2015,21:50:48,Shoulder Relax,,,4,,45,rest,,,,,,,,,,,,,,,,rope
+30/12/2015,21:50:48,Shoulder Relax,Static Triceps Push-Down With Rope,,5,20,,,11.34,25,,,,,,,,,,,,,,rope
+30/12/2015,21:50:48,Shoulder Relax,,,6,,45,rest,,,,,,,,,,,,,,,,rope

@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7506EBD520EB329D002ABEF6 /* Windower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506EBD420EB329D002ABEF6 /* Windower.swift */; };
+		7506EBD620EBFDC7002ABEF6 /* Windower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506EBD420EB329D002ABEF6 /* Windower.swift */; };
+		7506EBD720EBFDC7002ABEF6 /* Windower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506EBD420EB329D002ABEF6 /* Windower.swift */; };
+		750FB6E920DC420E00526B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB6E820DC420E00526B50 /* AppDelegate.swift */; };
+		750FB6EB20DC420E00526B50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB6EA20DC420E00526B50 /* ViewController.swift */; };
+		750FB6ED20DC420E00526B50 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB6EC20DC420E00526B50 /* Document.swift */; };
+		750FB6EF20DC420E00526B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750FB6EE20DC420E00526B50 /* Assets.xcassets */; };
+		750FB6F220DC420E00526B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 750FB6F020DC420E00526B50 /* Main.storyboard */; };
+		750FB6FE20DC420E00526B50 /* AuditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB6FD20DC420E00526B50 /* AuditorTests.swift */; };
+		750FB70920DC420E00526B50 /* AuditorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB70820DC420E00526B50 /* AuditorUITests.swift */; };
+		750FB71720DC42D800526B50 /* AudioSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB71620DC42D800526B50 /* AudioSegmentView.swift */; };
+		750FB71820DC42D800526B50 /* AudioSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB71620DC42D800526B50 /* AudioSegmentView.swift */; };
+		750FB71920DC42D800526B50 /* AudioSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB71620DC42D800526B50 /* AudioSegmentView.swift */; };
+		750FB71C20DC42FB00526B50 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 750FB71A20DC42FB00526B50 /* shaders.metal */; };
+		750FB71D20DC42FB00526B50 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 750FB71A20DC42FB00526B50 /* shaders.metal */; };
+		750FB71E20DC42FB00526B50 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 750FB71A20DC42FB00526B50 /* shaders.metal */; };
+		750FB71F20DC42FB00526B50 /* AudioSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB71B20DC42FB00526B50 /* AudioSegment.swift */; };
+		750FB72320DC552800526B50 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB72220DC552800526B50 /* AppView.swift */; };
+		750FB72420DC552800526B50 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB72220DC552800526B50 /* AppView.swift */; };
+		750FB72520DC552800526B50 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB72220DC552800526B50 /* AppView.swift */; };
+		750FB72E20DCCFB400526B50 /* TracksScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB72D20DCCFB400526B50 /* TracksScrollView.swift */; };
+		750FB73020DDC6AB00526B50 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB72F20DDC6AB00526B50 /* AudioEngine.swift */; };
+		750FB73420DF106200526B50 /* LiveAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB73320DF106200526B50 /* LiveAudioView.swift */; };
+		750FB73520DF106200526B50 /* LiveAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB73320DF106200526B50 /* LiveAudioView.swift */; };
+		750FB73620DF106200526B50 /* LiveAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB73320DF106200526B50 /* LiveAudioView.swift */; };
+		750FB74920DF69FC00526B50 /* AudioRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB74520DF3FBD00526B50 /* AudioRoute.swift */; };
+		750FB74A20DF69FD00526B50 /* AudioRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB74520DF3FBD00526B50 /* AudioRoute.swift */; };
+		750FB74B20DF69FE00526B50 /* AudioRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB74520DF3FBD00526B50 /* AudioRoute.swift */; };
+		750FB74D20DF6DD400526B50 /* claire-mid.aif in Resources */ = {isa = PBXBuildFile; fileRef = 750FB74C20DF6DD400526B50 /* claire-mid.aif */; };
+		7556EE9420E1FA8A002529DD /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7556EE9320E1FA8A002529DD /* FFT.swift */; };
+		7556EE9520E1FA8A002529DD /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7556EE9320E1FA8A002529DD /* FFT.swift */; };
+		7556EE9620E1FA8A002529DD /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7556EE9320E1FA8A002529DD /* FFT.swift */; };
+		75CEB97920E2BB3400C58896 /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CEB97820E2BB3400C58896 /* SpectrogramView.swift */; };
+		75CEB97A20E2BB3400C58896 /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CEB97820E2BB3400C58896 /* SpectrogramView.swift */; };
+		75CEB97B20E2BB3400C58896 /* SpectrogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CEB97820E2BB3400C58896 /* SpectrogramView.swift */; };
+		75D3669620F401BE005ADC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB6E820DC420E00526B50 /* AppDelegate.swift */; };
+		75D3669720F401BF005ADC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FB6E820DC420E00526B50 /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		750FB6FA20DC420E00526B50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 750FB6DD20DC420E00526B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 750FB6E420DC420E00526B50;
+			remoteInfo = Auditor;
+		};
+		750FB70520DC420E00526B50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 750FB6DD20DC420E00526B50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 750FB6E420DC420E00526B50;
+			remoteInfo = Auditor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7506EBD420EB329D002ABEF6 /* Windower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windower.swift; sourceTree = "<group>"; };
+		750FB6E520DC420E00526B50 /* Auditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Auditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		750FB6E820DC420E00526B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		750FB6EA20DC420E00526B50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		750FB6EC20DC420E00526B50 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		750FB6EE20DC420E00526B50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		750FB6F120DC420E00526B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		750FB6F320DC420E00526B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		750FB6F420DC420E00526B50 /* Auditor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Auditor.entitlements; sourceTree = "<group>"; };
+		750FB6F920DC420E00526B50 /* AuditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		750FB6FD20DC420E00526B50 /* AuditorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditorTests.swift; sourceTree = "<group>"; };
+		750FB6FF20DC420E00526B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		750FB70420DC420E00526B50 /* AuditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		750FB70820DC420E00526B50 /* AuditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditorUITests.swift; sourceTree = "<group>"; };
+		750FB70A20DC420E00526B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		750FB71620DC42D800526B50 /* AudioSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSegmentView.swift; sourceTree = "<group>"; };
+		750FB71A20DC42FB00526B50 /* shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = shaders.metal; sourceTree = "<group>"; };
+		750FB71B20DC42FB00526B50 /* AudioSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSegment.swift; sourceTree = "<group>"; };
+		750FB72220DC552800526B50 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		750FB72D20DCCFB400526B50 /* TracksScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksScrollView.swift; sourceTree = "<group>"; };
+		750FB72F20DDC6AB00526B50 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		750FB73320DF106200526B50 /* LiveAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAudioView.swift; sourceTree = "<group>"; };
+		750FB73720DF3C3000526B50 /* Auditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Auditor-Bridging-Header.h"; sourceTree = "<group>"; };
+		750FB73820DF3C3000526B50 /* AuditorTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AuditorTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		750FB73920DF3C3000526B50 /* AuditorUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AuditorUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		750FB74520DF3FBD00526B50 /* AudioRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRoute.swift; sourceTree = "<group>"; };
+		750FB74C20DF6DD400526B50 /* claire-mid.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "claire-mid.aif"; sourceTree = "<group>"; };
+		7556EE9320E1FA8A002529DD /* FFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFT.swift; sourceTree = "<group>"; };
+		75CEB97820E2BB3400C58896 /* SpectrogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrogramView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		750FB6E220DC420E00526B50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750FB6F620DC420E00526B50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750FB70120DC420E00526B50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		750FB6DC20DC420E00526B50 = {
+			isa = PBXGroup;
+			children = (
+				750FB6E720DC420E00526B50 /* Auditor */,
+				750FB6FC20DC420E00526B50 /* AuditorTests */,
+				750FB70720DC420E00526B50 /* AuditorUITests */,
+				750FB6E620DC420E00526B50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		750FB6E620DC420E00526B50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				750FB6E520DC420E00526B50 /* Auditor.app */,
+				750FB6F920DC420E00526B50 /* AuditorTests.xctest */,
+				750FB70420DC420E00526B50 /* AuditorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		750FB6E720DC420E00526B50 /* Auditor */ = {
+			isa = PBXGroup;
+			children = (
+				750FB6E820DC420E00526B50 /* AppDelegate.swift */,
+				750FB6EA20DC420E00526B50 /* ViewController.swift */,
+				750FB72220DC552800526B50 /* AppView.swift */,
+				750FB73F20DF3C4F00526B50 /* Audio */,
+				750FB72C20DCA31700526B50 /* Model */,
+				750FB72B20DCA2FD00526B50 /* View */,
+				750FB6F320DC420E00526B50 /* Info.plist */,
+				750FB6F420DC420E00526B50 /* Auditor.entitlements */,
+				750FB6EE20DC420E00526B50 /* Assets.xcassets */,
+				750FB73720DF3C3000526B50 /* Auditor-Bridging-Header.h */,
+				750FB73820DF3C3000526B50 /* AuditorTests-Bridging-Header.h */,
+				750FB73920DF3C3000526B50 /* AuditorUITests-Bridging-Header.h */,
+			);
+			path = Auditor;
+			sourceTree = "<group>";
+		};
+		750FB6FC20DC420E00526B50 /* AuditorTests */ = {
+			isa = PBXGroup;
+			children = (
+				750FB6FD20DC420E00526B50 /* AuditorTests.swift */,
+				750FB6FF20DC420E00526B50 /* Info.plist */,
+			);
+			path = AuditorTests;
+			sourceTree = "<group>";
+		};
+		750FB70720DC420E00526B50 /* AuditorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				750FB70820DC420E00526B50 /* AuditorUITests.swift */,
+				750FB70A20DC420E00526B50 /* Info.plist */,
+			);
+			path = AuditorUITests;
+			sourceTree = "<group>";
+		};
+		750FB72B20DCA2FD00526B50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750FB6F020DC420E00526B50 /* Main.storyboard */,
+				750FB71620DC42D800526B50 /* AudioSegmentView.swift */,
+				750FB71A20DC42FB00526B50 /* shaders.metal */,
+				750FB72D20DCCFB400526B50 /* TracksScrollView.swift */,
+				750FB73320DF106200526B50 /* LiveAudioView.swift */,
+				75CEB97820E2BB3400C58896 /* SpectrogramView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		750FB72C20DCA31700526B50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				750FB6EC20DC420E00526B50 /* Document.swift */,
+				750FB71B20DC42FB00526B50 /* AudioSegment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		750FB73F20DF3C4F00526B50 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				750FB72F20DDC6AB00526B50 /* AudioEngine.swift */,
+				750FB74520DF3FBD00526B50 /* AudioRoute.swift */,
+				7556EE9320E1FA8A002529DD /* FFT.swift */,
+				7506EBD420EB329D002ABEF6 /* Windower.swift */,
+				750FB74C20DF6DD400526B50 /* claire-mid.aif */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		750FB6E420DC420E00526B50 /* Auditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 750FB70D20DC420E00526B50 /* Build configuration list for PBXNativeTarget "Auditor" */;
+			buildPhases = (
+				750FB6E120DC420E00526B50 /* Sources */,
+				750FB6E220DC420E00526B50 /* Frameworks */,
+				750FB6E320DC420E00526B50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Auditor;
+			productName = Auditor;
+			productReference = 750FB6E520DC420E00526B50 /* Auditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		750FB6F820DC420E00526B50 /* AuditorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 750FB71020DC420E00526B50 /* Build configuration list for PBXNativeTarget "AuditorTests" */;
+			buildPhases = (
+				750FB6F520DC420E00526B50 /* Sources */,
+				750FB6F620DC420E00526B50 /* Frameworks */,
+				750FB6F720DC420E00526B50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				750FB6FB20DC420E00526B50 /* PBXTargetDependency */,
+			);
+			name = AuditorTests;
+			productName = AuditorTests;
+			productReference = 750FB6F920DC420E00526B50 /* AuditorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		750FB70320DC420E00526B50 /* AuditorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 750FB71320DC420E00526B50 /* Build configuration list for PBXNativeTarget "AuditorUITests" */;
+			buildPhases = (
+				750FB70020DC420E00526B50 /* Sources */,
+				750FB70120DC420E00526B50 /* Frameworks */,
+				750FB70220DC420E00526B50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				750FB70620DC420E00526B50 /* PBXTargetDependency */,
+			);
+			name = AuditorUITests;
+			productName = AuditorUITests;
+			productReference = 750FB70420DC420E00526B50 /* AuditorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		750FB6DD20DC420E00526B50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Lance Jabr";
+				TargetAttributes = {
+					750FB6E420DC420E00526B50 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					750FB6F820DC420E00526B50 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+						TestTargetID = 750FB6E420DC420E00526B50;
+					};
+					750FB70320DC420E00526B50 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+						TestTargetID = 750FB6E420DC420E00526B50;
+					};
+				};
+			};
+			buildConfigurationList = 750FB6E020DC420E00526B50 /* Build configuration list for PBXProject "Auditor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 750FB6DC20DC420E00526B50;
+			productRefGroup = 750FB6E620DC420E00526B50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				750FB6E420DC420E00526B50 /* Auditor */,
+				750FB6F820DC420E00526B50 /* AuditorTests */,
+				750FB70320DC420E00526B50 /* AuditorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		750FB6E320DC420E00526B50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				750FB6EF20DC420E00526B50 /* Assets.xcassets in Resources */,
+				750FB6F220DC420E00526B50 /* Main.storyboard in Resources */,
+				750FB74D20DF6DD400526B50 /* claire-mid.aif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750FB6F720DC420E00526B50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750FB70220DC420E00526B50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		750FB6E120DC420E00526B50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				750FB73020DDC6AB00526B50 /* AudioEngine.swift in Sources */,
+				750FB71F20DC42FB00526B50 /* AudioSegment.swift in Sources */,
+				750FB74920DF69FC00526B50 /* AudioRoute.swift in Sources */,
+				750FB6EB20DC420E00526B50 /* ViewController.swift in Sources */,
+				750FB73420DF106200526B50 /* LiveAudioView.swift in Sources */,
+				750FB71C20DC42FB00526B50 /* shaders.metal in Sources */,
+				750FB72E20DCCFB400526B50 /* TracksScrollView.swift in Sources */,
+				750FB72320DC552800526B50 /* AppView.swift in Sources */,
+				75CEB97920E2BB3400C58896 /* SpectrogramView.swift in Sources */,
+				7506EBD520EB329D002ABEF6 /* Windower.swift in Sources */,
+				7556EE9420E1FA8A002529DD /* FFT.swift in Sources */,
+				750FB71720DC42D800526B50 /* AudioSegmentView.swift in Sources */,
+				750FB6E920DC420E00526B50 /* AppDelegate.swift in Sources */,
+				750FB6ED20DC420E00526B50 /* Document.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750FB6F520DC420E00526B50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				750FB6FE20DC420E00526B50 /* AuditorTests.swift in Sources */,
+				750FB71820DC42D800526B50 /* AudioSegmentView.swift in Sources */,
+				75CEB97A20E2BB3400C58896 /* SpectrogramView.swift in Sources */,
+				750FB74A20DF69FD00526B50 /* AudioRoute.swift in Sources */,
+				750FB72420DC552800526B50 /* AppView.swift in Sources */,
+				7556EE9520E1FA8A002529DD /* FFT.swift in Sources */,
+				7506EBD620EBFDC7002ABEF6 /* Windower.swift in Sources */,
+				750FB73520DF106200526B50 /* LiveAudioView.swift in Sources */,
+				75D3669620F401BE005ADC91 /* AppDelegate.swift in Sources */,
+				750FB71D20DC42FB00526B50 /* shaders.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		750FB70020DC420E00526B50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				750FB70920DC420E00526B50 /* AuditorUITests.swift in Sources */,
+				750FB71920DC42D800526B50 /* AudioSegmentView.swift in Sources */,
+				75CEB97B20E2BB3400C58896 /* SpectrogramView.swift in Sources */,
+				750FB74B20DF69FE00526B50 /* AudioRoute.swift in Sources */,
+				750FB72520DC552800526B50 /* AppView.swift in Sources */,
+				7556EE9620E1FA8A002529DD /* FFT.swift in Sources */,
+				7506EBD720EBFDC7002ABEF6 /* Windower.swift in Sources */,
+				750FB73620DF106200526B50 /* LiveAudioView.swift in Sources */,
+				75D3669720F401BF005ADC91 /* AppDelegate.swift in Sources */,
+				750FB71E20DC42FB00526B50 /* shaders.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		750FB6FB20DC420E00526B50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 750FB6E420DC420E00526B50 /* Auditor */;
+			targetProxy = 750FB6FA20DC420E00526B50 /* PBXContainerItemProxy */;
+		};
+		750FB70620DC420E00526B50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 750FB6E420DC420E00526B50 /* Auditor */;
+			targetProxy = 750FB70520DC420E00526B50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		750FB6F020DC420E00526B50 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				750FB6F120DC420E00526B50 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		750FB70B20DC420E00526B50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		750FB70C20DC420E00526B50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		750FB70E20DC420E00526B50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Auditor/Auditor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68VR5CE66Z;
+				INFOPLIST_FILE = Auditor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancejabr.Auditor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Auditor/Auditor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		750FB70F20DC420E00526B50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Auditor/Auditor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 68VR5CE66Z;
+				INFOPLIST_FILE = Auditor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancejabr.Auditor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Auditor/Auditor-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		750FB71120DC420E00526B50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CHN786DUCG;
+				INFOPLIST_FILE = AuditorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancejabr.AuditorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Auditor/AuditorTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Auditor.app/Contents/MacOS/Auditor";
+			};
+			name = Debug;
+		};
+		750FB71220DC420E00526B50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CHN786DUCG;
+				INFOPLIST_FILE = AuditorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancejabr.AuditorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Auditor/AuditorTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Auditor.app/Contents/MacOS/Auditor";
+			};
+			name = Release;
+		};
+		750FB71420DC420E00526B50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CHN786DUCG;
+				INFOPLIST_FILE = AuditorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancejabr.AuditorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Auditor/AuditorUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Auditor;
+			};
+			name = Debug;
+		};
+		750FB71520DC420E00526B50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CHN786DUCG;
+				INFOPLIST_FILE = AuditorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancejabr.AuditorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Auditor/AuditorUITests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Auditor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		750FB6E020DC420E00526B50 /* Build configuration list for PBXProject "Auditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750FB70B20DC420E00526B50 /* Debug */,
+				750FB70C20DC420E00526B50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		750FB70D20DC420E00526B50 /* Build configuration list for PBXNativeTarget "Auditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750FB70E20DC420E00526B50 /* Debug */,
+				750FB70F20DC420E00526B50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		750FB71020DC420E00526B50 /* Build configuration list for PBXNativeTarget "AuditorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750FB71120DC420E00526B50 /* Debug */,
+				750FB71220DC420E00526B50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		750FB71320DC420E00526B50 /* Build configuration list for PBXNativeTarget "AuditorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750FB71420DC420E00526B50 /* Debug */,
+				750FB71520DC420E00526B50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 750FB6DD20DC420E00526B50 /* Project object */;
+}
