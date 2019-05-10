@@ -129,7 +129,7 @@ class NoiseSDRDevice: SDRDevice {
     let π = M_PI
     let sampleCount = 32000
     
-    private func testSpectrumData() -> [Float] {
+    private func testSpectrumData() -> [Double] {
         //        let array = (0..<1000).map { _ in Int.random(in: 0 ..< 1000) }
         //
         //        let mapped = array.map { (val) -> Double in
