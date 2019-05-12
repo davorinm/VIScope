@@ -9,36 +9,24 @@ import Foundation
 import Accelerate
 
 class FFTBlock {
+    private let fftSize: Int = 131072
+    private let fft: DSP.FFT
+    private let fftWindow: DSP.FFTWindow
     
-    var queue: OperationQueue?
-    
-    var fftSetup:       FFTSetup
-    var fftSize:        Int = 131072 //2^17
-//    var fftSizeArray:   [Float] = [32768, 65536, 131072, 262144]
-    
-    var samplesBufferSize = 500000
-
-    var realSamples:    [Float]
-    var imagSamples:    [Float]
-    var hannWindow:     [Float]
+    private let samplesBufferSize: Int = 524228
+    private let realSamples: FifoQueue<Float>
+    private let imagSamples: FifoQueue<Float>
     
     var fftData: (([Float]) -> Void)?
     
     init() {
-        //    class func fastFourier(_ fftSetup: FFTSetup, samples: NSDictionary, fftSize: Int) -> [Float] {
+        self.realSamples = FifoQueue<Float>(size: samplesBufferSize)
+        self.imagSamples = FifoQueue<Float>(size: samplesBufferSize)
         
         let fftLength:  vDSP_Length = vDSP_Length(log2(Float(fftSize)))
-        let fftRadix:   FFTRadix    = FFTRadix(kFFTRadix2)
         
-        self.fftSetup = vDSP_create_fftsetup(fftLength, fftRadix)!
-        
-        self.hannWindow = [Float](repeating: 0.0, count: fftSize)
-        vDSP_hann_window(&hannWindow, vDSP_Length(fftSize), 0)
-        
-        self.realSamples = []
-        self.realSamples.reserveCapacity(samplesBufferSize)
-        self.imagSamples = []
-        self.imagSamples.reserveCapacity(samplesBufferSize)
+        self.fftWindow = DSP.FFTWindow(length: fftSize, function: .hamming)
+        self.fft = DSP.FFT(length: fftLength, direction: .forward)!
     }
     
     //--------------------------------------------------------------------------
@@ -47,10 +35,10 @@ class FFTBlock {
     //
     //--------------------------------------------------------------------------
 
-    func process(_ samples: SDRCplxSamples) -> SDRCplxSamples {
-        // Add Samples
-        self.realSamples.append(contentsOf: samples.real)
-        self.imagSamples.append(contentsOf: samples.imag)
+    func process(_ samples: DSPSamples) -> DSPSamples {
+        // Add samples to local buffer
+        self.realSamples.push(samples.real)
+        self.imagSamples.push(samples.imag)
         
         // TODO: Implement buffer, fill buffer to fft size, then take those samples out, what is left takes another pass
         
@@ -60,11 +48,10 @@ class FFTBlock {
             return samples
         }
         
-        var real = Array(self.realSamples[0..<self.fftSize])
-        var imag = Array(self.imagSamples[0..<self.fftSize])
+        var real = self.realSamples.pop(self.fftSize)
+        var imag = self.imagSamples.pop(self.fftSize)
         
-        self.realSamples.removeFirst(self.fftSize)
-        self.imagSamples.removeFirst(self.fftSize)
+        self.fftWindow.process(data: <#T##UnsafeMutablePointer<Float>#>)
         
         // create DSPSPlitComplex for FFT
         var inSamples:  DSPSplitComplex = DSPSplitComplex(realp: &real, imagp: &imag)

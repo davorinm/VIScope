@@ -9,6 +9,8 @@
 import Foundation
 import Accelerate
 
+typealias DSPSamples = (real: [Float], imag: [Float])
+
 class DSP {
     class func oldNormalize(_ rawSamples: [UInt8]) -> [Float] {
         // get samples count

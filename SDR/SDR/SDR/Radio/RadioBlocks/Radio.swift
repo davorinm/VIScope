@@ -22,6 +22,7 @@ class Radio {
         self.spectrumData = spectrumData
         
         let normalize = NormalizeBlock(bits: 8)
+        let split = SplitBlock()
         let fft = FFTBlock()
         fft.fftSize = 16000
         fft.fftData = { [unowned self] (samples) in

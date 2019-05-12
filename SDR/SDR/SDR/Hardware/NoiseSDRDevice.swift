@@ -32,7 +32,6 @@ class NoiseSDRDevice: SDRDevice {
         
         
         
-        
     }
     
     func sampleRateList() -> [Int] {

@@ -1,23 +1,27 @@
 //
-//  NormalizeBlock.swift
+//  SplitBlock.swift
 //  SDR
 //
-//  Created by Davorin Mađarić on 24/04/2019.
+//  Created by Davorin Madaric on 12/05/2019.
 //  Copyright © 2019 Davorin Madaric. All rights reserved.
 //
 
 import Foundation
-import Accelerate
 
-class NormalizeBlock {
+class SplitBlock {
     
-    init(bits: Int) {
+    init() {
         // TODO: Implement
     }
     
     func process(_ samples: [UInt8]) -> [Float] {
-        let normalizedSamples = DSP.oldNormalize(samples)
+        let deinter = DSP.deinterlaceSamples(normalizedSamples)
+        
+        
+        
+        
         
         
     }
+    
 }
