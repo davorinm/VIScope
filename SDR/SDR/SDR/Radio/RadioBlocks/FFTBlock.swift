@@ -20,6 +20,8 @@ class FFTBlock {
     var fftData: (([Float]) -> Void)?
     
     init() {
+        
+        // TODO: [Float]
         self.realSamples = FifoQueue<Float>(size: samplesBufferSize)
         self.imagSamples = FifoQueue<Float>(size: samplesBufferSize)
         
@@ -36,6 +38,10 @@ class FFTBlock {
     //--------------------------------------------------------------------------
 
     func process(_ samples: DSPSamples) -> DSPSamples {
+        // TODO: COPY samples, check lenght, perform fft in other thread
+        
+        
+        
         // Add samples to local buffer
         self.realSamples.push(samples.real)
         self.imagSamples.push(samples.imag)
