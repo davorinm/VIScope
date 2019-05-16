@@ -36,9 +36,7 @@ class Radio {
     private func fftData(data: [Float]) {
         let max = data.max()!
         let min = data.min()!
-        
         let range = max - min
-        
         
         let mappedSamples: [Float] = data.enumerated().compactMap {
             // TODO: Make real interpolation of samples, depends of chart widht
@@ -50,13 +48,6 @@ class Radio {
             let scaledValue = ($0.element - min) / range;
             return scaledValue
         }
-        
-        
-        // Return on main thread
-        DispatchQueue.main.async {
-            self.spectrumData.raise(mappedSamples)
-        }
-
         
         // Return on main thread
         DispatchQueue.main.async {
