@@ -72,12 +72,8 @@ extension DSP {
             var fftCoefRealp = [Float](repeating: 0.0, count: fftN)
             var fftCoefImagp = [Float](repeating: 0.0, count: fftN)
             
-            // setup DFT and execute.
-            let setup = vDSP_DFT_zop_CreateSetup(nil, vDSP_Length(fftN), vDSP_DFT_Direction.FORWARD)
-            vDSP_DFT_Execute(setup!, &inputRealp, &inputImagp, &fftCoefRealp, &fftCoefImagp)
-            
-            // destroy setup.
-            vDSP_DFT_DestroySetup(setup)
+            // execute.
+            vDSP_DFT_Execute(setup, &inputRealp, &inputImagp, &fftCoefRealp, &fftCoefImagp)
             
             return (fftCoefRealp, fftCoefImagp)
         }
@@ -105,17 +101,8 @@ extension DSP {
             var outputRealp = [Float](repeating: 0.0, count: fftN)
             var outputImagp = [Float](repeating: 0.0, count: fftN)
             
-            // setup DFT and execute.
-            let setup = vDSP_DFT_zop_CreateSetup(nil, vDSP_Length(fftN), vDSP_DFT_Direction.INVERSE)
-            
-            defer {
-                
-                // destroy setup.
-                vDSP_DFT_DestroySetup(setup)
-                
-            }
-            
-            vDSP_DFT_Execute(setup!, &inputCoefRealp, &inputCoefImagp, &outputRealp, &outputImagp)
+            // execute.
+            vDSP_DFT_Execute(setup, &inputCoefRealp, &inputCoefImagp, &outputRealp, &outputImagp)
             
             // normalization of ifft
             var scale = Float(fftN)
@@ -173,13 +160,13 @@ extension DSP {
             let log2N = vDSP_Length(log2f(Float(realp.count)))
             let fftN = Int(1 << log2N)
             
-            // buffers.
+            // buffers
             var inputRealp = [Double](realp[0..<fftN])
             var inputImagp = [Double](imagp[0..<fftN])
             var fftCoefRealp = [Double](repeating: 0.0, count: fftN)
             var fftCoefImagp = [Double](repeating: 0.0, count: fftN)
             
-            // setup DFT and execute.
+            // execute
             vDSP_DFT_ExecuteD(setup, &inputRealp, &inputImagp, &fftCoefRealp, &fftCoefImagp)
             
             return (fftCoefRealp, fftCoefImagp)
@@ -202,15 +189,14 @@ extension DSP {
             let log2N = vDSP_Length(log2f(Float(realp.count)))
             let fftN = Int(1 << log2N)
             
-            // buffers.
+            // buffers
             var inputCoefRealp = [Double](realp[0..<fftN])
             var inputCoefImagp = [Double](imagp[0..<fftN])
             var outputRealp = [Double](repeating: 0.0, count: fftN)
             var outputImagp = [Double](repeating: 0.0, count: fftN)
             
-            // setup DFT and execute.
-            let setup = vDSP_DFT_zop_CreateSetupD(nil, vDSP_Length(fftN), vDSP_DFT_Direction.INVERSE)
-            vDSP_DFT_ExecuteD(setup!, &inputCoefRealp, &inputCoefImagp, &outputRealp, &outputImagp)
+            // execute.
+            vDSP_DFT_ExecuteD(setup, &inputCoefRealp, &inputCoefImagp, &outputRealp, &outputImagp)
             
             // normalization of ifft
             var scale = Double(fftN)
@@ -219,9 +205,6 @@ extension DSP {
             
             vDSP_vsdivD(&outputRealp, 1, &scale, &normalizedOutputRealp, 1, vDSP_Length(fftN))
             vDSP_vsdivD(&outputImagp, 1, &scale, &normalizedOutputImagp, 1, vDSP_Length(fftN))
-            
-            // destroy setup.
-            vDSP_DFT_DestroySetupD(setup)
             
             return (normalizedOutputRealp, normalizedOutputImagp)
         }

@@ -69,38 +69,6 @@ extension DSP {
             vDSP_DFT_DestroySetup(self.fftSetup)
         }
         
-        /// Process a block of real data.
-        /// - parameter data: A pointer to time-domain Float data
-        func process(data: UnsafePointer<Float>) {
-            
-            let n_2 = UInt((self.nFrames + self.zeroPad) / 2)
-            
-            // copy into input
-            vDSP_mmov(data, &self.input, self.nFrames, 1, self.nFrames, self.nFrames)
-            
-            // window the input
-            self.windower?.process(data: &self.input)
-            
-            // zero out the complex output struct
-            var zero: Float = 0
-            vDSP_vsmul(self.fftOutput.realp, 1, &zero, self.fftOutput.realp, 1, n_2)
-            vDSP_vsmul(self.fftOutput.imagp, 1, &zero, self.fftOutput.imagp, 1, n_2)
-            
-            // split the real data into a complex struct
-            UnsafePointer<Float>(self.input).withMemoryRebound(to: DSPComplex.self, capacity: Int(self.nFrames / 2)) { data in
-                vDSP_ctoz(data, 2, &self.fftOutput, 1, n_2)
-            }
-            
-            // execute DFT
-            vDSP_DFT_Execute(self.fftSetup, self.fftOutput.realp, self.fftOutput.imagp, self.fftOutput.realp, self.fftOutput.imagp)
-            
-            // scale the output by 1/N
-            var scale = 1/Float(self.nFrames)
-            var normFactor = DSPSplitComplex(realp: &scale, imagp: &zero)
-            vDSP_zvzsml(&self.fftOutput, 1, &normFactor, &self.fftOutput, 1, n_2)
-            
-            // calculate the squared magnitude of each output datum
-            vDSP_zvmags(&self.fftOutput, 1, &self.powerSpectrum, 1, n_2)
-        }
+        
     }
 }

@@ -9,110 +9,120 @@ import Foundation
 import Accelerate
 
 class FFTBlock {
-    private let fftSize: Int = 131072
-    private let fft: DSP.FFT
+    private let bufferSize: Int = 524288
+    private var bufferSamples: DSPSamples
+    
+    private let fftSize: Int = 64000
+    private let fftLength: vDSP_Length
+    private var fftSamples: DSPSamples
+    
     private let fftWindow: DSP.FFTWindow
     
-    private let samplesBufferSize: Int = 524228
-    private let realSamples: FifoQueue<Float>
-    private let imagSamples: FifoQueue<Float>
+    private let fftSetup: vDSP_DFT_Setup
     
     var fftData: (([Float]) -> Void)?
     
+    private let processQueue: DispatchQueue = DispatchQueue(label: "FFTBlock")
+    
     init() {
+        // Calculate fftSize
+        let log2N = vDSP_Length(log2f(Float(fftSize)))
+        fftLength = vDSP_Length(Int(1 << log2N))
         
-        // TODO: [Float]
-        self.realSamples = FifoQueue<Float>(size: samplesBufferSize)
-        self.imagSamples = FifoQueue<Float>(size: samplesBufferSize)
+        // Create buffer
+        bufferSamples = DSPSamples(count: bufferSize)
         
-        let fftLength:  vDSP_Length = vDSP_Length(log2(Float(fftSize)))
+        // Create fft buffer
+        fftSamples = DSPSamples(count: Int(fftLength))
         
-        self.fftWindow = DSP.FFTWindow(length: fftSize, function: .hamming)
-        self.fft = DSP.FFT(length: fftLength, direction: .forward)!
+        // Create window
+        fftWindow = DSP.FFTWindow(length: Int(fftLength), function: .hamming)
+        
+        // Create setup
+        fftSetup = vDSP_DFT_zop_CreateSetup(nil, fftLength, vDSP_DFT_Direction.FORWARD)!
     }
     
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
+    deinit {
+        // Destroy setup
+        vDSP_DFT_DestroySetup(fftSetup)
+    }
 
     func process(_ samples: DSPSamples) -> DSPSamples {
-        // TODO: COPY samples, check lenght, perform fft in other thread
+        // Copy incomming samples to buffer
+        bufferSamples.append(samples)
         
-        
-        
-        // Add samples to local buffer
-        self.realSamples.push(samples.real)
-        self.imagSamples.push(samples.imag)
-        
-        // TODO: Implement buffer, fill buffer to fft size, then take those samples out, what is left takes another pass
-        
-        // copy samples
-        
-        if self.realSamples.count < self.fftSize || self.imagSamples.count < self.fftSize {
-            return samples
+        // FFT
+        processQueue.async {
+            while self.bufferSamples.count >= self.fftLength {
+                self.calculateFFT()
+            }
         }
-        
-        var real = self.realSamples.pop(self.fftSize)
-        var imag = self.imagSamples.pop(self.fftSize)
-        
-        self.fftWindow.process(data: <#T##UnsafeMutablePointer<Float>#>)
-        
-        // create DSPSPlitComplex for FFT
-        var inSamples:  DSPSplitComplex = DSPSplitComplex(realp: &real, imagp: &imag)
-        
-        // multiply samples by hann window
-        vDSP_vmul(inSamples.realp, vDSP_Stride(1), &self.hannWindow, vDSP_Stride(1), inSamples.realp, vDSP_Stride(1), vDSP_Length(self.fftSize))
-        vDSP_vmul(inSamples.imagp, vDSP_Stride(1), &self.hannWindow, vDSP_Stride(1), inSamples.imagp, vDSP_Stride(1), vDSP_Length(self.fftSize))
-        
-        // perform the fft
-        // TODO: use vDSP_DFT_Execute as described in docs
-        vDSP_fft_zip(self.fftSetup, &inSamples, vDSP_Stride(1), vDSP_Length(log2(Float(self.fftSize))), FFTDirection(kFFTDirection_Forward))
-        
-        // normalize fft results ?????
-        var normalizeReal: Float = 1.0/Float32(self.fftSize)
-        var normalizeImag: Float = 1.0/Float32(self.fftSize)
-        var normalizeComplex = DSPSplitComplex(realp: &normalizeReal, imagp: &normalizeImag)
-        vDSP_zvzsml(&inSamples, vDSP_Stride(1), &normalizeComplex, &inSamples, vDSP_Stride(1), vDSP_Length(self.fftSize))
-        
-        // get magnitudes
-        var magnitudes = [Float](repeating: 0.0, count: self.fftSize)
-        vDSP_zvmags(&inSamples, 1, &magnitudes, 1, vDSP_Length(self.fftSize))
-        
-        
-        // https://developer.apple.com/library/content/samplecode/aurioTouch/Listings/Classes_FFTHelper_cpp.html
-        // In order to avoid taking log10 of zero, an adjusting factor is added in to make the minimum value equal -128dB
-        var minDB: Float32 = 1.5849e-13
-        //        var minDB: Float32 = 0.0000000001  // min value equeal to -100dBFS
-        let inMagnitudes = magnitudes
-        vDSP_vsadd(inMagnitudes, 1, &minDB, &magnitudes, 1, vDSP_Length(self.fftSize))
-        
-        // convert to dbFS
-        var dbScale: Float32 = 1
-        var dbs        = [Float](repeating: 0.0, count: self.fftSize)
-        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, vDSP_Length(self.fftSize), 0)
-        
-        // re-arrange values to match -n/2 <-> n/2
-        let halfPoint = dbs.count / 2
-        for i in 0..<halfPoint {
-            let temp             = dbs[i]
-            dbs[i]               = dbs[i + halfPoint]
-            dbs[i + halfPoint]   = temp
-        }
-        
-        // post fft message with samples
-        
-        fftData?(dbs)
-//        fftData?(dbs)
-        
-//        if let queue = self.notifyQueue {
-//            queue.async {
-                //                    let userInfo: [String : Any] = [fftSamplesUpdatedKey : dbs]
-                //                    NotificationCenter.default.post(name: .fftSamplesUpdatedNotification, object: self, userInfo: userInfo)
-//            }
-//        }
         
         return samples
     }
+    
+    private func calculateFFT() {
+        // Check length
+        guard bufferSamples.count >= fftLength else {
+            return
+        }
+        
+        // Copy to fft buffer
+        bufferSamples.move(to: fftSamples, count: Int(fftLength))
+        
+        // Windowing
+        fftWindow.process(data: &fftSamples.real)
+        fftWindow.process(data: &fftSamples.imag)
+        
+        // execute DFT
+        vDSP_DFT_Execute(self.fftSetup, fftSamples.real, fftSamples.imag, &fftSamples.real, &fftSamples.imag)
+        
+        // create DSPSPlitComplex for FFT
+        var inMagnitudes: DSPSplitComplex = DSPSplitComplex(realp: &fftSamples.real, imagp: &fftSamples.imag)
+        
+        // get magnitudes
+        var magnitudes = [Float](repeating: 0, count: Int(fftLength))
+        vDSP_zvmags(&inMagnitudes, 1, &magnitudes, 1, fftLength)
+        
+        // convert to dbFS
+        var dbScale: Float32 = 1
+        var dbs = [Float](repeating: 0.0, count: Int(fftLength))
+        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 0)
+        
+        
+//        // normalization of ifft
+//        var scale = Float(fftN)
+//        var normalizedOutputRealp = [Float](repeating: 0.0, count: fftN)
+//        var normalizedOutputImagp = [Float](repeating: 0.0, count: fftN)
+//
+//        vDSP_vsdiv(&outputRealp, 1, &scale, &normalizedOutputRealp, 1, vDSP_Length(fftN))
+//        vDSP_vsdiv(&outputImagp, 1, &scale, &normalizedOutputImagp, 1, vDSP_Length(fftN))
+//
+        // return data
+        fftData?(magnitudes)
+    }
+    
+//    private func fft(real: [Float], imag: [Float]) {
+//        let log2N = vDSP_Length(log2f(Float(real.count)))
+//        let fftN = Int(1 << log2N)
+//
+//        // buffers.
+//        var inputCoefRealp = [Float](real[0..<fftN])
+//        var inputCoefImagp = [Float](imag[0..<fftN])
+//        var outputRealp = [Float](repeating: 0.0, count: fftN)
+//        var outputImagp = [Float](repeating: 0.0, count: fftN)
+//
+//        // execute.
+//        vDSP_DFT_Execute(setup, &inputCoefRealp, &inputCoefImagp, &outputRealp, &outputImagp)
+//
+//        // normalization of ifft
+//        var scale = Float(fftN)
+//        var normalizedOutputRealp = [Float](repeating: 0.0, count: fftN)
+//        var normalizedOutputImagp = [Float](repeating: 0.0, count: fftN)
+//
+//        vDSP_vsdiv(&outputRealp, 1, &scale, &normalizedOutputRealp, 1, vDSP_Length(fftN))
+//        vDSP_vsdiv(&outputImagp, 1, &scale, &normalizedOutputImagp, 1, vDSP_Length(fftN))
+//
+//        return (normalizedOutputRealp, normalizedOutputImagp)
+//    }
 }

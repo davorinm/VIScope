@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Accelerate
 
 class SplitBlock {
     
@@ -14,14 +15,19 @@ class SplitBlock {
         // TODO: Implement
     }
     
-    func process(_ samples: [UInt8]) -> [Float] {
-        let deinter = DSP.deinterlaceSamples(normalizedSamples)
+    func process(_ samples: [Float]) -> DSPSamples {
+        let count = samples.count / 2
+        let output = DSPSamples(count: count)
+        output.count = count
         
+        var outputSC = DSPSplitComplex(realp: &output.real, imagp: &output.imag)
         
+        // split the real data into a complex struct
+        let samplesData = UnsafePointer<Float>(samples)
+        samplesData.withMemoryRebound(to: DSPComplex.self, capacity: count) { dspComplex in
+            vDSP_ctoz(dspComplex, 2, &outputSC, 1, UInt(count))
+        }
         
-        
-        
-        
+        return output
     }
-    
 }

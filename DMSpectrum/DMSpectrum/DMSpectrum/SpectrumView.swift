@@ -60,15 +60,18 @@ public final class SpectrumView: NSView {
     // MARK: - Data
     
     public func setData(_ samples: [Float]) {
-        let path = CGMutablePath()
         let xScale = shapeLayer.frame.width / CGFloat(samples.count)
-        let points: [CGPoint] = samples.enumerated().compactMap {
-            return CGPoint(x: xScale * CGFloat($0.offset),
-                           y: shapeLayer.frame.height * CGFloat(1.0 - $0.element))
-           
+        
+        let path = CGMutablePath()
+        path.move(to: CGPoint(x: 0, y: 0))
+        
+        for sample in samples.enumerated() {
+            let point = CGPoint(x: xScale * CGFloat(sampleoffset),
+                                y: shapeLayer.frame.height * CGFloat(1.0 - sample.element))
+            
+            path.addLine(to: point)
         }
         
-        path.addLines(between: points)
         shapeLayer.path = path
     }
 }

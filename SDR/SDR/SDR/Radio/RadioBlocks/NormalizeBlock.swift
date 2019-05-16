@@ -18,6 +18,6 @@ class NormalizeBlock {
     func process(_ samples: [UInt8]) -> [Float] {
         let normalizedSamples = DSP.oldNormalize(samples)
         
-        
+        return normalizedSamples
     }
 }
