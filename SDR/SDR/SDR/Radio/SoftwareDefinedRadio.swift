@@ -34,13 +34,22 @@ class SoftwareDefinedRadio {
     /// Singelton of shared SoftwareDefinedRadio
     static let shared = SoftwareDefinedRadio()
     
-    let availableDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
+    // Publics
+    let availableDevices: ObservableProperty<[SDRDeviceName]> = ObservableProperty(value: [])
     let bindedDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
-    let spectrumData: ObservableEvent<[Float]> = ObservableEvent()
+    let spectrum: SDRSpectrum
     
     private let radio: Radio
     
     private init() {
+        spectrum = SDRSpectrum()
+        let spectrumData: ObservableEvent<[Float]> = ObservableEvent()
+
+        
+        
+        
+        
+        
         self.radio = Radio(spectrumData: spectrumData)
         self.updateDevices()
         

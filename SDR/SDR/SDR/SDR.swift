@@ -2,7 +2,7 @@ import Foundation
 
 public class SDR {
     /// Devices that are availabe to be binded
-    public class var availableDevices: ObservableProperty<[SDRDevice]> {
+    public class var availableDevices: ObservableProperty<[SDRDeviceName]> {
         return SoftwareDefinedRadio.shared.availableDevices
     }
     
@@ -17,7 +17,7 @@ public class SDR {
     }
     
     /// Spectrum data from SDR
-    public class var spectrumData: ObservableEvent<[Float]> {
-        return SoftwareDefinedRadio.shared.spectrumData
+    public class var spectrum: SDRSpectrum {
+        return SoftwareDefinedRadio.shared.spectrum
     }
 }

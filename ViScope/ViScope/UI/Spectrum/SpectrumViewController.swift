@@ -29,10 +29,13 @@ class SpectrumViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SDR.spectrumData.subscribe(self) { [unowned self] (spectrum) in            
-            self.spectrumChart.setData(spectrum)
-            self.waterfallChart.addData(spectrum)
-        }
+        print("SpectrumViewController viewDidLoad")
+        print("\(spectrumChart.bounds.width)")
+        
+//        SDR.spectrumData.subscribe(self) { [unowned self] (spectrum) in            
+//            self.spectrumChart.setData(spectrum)
+//            self.waterfallChart.addData(spectrum)
+//        }
     }
     
     override func viewWillAppear() {
@@ -49,6 +52,7 @@ class SpectrumViewController: NSViewController {
         super.viewDidLayout()
         
         print("SpectrumViewController viewDidLayout")
+        print("\(spectrumChart.bounds.width)")
         // TODO: If this works, report width for samples intepolation... or maybe should we be doing this in charts?!?
     }
 }
