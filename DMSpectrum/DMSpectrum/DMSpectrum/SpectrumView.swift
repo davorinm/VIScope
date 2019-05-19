@@ -66,7 +66,7 @@ public final class SpectrumView: NSView {
         path.move(to: CGPoint(x: 0, y: 0))
         
         for sample in samples.enumerated() {
-            let point = CGPoint(x: xScale * CGFloat(sampleoffset),
+            let point = CGPoint(x: xScale * CGFloat(sample.offset),
                                 y: shapeLayer.frame.height * CGFloat(1.0 - sample.element))
             
             path.addLine(to: point)

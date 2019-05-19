@@ -12,7 +12,7 @@ class Radio {
     private let spectrumData: ObservableEvent<[Float]>
     private let processQueue: DispatchQueue = DispatchQueue(label: "Radio")
     
-    private var chain: (([UInt8]) -> DSPSamples)?
+    private var chain: (([UInt8]) -> DSP.Samples)?
     
     init(spectrumData: ObservableEvent<[Float]>) {
         self.spectrumData = spectrumData
@@ -39,11 +39,6 @@ class Radio {
         let range = max - min
         
         let mappedSamples: [Float] = data.enumerated().compactMap {
-            // TODO: Make real interpolation of samples, depends of chart widht
-            if $0.offset % 22 != 0 {
-                return nil
-            }
-            
             // Scaling 0...1
             let scaledValue = ($0.element - min) / range;
             return scaledValue

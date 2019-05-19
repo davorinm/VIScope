@@ -15,18 +15,18 @@ class SplitBlock {
         // TODO: Implement
     }
     
-    func process(_ samples: [Float]) -> DSPSamples {
+    func process(_ samples: [Float]) -> DSP.Samples {
         let count = samples.count / 2
-        let output = DSPSamples(count: count)
-        output.count = count
-        
-        var outputSC = DSPSplitComplex(realp: &output.real, imagp: &output.imag)
+        let output = DSP.Samples(count: count)
+        var splitOutput = output.splitComplex()
         
         // split the real data into a complex struct
         let samplesData = UnsafePointer<Float>(samples)
         samplesData.withMemoryRebound(to: DSPComplex.self, capacity: count) { dspComplex in
-            vDSP_ctoz(dspComplex, 2, &outputSC, 1, UInt(count))
+            vDSP_ctoz(dspComplex, 2, &splitOutput, 1, UInt(count))
         }
+        
+        output.count = count
         
         return output
     }

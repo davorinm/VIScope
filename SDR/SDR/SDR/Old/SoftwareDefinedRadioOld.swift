@@ -257,19 +257,6 @@ class SoftwareDefinedRadioOld {
     //
     //
     //--------------------------------------------------------------------------
-    
-    func dequeueSamples() {
-        if self.isPaused == false {
-            dequeueSamplesWithIndex()
-        }
-        
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
 
     func goLive() {
         
@@ -278,68 +265,6 @@ class SoftwareDefinedRadioOld {
         
     }
 
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-
-    func dequeueSamplesWithIndex(/*_ index: Int*/) {
-        
-        self.dequeueQueue.async {
-
-//            let rawSamples = self.sampleBuffer[self.sampleIndex]
-//            self.sampleIndex += 1
-            
-            let rawSamples = self.sampleBuffer.popLast()!
-            
-            // get samples count
-            let sampleLength = vDSP_Length(rawSamples.count)
-            let sampleCount  = rawSamples.count
-        
-            // create stride constants
-            let strideOfOne = vDSP_Stride(1)
-            let strideOfTwo = vDSP_Stride(2)
-        
-            // create scalers
-            var addScaler:  Float = -127.5
-            var divScaler:  Float = 127.5
-            var zeroScaler: Float = 0.0
-        
-            // create float array
-            var floatSamples: [Float] = [Float](repeating: 0.0, count: sampleCount)
-        
-            // create split arrays for complex separation
-            var realSamples: [Float] = [Float](repeating: 0.0, count: (sampleCount / 2) )
-            var imagSamples: [Float] = [Float](repeating: 0.0, count: (sampleCount / 2) )
-        
-            // convert the raw UInt8 values into Floats
-            vDSP_vfltu8(rawSamples, strideOfOne, &floatSamples, strideOfOne, sampleLength)
-        
-            // convert 0.0 ... 255.0 -> -127.5 ... 127.5
-            vDSP_vsadd(floatSamples, strideOfOne, &addScaler, &floatSamples, strideOfOne, sampleLength)
-        
-            // normalize values to -1.0 -> 1.0
-            vDSP_vsdiv(floatSamples, strideOfOne, &divScaler, &floatSamples, strideOfOne, sampleLength)
-        
-            // the following two vDSP_vsadd calls are used only as a means of
-            // optimizing a for loop used to separate the I and Q values into
-            // their own arrays
-            vDSP_vsadd(&(floatSamples) + 0, strideOfTwo, &zeroScaler, &realSamples, strideOfOne, (sampleLength / 2) )
-            vDSP_vsadd(&(floatSamples) + 1, strideOfTwo, &zeroScaler, &imagSamples, strideOfOne, (sampleLength / 2) )
-        
-            // create samples object
-            let samples = Samples(realArray: realSamples, imagArray: imagSamples)
-            
-            // send samples to start of DSP chain
-            guard let radio = self.radio else {
-                fatalError("No radio configured")
-            }
-    
-            radio.samplesIn(samples)
-        }
-     
-    }
     
     //--------------------------------------------------------------------------
     //
@@ -421,20 +346,5 @@ extension SoftwareDefinedRadioOld {
         
     }
     
-    // Delegate
-    
-    func sdrDevice(_ device: SDRDevice, rawSamples: [UInt8]) {
-        
-        radioQueue.async {
-            
-            // buffer samples
-            self.sampleBuffer.append(rawSamples)
-            
-            // dequeue buffer
-            self.dequeueSamples()
-            
-        }
-    }
-
     
 }

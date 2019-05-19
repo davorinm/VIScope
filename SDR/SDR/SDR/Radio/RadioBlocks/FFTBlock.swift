@@ -10,11 +10,11 @@ import Accelerate
 
 class FFTBlock {
     private let bufferSize: Int = 524288
-    private var bufferSamples: DSPSamples
+    private var bufferSamples: DSP.Samples
     
     private let fftSize: Int = 64000
     private let fftLength: vDSP_Length
-    private var fftSamples: DSPSamples
+    private var fftSamples: DSP.Samples
     
     private let fftWindow: DSP.FFTWindow
     
@@ -30,10 +30,10 @@ class FFTBlock {
         fftLength = vDSP_Length(Int(1 << log2N))
         
         // Create buffer
-        bufferSamples = DSPSamples(count: bufferSize)
+        bufferSamples = DSP.Samples(count: bufferSize)
         
         // Create fft buffer
-        fftSamples = DSPSamples(count: Int(fftLength))
+        fftSamples = DSP.Samples(count: Int(fftLength))
         
         // Create window
         fftWindow = DSP.FFTWindow(length: Int(fftLength), function: .hamming)
@@ -47,7 +47,7 @@ class FFTBlock {
         vDSP_DFT_DestroySetup(fftSetup)
     }
 
-    func process(_ samples: DSPSamples) -> DSPSamples {
+    func process(_ samples: DSP.Samples) -> DSP.Samples {
         // Copy incomming samples to buffer
         bufferSamples.append(samples)
         
@@ -78,28 +78,42 @@ class FFTBlock {
         vDSP_DFT_Execute(self.fftSetup, fftSamples.real, fftSamples.imag, &fftSamples.real, &fftSamples.imag)
         
         // create DSPSPlitComplex for FFT
-        var inMagnitudes: DSPSplitComplex = DSPSplitComplex(realp: &fftSamples.real, imagp: &fftSamples.imag)
+        var inMagnitudes: DSPSplitComplex = fftSamples.splitComplex()
         
         // get magnitudes
         var magnitudes = [Float](repeating: 0, count: Int(fftLength))
         vDSP_zvmags(&inMagnitudes, 1, &magnitudes, 1, fftLength)
         
         // convert to dbFS
-        var dbScale: Float32 = 1
-        var dbs = [Float](repeating: 0.0, count: Int(fftLength))
-        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 0)
+//        var dbScale: Float32 = 1
+//        var dbs = [Float](repeating: 0.0, count: Int(fftLength))
+//        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 0)
         
+        // Int
+        let interpolatedCount = 500
         
-//        // normalization of ifft
-//        var scale = Float(fftN)
-//        var normalizedOutputRealp = [Float](repeating: 0.0, count: fftN)
-//        var normalizedOutputImagp = [Float](repeating: 0.0, count: fftN)
-//
-//        vDSP_vsdiv(&outputRealp, 1, &scale, &normalizedOutputRealp, 1, vDSP_Length(fftN))
-//        vDSP_vsdiv(&outputImagp, 1, &scale, &normalizedOutputImagp, 1, vDSP_Length(fftN))
-//
+        // Interpolation control
+        let stride = vDSP_Stride(1)
+        var base: Float = 0
+        var end = Float(interpolatedCount)
+        var control = [Float](repeating: 0, count: magnitudes.count)
+        vDSP_vgen(&base,
+                  &end,
+                  &control, stride,
+                  vDSP_Length(magnitudes.count))
+        
+        // Interpolation
+        var interpolated = [Float](repeating: 0, count: interpolatedCount)
+        vDSP_vgenp(magnitudes, stride,
+                   control, stride,
+                   &interpolated, stride,
+                   vDSP_Length(interpolatedCount),
+                   vDSP_Length(magnitudes.count))
+        
+//        interpolated[0] = 2000
+        
         // return data
-        fftData?(magnitudes)
+        fftData?(interpolated)
     }
     
 //    private func fft(real: [Float], imag: [Float]) {

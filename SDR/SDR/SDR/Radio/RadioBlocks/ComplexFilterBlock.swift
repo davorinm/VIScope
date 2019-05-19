@@ -58,7 +58,7 @@ class ComplexFilterBlock {
         self.imagLastSamples   = [Float](repeating :0.0, count: self.kernel.count)
     }
     
-    func process(_ samples: SDRCplxSamples) -> SDRCplxSamples {
+    func process(_ samples: DSP.Samples) -> DSP.Samples {
         var samples = samples
 
         
@@ -124,7 +124,8 @@ class ComplexFilterBlock {
         )
         
         // pack output samples into samples object
-        let outSamples = SDRCplxSamples(real: realOutSamples, imag: imagOutSamples)
+//        let outSamples = DSP.Samples(real: realOutSamples, imag: imagOutSamples)
+        let outSamples = DSP.Samples(count: 0)
         
         return outSamples
     }

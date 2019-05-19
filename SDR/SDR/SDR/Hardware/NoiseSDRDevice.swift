@@ -20,7 +20,8 @@ class NoiseSDRDevice: SDRDevice {
     
     var sampleRate: Int = 0
     
-    
+    private var bufferSize:             Int          = 16384 * 2 // TODO: Check buffer size
+
     
     
     private var scheduledTimer: Timer!
@@ -71,9 +72,14 @@ class NoiseSDRDevice: SDRDevice {
     }
     
     func startSampleStream() {
-        scheduledTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] (timer) in
-            if let data = self?.generateSamples() {
-                self?.rawSamples.raise(data)
+        scheduledTimer = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true) { [weak self] (timer) in
+//            if let data = self?.generateSamples() {
+//                self?.rawSamples.raise(data)
+//            }
+
+            if let wSelf = self {
+                let data = wSelf.signal(noiseAmount: 1, numSamples: wSelf.bufferSize)
+                wSelf.rawSamples.raise(data)
             }
         }
     }
@@ -119,7 +125,7 @@ class NoiseSDRDevice: SDRDevice {
     }
     
     private func generateSamples() -> [UInt8] {
-        let array = (0..<32000).map { _ in UInt8.random(in: 10 ..< 230) }
+        let array = (0..<bufferSize).map { _ in UInt8.random(in: 10 ..< 230) }
         return array
     }
     
