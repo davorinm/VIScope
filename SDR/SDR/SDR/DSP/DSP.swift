@@ -9,37 +9,6 @@
 import Foundation
 import Accelerate
 
-class DSPSamples {
-    var real: [Float]
-    var imag: [Float]
-    var count: Int
-    
-    init(count: Int) {
-        self.real = [Float](repeating: 0, count: count)
-        self.imag = [Float](repeating: 0, count: count)
-        self.count = 0
-    }
-    
-    func append(_ samples: DSPSamples) {
-        vDSP_mmov(samples.real, &real + count, vDSP_Length(samples.count), 1, 0, 0)
-        vDSP_mmov(samples.imag, &imag + count, vDSP_Length(samples.count), 1, 0, 0)
-        count += samples.count
-    }
-    
-    func move(to: DSPSamples, count: Int) {
-        // Copy
-        vDSP_mmov(self.real, &to.real, vDSP_Length(count), 1, 0, 0)
-        vDSP_mmov(self.imag, &to.imag, vDSP_Length(count), 1, 0, 0)
-        
-        // Remove copyed samples from bufferSamples
-        let remainingLength = self.count - count
-        vDSP_mmov(&self.real + count, &self.real, vDSP_Length(remainingLength), 1, 0, 0)
-        vDSP_mmov(&self.imag + count, &self.imag, vDSP_Length(remainingLength), 1, 0, 0)
-        
-        self.count = remainingLength
-    }
-}
-
 class DSP {
     class func oldNormalize(_ rawSamples: [UInt8]) -> [Float] {
         // get samples count
