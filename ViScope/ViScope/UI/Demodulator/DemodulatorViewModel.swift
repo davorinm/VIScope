@@ -19,9 +19,7 @@ class DemodulatorViewModel {
     }
     
     init() {
-        SDR.bindedDevices.subscribeWithRaise(self) { [unowned self] (devices) in
-            self.items = devices
-        }
+        
     }
     
     func load() {

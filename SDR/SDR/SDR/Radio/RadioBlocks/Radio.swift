@@ -9,19 +9,23 @@
 import Foundation
 
 class Radio {
-    private let spectrumData: ObservableEvent<[Float]>
     private let processQueue: DispatchQueue = DispatchQueue(label: "Radio")
     
+    let spectrum = SDRSpectrum()
     private var chain: (([UInt8]) -> DSP.Samples)?
     
-    init(spectrumData: ObservableEvent<[Float]>) {
-        self.spectrumData = spectrumData
+    init() {
         
         let normalize = NormalizeBlock(bits: 8)
         let split = SplitBlock()
         let fft = FFTBlock()
         fft.fftData = fftData
         let filter = ComplexFilterBlock(sampleRateIn: 2400000, sampleRateOut: 48000, cutoffFrequency: 5000, kernelLength: 300)
+        
+        
+        spectrum.width.subscribe(self) { (width) in
+            fft.interpolatedWidth = width
+        }
         
         // TODO: Stop using "-->" and use block chainig - linked list...
         chain = normalize.process --> split.process --> fft.process
@@ -46,10 +50,7 @@ class Radio {
         
         // Return on main thread
         DispatchQueue.main.async {
-            self.spectrumData.raise(mappedSamples)
+            self.spectrum.data.raise(mappedSamples)
         }
     }
 }
-
-
-

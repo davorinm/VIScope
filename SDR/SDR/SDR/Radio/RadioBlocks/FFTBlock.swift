@@ -22,6 +22,8 @@ class FFTBlock {
     
     var fftData: (([Float]) -> Void)?
     
+    var interpolatedWidth = 500
+    
     private let processQueue: DispatchQueue = DispatchQueue(label: "FFTBlock")
     
     init() {
@@ -85,30 +87,27 @@ class FFTBlock {
         vDSP_zvmags(&inMagnitudes, 1, &magnitudes, 1, fftLength)
         
         // convert to dbFS
-//        var dbScale: Float32 = 1
-//        var dbs = [Float](repeating: 0.0, count: Int(fftLength))
-//        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 0)
-        
-        // Int
-        let interpolatedCount = 500
+        var dbScale: Float32 = 1
+        var dbs = [Float](repeating: 0.0, count: Int(fftLength))
+        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 0)
         
         // Interpolation control
         let stride = vDSP_Stride(1)
         var base: Float = 0
-        var end = Float(interpolatedCount)
-        var control = [Float](repeating: 0, count: magnitudes.count)
+        var end = Float(interpolatedWidth)
+        var control = [Float](repeating: 0, count: dbs.count)
         vDSP_vgen(&base,
                   &end,
                   &control, stride,
-                  vDSP_Length(magnitudes.count))
+                  vDSP_Length(dbs.count))
         
         // Interpolation
-        var interpolated = [Float](repeating: 0, count: interpolatedCount)
-        vDSP_vgenp(magnitudes, stride,
+        var interpolated = [Float](repeating: 0, count: interpolatedWidth)
+        vDSP_vgenp(dbs, stride,
                    control, stride,
                    &interpolated, stride,
-                   vDSP_Length(interpolatedCount),
-                   vDSP_Length(magnitudes.count))
+                   vDSP_Length(interpolatedWidth),
+                   vDSP_Length(dbs.count))
         
 //        interpolated[0] = 2000
         

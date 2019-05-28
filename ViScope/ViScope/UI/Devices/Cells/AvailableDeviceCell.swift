@@ -9,6 +9,8 @@
 import Cocoa
 
 class AvailableDeviceCell: NSTableCellView {
+    @IBOutlet private weak var deviceNameField: NSTextField!
+    
     private var bindDevice: (() -> Void)?
     
     override func awakeFromNib() {
@@ -25,6 +27,7 @@ class AvailableDeviceCell: NSTableCellView {
     }
     
     func setup(_ item: DevicesItem) {
+        deviceNameField.stringValue = item.device.name
         bindDevice = item.bindDevice
     }
     

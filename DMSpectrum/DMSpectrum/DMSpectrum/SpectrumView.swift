@@ -16,9 +16,6 @@ public final class SpectrumView: NSView {
         didSet {
             shapeLayer.frame = bounds
             gradientLayer.frame = bounds
-//            layer!.frame = frame
-//
-//            print("frame \(frame)")
         }
     }
     
@@ -60,6 +57,9 @@ public final class SpectrumView: NSView {
     // MARK: - Data
     
     public func setData(_ samples: [Float]) {
+        // TODO: calculate min, max normalize data
+        // TODO: Option to set custom min max, floor or ceil data, also for histogram
+        
         let xScale = shapeLayer.frame.width / CGFloat(samples.count)
         
         let path = CGMutablePath()

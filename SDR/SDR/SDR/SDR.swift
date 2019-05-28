@@ -1,14 +1,15 @@
 import Foundation
 
+/// SDR class
 public class SDR {
-    /// Devices that are availabe to be binded
-    public class var availableDevices: ObservableProperty<[SDRDeviceName]> {
-        return SoftwareDefinedRadio.shared.availableDevices
+    /// SDR Devices
+    public class var devices: ObservableProperty<[SDRDevice]> {
+        return SoftwareDefinedRadio.shared.devices
     }
     
-    /// Devices that are binded to SDR
-    public class var bindedDevices: ObservableProperty<[SDRDevice]> {
-        return SoftwareDefinedRadio.shared.bindedDevices
+    /// Create SDR device
+    public class func createDevice(_ devices: [SDRDevice]) {
+        SoftwareDefinedRadio.shared.createDevice(devices)
     }
     
     /// Bind device from availableDevices list
@@ -20,4 +21,13 @@ public class SDR {
     public class var spectrum: SDRSpectrum {
         return SoftwareDefinedRadio.shared.spectrum
     }
+}
+
+/// SDRSpectrum class for spectrum data
+public class SDRSpectrum {
+    /// Width of spectrum data in points
+    public let width: ObservableProperty<Int> = ObservableProperty(value: 400)
+    
+    /// Observable spectrum data
+    public let data: ObservableEvent<[Float]> = ObservableEvent()
 }

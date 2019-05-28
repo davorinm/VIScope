@@ -31,26 +31,22 @@ import Foundation
 //}
 
 class SoftwareDefinedRadio {
-    /// Singelton of shared SoftwareDefinedRadio
     static let shared = SoftwareDefinedRadio()
     
-    // Publics
-    let availableDevices: ObservableProperty<[SDRDeviceName]> = ObservableProperty(value: [])
-    let bindedDevices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
+    let devices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
     let spectrum: SDRSpectrum
     
     private let radio: Radio
     
     private init() {
-        spectrum = SDRSpectrum()
-        let spectrumData: ObservableEvent<[Float]> = ObservableEvent()
+        self.radio = Radio()
+        self.spectrum = self.radio.spectrum
 
         
         
         
         
         
-        self.radio = Radio(spectrumData: spectrumData)
         self.updateDevices()
         
         USB.shared.onChange = { [unowned self] in
@@ -66,14 +62,19 @@ class SoftwareDefinedRadio {
     // MARK: -
     
     private func updateDevices() {
-        availableDevices.value = RTLSDR.deviceList() + [NoiseSDRDevice()]
+        devices.value = RTLSDR.deviceList() + [NoiseSDRDevice()]
     }
     
     // MARK: - Devices
     
+    func createDevice(_ devices: [SDRDevice]) {
+        // TODO: IMp
+    }
+    
     func bindDevice(_ device: SDRDevice) {
-        bindedDevices.value.append(device)
-        
+        // TODO: Fix
+//        bindedDevices.value.append(device)
+
         device.rawSamples.subscribe(self) { [unowned self] (samples) in
             self.radio.samplesIn(samples)
         }

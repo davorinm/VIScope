@@ -26,8 +26,9 @@ class NoiseSDRDevice: SDRDevice {
     
     private var scheduledTimer: Timer!
     
+    private let asyncReadQueue: DispatchQueue = DispatchQueue(label: "kjghasdkfgds")
+    
     init() {
-        
         
         
         
@@ -73,14 +74,7 @@ class NoiseSDRDevice: SDRDevice {
     
     func startSampleStream() {
         scheduledTimer = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true) { [weak self] (timer) in
-//            if let data = self?.generateSamples() {
-//                self?.rawSamples.raise(data)
-//            }
-
-            if let wSelf = self {
-                let data = wSelf.signal(noiseAmount: 1, numSamples: wSelf.bufferSize)
-                wSelf.rawSamples.raise(data)
-            }
+            self?.generate()
         }
     }
     
@@ -90,6 +84,51 @@ class NoiseSDRDevice: SDRDevice {
     }
     
     // MARK: - Random
+    
+    private func generate() {
+        self.asyncReadQueue.async {
+            
+            //            if let data = self?.generateSamples() {
+            //                self?.rawSamples.raise(data)
+            //            }
+            
+            
+            
+            let data = self.play(carrierFrequency: 20000, modulatorFrequency: 200, modulatorAmplitude: 0.8)
+//            let data = self.signal(noiseAmount: 1, numSamples: self.bufferSize)
+            self.rawSamples.raise(data)
+        }
+    }
+    
+    
+    let generatorSampleRate: Double = 200000
+    var generatorSamples = [UInt8](repeating: 0, count: Int(32768 * 2))
+    
+    private func play(carrierFrequency: Float32, modulatorFrequency: Float32, modulatorAmplitude: Float32) -> [UInt8]  {
+        let unitVelocity = Float32(2.0 * Double.pi / generatorSampleRate)
+        let carrierVelocity = carrierFrequency * unitVelocity
+        let modulatorVelocity = modulatorFrequency * unitVelocity
+
+        // Fill the buffer with new samples.
+        var sampleTime: Float = 0
+        
+        for sampleIndex in 0..<self.generatorSamples.count {
+            let index = Int(sampleIndex)
+            
+            let sample = sin(carrierVelocity * sampleTime + modulatorAmplitude * sin(modulatorVelocity * sampleTime))
+            
+            let mapped = ((sample + 1) / 2) * 255
+            
+            let val = UInt8(mapped)
+            
+            
+            generatorSamples[index] = val
+            
+            sampleTime += 1
+        }
+        
+        return generatorSamples
+    }
     
     private func signal(noiseAmount: Float, numSamples: Int) -> [UInt8] {
         let tau = Float.pi * 2

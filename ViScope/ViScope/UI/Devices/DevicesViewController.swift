@@ -21,25 +21,12 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        modeSelectorControl.segmentCount = DevicesViewMode.allCases.count
-        for (i, mode) in DevicesViewMode.allCases.enumerated() {
-            switch mode {
-            case .available:
-                modeSelectorControl.setLabel("Available", forSegment: i)
-            case .binded:
-                modeSelectorControl.setLabel("Binded", forSegment: i)
-            }
-        }
-        
+                
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(NSNib(nibNamed: "AvailableDeviceCell", bundle: nil), forIdentifier: availableDeviceCell)
         tableView.register(NSNib(nibNamed: "BindedDeviceCell", bundle: nil), forIdentifier: bindedDeviceCell)
         
-        viewModel.modeChanged = { [unowned self] (mode) in
-            self.modeSelectorControl.selectedSegment = mode.rawValue
-        }
         viewModel.updateItems = { [unowned self] in
             self.tableView.reloadData()
         }
@@ -48,14 +35,7 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
     
     // MARK: - Actions
     
-    @IBAction func modeSelectorChanged(_ sender: Any) {
-        guard let mode = DevicesViewMode(rawValue: modeSelectorControl.selectedSegment) else {
-            print("DevicesViewMode error")
-            return
-        }
-        
-        viewModel.setMode(mode)
-    }
+    
     
     // MARK: - NSTableViewDataSource
     
@@ -64,7 +44,7 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
         print(count)
         return count
     }
-    
+            
 //    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
 //        let item = viewModel.items[row]
 //        return item

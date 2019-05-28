@@ -7,15 +7,8 @@ import Foundation
 // TODO: Change func getters to readonly properties
 // TODO: Changable properties to readonly observers
 
-public protocol SDRDevice: SDRDeviceName, SDRDeviceTuner {
-    
-}
-
-public protocol SDRDeviceName {
+public protocol SDRDevice {
     var name: String { get }
-}
-
-public protocol SDRDeviceTuner {
     var rawSamples: ObservableEvent<[UInt8]> { get }
     
     var minimumFrequency: Int { get }
@@ -39,9 +32,4 @@ public protocol SDRDeviceTuner {
     
     func startSampleStream()
     func stopSampleStream()
-}
-
-public class SDRSpectrum {
-    var width: Int = 400
-    var data: ObservableEvent<[Float]> = ObservableEvent()
 }
