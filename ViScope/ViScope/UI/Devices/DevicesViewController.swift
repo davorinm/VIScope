@@ -9,8 +9,8 @@
 import Cocoa
 
 class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
-    @IBOutlet private weak var modeSelectorControl: NSSegmentedControl!
     @IBOutlet private weak var tableView: NSTableView!
+    @IBOutlet private weak var createDeviceButton: NSButton!
     
     private let viewModel = DevicesViewModel()
     
@@ -22,24 +22,11 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        modeSelectorControl.segmentCount = DevicesViewMode.allCases.count
-        for (i, mode) in DevicesViewMode.allCases.enumerated() {
-            switch mode {
-            case .available:
-                modeSelectorControl.setLabel("Available", forSegment: i)
-            case .binded:
-                modeSelectorControl.setLabel("Binded", forSegment: i)
-            }
-        }
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(NSNib(nibNamed: "AvailableDeviceCell", bundle: nil), forIdentifier: availableDeviceCell)
         tableView.register(NSNib(nibNamed: "BindedDeviceCell", bundle: nil), forIdentifier: bindedDeviceCell)
         
-        viewModel.modeChanged = { [unowned self] (mode) in
-            self.modeSelectorControl.selectedSegment = mode.rawValue
-        }
         viewModel.updateItems = { [unowned self] in
             self.tableView.reloadData()
         }
@@ -48,13 +35,26 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
     
     // MARK: - Actions
     
-    @IBAction func modeSelectorChanged(_ sender: Any) {
-        guard let mode = DevicesViewMode(rawValue: modeSelectorControl.selectedSegment) else {
-            print("DevicesViewMode error")
-            return
-        }
+    @IBAction func createDeviceButtonPressed(_ sender: Any) {
+        let storyboard = NSStoryboard(name: "CreateDevice", bundle: nil)
+        let vc2 = storyboard.instantiateInitialController() as! CreateDeviceViewController
         
-        viewModel.setMode(mode)
+        
+        let vc = storyboard.instantiateController(withIdentifier: "CreateDeviceViewController") as! CreateDeviceViewController
+        
+        
+        
+        
+//        NSApplication.shared.runModal(for: windowController.window!)
+        
+//        self.presentAsSheet(vc)
+        
+        self.presentAsModalWindow(vc)
+        
+        
+//        windowController
+
+//        windowController.close()
     }
     
     // MARK: - NSTableViewDataSource

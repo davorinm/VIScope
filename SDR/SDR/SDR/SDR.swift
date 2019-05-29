@@ -1,19 +1,19 @@
 import Foundation
 
 public class SDR {
-    /// Devices that are availabe to be binded
-    public class var availableDevices: ObservableProperty<[SDRDeviceName]> {
-        return SoftwareDefinedRadio.shared.availableDevices
+    /// SDR Devices
+    public class var devices: ObservableProperty<[SDRDevice]> {
+        return SoftwareDefinedRadio.shared.devices
     }
     
-    /// Devices that are binded to SDR
-    public class var bindedDevices: ObservableProperty<[SDRDevice]> {
-        return SoftwareDefinedRadio.shared.bindedDevices
+    /// Create a new device from multiple SDRDevices
+    public class func createDevice(_ devices: [SDRDevice]) {
+        SoftwareDefinedRadio.shared.createDevice(devices)
     }
     
-    /// Bind device from availableDevices list
-    public class func bindDevice(_ device: SDRDevice) {
-        SoftwareDefinedRadio.shared.bindDevice(device)
+    /// Start sampling device
+    public class func startDevice(_ device: SDRDevice) {
+         SoftwareDefinedRadio.shared.startDevice(device)
     }
     
     /// Spectrum data from SDR

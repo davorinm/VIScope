@@ -8,9 +8,7 @@
 
 import Cocoa
 
-class DemodulatorViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
-    @IBOutlet private weak var tableView: NSTableView!
-    
+class DemodulatorViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {    
     private let viewModel = DemodulatorViewModel()
     
     override func viewDidLoad() {

@@ -11,9 +11,11 @@
 		1EBE49C32278656E00C1C00F /* DMSpectrum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E50C1B42277926D00764168 /* DMSpectrum.framework */; };
 		1EBE49C42278656E00C1C00F /* DMSpectrum.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1E50C1B42277926D00764168 /* DMSpectrum.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233E92265BBCC009EE218 /* AppDelegate.swift */; };
-		720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233EB2265BBCC009EE218 /* MainViewController.swift */; };
 		720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720233ED2265BBCD009EE218 /* Assets.xcassets */; };
 		720233F12265BBCD009EE218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720233EF2265BBCD009EE218 /* Main.storyboard */; };
+		72691842229D3481006C853B /* CreateDevice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72691841229D3481006C853B /* CreateDevice.storyboard */; };
+		72691845229D34B5006C853B /* CreateDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72691844229D34B5006C853B /* CreateDeviceViewController.swift */; };
+		72691848229D3C6C006C853B /* CreateDeviceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72691847229D3C6C006C853B /* CreateDeviceWindowController.swift */; };
 		727CB9A02282BC2600A45F8C /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CB99F2282BC2600A45F8C /* DragView.swift */; };
 		727CB9A32282BC6000A45F8C /* NSDraggingInfo+DraggedFileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CB9A22282BC6000A45F8C /* NSDraggingInfo+DraggedFileURL.swift */; };
 		7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7293B8822268655D00820CED /* SpectrumViewController.swift */; };
@@ -55,11 +57,13 @@
 		1E66E8DE2269062300F93A46 /* TunerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewController.swift; sourceTree = "<group>"; };
 		720233E62265BBCC009EE218 /* ViScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720233E92265BBCC009EE218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		720233EB2265BBCC009EE218 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		720233ED2265BBCD009EE218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		720233F02265BBCD009EE218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		720233F22265BBCD009EE218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720233F32265BBCD009EE218 /* ViScope.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ViScope.entitlements; sourceTree = "<group>"; };
+		72691841229D3481006C853B /* CreateDevice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateDevice.storyboard; sourceTree = "<group>"; };
+		72691844229D34B5006C853B /* CreateDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeviceViewController.swift; sourceTree = "<group>"; };
+		72691847229D3C6C006C853B /* CreateDeviceWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeviceWindowController.swift; sourceTree = "<group>"; };
 		727CB99F2282BC2600A45F8C /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		727CB9A22282BC6000A45F8C /* NSDraggingInfo+DraggedFileURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+DraggedFileURL.swift"; sourceTree = "<group>"; };
 		7293B8822268655D00820CED /* SpectrumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		72691843229D349F006C853B /* CreateDevice */ = {
+			isa = PBXGroup;
+			children = (
+				72691847229D3C6C006C853B /* CreateDeviceWindowController.swift */,
+				72691844229D34B5006C853B /* CreateDeviceViewController.swift */,
+			);
+			path = CreateDevice;
+			sourceTree = "<group>";
+		};
 		727CB9A12282BC3500A45F8C /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,13 +202,14 @@
 		72F670C222685CC000D61EE8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				72691843229D349F006C853B /* CreateDevice */,
+				727CB9A12282BC3500A45F8C /* Common */,
 				72E4594222706814001F123E /* Devices */,
 				1E33929E226C878E00AD052F /* Tuner */,
 				1E33929D226C878900AD052F /* Spectrum */,
 				72E4594322706823001F123E /* Demodulator */,
 				720233EF2265BBCD009EE218 /* Main.storyboard */,
-				720233EB2265BBCC009EE218 /* MainViewController.swift */,
-				727CB9A12282BC3500A45F8C /* Common */,
+				72691841229D3481006C853B /* CreateDevice.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -266,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72691842229D3481006C853B /* CreateDevice.storyboard in Resources */,
 				720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */,
 				72EB3EDD2273032A00CDA861 /* AvailableDeviceCell.xib in Resources */,
 				72EB3ED72272F03100CDA861 /* BindedDeviceCell.xib in Resources */,
@@ -302,7 +317,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				727CB9A02282BC2600A45F8C /* DragView.swift in Sources */,
-				720233EC2265BBCC009EE218 /* MainViewController.swift in Sources */,
 				72EB3ECF2272E0FE00CDA861 /* DevicesViewModel.swift in Sources */,
 				72EB3ED52272F01B00CDA861 /* BindedDeviceCell.swift in Sources */,
 				1E66E8DF2269062300F93A46 /* TunerViewController.swift in Sources */,
@@ -310,6 +324,8 @@
 				727CB9A32282BC6000A45F8C /* NSDraggingInfo+DraggedFileURL.swift in Sources */,
 				72E45948227068D6001F123E /* DemodulatorViewController.swift in Sources */,
 				720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */,
+				72691845229D34B5006C853B /* CreateDeviceViewController.swift in Sources */,
+				72691848229D3C6C006C853B /* CreateDeviceWindowController.swift in Sources */,
 				72E4594522706882001F123E /* DevicesViewController.swift in Sources */,
 				7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */,
 				72EB3EDB2273028800CDA861 /* AvailableDeviceCell.swift in Sources */,

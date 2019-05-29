@@ -701,10 +701,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Main View Controller-->
+        <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1264" height="562"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -887,26 +887,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="250" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dup-F2-BGk">
-                                <rect key="frame" x="97" y="567" width="57" height="23"/>
-                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="capsule" trackingMode="selectOne" id="1lw-gj-Ej1">
-                                    <font key="font" metaFont="system"/>
-                                    <segments>
-                                        <segment label="First"/>
-                                    </segments>
-                                </segmentedCell>
-                                <connections>
-                                    <action selector="modeSelectorChanged:" target="SQm-yh-swl" id="hA1-aE-ueo"/>
-                                </connections>
-                            </segmentedControl>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="deo-xl-Occ">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="558"/>
+                                <rect key="frame" x="0.0" y="50" width="250" height="550"/>
                                 <clipView key="contentView" id="a1q-6J-BXP">
-                                    <rect key="frame" x="1" y="1" width="248" height="556"/>
+                                    <rect key="frame" x="1" y="1" width="248" height="548"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="d2o-Fl-IL1">
-                                            <rect key="frame" x="0.0" y="0.0" width="248" height="556"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="248" height="548"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -934,18 +922,39 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-Z2-jCE">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                <subviews>
+                                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RHs-d8-Efa">
+                                        <rect key="frame" x="17" y="12" width="27" height="26"/>
+                                        <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AcM-FI-aLn">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="createDeviceButtonPressed:" target="SQm-yh-swl" id="e1M-dK-hnd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0NR-Zw-aDy"/>
+                                    <constraint firstItem="RHs-d8-Efa" firstAttribute="centerY" secondItem="Fjw-Z2-jCE" secondAttribute="centerY" id="u1M-SA-khq"/>
+                                    <constraint firstItem="RHs-d8-Efa" firstAttribute="leading" secondItem="Fjw-Z2-jCE" secondAttribute="leading" constant="20" id="xzY-bo-G86"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="deo-xl-Occ" firstAttribute="leading" secondItem="DXp-u0-xGm" secondAttribute="leading" id="7pi-bU-GaY"/>
-                            <constraint firstAttribute="bottom" secondItem="deo-xl-Occ" secondAttribute="bottom" id="Wma-i9-UMA"/>
-                            <constraint firstItem="dup-F2-BGk" firstAttribute="centerX" secondItem="DXp-u0-xGm" secondAttribute="centerX" id="YKl-eO-rrK"/>
-                            <constraint firstItem="deo-xl-Occ" firstAttribute="top" secondItem="dup-F2-BGk" secondAttribute="bottom" constant="10" id="izd-Nx-Kj3"/>
+                            <constraint firstAttribute="bottom" secondItem="Fjw-Z2-jCE" secondAttribute="bottom" id="9IG-S8-cQN"/>
+                            <constraint firstItem="Fjw-Z2-jCE" firstAttribute="leading" secondItem="DXp-u0-xGm" secondAttribute="leading" id="T2b-Ad-EHv"/>
                             <constraint firstAttribute="trailing" secondItem="deo-xl-Occ" secondAttribute="trailing" id="khx-Hf-ikq"/>
-                            <constraint firstItem="dup-F2-BGk" firstAttribute="top" secondItem="DXp-u0-xGm" secondAttribute="top" constant="10" id="ygh-JF-uq0"/>
+                            <constraint firstItem="Fjw-Z2-jCE" firstAttribute="top" secondItem="deo-xl-Occ" secondAttribute="bottom" id="pLn-K3-sDN"/>
+                            <constraint firstAttribute="trailing" secondItem="Fjw-Z2-jCE" secondAttribute="trailing" id="psQ-w2-Aza"/>
+                            <constraint firstItem="deo-xl-Occ" firstAttribute="top" secondItem="DXp-u0-xGm" secondAttribute="top" id="zkx-B6-0j3"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="modeSelectorControl" destination="dup-F2-BGk" id="2rh-xA-eDP"/>
+                        <outlet property="createDeviceButton" destination="RHs-d8-Efa" id="ZqU-zz-dUw"/>
                         <outlet property="tableView" destination="d2o-Fl-IL1" id="uBX-QN-rPR"/>
                     </connections>
                 </viewController>
@@ -960,26 +969,6 @@
                     <view key="view" id="uU4-4p-dFf">
                         <rect key="frame" x="0.0" y="0.0" width="353" height="622"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D2K-cB-9sh">
-                                <rect key="frame" x="51" y="594" width="251" height="23"/>
-                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="capsule" trackingMode="selectOne" id="Jlf-Nr-mQz">
-                                    <font key="font" metaFont="system"/>
-                                    <segments>
-                                        <segment label="First"/>
-                                        <segment label="Second" selected="YES" tag="1"/>
-                                        <segment label="Third"/>
-                                        <segment label="Fourth"/>
-                                    </segments>
-                                </segmentedCell>
-                            </segmentedControl>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="D2K-cB-9sh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uU4-4p-dFf" secondAttribute="leading" constant="5" id="1Se-Z9-WjC"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D2K-cB-9sh" secondAttribute="trailing" constant="5" id="9gx-yv-Uau"/>
-                            <constraint firstItem="D2K-cB-9sh" firstAttribute="centerX" secondItem="uU4-4p-dFf" secondAttribute="centerX" id="Edb-UR-RTE"/>
-                            <constraint firstItem="D2K-cB-9sh" firstAttribute="top" secondItem="uU4-4p-dFf" secondAttribute="top" constant="5" id="U0S-2V-XcR"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rIg-4e-S6s" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
