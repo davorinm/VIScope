@@ -9,8 +9,8 @@
 import Cocoa
 
 class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
-    @IBOutlet private weak var modeSelectorControl: NSSegmentedControl!
     @IBOutlet private weak var tableView: NSTableView!
+    @IBOutlet private weak var createDeviceButton: NSButton!
     
     private let viewModel = DevicesViewModel()
     
@@ -21,7 +21,7 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(NSNib(nibNamed: "AvailableDeviceCell", bundle: nil), forIdentifier: availableDeviceCell)
@@ -35,7 +35,27 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
     
     // MARK: - Actions
     
-    
+    @IBAction func createDeviceButtonPressed(_ sender: Any) {
+        let storyboard = NSStoryboard(name: "CreateDevice", bundle: nil)
+        let vc2 = storyboard.instantiateInitialController() as! CreateDeviceViewController
+        
+        
+        let vc = storyboard.instantiateController(withIdentifier: "CreateDeviceViewController") as! CreateDeviceViewController
+        
+        
+        
+        
+//        NSApplication.shared.runModal(for: windowController.window!)
+        
+//        self.presentAsSheet(vc)
+        
+        self.presentAsModalWindow(vc)
+        
+        
+//        windowController
+
+//        windowController.close()
+    }
     
     // MARK: - NSTableViewDataSource
     

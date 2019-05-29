@@ -7,14 +7,14 @@ public class SDR {
         return SoftwareDefinedRadio.shared.devices
     }
     
-    /// Create SDR device
+    /// Create a new device from multiple SDRDevices
     public class func createDevice(_ devices: [SDRDevice]) {
         SoftwareDefinedRadio.shared.createDevice(devices)
     }
     
-    /// Bind device from availableDevices list
-    public class func bindDevice(_ device: SDRDevice) {
-        SoftwareDefinedRadio.shared.bindDevice(device)
+    /// Start sampling device
+    public class func startDevice(_ device: SDRDevice) {
+         SoftwareDefinedRadio.shared.startDevice(device)
     }
     
     /// Spectrum data from SDR

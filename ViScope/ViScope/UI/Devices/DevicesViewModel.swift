@@ -9,11 +9,6 @@
 import Foundation
 import SDR
 
-enum DevicesViewMode: Int, CaseIterable {
-    case available = 0
-    case binded
-}
-
 class DevicesItem {
     let device: SDRDevice
     
@@ -25,7 +20,8 @@ class DevicesItem {
     }
     
     func bindDevice() {
-        SDR.bindDevice(device)
+        // TODO: Fix
+//        SDR.bindDevice(device)
     }
 }
 
@@ -33,7 +29,6 @@ class DevicesViewModel {
     var updateItems: (() -> Void)?
 
     private var devicesDisposable: Disposable?    
-    private var mode: DevicesViewMode!
     private(set) var items: [DevicesItem] = [] {
         didSet {
             updateItems?()

@@ -37,6 +37,8 @@ class SoftwareDefinedRadio {
     let spectrum: SDRSpectrum
     
     private let radio: Radio
+    private let testDevices: [SDRDevice] = [NoiseSDRDevice()]
+    private var createdDevices: [SDRDevice] = []
     
     private init() {
         self.radio = Radio()
@@ -62,19 +64,19 @@ class SoftwareDefinedRadio {
     // MARK: -
     
     private func updateDevices() {
-        devices.value = RTLSDR.deviceList() + [NoiseSDRDevice()]
+        devices.value = RTLSDR.deviceList() + testDevices + createdDevices
     }
     
     // MARK: - Devices
     
     func createDevice(_ devices: [SDRDevice]) {
-        // TODO: IMp
+        // TODO: Implement
     }
     
-    func bindDevice(_ device: SDRDevice) {
+    func startDevice(_ device: SDRDevice) {
         // TODO: Fix
 //        bindedDevices.value.append(device)
-
+        
         device.rawSamples.subscribe(self) { [unowned self] (samples) in
             self.radio.samplesIn(samples)
         }
