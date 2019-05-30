@@ -13,12 +13,18 @@ class CombineSamplesBlock {
     // TODO: use combine block for creating samples from multiple sources
     
     func process(_ samples: [DSP.Samples]) -> DSP.Samples {
+        // Resample signals up
         
+        // Shift signals
+        
+        // Add signals
+        
+        // Resample signals down
     
     
     
     
-    
+        return DSP.Samples(count: 4)
     }
     
     
