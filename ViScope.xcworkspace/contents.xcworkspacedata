@@ -8,9 +8,6 @@
       location = "group:SDR/SDR.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Charts/Charts.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:SwiftChart/SwiftChart.xcodeproj">
    </FileRef>
    <FileRef
