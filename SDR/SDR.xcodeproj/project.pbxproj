@@ -56,9 +56,6 @@
 		1E339267226C82DF00AD052F /* SDR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDR.h; sourceTree = "<group>"; };
 		1E339268226C82DF00AD052F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E339281226C83BC00AD052F /* FFTBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTBlock.swift; sourceTree = "<group>"; };
-		1E339289226C83BC00AD052F /* RadioOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioOld.swift; sourceTree = "<group>"; };
-		1E33928B226C83BC00AD052F /* Samples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
-		1E33928C226C83BC00AD052F /* SoftwareDefinedRadioOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadioOld.swift; sourceTree = "<group>"; };
 		1E33928D226C83BC00AD052F /* SDR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDR.swift; sourceTree = "<group>"; };
 		1E339293226C840400AD052F /* SDRDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDRDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E50C1B5227793E000764168 /* NoiseSDRDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseSDRDevice.swift; sourceTree = "<group>"; };
@@ -146,7 +143,6 @@
 		1E33928E226C83BC00AD052F /* SDR */ = {
 			isa = PBXGroup;
 			children = (
-				72E4593D227044D0001F123E /* Old */,
 				1EBC53D5226F96C8009C02C6 /* Tools */,
 				1E9CD721226F2FF500CD679C /* Hardware */,
 				1EEFEDAC2291F67D00FBE07B /* DSP */,
@@ -262,16 +258,6 @@
 				72CA0A88228589BA000A9153 /* TempiFFT.swift */,
 			);
 			path = NewGroup;
-			sourceTree = "<group>";
-		};
-		72E4593D227044D0001F123E /* Old */ = {
-			isa = PBXGroup;
-			children = (
-				1E339289226C83BC00AD052F /* RadioOld.swift */,
-				1E33928B226C83BC00AD052F /* Samples.swift */,
-				1E33928C226C83BC00AD052F /* SoftwareDefinedRadioOld.swift */,
-			);
-			path = Old;
 			sourceTree = "<group>";
 		};
 		72E4594022704A27001F123E /* RadioBlocks */ = {
