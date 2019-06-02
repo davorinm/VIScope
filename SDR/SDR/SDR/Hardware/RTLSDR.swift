@@ -101,7 +101,7 @@ final class RTLSDR: SDRDevice {
     
     private var _isConfigured:          Bool    = false
     
-    var sampleRate: Int = 0 {
+    var sampleRate: Int = 2400000 {
         didSet {
             if(self.isOpen() == true) {
                 let rate = UInt32(self.sampleRate)
@@ -110,7 +110,7 @@ final class RTLSDR: SDRDevice {
         }
     }
     
-    var tunedFrequency: Int = 0 {
+    var tunedFrequency: Int = 100600000 {
         didSet {
 //            print("Set freq: \(self._tunedFrequency) - \(self.description)")
             if(self.isOpen() == true) {
@@ -131,7 +131,7 @@ final class RTLSDR: SDRDevice {
     
     private var _tunerGainList:         [Int]   = []
     
-    private var _tunerAutoGain:         Bool    = false {
+    private var _tunerAutoGain:         Bool    = true {
         didSet {
             if(self.isOpen() == true) {
                 if(self._tunerAutoGain == true) {
@@ -429,7 +429,7 @@ final class RTLSDR: SDRDevice {
     //
     //--------------------------------------------------------------------------
 
-    private init(_ devID: Int){
+    private init(_ devID: Int) {
         
         // set devID as index to librtlsdr device
         librtlsdrIndex     = UInt32(devID)
