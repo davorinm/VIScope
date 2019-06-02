@@ -6,7 +6,7 @@
 //  Copyright © 2019 Davorin Madaric. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 import Metal
 import MetalKit
 
@@ -98,7 +98,9 @@ public final class HistogramView: NSView {
         transformFilter.setValue(image, forKey: kCIInputImageKey)
         transformFilter.setValue(scale, forKey: kCIInputScaleKey)
         transformFilter.setValue(aspectRatio, forKey: kCIInputAspectRatioKey)
-        let outputImage = transformFilter.value(forKey: kCIOutputImageKey) as! CIImage
+        guard let outputImage = transformFilter.value(forKey: kCIOutputImageKey) as? CIImage else {
+            return
+        }
         
         // Draw
         metalRender.setImage(outputImage)

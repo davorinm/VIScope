@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E50C1A422778C6E00764168 /* DMSpectrum.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E50C1A222778C6E00764168 /* DMSpectrum.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E50C1AE22778CA000764168 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E50C1AB22778CA000764168 /* SpectrumView.swift */; };
+		1EB1AB1122A3C6CF001FC95C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1AB1022A3C6CF001FC95C /* Platform.swift */; };
 		1EF76E5F227AFB85001A1EB2 /* HistogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF76E5E227AFB85001A1EB2 /* HistogramView.swift */; };
 		1EF76E61227CCA0C001A1EB2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF76E60227CCA0C001A1EB2 /* Colors.swift */; };
 /* End PBXBuildFile section */
@@ -18,6 +19,7 @@
 		1E50C1A222778C6E00764168 /* DMSpectrum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMSpectrum.h; sourceTree = "<group>"; };
 		1E50C1A322778C6E00764168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E50C1AB22778CA000764168 /* SpectrumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
+		1EB1AB1022A3C6CF001FC95C /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		1EF76E5E227AFB85001A1EB2 /* HistogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramView.swift; sourceTree = "<group>"; };
 		1EF76E60227CCA0C001A1EB2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +67,7 @@
 				1E50C1AB22778CA000764168 /* SpectrumView.swift */,
 				1EF76E5E227AFB85001A1EB2 /* HistogramView.swift */,
 				1EF76E60227CCA0C001A1EB2 /* Colors.swift */,
+				1EB1AB1022A3C6CF001FC95C /* Platform.swift */,
 			);
 			path = DMSpectrum;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				1E50C1AE22778CA000764168 /* SpectrumView.swift in Sources */,
 				1EF76E61227CCA0C001A1EB2 /* Colors.swift in Sources */,
+				1EB1AB1122A3C6CF001FC95C /* Platform.swift in Sources */,
 				1EF76E5F227AFB85001A1EB2 /* HistogramView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
