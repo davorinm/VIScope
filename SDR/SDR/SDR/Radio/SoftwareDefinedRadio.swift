@@ -35,6 +35,7 @@ class SoftwareDefinedRadio {
     
     let devices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
     let spectrum: SDRSpectrum
+    let ifSpectrum: SDRSpectrum
     
     private let radio: Radio
     private let testDevices: [SDRDevice] = [NoiseSDRDevice()]
@@ -42,7 +43,10 @@ class SoftwareDefinedRadio {
     
     private init() {
         self.radio = Radio()
+        
+        // TODO: Implement better spectrum passing
         self.spectrum = self.radio.spectrum
+        self.ifSpectrum = self.radio.ifSpectrum
 
         
         

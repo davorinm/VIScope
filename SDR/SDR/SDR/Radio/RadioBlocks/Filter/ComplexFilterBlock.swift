@@ -39,6 +39,9 @@ class ComplexFilterBlock {
     var realLastSamples:    [Float]
     var imagLastSamples:    [Float]
     
+    
+    let lastSamples = DSP.Samples(count: outBufferSize)
+    
     //--------------------------------------------------------------------------
     //
     //
@@ -59,9 +62,6 @@ class ComplexFilterBlock {
     }
     
     func process(_ samples: DSP.Samples) -> DSP.Samples {
-        var samples = samples
-
-        
         // compute size of output buffer being: out = in.count / downRatio
         // if not evenly divisible, the remaining samples will be left over
         // for the next block of incoming samples
@@ -72,10 +72,6 @@ class ComplexFilterBlock {
         if(realLastSamples.count > (self.kernelLength + self.downRatio)) {
             outBufferSize += 1
         }
-        
-        // create arrays for output samples
-        var realOutSamples: [Float] = [Float](repeating: 0.0, count: outBufferSize)
-        var imagOutSamples: [Float] = [Float](repeating: 0.0, count: outBufferSize)
         
         // compute input buffer size needed for vDSP_zrdesamp using:
         // input buffer size = (DF * (N - 1) + P)
@@ -109,9 +105,13 @@ class ComplexFilterBlock {
         realLastSamples = Array(samples.real.dropFirst(self.downRatio * outBufferSize))
         imagLastSamples = Array(samples.imag.dropFirst(self.downRatio * outBufferSize))
         
+        // create arrays for output samples
+        let outSamples = DSP.Samples(count: outBufferSize)
+        
         // pack the input and output arrays into a DSPSplitComplex
         var source = DSPSplitComplex(realp: &realSamples,    imagp: &imagSamples  )
-        var dest   = DSPSplitComplex(realp: &realOutSamples, imagp: &imagOutSamples)
+        var dest   = outSamples.splitComplex()
+        
         
         // perform the decimation with FIR filter
         vDSP_zrdesamp(
@@ -123,39 +123,6 @@ class ComplexFilterBlock {
             vDSP_Length(self.kernelLength   )
         )
         
-        // pack output samples into samples object
-//        let outSamples = DSP.Samples(real: realOutSamples, imag: imagOutSamples)
-        let outSamples = DSP.Samples(count: 0)
-        
         return outSamples
     }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-    
-    func gcd(a: Int, b: Int) -> Int {
-        
-        Swift.print("GCD - a:\(a) b:\(b)")
-        
-        if (a == 0) {
-            return b
-        }
-        if (b == 0){
-            return a
-        }
-        
-        if (a > b) {
-            return gcd(a: a - b, b: b)
-        } else {
-            return gcd(a: a, b: b - a);
-        }
-    }
-    
-    
 }
-
-
-

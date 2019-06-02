@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class AudioBLock {
+class AudioBlock {
     
     // The audio engine manages the sound system.
     let audioEngine:        AVAudioEngine        = AVAudioEngine()
@@ -75,7 +75,7 @@ class AudioBLock {
         audioEngine.stop()
     }
     
-    func processAudio(samples: [Float]) {
+    func process(_ samples: [Float]) {
         
         var audioBuffer:        AVAudioPCMBuffer
         var audioBufferData:    UnsafeMutablePointer<Float>

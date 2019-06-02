@@ -1,5 +1,5 @@
 //
-//  MixerBlock.swift
+//  ComplexMixerBlock.swift
 //  SDR
 //
 //  Created by Davorin Mađarić on 08/05/2019.
@@ -9,27 +9,27 @@
 import Foundation
 import Accelerate
 
-class MixerBlock {
-    var sampleRate:         Int     = 1 {
+class ComplexMixerBlock {
+    var sampleRate: Int = 1 {
         didSet {
             self.δ = 2 * π * Float(self.localOscillator) / Float(self.sampleRate)
         }
     }
     
-    var localOscillator:    Int     = 0 {
+    var localOscillator: Int = 0 {
         didSet {
             self.δ = 2 * π * Float(self.localOscillator) / Float(self.sampleRate)
         }
     }
     
-    let π:                  Float   = .pi
-    var δ:                  Float   = 0.0
-    var lastPhase:          Float   = 0.0
+    let π: Float = .pi
+    var δ: Float = 0.0
+    var lastPhase: Float = 0.0
     
     init(sampleRate: Int, frequency: Int) {
-        self.sampleRate         = sampleRate
-        self.localOscillator    = frequency
-        self.δ                  = 2 * π * Float(self.localOscillator) / Float(self.sampleRate)
+        self.sampleRate = sampleRate
+        self.localOscillator = frequency
+        self.δ = 2 * π * Float(self.localOscillator) / Float(self.sampleRate)
     }
     
     func process(_ samples: DSP.Samples) -> DSP.Samples {

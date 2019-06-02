@@ -8,24 +8,14 @@
 import Foundation
 import Accelerate
 
-    
 class FilterCoefficients {
-    
     enum FilterType {
         case lowPass
         case highPass
         case bandPass
     }
     
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-
-    
-    class func fir(sampleRate: Int, frequency: Int, length: Int)-> [Float] {
-        
+    class func fir(sampleRate: Int, frequency: Int, length: Int) -> [Float] {
         let π: Float = Float.pi
 
         // variable to hold the value of sinc()
@@ -80,23 +70,14 @@ class FilterCoefficients {
         
         // normalize coeff's for unity gain at DC - the sum of all coeff's
         // will be equal to 1
-        coefficientArray = coefficientArray.map({
-            (sample: Float) ->Float in
-                return sample / kernelSum
+        coefficientArray = coefficientArray.map({ (sample: Float) ->Float in
+            return sample / kernelSum
         })
 
         return coefficientArray
     }
     
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-
-    
     class func iir(type: FilterType, sampleRate: Int, frequency: Int, qValue: Double) -> [Double] {
-        
         var a0: Double = 0.0
         var a1: Double = 0.0
         var a2: Double = 0.0
@@ -154,15 +135,7 @@ class FilterCoefficients {
         return [b0, b1, b2, a1, a2]
     }
     
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-
-    
     class func pll(bandwidth: Double, dampening: Double, loopGain: Double) -> [Double] {
-        
         let ωn: Double  = bandwidth
         let ζ:  Double  = dampening
         let K:  Double  = loopGain
@@ -181,6 +154,5 @@ class FilterCoefficients {
         let a2: Double  =  1.0
         
         return [b0, b1, b2, a1, a2]
-
     }
 }

@@ -12,7 +12,7 @@ class FFTBlock {
     private let bufferSize: Int = 524288
     private var bufferSamples: DSP.Samples
     
-    private let fftSize: Int = 64000
+    private let fftSize: Int = 100000
     private let fftLength: vDSP_Length
     private var fftSamples: DSP.Samples
     
@@ -22,7 +22,20 @@ class FFTBlock {
     
     var fftData: (([Float]) -> Void)?
     
-    var interpolatedWidth = 500
+    
+    private let strideOne = vDSP_Stride(1)
+    
+    private var magnitudes: [Float]
+    
+    private var dbScale: Float32
+    private var dbs: [Float]
+    
+    var interpolatedWidth = 500 {
+        didSet {
+            setupInterpolation()
+        }
+    }
+    private var interpolationControl: [Float]
     
     private let processQueue: DispatchQueue = DispatchQueue(label: "FFTBlock")
     
@@ -42,6 +55,17 @@ class FFTBlock {
         
         // Create setup
         fftSetup = vDSP_DFT_zop_CreateSetup(nil, fftLength, vDSP_DFT_Direction.FORWARD)!
+        
+        // Create magnitudes array
+        magnitudes = [Float](repeating: 0, count: Int(fftLength))
+        
+        // Create db
+        dbScale = 0.8
+        dbs = [Float](repeating: 0.0, count: Int(fftLength))
+        
+        // Create interpolation control
+        interpolationControl = [Float](repeating: 0, count: Int(fftLength))
+        setupInterpolation()
     }
     
     deinit {
@@ -73,8 +97,8 @@ class FFTBlock {
         bufferSamples.move(to: fftSamples, count: Int(fftLength))
         
         // Windowing
-        fftWindow.process(data: &fftSamples.real)
-        fftWindow.process(data: &fftSamples.imag)
+//        fftWindow.process(data: &fftSamples.real)
+//        fftWindow.process(data: &fftSamples.imag)
         
         // execute DFT
         vDSP_DFT_Execute(self.fftSetup, fftSamples.real, fftSamples.imag, &fftSamples.real, &fftSamples.imag)
@@ -82,60 +106,31 @@ class FFTBlock {
         // create DSPSPlitComplex for FFT
         var inMagnitudes: DSPSplitComplex = fftSamples.splitComplex()
         
-        // get magnitudes
-        var magnitudes = [Float](repeating: 0, count: Int(fftLength))
-        vDSP_zvmags(&inMagnitudes, 1, &magnitudes, 1, fftLength)
+        // Calculate magnitudes
+        vDSP_zvmags(&inMagnitudes, strideOne, &magnitudes, strideOne, fftLength)
         
-        // convert to dbFS
-        var dbScale: Float32 = 1
-        var dbs = [Float](repeating: 0.0, count: Int(fftLength))
-        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 0)
-        
-        // Interpolation control
-        let stride = vDSP_Stride(1)
-        var base: Float = 0
-        var end = Float(interpolatedWidth)
-        var control = [Float](repeating: 0, count: dbs.count)
-        vDSP_vgen(&base,
-                  &end,
-                  &control, stride,
-                  vDSP_Length(dbs.count))
+        // convert to db
+        vDSP_vdbcon(&magnitudes, strideOne, &dbScale, &dbs, strideOne, fftLength, 1)
         
         // Interpolation
         var interpolated = [Float](repeating: 0, count: interpolatedWidth)
-        vDSP_vgenp(dbs, stride,
-                   control, stride,
-                   &interpolated, stride,
+        vDSP_vgenp(dbs, strideOne,
+                   interpolationControl, strideOne,
+                   &interpolated, strideOne,
                    vDSP_Length(interpolatedWidth),
-                   vDSP_Length(dbs.count))
-        
-//        interpolated[0] = 2000
+                   fftLength)
         
         // return data
         fftData?(interpolated)
     }
     
-//    private func fft(real: [Float], imag: [Float]) {
-//        let log2N = vDSP_Length(log2f(Float(real.count)))
-//        let fftN = Int(1 << log2N)
-//
-//        // buffers.
-//        var inputCoefRealp = [Float](real[0..<fftN])
-//        var inputCoefImagp = [Float](imag[0..<fftN])
-//        var outputRealp = [Float](repeating: 0.0, count: fftN)
-//        var outputImagp = [Float](repeating: 0.0, count: fftN)
-//
-//        // execute.
-//        vDSP_DFT_Execute(setup, &inputCoefRealp, &inputCoefImagp, &outputRealp, &outputImagp)
-//
-//        // normalization of ifft
-//        var scale = Float(fftN)
-//        var normalizedOutputRealp = [Float](repeating: 0.0, count: fftN)
-//        var normalizedOutputImagp = [Float](repeating: 0.0, count: fftN)
-//
-//        vDSP_vsdiv(&outputRealp, 1, &scale, &normalizedOutputRealp, 1, vDSP_Length(fftN))
-//        vDSP_vsdiv(&outputImagp, 1, &scale, &normalizedOutputImagp, 1, vDSP_Length(fftN))
-//
-//        return (normalizedOutputRealp, normalizedOutputImagp)
-//    }
+    /// Create interpolation control
+    private func setupInterpolation() {
+        var base: Float = 0
+        var end = Float(interpolatedWidth)
+        vDSP_vgen(&base,
+                  &end,
+                  &interpolationControl, strideOne,
+                  fftLength)
+    }
 }

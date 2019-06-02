@@ -22,6 +22,7 @@
 		1E9CD755226F311B00CD679C /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9CD74B226F311B00CD679C /* libusb-1.0.a */; };
 		1E9CD758226F312800CD679C /* SDR.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CD757226F312800CD679C /* SDR.xcconfig */; };
 		1EA6714F229DC1AC00616CC8 /* CombineSamplesBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6714E229DC1AC00616CC8 /* CombineSamplesBlock.swift */; };
+		1EB1AB1322A3D695001FC95C /* FMDemodulatorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1AB1222A3D695001FC95C /* FMDemodulatorBlock.swift */; };
 		1EBC53D0226F940F009C02C6 /* SDRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53CF226F940F009C02C6 /* SDRDevice.swift */; };
 		1EBC53D2226F96B6009C02C6 /* ObservableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */; };
 		1EBC53D4226F96BE009C02C6 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D3226F96BE009C02C6 /* Disposable.swift */; };
@@ -74,6 +75,7 @@
 		1E9CD74C226F311B00CD679C /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		1E9CD757226F312800CD679C /* SDR.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SDR.xcconfig; sourceTree = "<group>"; };
 		1EA6714E229DC1AC00616CC8 /* CombineSamplesBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineSamplesBlock.swift; sourceTree = "<group>"; };
+		1EB1AB1222A3D695001FC95C /* FMDemodulatorBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDemodulatorBlock.swift; sourceTree = "<group>"; };
 		1EBC53CF226F940F009C02C6 /* SDRDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRDevice.swift; sourceTree = "<group>"; };
 		1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableEvent.swift; sourceTree = "<group>"; };
 		1EBC53D3226F96BE009C02C6 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
@@ -213,6 +215,16 @@
 			path = LibUSB;
 			sourceTree = "<group>";
 		};
+		1EB1AB1422A45895001FC95C /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				727CB9A42282BF8E00A45F8C /* ComplexFilterBlock.swift */,
+				726A82922282E0E2008926D0 /* RealFilterBlock.swift */,
+				726A82942282E0FC008926D0 /* FilterCoefficients.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		1EBC53D5226F96C8009C02C6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,15 +277,14 @@
 		72E4594022704A27001F123E /* RadioBlocks */ = {
 			isa = PBXGroup;
 			children = (
+				1EB1AB1422A45895001FC95C /* Filter */,
 				72E4593B2270405F001F123E /* Radio.swift */,
 				72E4593E2270492E001F123E /* NormalizeBlock.swift */,
 				1E569E892288B6B1008971B9 /* SplitBlock.swift */,
 				1EA6714E229DC1AC00616CC8 /* CombineSamplesBlock.swift */,
 				1E339281226C83BC00AD052F /* FFTBlock.swift */,
-				727CB9A42282BF8E00A45F8C /* ComplexFilterBlock.swift */,
-				726A82922282E0E2008926D0 /* RealFilterBlock.swift */,
-				726A82942282E0FC008926D0 /* FilterCoefficients.swift */,
 				726A828E2282D033008926D0 /* MixerBlock.swift */,
+				1EB1AB1222A3D695001FC95C /* FMDemodulatorBlock.swift */,
 				726A82902282DB76008926D0 /* AudioBlock.swift */,
 			);
 			path = RadioBlocks;
@@ -400,6 +411,7 @@
 				1E33929A226C85D400AD052F /* SDR.swift in Sources */,
 				72CA0A7B22857E49000A9153 /* DSP+Normalize.swift in Sources */,
 				727CB9A72282BFFB00A45F8C /* FMSynthesizer.swift in Sources */,
+				1EB1AB1322A3D695001FC95C /* FMDemodulatorBlock.swift in Sources */,
 				726A828F2282D033008926D0 /* MixerBlock.swift in Sources */,
 				72E4593F2270492E001F123E /* NormalizeBlock.swift in Sources */,
 				1E50C1B6227793E000764168 /* NoiseSDRDevice.swift in Sources */,

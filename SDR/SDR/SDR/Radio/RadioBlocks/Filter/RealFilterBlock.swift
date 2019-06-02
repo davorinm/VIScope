@@ -37,7 +37,7 @@ class RealFilterBlock {
     //
     //--------------------------------------------------------------------------
 
-    init (sampleRateIn: Int, sampleRateOut: Int, cutoffFrequency: Int, kernelLength: Int, name: String?) {
+    init (sampleRateIn: Int, sampleRateOut: Int, cutoffFrequency: Int, kernelLength: Int) {
         self.inRate         = sampleRateIn
         self.outRate        = sampleRateOut
         self.downRatio      = sampleRateIn / sampleRateOut
@@ -49,8 +49,7 @@ class RealFilterBlock {
         self.realLastSamples   = [Float](repeating :0.0, count: self.kernel.count)
     }
 
-    func samplesIn(_ samples: [Float]) -> [Float] {
-        
+    func process(_ samples: [Float]) -> [Float] {
         var samples = samples
         
         // compute size of output buffer being: out = in.count / downRatio
