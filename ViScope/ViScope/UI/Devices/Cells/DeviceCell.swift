@@ -1,5 +1,5 @@
 //
-//  AvailableDeviceCell.swift
+//  DeviceCell.swift
 //  ViScope
 //
 //  Created by Davorin Mađarić on 26/04/2019.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class AvailableDeviceCell: NSTableCellView {
+class DeviceCell: NSTableCellView {
     @IBOutlet private weak var deviceNameField: NSTextField!
     
     private var bindDevice: (() -> Void)?
@@ -28,7 +28,7 @@ class AvailableDeviceCell: NSTableCellView {
     
     func setup(_ item: DevicesItem) {
         deviceNameField.stringValue = item.device.name
-        bindDevice = item.bindDevice
+        bindDevice = item.startDevice
     }
     
     // MARK: - Actions

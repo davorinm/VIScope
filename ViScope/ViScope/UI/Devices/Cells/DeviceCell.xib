@@ -8,7 +8,7 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <tableCellView id="guA-vz-EiE" customClass="AvailableDeviceCell" customModule="ViScope">
+        <tableCellView id="guA-vz-EiE" customClass="DeviceCell" customModule="ViScope">
             <rect key="frame" x="0.0" y="0.0" width="572" height="85"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -28,7 +28,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="xGQ-rK-Uth"/>
                     </constraints>
-                    <buttonCell key="cell" type="push" title="Bind" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ilx-BI-bPN">
+                    <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ilx-BI-bPN">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

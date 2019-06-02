@@ -19,8 +19,6 @@
 		727CB9A02282BC2600A45F8C /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CB99F2282BC2600A45F8C /* DragView.swift */; };
 		727CB9A32282BC6000A45F8C /* NSDraggingInfo+DraggedFileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CB9A22282BC6000A45F8C /* NSDraggingInfo+DraggedFileURL.swift */; };
 		7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7293B8822268655D00820CED /* SpectrumViewController.swift */; };
-		72C79A192269A5D100E9A4E1 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A182269A5D100E9A4E1 /* Charts.framework */; };
-		72C79A1A2269A5D100E9A4E1 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A182269A5D100E9A4E1 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72C79A1C2269A5D200E9A4E1 /* SDR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDR.framework */; };
 		72C79A1D2269A5D200E9A4E1 /* SDR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72C79A1F2269A5D200E9A4E1 /* SwiftChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */; };
@@ -29,10 +27,8 @@
 		72E45948227068D6001F123E /* DemodulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E45946227068D6001F123E /* DemodulatorViewController.swift */; };
 		72EB3ECF2272E0FE00CDA861 /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3ECE2272E0FE00CDA861 /* DevicesViewModel.swift */; };
 		72EB3ED12272EA9400CDA861 /* DemodulatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3ED02272EA9400CDA861 /* DemodulatorViewModel.swift */; };
-		72EB3ED52272F01B00CDA861 /* BindedDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3ED42272F01B00CDA861 /* BindedDeviceCell.swift */; };
-		72EB3ED72272F03100CDA861 /* BindedDeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72EB3ED62272F03100CDA861 /* BindedDeviceCell.xib */; };
-		72EB3EDB2273028800CDA861 /* AvailableDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3EDA2273028800CDA861 /* AvailableDeviceCell.swift */; };
-		72EB3EDD2273032A00CDA861 /* AvailableDeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72EB3EDC227302C200CDA861 /* AvailableDeviceCell.xib */; };
+		72EB3EDB2273028800CDA861 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3EDA2273028800CDA861 /* DeviceCell.swift */; };
+		72EB3EDD2273032A00CDA861 /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72EB3EDC227302C200CDA861 /* DeviceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,7 +40,6 @@
 			files = (
 				1EBE49C42278656E00C1C00F /* DMSpectrum.framework in Embed Frameworks */,
 				72C79A1D2269A5D200E9A4E1 /* SDR.framework in Embed Frameworks */,
-				72C79A1A2269A5D100E9A4E1 /* Charts.framework in Embed Frameworks */,
 				72C79A202269A5D200E9A4E1 /* SwiftChart.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -74,10 +69,8 @@
 		72E45946227068D6001F123E /* DemodulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemodulatorViewController.swift; sourceTree = "<group>"; };
 		72EB3ECE2272E0FE00CDA861 /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
 		72EB3ED02272EA9400CDA861 /* DemodulatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemodulatorViewModel.swift; sourceTree = "<group>"; };
-		72EB3ED42272F01B00CDA861 /* BindedDeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindedDeviceCell.swift; sourceTree = "<group>"; };
-		72EB3ED62272F03100CDA861 /* BindedDeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindedDeviceCell.xib; sourceTree = "<group>"; };
-		72EB3EDA2273028800CDA861 /* AvailableDeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDeviceCell.swift; sourceTree = "<group>"; };
-		72EB3EDC227302C200CDA861 /* AvailableDeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableDeviceCell.xib; sourceTree = "<group>"; };
+		72EB3EDA2273028800CDA861 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		72EB3EDC227302C200CDA861 /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +80,6 @@
 			files = (
 				1EBE49C32278656E00C1C00F /* DMSpectrum.framework in Frameworks */,
 				72C79A1C2269A5D200E9A4E1 /* SDR.framework in Frameworks */,
-				72C79A192269A5D100E9A4E1 /* Charts.framework in Frameworks */,
 				72C79A1F2269A5D200E9A4E1 /* SwiftChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,10 +183,8 @@
 		72EB3ED92273027600CDA861 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				72EB3EDA2273028800CDA861 /* AvailableDeviceCell.swift */,
-				72EB3EDC227302C200CDA861 /* AvailableDeviceCell.xib */,
-				72EB3ED42272F01B00CDA861 /* BindedDeviceCell.swift */,
-				72EB3ED62272F03100CDA861 /* BindedDeviceCell.xib */,
+				72EB3EDA2273028800CDA861 /* DeviceCell.swift */,
+				72EB3EDC227302C200CDA861 /* DeviceCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -282,8 +272,7 @@
 			files = (
 				72691842229D3481006C853B /* CreateDevice.storyboard in Resources */,
 				720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */,
-				72EB3EDD2273032A00CDA861 /* AvailableDeviceCell.xib in Resources */,
-				72EB3ED72272F03100CDA861 /* BindedDeviceCell.xib in Resources */,
+				72EB3EDD2273032A00CDA861 /* DeviceCell.xib in Resources */,
 				720233F12265BBCD009EE218 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +307,6 @@
 			files = (
 				727CB9A02282BC2600A45F8C /* DragView.swift in Sources */,
 				72EB3ECF2272E0FE00CDA861 /* DevicesViewModel.swift in Sources */,
-				72EB3ED52272F01B00CDA861 /* BindedDeviceCell.swift in Sources */,
 				1E66E8DF2269062300F93A46 /* TunerViewController.swift in Sources */,
 				72EB3ED12272EA9400CDA861 /* DemodulatorViewModel.swift in Sources */,
 				727CB9A32282BC6000A45F8C /* NSDraggingInfo+DraggedFileURL.swift in Sources */,
@@ -328,7 +316,7 @@
 				72691848229D3C6C006C853B /* CreateDeviceWindowController.swift in Sources */,
 				72E4594522706882001F123E /* DevicesViewController.swift in Sources */,
 				7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */,
-				72EB3EDB2273028800CDA861 /* AvailableDeviceCell.swift in Sources */,
+				72EB3EDB2273028800CDA861 /* DeviceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

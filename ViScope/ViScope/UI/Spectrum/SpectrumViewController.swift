@@ -32,6 +32,14 @@ class SpectrumViewController: NSViewController {
         print("SpectrumViewController viewDidLoad")
         print("\(spectrumChart.bounds.width)")
         
+        // TODO: Implement better
+        SDR.spectrum.span.subscribe(self) { [unowned self] (span) in
+            print(span)
+//            self.spectrumChart.startLabel = frequencyStart
+//            self.waterfallChart.startLabel = frequencyStart
+        }
+    
+        // TODO: Implement better
         SDR.spectrum.data.subscribe(self) { [unowned self] (spectrum) in
             self.spectrumChart.setData(spectrum)
             self.waterfallChart.addData(spectrum)
@@ -51,6 +59,7 @@ class SpectrumViewController: NSViewController {
     override func viewDidLayout() {
         super.viewDidLayout()
         
+        // TODO: Implement better
         SDR.spectrum.width.value = Int(spectrumChart.bounds.width)
         
         print("SpectrumViewController viewDidLayout")

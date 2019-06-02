@@ -12,16 +12,14 @@ import SDR
 class DevicesItem {
     let device: SDRDevice
     
-//    private var bindDevice: (() -> Void)?
     private(set) var binded: Bool = false
     
     init(device: SDRDevice) {
         self.device = device
     }
     
-    func bindDevice() {
-        // TODO: Fix
-//        SDR.bindDevice(device)
+    func startDevice() {
+        SDR.startDevice(device)
     }
 }
 
