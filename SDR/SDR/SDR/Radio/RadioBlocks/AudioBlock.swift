@@ -75,7 +75,7 @@ class AudioBlock {
         audioEngine.stop()
     }
     
-    func process(_ samples: [Float]) {
+    func process(_ samples: DSP.RealSamples) {
         
         var audioBuffer:        AVAudioPCMBuffer
         var audioBufferData:    UnsafeMutablePointer<Float>

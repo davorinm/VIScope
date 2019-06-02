@@ -10,6 +10,8 @@ import Foundation
 import Accelerate
 
 extension DSP {
+    typealias RealSamples = [Float]
+    
     class ComplexSamples {
         var real: [Float]
         var imag: [Float]

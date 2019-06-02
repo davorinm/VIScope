@@ -20,7 +20,7 @@ class FMDemodulatorBlock {
         // TODO: Create audioSamples buffer in initialize
     }
     
-    func process(_ samples: DSP.ComplexSamples) -> [Float] {
+    func process(_ samples: DSP.ComplexSamples) -> DSP.RealSamples {
         // TODO: Create buffer in initialize
         var audioSamples: [Float] = []
         

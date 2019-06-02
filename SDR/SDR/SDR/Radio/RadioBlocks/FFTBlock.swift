@@ -20,7 +20,7 @@ class FFTBlock {
     
     private let fftSetup: vDSP_DFT_Setup
     
-    var fftData: (([Float]) -> Void)?
+    var fftData: ((DSP.RealSamples) -> Void)?
     
     
     private let strideOne = vDSP_Stride(1)
