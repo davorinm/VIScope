@@ -1,5 +1,5 @@
 //
-//  DSP+Samples.swift
+//  DSP+ComplexSamples.swift
 //  SDR
 //
 //  Created by Davorin Madaric on 19/05/2019.
@@ -10,7 +10,7 @@ import Foundation
 import Accelerate
 
 extension DSP {
-    class Samples {
+    class ComplexSamples {
         var real: [Float]
         var imag: [Float]
         var count: Int
@@ -21,13 +21,13 @@ extension DSP {
             self.count = 0
         }
         
-        func append(_ samples: DSP.Samples) {
+        func append(_ samples: DSP.ComplexSamples) {
             vDSP_mmov(samples.real, &real + count, vDSP_Length(samples.count), 1, 0, 0)
             vDSP_mmov(samples.imag, &imag + count, vDSP_Length(samples.count), 1, 0, 0)
             count += samples.count
         }
         
-        func move(to: DSP.Samples, count: Int) {
+        func move(to: DSP.ComplexSamples, count: Int) {
             // Copy
             vDSP_mmov(self.real, &to.real, vDSP_Length(count), 1, 0, 0)
             vDSP_mmov(self.imag, &to.imag, vDSP_Length(count), 1, 0, 0)

@@ -32,7 +32,7 @@ class ComplexMixerBlock {
         self.δ = 2 * π * Float(self.localOscillator) / Float(self.sampleRate)
     }
     
-    func process(_ samples: DSP.Samples) -> DSP.Samples {
+    func process(_ samples: DSP.ComplexSamples) -> DSP.ComplexSamples {
         var samples = samples
         
         if (localOscillator != 0) {

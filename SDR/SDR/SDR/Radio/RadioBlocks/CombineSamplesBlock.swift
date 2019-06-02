@@ -12,7 +12,7 @@ import Accelerate
 class CombineSamplesBlock {
     // TODO: use combine block for creating samples from multiple sources
     
-    func process(_ samples: [DSP.Samples]) -> DSP.Samples {
+    func process(_ samples: [DSP.ComplexSamples]) -> DSP.ComplexSamples {
         // Resample signals up
         
         // Shift signals
@@ -24,7 +24,7 @@ class CombineSamplesBlock {
     
     
     
-        return DSP.Samples(count: 4)
+        return DSP.ComplexSamples(count: 4)
     }
     
     

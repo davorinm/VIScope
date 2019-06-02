@@ -10,11 +10,11 @@ import Accelerate
 
 class FFTBlock {
     private let bufferSize: Int = 524288
-    private var bufferSamples: DSP.Samples
+    private var bufferSamples: DSP.ComplexSamples
     
     private let fftSize: Int = 100000
     private let fftLength: vDSP_Length
-    private var fftSamples: DSP.Samples
+    private var fftSamples: DSP.ComplexSamples
     
     private let fftWindow: DSP.FFTWindow
     
@@ -45,10 +45,10 @@ class FFTBlock {
         fftLength = vDSP_Length(Int(1 << log2N))
         
         // Create buffer
-        bufferSamples = DSP.Samples(count: bufferSize)
+        bufferSamples = DSP.ComplexSamples(count: bufferSize)
         
         // Create fft buffer
-        fftSamples = DSP.Samples(count: Int(fftLength))
+        fftSamples = DSP.ComplexSamples(count: Int(fftLength))
         
         // Create window
         fftWindow = DSP.FFTWindow(length: Int(fftLength), function: .hamming)
@@ -73,7 +73,7 @@ class FFTBlock {
         vDSP_DFT_DestroySetup(fftSetup)
     }
 
-    func process(_ samples: DSP.Samples) -> DSP.Samples {
+    func process(_ samples: DSP.ComplexSamples) -> DSP.ComplexSamples {
         // Copy incomming samples to buffer
         bufferSamples.append(samples)
         

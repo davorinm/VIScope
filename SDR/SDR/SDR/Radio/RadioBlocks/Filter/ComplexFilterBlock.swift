@@ -39,9 +39,6 @@ class ComplexFilterBlock {
     var realLastSamples:    [Float]
     var imagLastSamples:    [Float]
     
-    
-    let lastSamples = DSP.Samples(count: outBufferSize)
-    
     //--------------------------------------------------------------------------
     //
     //
@@ -61,7 +58,8 @@ class ComplexFilterBlock {
         self.imagLastSamples   = [Float](repeating :0.0, count: self.kernel.count)
     }
     
-    func process(_ samples: DSP.Samples) -> DSP.Samples {
+    // TODO: Implement buffering as in FFT
+    func process(_ samples: DSP.ComplexSamples) -> DSP.ComplexSamples {
         // compute size of output buffer being: out = in.count / downRatio
         // if not evenly divisible, the remaining samples will be left over
         // for the next block of incoming samples
@@ -106,7 +104,7 @@ class ComplexFilterBlock {
         imagLastSamples = Array(samples.imag.dropFirst(self.downRatio * outBufferSize))
         
         // create arrays for output samples
-        let outSamples = DSP.Samples(count: outBufferSize)
+        let outSamples = DSP.ComplexSamples(count: outBufferSize)
         
         // pack the input and output arrays into a DSPSplitComplex
         var source = DSPSplitComplex(realp: &realSamples,    imagp: &imagSamples  )

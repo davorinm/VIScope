@@ -15,9 +15,9 @@ class SplitBlock {
         // TODO: Implement
     }
     
-    func process(_ samples: [Float]) -> DSP.Samples {
+    func process(_ samples: [Float]) -> DSP.ComplexSamples {
         let count = samples.count / 2
-        let output = DSP.Samples(count: count)
+        let output = DSP.ComplexSamples(count: count)
         var splitOutput = output.splitComplex()
         
         // split the real data into a complex struct
