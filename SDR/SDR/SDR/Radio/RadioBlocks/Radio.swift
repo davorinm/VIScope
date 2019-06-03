@@ -17,19 +17,20 @@ class Radio {
     private var chain: (([UInt8]) -> ())?
     
     init() {
-        let inputSampleRate: Int = 2000000
+        let inputSampleRate: Int = 2400000
         let audioSampleRate = 48000
-        let localOscillator = 100600000
+        let localOscillator = -400000
         
         let normalize = NormalizeBlock(bits: 8)
         let split = SplitBlock()
-        let fft = FFTBlock()
+        let fft = FFTBlock(fftSize: 200000)
         let complexMixer = ComplexMixerBlock(sampleRate: inputSampleRate, frequency: localOscillator)
-        let ifFilter = ComplexFilterBlock(sampleRateIn: 2400000, sampleRateOut: 48000, cutoffFrequency: 5000, kernelLength: 300)
-        let ifFft = FFTBlock()
+        let ifFilter = ComplexFilterBlock(sampleRateIn: inputSampleRate, sampleRateOut: 240000, cutoffFrequency: 100000, kernelLength: 300)
+        let ifFft = FFTBlock(fftSize: 5000)
         let fmDemodulator = FMDemodulatorBlock()
-        let audioFilter = RealFilterBlock(sampleRateIn: 48000, sampleRateOut: audioSampleRate, cutoffFrequency: 15000, kernelLength: 300)
+        let audioFilter = RealFilterBlock(sampleRateIn: 240000, sampleRateOut: audioSampleRate, cutoffFrequency: 15000, kernelLength: 300)
         let audioPlayer = AudioBlock()
+        audioPlayer.startAudio()
         
         fft.fftData = fftData
         spectrum.width.subscribe(self) { (width) in

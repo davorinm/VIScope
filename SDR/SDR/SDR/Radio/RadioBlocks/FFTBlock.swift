@@ -12,7 +12,6 @@ class FFTBlock {
     private let bufferSize: Int = 524288
     private var bufferSamples: DSP.ComplexSamples
     
-    private let fftSize: Int = 100000
     private let fftLength: vDSP_Length
     private var fftSamples: DSP.ComplexSamples
     
@@ -39,7 +38,7 @@ class FFTBlock {
     
     private let processQueue: DispatchQueue = DispatchQueue(label: "FFTBlock")
     
-    init() {
+    init(fftSize: Int) {
         // Calculate fftSize
         let log2N = vDSP_Length(log2f(Float(fftSize)))
         fftLength = vDSP_Length(Int(1 << log2N))
@@ -80,14 +79,14 @@ class FFTBlock {
         // FFT
         processQueue.async {
             while self.bufferSamples.count >= self.fftLength {
-                self.calculateFFT()
+                self.calculate()
             }
         }
         
         return samples
     }
     
-    private func calculateFFT() {
+    private func calculate() {
         // Check length
         guard bufferSamples.count >= fftLength else {
             return

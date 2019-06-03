@@ -26,8 +26,9 @@
 		1EBC53D0226F940F009C02C6 /* SDRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53CF226F940F009C02C6 /* SDRDevice.swift */; };
 		1EBC53D2226F96B6009C02C6 /* ObservableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */; };
 		1EBC53D4226F96BE009C02C6 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D3226F96BE009C02C6 /* Disposable.swift */; };
+		1EC3B09B22A5B07F00E3467F /* PolarBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3B09A22A5B07F00E3467F /* PolarBlock.swift */; };
 		1EEFEDAB2291F1B000FBE07B /* DSP+Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFEDAA2291F1B000FBE07B /* DSP+Samples.swift */; };
-		726A828F2282D033008926D0 /* MixerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A828E2282D033008926D0 /* MixerBlock.swift */; };
+		726A828F2282D033008926D0 /* ComplexMixerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A828E2282D033008926D0 /* ComplexMixerBlock.swift */; };
 		726A82912282DB76008926D0 /* AudioBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A82902282DB76008926D0 /* AudioBlock.swift */; };
 		726A82932282E0E2008926D0 /* RealFilterBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A82922282E0E2008926D0 /* RealFilterBlock.swift */; };
 		726A82952282E0FC008926D0 /* FilterCoefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726A82942282E0FC008926D0 /* FilterCoefficients.swift */; };
@@ -76,8 +77,9 @@
 		1EBC53CF226F940F009C02C6 /* SDRDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRDevice.swift; sourceTree = "<group>"; };
 		1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableEvent.swift; sourceTree = "<group>"; };
 		1EBC53D3226F96BE009C02C6 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		1EC3B09A22A5B07F00E3467F /* PolarBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolarBlock.swift; sourceTree = "<group>"; };
 		1EEFEDAA2291F1B000FBE07B /* DSP+Samples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSP+Samples.swift"; sourceTree = "<group>"; };
-		726A828E2282D033008926D0 /* MixerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerBlock.swift; sourceTree = "<group>"; };
+		726A828E2282D033008926D0 /* ComplexMixerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexMixerBlock.swift; sourceTree = "<group>"; };
 		726A82902282DB76008926D0 /* AudioBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBlock.swift; sourceTree = "<group>"; };
 		726A82922282E0E2008926D0 /* RealFilterBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealFilterBlock.swift; sourceTree = "<group>"; };
 		726A82942282E0FC008926D0 /* FilterCoefficients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCoefficients.swift; sourceTree = "<group>"; };
@@ -269,7 +271,8 @@
 				1E569E892288B6B1008971B9 /* SplitBlock.swift */,
 				1EA6714E229DC1AC00616CC8 /* CombineSamplesBlock.swift */,
 				1E339281226C83BC00AD052F /* FFTBlock.swift */,
-				726A828E2282D033008926D0 /* MixerBlock.swift */,
+				1EC3B09A22A5B07F00E3467F /* PolarBlock.swift */,
+				726A828E2282D033008926D0 /* ComplexMixerBlock.swift */,
 				1EB1AB1222A3D695001FC95C /* FMDemodulatorBlock.swift */,
 				726A82902282DB76008926D0 /* AudioBlock.swift */,
 			);
@@ -398,7 +401,7 @@
 				72CA0A7B22857E49000A9153 /* DSP+Normalize.swift in Sources */,
 				727CB9A72282BFFB00A45F8C /* FMSynthesizer.swift in Sources */,
 				1EB1AB1322A3D695001FC95C /* FMDemodulatorBlock.swift in Sources */,
-				726A828F2282D033008926D0 /* MixerBlock.swift in Sources */,
+				726A828F2282D033008926D0 /* ComplexMixerBlock.swift in Sources */,
 				72E4593F2270492E001F123E /* NormalizeBlock.swift in Sources */,
 				1E50C1B6227793E000764168 /* NoiseSDRDevice.swift in Sources */,
 				1E9CD752226F311B00CD679C /* USB.swift in Sources */,
@@ -409,6 +412,7 @@
 				1E9CD74E226F311B00CD679C /* RTLSDR.swift in Sources */,
 				1E569E84228866E7008971B9 /* DSP+FFTWindow.swift in Sources */,
 				726A82912282DB76008926D0 /* AudioBlock.swift in Sources */,
+				1EC3B09B22A5B07F00E3467F /* PolarBlock.swift in Sources */,
 				1EBC53D4226F96BE009C02C6 /* Disposable.swift in Sources */,
 				72EB3EDF2273067900CDA861 /* LinkedList.swift in Sources */,
 				727CB9A52282BF8E00A45F8C /* ComplexFilterBlock.swift in Sources */,
