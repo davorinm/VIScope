@@ -13,8 +13,23 @@ public class SDR {
     }
     
     /// Start sampling device
-    public class func startDevice(_ device: SDRDevice) {
-         SoftwareDefinedRadio.shared.startDevice(device)
+    public class func selectDevice(_ device: SDRDevice) {
+        SoftwareDefinedRadio.shared.selectDevice(device)
+    }
+    
+    /// Select SDR device
+    public class var selectedDevice: ObservableProperty<SDRDevice?> {
+        return SoftwareDefinedRadio.shared.selectedDevice
+    }
+    
+    /// Start sampling of selected device
+    public class func startDevice() {
+         SoftwareDefinedRadio.shared.startDevice()
+    }
+    
+    /// Stop sampling of selected device
+    public class func stopDevice() {
+        SoftwareDefinedRadio.shared.stopDevice()
     }
     
     /// Spectrum data from SDR

@@ -9,7 +9,7 @@ import Foundation
 import LibRTLSDR
 
 final class RTLSDR: SDRDevice {
-    let rawSamples: ObservableEvent<[UInt8]> = ObservableEvent()
+    let samples: ObservableEvent<[Float]> = ObservableEvent()
     
     
     // MARK: - Type Properties
@@ -99,30 +99,35 @@ final class RTLSDR: SDRDevice {
     
     private var sampleBuffer:           [UInt8]
     
-    private var _isConfigured:          Bool    = false
+    var isConfigured:          Bool    = false
     
     var sampleRate: Int = 2400000 {
         didSet {
-            if(self.isOpen() == true) {
+            if(self.isOpen == true) {
+                print("Set samplerate: \(self.sampleRate) - \(self.description)")
                 let rate = UInt32(self.sampleRate)
                 rtlsdr_set_sample_rate(self.librtlsdrPointer, rate)
+            } else {
+                print("Set sampleRate failed")
             }
         }
     }
     
     var tunedFrequency: Int = 100600000 {
         didSet {
-//            print("Set freq: \(self._tunedFrequency) - \(self.description)")
-            if(self.isOpen() == true) {
+            if(self.isOpen == true) {
+                print("Set freq: \(self.tunedFrequency) - \(self.description)")
                 let frequency = UInt32(self.tunedFrequency)
                 rtlsdr_set_center_freq(self.librtlsdrPointer, frequency)
+            } else {
+                print("Set freq failed")
             }
         }
     }
     
     var frequencyCorrection: Int = 0 {
         didSet {
-            if(self.isOpen() == true) {
+            if(self.isOpen == true) {
                 let correction = Int32(self.frequencyCorrection)
                 rtlsdr_set_freq_correction(self.librtlsdrPointer, correction)
             }
@@ -131,23 +136,23 @@ final class RTLSDR: SDRDevice {
     
     private var _tunerGainList:         [Int]   = []
     
-    private var _tunerAutoGain:         Bool    = true {
+    var tunerAutoGain:         Bool    = true {
         didSet {
-            if(self.isOpen() == true) {
-                if(self._tunerAutoGain == true) {
+            if(self.isOpen == true) {
+                if(self.tunerAutoGain == true) {
                     rtlsdr_set_tuner_gain_mode(self.librtlsdrPointer, RTLSDR.gainModeAuto)
                 } else {
                     rtlsdr_set_tuner_gain_mode(self.librtlsdrPointer, RTLSDR.gainModeManual)
-                    rtlsdr_set_tuner_gain(self.librtlsdrPointer, Int32(self._tunerGain))
+                    rtlsdr_set_tuner_gain(self.librtlsdrPointer, Int32(self.tunerGain))
                 }
             }
         }
     }
     
-    private var _tunerGain:             Int     = 0 {
+    var tunerGain:             Int     = 0 {
         didSet {
-            if(self.isOpen() == true) {
-                let gain = Int32(self._tunerGain)
+            if(self.isOpen == true) {
+                let gain = Int32(self.tunerGain)
                 rtlsdr_set_tuner_gain(self.librtlsdrPointer, gain)                
             }
         }
@@ -212,81 +217,20 @@ final class RTLSDR: SDRDevice {
     
     //--------------------------------------------------------------------------
     //
-    //
-    //
-    //--------------------------------------------------------------------------
-
-    func tunerAutoGain() -> Bool {
-        
-        return _tunerAutoGain
-        
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-
-    func tunerAutoGain(auto: Bool) {
-        
-        self._tunerAutoGain = auto
-        
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-
-    func tunerGain() -> Int {
-        
-        return _tunerGain
-        
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    //
-    //
-    //--------------------------------------------------------------------------
-
-    func tunerGain(gain: Int) {
-        
-        self._tunerGain = gain
-        
-    }
-    
-    //--------------------------------------------------------------------------
-    //
     // isOpen() -> Bool
     //
     // is current device opened via librtlsdr
     //
     //--------------------------------------------------------------------------
 
-    func isOpen() -> Bool {
-
-        if(librtlsdrPointer != nil) {
-            return true
-        } else {
-            return false
+    var isOpen: Bool {
+        get {
+            if(librtlsdrPointer != nil) {
+                return true
+            } else {
+                return false
+            }
         }
-    }
-    
-    //--------------------------------------------------------------------------
-    //
-    // isConfigured() -> Bool
-    //
-    // is current device opened via librtlsdr
-    //
-    //--------------------------------------------------------------------------
-    
-    func isConfigured() -> Bool {
-        
-        return self._isConfigured
-    
     }
 
     
@@ -310,7 +254,7 @@ final class RTLSDR: SDRDevice {
 
     func close() {
         
-        if(self.isOpen() == true) {
+        if(self.isOpen == true) {
             rtlsdr_close(librtlsdrPointer)
             librtlsdrPointer = nil
         }
@@ -330,12 +274,12 @@ final class RTLSDR: SDRDevice {
     func startSampleStream() {
         
         // open device
-        if(self.isOpen() == false) {
+        if(self.isOpen == false) {
             self.open()
         }
         
         // initalize device
-        if(self.isConfigured() == false) {
+        if(self.isConfigured == false) {
             self.initDevice()
         }
         
@@ -352,8 +296,8 @@ final class RTLSDR: SDRDevice {
         let freq                = self.tunedFrequency
         self.tunedFrequency    = freq
         
-        let auto = self._tunerAutoGain
-        self._tunerAutoGain = auto
+        let auto = self.tunerAutoGain
+        self.tunerAutoGain = auto
         
         // reset buffer
         rtlsdr_reset_buffer(self.librtlsdrPointer)
@@ -383,7 +327,7 @@ final class RTLSDR: SDRDevice {
 
     func cancelAsyncRead() {
         
-        if(self.isOpen() == true) {
+        if(self.isOpen == true) {
             rtlsdr_cancel_async(self.librtlsdrPointer)
         }
         
@@ -412,8 +356,9 @@ final class RTLSDR: SDRDevice {
                 // convert buffer to Swift [UInt8]
                 let samples: [UInt8] = Array(bufferPointer)
                 
+                let normalizedSamples = DSP.normalize(samples)
                 
-                selfRTLSDR.rawSamples.raise(samples)
+                selfRTLSDR.samples.raise(normalizedSamples)
                 
                 
             }, rtlSdrContext, UInt32(0), UInt32(self.bufferSize))
@@ -471,7 +416,7 @@ final class RTLSDR: SDRDevice {
         open()
         initDeviceTunerGainList()
         initDeviceTuner()
-        self._isConfigured = true
+        self.isConfigured = true
         close()
         
     }
@@ -483,7 +428,7 @@ final class RTLSDR: SDRDevice {
     //--------------------------------------------------------------------------
 
     private func initDeviceTunerGainList() {
-        if(isOpen() == true) {
+        if(isOpen == true) {
             
             let tunerGainCount: Int     = Int(rtlsdr_get_tuner_gains(librtlsdrPointer, nil))
             var gainList:       [Int32] = [Int32](repeating: 0, count: tunerGainCount)
@@ -505,7 +450,7 @@ final class RTLSDR: SDRDevice {
     //--------------------------------------------------------------------------
 
     private func initDeviceTuner() {
-        if(isOpen() == true) {
+        if(isOpen == true) {
             
             let deviceTunerType: rtlsdr_tuner = rtlsdr_get_tuner_type(librtlsdrPointer)
             

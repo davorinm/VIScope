@@ -10,7 +10,7 @@ import Foundation
 import Accelerate
 
 class DSP {
-    class func oldNormalize(_ rawSamples: [UInt8]) -> [Float] {
+    class func normalize(_ rawSamples: [UInt8]) -> [Float] {
         // get samples count
         let sampleCount  = rawSamples.count
         let sampleLength = vDSP_Length(sampleCount)

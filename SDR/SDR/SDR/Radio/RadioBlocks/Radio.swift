@@ -14,14 +14,13 @@ class Radio {
     let spectrum = SDRSpectrum()
     let ifSpectrum = SDRSpectrum()
     
-    private var chain: (([UInt8]) -> ())?
+    private var chain: (([Float]) -> ())?
     
     init() {
         let inputSampleRate: Int = 2400000
         let audioSampleRate = 48000
         let localOscillator = -400000
         
-        let normalize = NormalizeBlock(bits: 8)
         let split = SplitBlock()
         let fft = FFTBlock(fftSize: 200000)
         let complexMixer = ComplexMixerBlock(sampleRate: inputSampleRate, frequency: localOscillator)
@@ -43,10 +42,10 @@ class Radio {
         }
         
         // TODO: Stop using "-->" and use block chainig - linked list...
-        chain = normalize.process --> split.process --> fft.process --> complexMixer.process --> ifFilter.process --> ifFft.process --> fmDemodulator.process --> audioFilter.process --> audioPlayer.process
+        chain = split.process --> fft.process --> complexMixer.process --> ifFilter.process --> ifFft.process --> fmDemodulator.process --> audioFilter.process --> audioPlayer.process
     }
 
-    func samplesIn(_ rawSamples: [UInt8]) {
+    func samplesIn(_ rawSamples: [Float]) {
         processQueue.async { [unowned self] in
             _ = self.chain?(rawSamples)
         }

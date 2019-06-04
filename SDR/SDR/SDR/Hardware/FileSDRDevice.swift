@@ -1,5 +1,5 @@
 //
-//  NoiseSDRDevice.swift
+//  FileSDRDevice.swift
 //  SDR
 //
 //  Created by Davorin Madaric on 29/04/2019.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-class NoiseSDRDevice: SDRDevice {
+final class FileSDRDevice: SDRDevice {
     
-    var name: String = "NoiseSDRDevice"
+    var name: String = "FileSDRDevice"
     
-    var rawSamples: ObservableEvent<[UInt8]> = ObservableEvent()
+    var samples: ObservableEvent<[Float]> = ObservableEvent()
     
     let minimumFrequency: Int = 35000000
     
@@ -48,29 +48,13 @@ class NoiseSDRDevice: SDRDevice {
         return [0]
     }
     
-    func tunerAutoGain() -> Bool {
-        return false
-    }
+    var tunerAutoGain: Bool = false
     
-    func tunerAutoGain(auto: Bool) {
-        
-    }
+    var tunerGain: Int = 0
     
-    func tunerGain() -> Int {
-        return 0
-    }
+    var isOpen: Bool = false
     
-    func tunerGain(gain: Int) {
-        
-    }
-    
-    func isOpen() -> Bool {
-        return false
-    }
-    
-    func isConfigured() -> Bool {
-        return false
-    }
+    var isConfigured: Bool = false
     
     func startSampleStream() {
         scheduledTimer = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true) { [weak self] (timer) in
@@ -89,22 +73,22 @@ class NoiseSDRDevice: SDRDevice {
         self.asyncReadQueue.async {
             
             //            if let data = self?.generateSamples() {
-            //                self?.rawSamples.raise(data)
+            //                self?.samples.raise(data)
             //            }
             
             
             
             let data = self.play(carrierFrequency: 20000, modulatorFrequency: 200, modulatorAmplitude: 0.8)
 //            let data = self.signal(noiseAmount: 1, numSamples: self.bufferSize)
-            self.rawSamples.raise(data)
+            self.samples.raise(data)
         }
     }
     
     
     let generatorSampleRate: Double = 200000
-    var generatorSamples = [UInt8](repeating: 0, count: Int(32768 * 2))
+    var generatorSamples = [Float](repeating: 0, count: Int(32768 * 2))
     
-    private func play(carrierFrequency: Float32, modulatorFrequency: Float32, modulatorAmplitude: Float32) -> [UInt8]  {
+    private func play(carrierFrequency: Float32, modulatorFrequency: Float32, modulatorAmplitude: Float32) -> [Float]  {
         let unitVelocity = Float32(2.0 * Double.pi / generatorSampleRate)
         let carrierVelocity = carrierFrequency * unitVelocity
         let modulatorVelocity = modulatorFrequency * unitVelocity
@@ -114,15 +98,9 @@ class NoiseSDRDevice: SDRDevice {
         
         for sampleIndex in 0..<self.generatorSamples.count {
             let index = Int(sampleIndex)
-            
             let sample = sin(carrierVelocity * sampleTime + modulatorAmplitude * sin(modulatorVelocity * sampleTime))
             
-            let mapped = ((sample + 1) / 2) * 255
-            
-            let val = UInt8(mapped)
-            
-            
-            generatorSamples[index] = val
+            generatorSamples[index] = sample
             
             sampleTime += 1
         }

@@ -18,9 +18,9 @@ class DevicesItem {
         self.device = device
     }
     
-    func startDevice() {
-        SDR.startDevice(device)
-    }
+//    func startDevice() {
+//        SDR.startDevice()
+//    }
 }
 
 class DevicesViewModel {

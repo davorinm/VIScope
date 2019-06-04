@@ -13,33 +13,19 @@ import Foundation
 //https://albertodebortoli.com/2018/02/12/the-easiest-promises-in-swift/
 //https://github.com/mxcl/PromiseKit
 //
-//class StuffMaker {
-//    func iBuildStuffWithFutures() -> Future<NSData> {
-//        let p = Promise<NSData>()
-//        dispatch_async(self.mycustomqueue)  {
-//            // do stuff to make your NSData
-//            if (SUCCESS) {
-//                let goodStuff = NSData()
-//                p.completeWithSuccess(goodStuff)
-//            }
-//            else {
-//                p.completeWithFail(NSError())
-//            }
-//        }
-//        return p.future()
-//    }
-//}
 
 class SoftwareDefinedRadio {
     static let shared = SoftwareDefinedRadio()
     
     let devices: ObservableProperty<[SDRDevice]> = ObservableProperty(value: [])
+    let selectedDevice: ObservableProperty<SDRDevice?> = ObservableProperty(value: nil)
     let spectrum: SDRSpectrum
     let ifSpectrum: SDRSpectrum
     
     private let radio: Radio
-    private let testDevices: [SDRDevice] = [NoiseSDRDevice()]
+    private let testDevices: [SDRDevice] = [FileSDRDevice()]
     private var createdDevices: [SDRDevice] = []
+    private var deviceSamplesDisposable: Disposable?
     
     private init() {
         self.radio = Radio()
@@ -77,14 +63,35 @@ class SoftwareDefinedRadio {
         // TODO: Implement
     }
     
-    func startDevice(_ device: SDRDevice) {
-        // TODO: Fix
-//        bindedDevices.value.append(device)
+    func selectDevice(_ device: SDRDevice) {
+        self.deviceSamplesDisposable = nil
+        self.selectedDevice.value = device
         
-        device.rawSamples.subscribe(self) { [unowned self] (samples) in
+        guard let device = self.selectedDevice.value else {
+            print("Device cannot be selected")
+            return
+        }
+        
+        deviceSamplesDisposable = device.samples.subscribe { [unowned self] (samples) in
             self.radio.samplesIn(samples)
+        }
+    }
+    
+    func startDevice() {
+        guard let device = self.selectedDevice.value else {
+            print("Device cannot be selected")
+            return
         }
         
         device.startSampleStream()
+    }
+    
+    func stopDevice() {
+        guard let device = self.selectedDevice.value else {
+            print("Device cannot be selected")
+            return
+        }
+        
+        device.stopSampleStream()
     }
 }
