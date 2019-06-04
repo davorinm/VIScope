@@ -22,7 +22,7 @@ class Radio {
         let localOscillator = -400000
         
         let split = SplitBlock()
-        let fft = FFTBlock(fftSize: 200000)
+        let fft = FFTBlock(fftSize: 65000)
         let complexMixer = ComplexMixerBlock(sampleRate: inputSampleRate, frequency: localOscillator)
         let ifFilter = ComplexFilterBlock(sampleRateIn: inputSampleRate, sampleRateOut: 240000, cutoffFrequency: 100000, kernelLength: 300)
         let ifFft = FFTBlock(fftSize: 5000)
@@ -69,19 +69,19 @@ class Radio {
     }
     
     private func ifFftData(data: [Float]) {
-        let max = data.max()!
-        let min = data.min()!
-        let range = max - min
-        
-        let mappedSamples: [Float] = data.enumerated().compactMap {
-            // Scaling 0...1
-            let scaledValue = ($0.element - min) / range;
-            return scaledValue
-        }
+//        let max = data.max()!
+//        let min = data.min()!
+//        let range = max - min
+//        
+//        let mappedSamples: [Float] = data.enumerated().compactMap {
+//            // Scaling 0...1
+//            let scaledValue = ($0.element - min) / range;
+//            return scaledValue
+//        }
         
         // Return on main thread
         DispatchQueue.main.async {
-            self.ifSpectrum.data.raise(mappedSamples)
+            self.ifSpectrum.data.raise(data)
         }
     }
 }

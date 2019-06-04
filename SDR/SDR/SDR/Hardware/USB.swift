@@ -97,9 +97,9 @@ class USB {
             
             print("Device attach: %04x:%04x", deviceDescriptor.pointee.idVendor, deviceDescriptor.pointee.idProduct)
             
-            let selfUSB = Unmanaged<USB>.fromOpaque(data!).takeUnretainedValue()
-            
-            let res = libusb_open(device, selfUSB.usbDeviceHandle)
+//            let selfUSB = Unmanaged<USB>.fromOpaque(data!).takeUnretainedValue()
+//            
+//            let res = libusb_open(device, selfUSB.usbDeviceHandle)
             
             return 0
         }, user_data, &deviceArrivedCallbackHandle)
@@ -137,12 +137,19 @@ class USB {
     }
     
     private func usbHandleEvents() {
-        print("usbHandleEvents")
+        print("usbHandleEvents Start")
         
         let rc = libusb_handle_events(nil)
         if rc < 0 {
             print("libusb_handle_events() failed: %s\n", libusb_error_name(rc))
         }
+        
+        DispatchQueue.main.async {
+            
+            self.onChange?()
+        }
+        
+        print("usbHandleEvents End")
     }
     
     private func usbExit() {

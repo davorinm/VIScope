@@ -78,6 +78,16 @@ public final class SpectrumView: NSView {
         // TODO: calculate min, max normalize data
         // TODO: Option to set custom min max, floor or ceil data, also for histogram
         
+        
+        if samples.count != Int(shapeLayer.bounds.width) {
+            print("samples count missaligned")
+        }
+        
+        
+        
+        let min = samples.min()
+        let max = samples.max()
+        
         let xScale = shapeLayer.frame.width / CGFloat(samples.count)
         
         let path = CGMutablePath()

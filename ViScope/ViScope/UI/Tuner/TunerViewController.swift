@@ -35,4 +35,31 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
         
         
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        // 1
+        guard let window = view.window else {
+            print("NO WINDOW!!")
+            return
+        }
+        
+        // 2
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = true
+        panel.canChooseDirectories = false
+        panel.allowsMultipleSelection = false
+        
+        // 3
+        panel.beginSheetModal(for: window) { (result) in
+            if result == NSApplication.ModalResponse.OK {
+                // 4
+                let selected = panel.urls[0]
+                
+                
+                SDR.startFileSampleStream(selected)
+            }
+        }
+    }
 }

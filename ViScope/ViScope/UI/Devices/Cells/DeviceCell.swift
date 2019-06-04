@@ -28,7 +28,7 @@ class DeviceCell: NSTableCellView {
     
     func setup(_ item: DevicesItem) {
         deviceNameField.stringValue = item.device.name
-        bindDevice = item.startDevice
+//        bindDevice = item.startDevice
     }
     
     // MARK: - Actions

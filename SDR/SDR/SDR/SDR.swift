@@ -41,6 +41,11 @@ public class SDR {
     public class var ifSpectrum: SDRSpectrum {
         return SoftwareDefinedRadio.shared.ifSpectrum
     }
+    
+    /// Start file stream
+    public class func startFileSampleStream(_ url: URL) {
+        SoftwareDefinedRadio.shared.startFileSampleStream(url)
+    }
 }
 
 /// SDRSpectrum class for spectrum data

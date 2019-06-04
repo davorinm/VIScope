@@ -27,6 +27,8 @@ class SoftwareDefinedRadio {
     private var createdDevices: [SDRDevice] = []
     private var deviceSamplesDisposable: Disposable?
     
+    private var sampleStreamTimer: Timer?
+    
     private init() {
         self.radio = Radio()
         
@@ -78,6 +80,8 @@ class SoftwareDefinedRadio {
     }
     
     func startDevice() {
+        stopSampleStream()
+        
         guard let device = self.selectedDevice.value else {
             print("Device cannot be selected")
             return
@@ -93,5 +97,48 @@ class SoftwareDefinedRadio {
         }
         
         device.stopSampleStream()
+    }
+    
+    //  //
+    
+    private var fileSampleHandle: FileHandle?
+    private let asyncReadQueue = DispatchQueue(label: "Read")
+    
+    func startFileSampleStream(_ url: URL) {
+        stopDevice()
+        
+        do {
+            fileSampleHandle = try FileHandle(forReadingFrom: url)
+        } catch let error {
+            print(error)
+        }
+        
+        let timeDelay: TimeInterval = (16384 * 2) / 2400000
+        
+        sampleStreamTimer = Timer.scheduledTimer(withTimeInterval: timeDelay, repeats: true) { [weak self] (timer) in
+            self?.asyncReadQueue.async {
+                
+                guard let fileSampleHandle = self?.fileSampleHandle else {
+                    assertionFailure()
+                    return
+                }
+                
+                let data = fileSampleHandle.readData(ofLength: 16384 * 2 * 4)
+                let dataArray: [Float] = data.withUnsafeBytes({ (dataPointer) -> [Float] in
+                    return Array(UnsafeBufferPointer<Float>(start: dataPointer, count: data.count/MemoryLayout<Float>.stride))
+                })
+                
+                self?.radio.samplesIn(dataArray)
+                
+            }
+            
+            
+            
+        }
+    }
+    
+    func stopSampleStream() {
+        sampleStreamTimer?.invalidate()
+        sampleStreamTimer = nil
     }
 }

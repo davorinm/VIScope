@@ -42,7 +42,7 @@ class SpectrumViewController: NSViewController {
         // TODO: Implement better
         SDR.spectrum.data.subscribe(self) { [unowned self] (spectrum) in
             self.spectrumChart.setData(spectrum)
-            self.waterfallChart.addData(spectrum)
+//            self.waterfallChart.addData(spectrum)
         }
     }
     
@@ -64,6 +64,7 @@ class SpectrumViewController: NSViewController {
         
         print("SpectrumViewController viewDidLayout")
         print("\(spectrumChart.bounds.width)")
+        print("\(self.view.bounds.width)")
         // TODO: If this works, report width for samples intepolation... or maybe should we be doing this in charts?!?
     }
 }
