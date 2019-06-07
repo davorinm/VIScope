@@ -59,60 +59,16 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
-                                            <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
-                                            <connections>
-                                                <action selector="openDocument:" target="Ady-hI-5gd" id="bVn-NM-KNZ"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Open Recent" id="tXI-mr-wws">
+                                        <menuItem title="Open device…" id="IAo-SY-fd9">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="oas-Oc-fiZ">
-                                                <items>
-                                                    <menuItem title="Clear Menu" id="vNY-rz-j42">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="clearRecentDocuments:" target="Ady-hI-5gd" id="Daa-9d-B3U"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                </items>
-                                            </menu>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
-                                        <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
-                                                <action selector="performClose:" target="Ady-hI-5gd" id="HmO-Ls-i7Q"/>
+                                                <action selector="openDevice:" target="Ady-hI-5gd" id="zHr-Al-jpH"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Save…" keyEquivalent="s" id="pxx-59-PXV">
+                                        <menuItem title="Open file…" id="pxx-59-PXV">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="saveDocument:" target="Ady-hI-5gd" id="teZ-XB-qJY"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Save As…" keyEquivalent="S" id="Bw7-FT-i3A">
-                                            <connections>
-                                                <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="mDf-zr-I0C"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Revert to Saved" keyEquivalent="r" id="KaW-ft-85H">
-                                            <connections>
-                                                <action selector="revertDocumentToSaved:" target="Ady-hI-5gd" id="iJ3-Pv-kwq"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
-                                        <menuItem title="Page Setup…" keyEquivalent="P" id="qIS-W8-SiK">
-                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="runPageLayout:" target="Ady-hI-5gd" id="Din-rz-gC5"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS">
-                                            <connections>
-                                                <action selector="print:" target="Ady-hI-5gd" id="qaZ-4w-aoO"/>
+                                                <action selector="openFile:" target="Ady-hI-5gd" id="jpF-Xf-Ehf"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -701,25 +657,16 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1264" height="562"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Dv5-Tr-obT" userLabel="Devices Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="562"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="rqp-xY-Ba1"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="SQm-yh-swl" kind="embed" id="rK6-ai-l1W"/>
-                                </connections>
-                            </containerView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="rda-aH-ubG" userLabel="Tuner Container View">
-                                <rect key="frame" x="250" y="462" width="764" height="100"/>
+                                <rect key="frame" x="0.0" y="462" width="1014" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="xGp-3h-A2i"/>
                                 </constraints>
@@ -728,7 +675,7 @@
                                 </connections>
                             </containerView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="7H9-8r-b9d" userLabel="Spectrum Container View">
-                                <rect key="frame" x="250" y="0.0" width="764" height="462"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1014" height="462"/>
                                 <connections>
                                     <segue destination="YVY-D7-Mhk" kind="embed" id="9po-sd-2WU"/>
                                 </connections>
@@ -745,18 +692,15 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="ASZ-ZC-9Wy" firstAttribute="leading" secondItem="7H9-8r-b9d" secondAttribute="trailing" id="19Q-xK-yE1"/>
-                            <constraint firstItem="Dv5-Tr-obT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="1WS-FK-EE5"/>
                             <constraint firstItem="7H9-8r-b9d" firstAttribute="top" secondItem="rda-aH-ubG" secondAttribute="bottom" id="8as-0z-Kwm"/>
-                            <constraint firstAttribute="bottom" secondItem="Dv5-Tr-obT" secondAttribute="bottom" id="FDc-D4-Na6"/>
-                            <constraint firstItem="Dv5-Tr-obT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="JKC-gr-z4e"/>
-                            <constraint firstItem="rda-aH-ubG" firstAttribute="leading" secondItem="Dv5-Tr-obT" secondAttribute="trailing" id="Mul-Zq-EdD"/>
-                            <constraint firstItem="7H9-8r-b9d" firstAttribute="leading" secondItem="Dv5-Tr-obT" secondAttribute="trailing" id="W8H-60-41m"/>
+                            <constraint firstItem="rda-aH-ubG" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Bij-uo-fAU"/>
                             <constraint firstAttribute="bottom" secondItem="ASZ-ZC-9Wy" secondAttribute="bottom" id="YXt-YC-1Ub"/>
                             <constraint firstAttribute="trailing" secondItem="ASZ-ZC-9Wy" secondAttribute="trailing" id="dpP-eU-9EC"/>
                             <constraint firstItem="rda-aH-ubG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="h5Y-xU-bBJ"/>
                             <constraint firstItem="ASZ-ZC-9Wy" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="kZJ-Nz-mpO"/>
                             <constraint firstItem="ASZ-ZC-9Wy" firstAttribute="leading" secondItem="rda-aH-ubG" secondAttribute="trailing" id="lqX-eg-xix"/>
                             <constraint firstAttribute="bottom" secondItem="7H9-8r-b9d" secondAttribute="bottom" id="m15-IK-qhX"/>
+                            <constraint firstItem="7H9-8r-b9d" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="tuS-uV-NNF"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -772,8 +716,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="700" height="100"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Op-Qx-ShY">
-                                <rect key="frame" x="215" y="55" width="300" height="35"/>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Op-Qx-ShY">
+                                <rect key="frame" x="65" y="55" width="300" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="3lN-rY-p7q"/>
                                     <constraint firstAttribute="width" constant="300" id="bAG-gN-kBJ"/>
@@ -787,6 +731,9 @@
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-6g-EHK">
                                 <rect key="frame" x="8" y="8" width="684" height="19"/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="jYb-64-u5U"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" target="2hp-nT-MNM" id="cyz-4v-K5B"/>
+                                </connections>
                             </slider>
                             <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vXO-hj-vqX">
                                 <rect key="frame" x="540" y="66" width="153" height="26"/>
@@ -799,44 +746,37 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </comboBoxCell>
                             </comboBox>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zIK-KQ-p1f">
-                                <rect key="frame" x="10" y="64" width="25" height="27"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EQs-ez-35U">
+                                <rect key="frame" x="10" y="54" width="35" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="SKA-iC-ZKB"/>
-                                    <constraint firstAttribute="width" constant="25" id="dl8-gM-Ljz"/>
+                                    <constraint firstAttribute="width" constant="35" id="WMc-XO-Ybj"/>
+                                    <constraint firstAttribute="height" constant="35" id="wLd-lI-YWE"/>
                                 </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QyG-7C-u6v">
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xUx-D5-FWN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpC-T9-Ugy">
-                                <rect key="frame" x="53" y="64" width="25" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Ys9-5u-Ny9"/>
-                                    <constraint firstAttribute="width" constant="25" id="sKf-IF-sB4"/>
-                                </constraints>
-                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wOi-eT-eKA">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
+                                <connections>
+                                    <action selector="startStopButtonPressed:" target="2hp-nT-MNM" id="nXi-RB-n2n"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="5Op-Qx-ShY" firstAttribute="top" secondItem="Ayx-fl-SL8" secondAttribute="top" constant="10" id="4d6-6p-fcO"/>
+                            <constraint firstItem="5Op-Qx-ShY" firstAttribute="leading" secondItem="EQs-ez-35U" secondAttribute="trailing" constant="20" id="96q-mR-1xE"/>
+                            <constraint firstItem="EQs-ez-35U" firstAttribute="leading" secondItem="Ayx-fl-SL8" secondAttribute="leading" constant="10" id="C0B-Tz-5HC"/>
                             <constraint firstAttribute="bottom" secondItem="PaA-6g-EHK" secondAttribute="bottom" constant="10" id="EAY-TM-X30"/>
                             <constraint firstAttribute="trailing" secondItem="PaA-6g-EHK" secondAttribute="trailing" constant="10" id="Oh3-aM-BMo"/>
-                            <constraint firstItem="zIK-KQ-p1f" firstAttribute="top" secondItem="Ayx-fl-SL8" secondAttribute="top" constant="10" id="QCQ-DT-UyT"/>
                             <constraint firstItem="vXO-hj-vqX" firstAttribute="top" secondItem="Ayx-fl-SL8" secondAttribute="top" constant="10" id="bMj-jq-wv0"/>
-                            <constraint firstItem="5Op-Qx-ShY" firstAttribute="leading" secondItem="Ayx-fl-SL8" secondAttribute="leading" constant="10" id="kMF-iU-x0V"/>
+                            <constraint firstItem="EQs-ez-35U" firstAttribute="top" secondItem="Ayx-fl-SL8" secondAttribute="top" constant="10" id="oes-Qp-C55"/>
                             <constraint firstItem="PaA-6g-EHK" firstAttribute="leading" secondItem="Ayx-fl-SL8" secondAttribute="leading" constant="10" id="pyK-Oh-Adf"/>
-                            <constraint firstItem="zIK-KQ-p1f" firstAttribute="leading" secondItem="Ayx-fl-SL8" secondAttribute="leading" constant="10" id="tzQ-oU-CkB"/>
                             <constraint firstAttribute="trailing" secondItem="vXO-hj-vqX" secondAttribute="trailing" constant="10" id="wZO-Gy-wno"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="frequencySlider" destination="PaA-6g-EHK" id="qzW-Dm-usM"/>
                         <outlet property="frequencyTextField" destination="5Op-Qx-ShY" id="D88-rn-bRx"/>
+                        <outlet property="startStopButton" destination="EQs-ez-35U" id="WfL-WW-M48"/>
                     </connections>
                 </viewController>
                 <customObject id="xmM-IT-Lp5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -858,27 +798,42 @@
                                         <rect key="frame" x="0.0" y="0.0" width="649" height="270"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
+                                            <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IeX-5A-EJv">
+                                                <rect key="frame" x="3" y="102" width="19" height="165"/>
+                                                <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="S4a-WZ-pKT"/>
+                                            </slider>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="SpectrumView" customModule="DMSpectrum">
-                                                <rect key="frame" x="5" y="105" width="639" height="160"/>
+                                                <rect key="frame" x="25" y="105" width="619" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="Mua-Ho-T2C"/>
                                                 </constraints>
                                             </customView>
+                                            <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f7K-LT-w8T">
+                                                <rect key="frame" x="3" y="2" width="19" height="105"/>
+                                                <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="VH1-Go-EAv"/>
+                                            </slider>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="LXE-A6-9BI" customClass="HistogramView" customModule="DMSpectrum">
-                                                <rect key="frame" x="5" y="5" width="639" height="100"/>
+                                                <rect key="frame" x="25" y="5" width="619" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Vd3-Rf-jdn"/>
                                                 </constraints>
                                             </customView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="IeX-5A-EJv" secondAttribute="top" id="41H-qe-Lyr"/>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="IeX-5A-EJv" secondAttribute="trailing" constant="5" id="7fk-cv-mkP"/>
                                             <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" constant="5" id="8mB-fU-r53"/>
+                                            <constraint firstItem="f7K-LT-w8T" firstAttribute="bottom" secondItem="LXE-A6-9BI" secondAttribute="bottom" id="HuU-Gm-RGU"/>
+                                            <constraint firstItem="f7K-LT-w8T" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" constant="5" id="QOZ-5D-sGU"/>
+                                            <constraint firstItem="f7K-LT-w8T" firstAttribute="top" secondItem="LXE-A6-9BI" secondAttribute="top" id="RDQ-g1-b5w"/>
                                             <constraint firstItem="LXE-A6-9BI" firstAttribute="top" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="XRQ-nV-uUQ"/>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" constant="5" id="ds4-TK-iKx"/>
+                                            <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" constant="5" id="YPS-JY-Mcm"/>
+                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="bottom" secondItem="IeX-5A-EJv" secondAttribute="bottom" id="dWR-ZF-1BE"/>
                                             <constraint firstAttribute="trailing" secondItem="LXE-A6-9BI" secondAttribute="trailing" constant="5" id="g9a-bx-ZQ2"/>
+                                            <constraint firstItem="LXE-A6-9BI" firstAttribute="leading" secondItem="f7K-LT-w8T" secondAttribute="trailing" constant="5" id="gJl-aI-Km5"/>
+                                            <constraint firstItem="IeX-5A-EJv" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" constant="5" id="olN-zz-wNu"/>
                                             <constraint firstAttribute="bottom" secondItem="LXE-A6-9BI" secondAttribute="bottom" constant="5" id="qqx-VL-qrM"/>
                                             <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" constant="5" id="v20-O3-5hW"/>
-                                            <constraint firstItem="LXE-A6-9BI" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" constant="5" id="y29-Ir-b8B"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
@@ -902,92 +857,6 @@
                 <customObject id="KL0-Bi-hTw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1340.5" y="588"/>
-        </scene>
-        <!--Devices View Controller-->
-        <scene sceneID="gGg-Iu-QYn">
-            <objects>
-                <viewController id="SQm-yh-swl" customClass="DevicesViewController" customModule="ViScope" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="DXp-u0-xGm">
-                        <rect key="frame" x="0.0" y="0.0" width="250" height="600"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="deo-xl-Occ">
-                                <rect key="frame" x="0.0" y="50" width="250" height="550"/>
-                                <clipView key="contentView" id="a1q-6J-BXP">
-                                    <rect key="frame" x="1" y="1" width="248" height="548"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="d2o-Fl-IL1">
-                                            <rect key="frame" x="0.0" y="0.0" width="248" height="548"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                                            <tableColumns>
-                                                <tableColumn width="245" minWidth="10" maxWidth="300" id="F1L-oD-KK9">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                                        <font key="font" metaFont="smallSystem"/>
-                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </tableHeaderCell>
-                                                    <customCell key="dataCell" alignment="left" id="fT2-NC-rRA"/>
-                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
-                                                </tableColumn>
-                                            </tableColumns>
-                                        </tableView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ZKY-j7-WSR">
-                                    <rect key="frame" x="1" y="541" width="248" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Tsv-IU-Vy1">
-                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-Z2-jCE">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sy2-Uz-0WX">
-                                        <rect key="frame" x="215" y="12" width="25" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="e3I-uj-tDY"/>
-                                            <constraint firstAttribute="height" constant="25" id="pSU-ya-kCi"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="knB-TQ-1eF">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                            <connections>
-                                                <action selector="createDeviceButtonPressed:" target="SQm-yh-swl" id="ina-lc-Vzt"/>
-                                            </connections>
-                                        </buttonCell>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0NR-Zw-aDy"/>
-                                    <constraint firstItem="sy2-Uz-0WX" firstAttribute="centerY" secondItem="Fjw-Z2-jCE" secondAttribute="centerY" id="gdq-xN-Vwq"/>
-                                    <constraint firstAttribute="trailing" secondItem="sy2-Uz-0WX" secondAttribute="trailing" constant="10" id="kn1-wV-aCh"/>
-                                </constraints>
-                            </customView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="deo-xl-Occ" firstAttribute="leading" secondItem="DXp-u0-xGm" secondAttribute="leading" id="7pi-bU-GaY"/>
-                            <constraint firstAttribute="bottom" secondItem="Fjw-Z2-jCE" secondAttribute="bottom" id="9IG-S8-cQN"/>
-                            <constraint firstItem="Fjw-Z2-jCE" firstAttribute="leading" secondItem="DXp-u0-xGm" secondAttribute="leading" id="T2b-Ad-EHv"/>
-                            <constraint firstAttribute="trailing" secondItem="deo-xl-Occ" secondAttribute="trailing" id="khx-Hf-ikq"/>
-                            <constraint firstItem="Fjw-Z2-jCE" firstAttribute="top" secondItem="deo-xl-Occ" secondAttribute="bottom" id="pLn-K3-sDN"/>
-                            <constraint firstAttribute="trailing" secondItem="Fjw-Z2-jCE" secondAttribute="trailing" id="psQ-w2-Aza"/>
-                            <constraint firstItem="deo-xl-Occ" firstAttribute="top" secondItem="DXp-u0-xGm" secondAttribute="top" id="zkx-B6-0j3"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="d2o-Fl-IL1" id="uBX-QN-rPR"/>
-                    </connections>
-                </viewController>
-                <customObject id="2y8-qP-Hz7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1241" y="-313"/>
         </scene>
         <!--Demodulator View Controller-->
         <scene sceneID="I2K-4A-YCi">

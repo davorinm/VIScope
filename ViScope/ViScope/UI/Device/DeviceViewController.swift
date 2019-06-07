@@ -1,5 +1,5 @@
 //
-//  DevicesViewController.swift
+//  DeviceViewController.swift
 //  ViScope
 //
 //  Created by Davorin Mađarić on 24/04/2019.
@@ -8,10 +8,10 @@
 
 import Cocoa
 
-class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+class DeviceViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     @IBOutlet private weak var tableView: NSTableView!
     
-    private let viewModel = DevicesViewModel()
+    private let viewModel = DeviceViewModel()
     
     private let deviceCell = NSUserInterfaceItemIdentifier("deviceCell")
     
@@ -27,6 +27,11 @@ class DevicesViewController: NSViewController, NSTableViewDataSource, NSTableVie
         viewModel.updateItems = { [unowned self] in
             self.tableView.reloadData()
         }
+        
+        viewModel.close = { [unowned self] in
+            self.dismiss(nil)
+        }
+        
         viewModel.load()
     }
     

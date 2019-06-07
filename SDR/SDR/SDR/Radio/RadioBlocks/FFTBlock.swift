@@ -89,6 +89,7 @@ class FFTBlock {
     private func calculate() {
         // Check length
         guard bufferSamples.count >= fftLength else {
+            print("Not enough samples")
             return
         }
         

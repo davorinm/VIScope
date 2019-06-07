@@ -11,7 +11,7 @@ import Cocoa
 class DeviceCell: NSTableCellView {
     @IBOutlet private weak var deviceNameField: NSTextField!
     
-    private var bindDevice: (() -> Void)?
+    private var selectDevice: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,17 +23,17 @@ class DeviceCell: NSTableCellView {
         super.prepareForReuse()
         
         print("prepareForReuse")
-        bindDevice = nil
+        selectDevice = nil
     }
     
     func setup(_ item: DevicesItem) {
         deviceNameField.stringValue = item.device.name
-//        bindDevice = item.startDevice
+        selectDevice = item.selectDevice
     }
     
     // MARK: - Actions
     
     @IBAction func bindButtonPressed(_ sender: Any) {
-        bindDevice?()
+        selectDevice?()
     }
 }

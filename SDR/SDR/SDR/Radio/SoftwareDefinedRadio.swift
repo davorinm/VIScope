@@ -129,11 +129,7 @@ class SoftwareDefinedRadio {
                 })
                 
                 self?.radio.samplesIn(dataArray)
-                
             }
-            
-            
-            
         }
     }
     

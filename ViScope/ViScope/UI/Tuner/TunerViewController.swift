@@ -10,56 +10,48 @@ import Cocoa
 import SDR
 
 class TunerViewController: NSViewController, NSComboBoxDelegate {
+    @IBOutlet private weak var startStopButton: NSButton!
     @IBOutlet private weak var frequencyTextField: NSTextField!
     @IBOutlet private weak var frequencySlider: NSSlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
-//        SDR.selectedDevices.subscribeWithRaise(self) { [unowned self]  (device) in
-//            guard let device = device else {
-//                return
-//            }
-//            
-//            self.frequencySlider.minValue = Double(device.minimumFrequency())
-//            self.frequencySlider.maxValue = Double(device.maximumFrequency())
-//            self.frequencySlider.doubleValue = Double(device.tunedFrequency())
-//        }
+        SDR.selectedDevice.subscribeWithRaise(self) { [unowned self]  (device) in
+            guard let device = device else {
+                return
+            }
+            
+            self.frequencySlider.minValue = Double(device.minimumFrequency)
+            self.frequencySlider.maxValue = Double(device.maximumFrequency)
+            self.frequencySlider.doubleValue = Double(device.tunedFrequency)
+            
+            self.frequencyTextField.stringValue = device.tunedFrequency.description
+        }
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        
         
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        // 1
-        guard let window = view.window else {
-            print("NO WINDOW!!")
-            return
-        }
         
-        // 2
-        let panel = NSOpenPanel()
-        panel.canChooseFiles = true
-        panel.canChooseDirectories = false
-        panel.allowsMultipleSelection = false
         
-        // 3
-        panel.beginSheetModal(for: window) { (result) in
-            if result == NSApplication.ModalResponse.OK {
-                // 4
-                let selected = panel.urls[0]
-                
-                
-                SDR.startFileSampleStream(selected)
-            }
-        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        SDR.selectedDevice.value?.tunedFrequency = Int(frequencySlider.doubleValue)
+    }
+    
+    @IBAction func startStopButtonPressed(_ sender: Any) {
+        
+        // TODO: Toggle device
+        SDR.startDevice()
+        
     }
 }
