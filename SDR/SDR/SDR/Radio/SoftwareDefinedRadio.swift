@@ -113,7 +113,7 @@ class SoftwareDefinedRadio {
             print(error)
         }
         
-        let timeDelay: TimeInterval = (16384 * 2) / 2400000
+        let timeDelay: TimeInterval = (16384 * 2) / (2400000 * 2)
         
         sampleStreamTimer = Timer.scheduledTimer(withTimeInterval: timeDelay, repeats: true) { [weak self] (timer) in
             self?.asyncReadQueue.async {

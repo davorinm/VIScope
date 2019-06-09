@@ -33,7 +33,7 @@ class ComplexMixerBlock {
     }
     
     func process(_ samples: DSP.ComplexSamples) -> DSP.ComplexSamples {
-        var samples = samples
+//        var samples = samples
         
         if (localOscillator != 0) {
             var inSamples = samples.splitComplex()
@@ -56,12 +56,15 @@ class ComplexMixerBlock {
             
             // create the oscillator
             // TODO: replace with vvcosisinf(_:​_:​_:​)
-            var loReal: [Float] = [Float](repeating: 0.0, count: samples.count)
-            var loImag: [Float] = [Float](repeating: 0.0, count: samples.count)
-            var oscillator: DSPSplitComplex = DSPSplitComplex(realp: &loReal, imagp: &loImag)
+            
+            var lo = DSP.ComplexSamples(capacity: samples.count)
+            var oscillator: DSPSplitComplex = lo.splitComplex()
             var samplesCount: Int32 = Int32(samples.count)
-            vvcosf(&loReal, &phaseArray, &samplesCount)
-            vvsinf(&loImag, &phaseArray, &samplesCount)
+            vvcosf(&lo.real, &phaseArray, &samplesCount)
+            vvsinf(&lo.imag, &phaseArray, &samplesCount)
+            lo.count = samples.count
+            
+//            vvcosisinf(&oscillator, &phaseArray, &samplesCount)
             
             // mix the original signal with the oscillator (in place)
             let conjugateMultiplication:    Int32 = -1

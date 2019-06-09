@@ -17,7 +17,9 @@ class SplitBlock {
     
     func process(_ samples: [Float]) -> DSP.ComplexSamples {
         let count = samples.count / 2
-        let output = DSP.ComplexSamples(count: count)
+        let output = DSP.ComplexSamples(capacity: count)
+        // TODO: Find better solution
+        output.count = count
         var splitOutput = output.splitComplex()
         
         // split the real data into a complex struct
@@ -26,7 +28,6 @@ class SplitBlock {
             vDSP_ctoz(dspComplex, 2, &splitOutput, 1, UInt(count))
         }
         
-        output.count = count
         
         return output
     }

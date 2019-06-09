@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7202348F22671128009EE218 /* SwiftChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 7202348D22671128009EE218 /* SwiftChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		720234E1226714D7009EE218 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202349522671137009EE218 /* Chart.swift */; };
-		720234E2226714D9009EE218 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202349622671137009EE218 /* ChartColors.swift */; };
-		720234E3226714DB009EE218 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202349722671137009EE218 /* ChartSeries.swift */; };
-		720234E5226716BA009EE218 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720234E4226716BA009EE218 /* Platform.swift */; };
+		1EC7C27B22ABC1E2004D59DB /* SDRControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EC7C27922ABC1E2004D59DB /* SDRControls.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EC7C29622ABC334004D59DB /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7C28A22ABC334004D59DB /* Platform.swift */; };
+		1EC7C29722ABC334004D59DB /* FrequencyChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7C28C22ABC334004D59DB /* FrequencyChartView.swift */; };
+		1EC7C29822ABC334004D59DB /* FrequencyPolarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7C28D22ABC334004D59DB /* FrequencyPolarView.swift */; };
+		1EC7C29922ABC334004D59DB /* FrequencyHistogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7C28E22ABC334004D59DB /* FrequencyHistogramView.swift */; };
+		1EC7C29A22ABC334004D59DB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7C28F22ABC334004D59DB /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7202348A22671128009EE218 /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7202348D22671128009EE218 /* SwiftChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftChart.h; sourceTree = "<group>"; };
-		7202348E22671128009EE218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7202349522671137009EE218 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
-		7202349622671137009EE218 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
-		7202349722671137009EE218 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
-		720234E4226716BA009EE218 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		1EC7C27622ABC1E2004D59DB /* SDRControls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDRControls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EC7C27922ABC1E2004D59DB /* SDRControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDRControls.h; sourceTree = "<group>"; };
+		1EC7C27A22ABC1E2004D59DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EC7C28A22ABC334004D59DB /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		1EC7C28C22ABC334004D59DB /* FrequencyChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyChartView.swift; sourceTree = "<group>"; };
+		1EC7C28D22ABC334004D59DB /* FrequencyPolarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyPolarView.swift; sourceTree = "<group>"; };
+		1EC7C28E22ABC334004D59DB /* FrequencyHistogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyHistogramView.swift; sourceTree = "<group>"; };
+		1EC7C28F22ABC334004D59DB /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7202348722671128009EE218 /* Frameworks */ = {
+		1EC7C27322ABC1E2004D59DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,108 +37,117 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7202348022671128009EE218 = {
+		1EC7C26C22ABC1E2004D59DB = {
 			isa = PBXGroup;
 			children = (
-				7202348C22671128009EE218 /* SwiftChart */,
-				7202348B22671128009EE218 /* Products */,
+				1EC7C27822ABC1E2004D59DB /* SDRControls */,
+				1EC7C27722ABC1E2004D59DB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7202348B22671128009EE218 /* Products */ = {
+		1EC7C27722ABC1E2004D59DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7202348A22671128009EE218 /* SwiftChart.framework */,
+				1EC7C27622ABC1E2004D59DB /* SDRControls.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7202348C22671128009EE218 /* SwiftChart */ = {
+		1EC7C27822ABC1E2004D59DB /* SDRControls */ = {
 			isa = PBXGroup;
 			children = (
-				7202349822671137009EE218 /* SwiftChart */,
-				7202348D22671128009EE218 /* SwiftChart.h */,
-				7202348E22671128009EE218 /* Info.plist */,
+				1EC7C28122ABC334004D59DB /* SDRControls */,
+				1EC7C27922ABC1E2004D59DB /* SDRControls.h */,
+				1EC7C27A22ABC1E2004D59DB /* Info.plist */,
 			);
-			path = SwiftChart;
+			path = SDRControls;
 			sourceTree = "<group>";
 		};
-		7202349822671137009EE218 /* SwiftChart */ = {
+		1EC7C28122ABC334004D59DB /* SDRControls */ = {
 			isa = PBXGroup;
 			children = (
-				720234E4226716BA009EE218 /* Platform.swift */,
-				7202349522671137009EE218 /* Chart.swift */,
-				7202349622671137009EE218 /* ChartColors.swift */,
-				7202349722671137009EE218 /* ChartSeries.swift */,
+				1EC7C28B22ABC334004D59DB /* Spectrum */,
+				1EC7C28A22ABC334004D59DB /* Platform.swift */,
+				1EC7C28F22ABC334004D59DB /* Colors.swift */,
 			);
-			path = SwiftChart;
+			path = SDRControls;
+			sourceTree = "<group>";
+		};
+		1EC7C28B22ABC334004D59DB /* Spectrum */ = {
+			isa = PBXGroup;
+			children = (
+				1EC7C28C22ABC334004D59DB /* FrequencyChartView.swift */,
+				1EC7C28D22ABC334004D59DB /* FrequencyPolarView.swift */,
+				1EC7C28E22ABC334004D59DB /* FrequencyHistogramView.swift */,
+			);
+			path = Spectrum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7202348522671128009EE218 /* Headers */ = {
+		1EC7C27122ABC1E2004D59DB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7202348F22671128009EE218 /* SwiftChart.h in Headers */,
+				1EC7C27B22ABC1E2004D59DB /* SDRControls.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7202348922671128009EE218 /* SwiftChart */ = {
+		1EC7C27522ABC1E2004D59DB /* SDRControls */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7202349222671128009EE218 /* Build configuration list for PBXNativeTarget "SwiftChart" */;
+			buildConfigurationList = 1EC7C27E22ABC1E2004D59DB /* Build configuration list for PBXNativeTarget "SDRControls" */;
 			buildPhases = (
-				7202348522671128009EE218 /* Headers */,
-				7202348622671128009EE218 /* Sources */,
-				7202348722671128009EE218 /* Frameworks */,
-				7202348822671128009EE218 /* Resources */,
+				1EC7C27122ABC1E2004D59DB /* Headers */,
+				1EC7C27222ABC1E2004D59DB /* Sources */,
+				1EC7C27322ABC1E2004D59DB /* Frameworks */,
+				1EC7C27422ABC1E2004D59DB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftChart;
-			productName = SwiftChart;
-			productReference = 7202348A22671128009EE218 /* SwiftChart.framework */;
+			name = SDRControls;
+			productName = SDRControls;
+			productReference = 1EC7C27622ABC1E2004D59DB /* SDRControls.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7202348122671128009EE218 /* Project object */ = {
+		1EC7C26D22ABC1E2004D59DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Davorin Mađarić";
+				ORGANIZATIONNAME = "Davorin Madaric";
 				TargetAttributes = {
-					7202348922671128009EE218 = {
-						CreatedOnToolsVersion = 10.2;
+					1EC7C27522ABC1E2004D59DB = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 7202348422671128009EE218 /* Build configuration list for PBXProject "SwiftChart" */;
+			buildConfigurationList = 1EC7C27022ABC1E2004D59DB /* Build configuration list for PBXProject "SDRControls" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7202348022671128009EE218;
-			productRefGroup = 7202348B22671128009EE218 /* Products */;
+			mainGroup = 1EC7C26C22ABC1E2004D59DB;
+			productRefGroup = 1EC7C27722ABC1E2004D59DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7202348922671128009EE218 /* SwiftChart */,
+				1EC7C27522ABC1E2004D59DB /* SDRControls */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7202348822671128009EE218 /* Resources */ = {
+		1EC7C27422ABC1E2004D59DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -146,21 +157,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7202348622671128009EE218 /* Sources */ = {
+		1EC7C27222ABC1E2004D59DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720234E3226714DB009EE218 /* ChartSeries.swift in Sources */,
-				720234E2226714D9009EE218 /* ChartColors.swift in Sources */,
-				720234E5226716BA009EE218 /* Platform.swift in Sources */,
-				720234E1226714D7009EE218 /* Chart.swift in Sources */,
+				1EC7C29922ABC334004D59DB /* FrequencyHistogramView.swift in Sources */,
+				1EC7C29A22ABC334004D59DB /* Colors.swift in Sources */,
+				1EC7C29622ABC334004D59DB /* Platform.swift in Sources */,
+				1EC7C29722ABC334004D59DB /* FrequencyChartView.swift in Sources */,
+				1EC7C29822ABC334004D59DB /* FrequencyPolarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7202349022671128009EE218 /* Debug */ = {
+		1EC7C27C22ABC1E2004D59DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -192,7 +204,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -224,7 +236,7 @@
 			};
 			name = Debug;
 		};
-		7202349122671128009EE218 /* Release */ = {
+		1EC7C27D22ABC1E2004D59DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -256,7 +268,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -281,52 +293,50 @@
 			};
 			name = Release;
 		};
-		7202349322671128009EE218 /* Debug */ = {
+		1EC7C27F22ABC1E2004D59DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SwiftChart/Info.plist;
+				INFOPLIST_FILE = SDRControls/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SwiftChart;
+				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SDRControls;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		7202349422671128009EE218 /* Release */ = {
+		1EC7C28022ABC1E2004D59DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SwiftChart/Info.plist;
+				INFOPLIST_FILE = SDRControls/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SwiftChart;
+				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SDRControls;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -336,25 +346,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7202348422671128009EE218 /* Build configuration list for PBXProject "SwiftChart" */ = {
+		1EC7C27022ABC1E2004D59DB /* Build configuration list for PBXProject "SDRControls" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7202349022671128009EE218 /* Debug */,
-				7202349122671128009EE218 /* Release */,
+				1EC7C27C22ABC1E2004D59DB /* Debug */,
+				1EC7C27D22ABC1E2004D59DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7202349222671128009EE218 /* Build configuration list for PBXNativeTarget "SwiftChart" */ = {
+		1EC7C27E22ABC1E2004D59DB /* Build configuration list for PBXNativeTarget "SDRControls" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7202349322671128009EE218 /* Debug */,
-				7202349422671128009EE218 /* Release */,
+				1EC7C27F22ABC1E2004D59DB /* Debug */,
+				1EC7C28022ABC1E2004D59DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7202348122671128009EE218 /* Project object */;
+	rootObject = 1EC7C26D22ABC1E2004D59DB /* Project object */;
 }

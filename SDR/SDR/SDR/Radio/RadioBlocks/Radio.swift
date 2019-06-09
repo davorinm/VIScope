@@ -14,18 +14,18 @@ class Radio {
     let spectrum = SDRSpectrum()
     let ifSpectrum = SDRSpectrum()
     
-    private var chain: (([Float]) -> ())?
+    private var chain: (([Float]) -> (DSP.ComplexSamples))?
     
     init() {
         let inputSampleRate: Int = 2400000
         let audioSampleRate = 48000
-        let localOscillator = -400000
+        let localOscillator = 1000000
         
         let split = SplitBlock()
-        let fft = FFTBlock(fftSize: 65000)
+        let fft = FFTBlock(fftPoints: 2000)
         let complexMixer = ComplexMixerBlock(sampleRate: inputSampleRate, frequency: localOscillator)
-        let ifFilter = ComplexFilterBlock(sampleRateIn: inputSampleRate, sampleRateOut: 240000, cutoffFrequency: 100000, kernelLength: 300)
-        let ifFft = FFTBlock(fftSize: 5000)
+        let ifFilter = ComplexFilterBlock(sampleRateIn: inputSampleRate, sampleRateOut: 600000, cutoffFrequency: 500000, kernelLength: 300)
+        let ifFft = FFTBlock(fftPoints: 6000)
         let fmDemodulator = FMDemodulatorBlock()
         let audioFilter = RealFilterBlock(sampleRateIn: 240000, sampleRateOut: audioSampleRate, cutoffFrequency: 15000, kernelLength: 300)
         let audioPlayer = AudioBlock()
@@ -33,16 +33,16 @@ class Radio {
         
         fft.fftData = fftData
         spectrum.width.subscribe(self) { (width) in
-            fft.interpolatedWidth = width
+//            fft.interpolatedWidth = width
         }
         
         ifFft.fftData = ifFftData
         ifSpectrum.width.subscribe(self) { (width) in
-            ifFft.interpolatedWidth = width
+//            ifFft.interpolatedWidth = width
         }
         
         // TODO: Stop using "-->" and use block chainig - linked list...
-        chain = split.process --> fft.process --> complexMixer.process --> ifFilter.process --> ifFft.process --> fmDemodulator.process --> audioFilter.process --> audioPlayer.process
+        chain = split.process --> fft.process //--> complexMixer.process --> ifFilter.process --> ifFft.process --> fmDemodulator.process --> audioFilter.process --> audioPlayer.process
     }
 
     func samplesIn(_ rawSamples: [Float]) {
@@ -52,33 +52,13 @@ class Radio {
     }
     
     private func fftData(data: [Float]) {
-        let max = data.max()!
-        let min = data.min()!
-        let range = max - min
-        
-        let mappedSamples: [Float] = data.enumerated().compactMap {
-            // Scaling 0...1
-            let scaledValue = ($0.element - min) / range;
-            return scaledValue
-        }
-        
         // Return on main thread
         DispatchQueue.main.async {
-            self.spectrum.data.raise(mappedSamples)
+            self.spectrum.data.raise(data)
         }
     }
     
     private func ifFftData(data: [Float]) {
-//        let max = data.max()!
-//        let min = data.min()!
-//        let range = max - min
-//        
-//        let mappedSamples: [Float] = data.enumerated().compactMap {
-//            // Scaling 0...1
-//            let scaledValue = ($0.element - min) / range;
-//            return scaledValue
-//        }
-        
         // Return on main thread
         DispatchQueue.main.async {
             self.ifSpectrum.data.raise(data)

@@ -7,8 +7,8 @@
 //
 
 import Cocoa
-import DMSpectrum
 import SDR
+import SDRControls
 
 //https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/signal_extraction_from_noise
 //https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/equalizing_audio_with_vdsp
@@ -23,8 +23,13 @@ import SDR
 //https://github.com/christopherhelf/Swift-FFT-Example/blob/master/ffttest/fft.swift
 
 class SpectrumViewController: NSViewController {
-    @IBOutlet private weak var spectrumChart: SpectrumView!
-    @IBOutlet private weak var waterfallChart: HistogramView!
+    @IBOutlet private weak var spectrumChart: FrequencyChartView!
+    @IBOutlet private weak var spectrumUpperStepper: NSStepper!
+    @IBOutlet private weak var spectrumLowerStepper: NSStepper!
+    
+    @IBOutlet private weak var waterfallChart: FrequencyHistogramView!
+    @IBOutlet private weak var waterfallUpperStepper: NSStepper!
+    @IBOutlet private weak var waterfallLowerStepper: NSStepper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,26 @@ class SpectrumViewController: NSViewController {
             self.spectrumChart.setData(spectrum)
 //            self.waterfallChart.addData(spectrum)
         }
+        
+        self.spectrumUpperStepper.increment = 10
+        self.spectrumUpperStepper.minValue = -1000
+        self.spectrumUpperStepper.maxValue = 1000
+        self.spectrumUpperStepper.floatValue = 100
+        
+        self.spectrumLowerStepper.increment = 10
+        self.spectrumLowerStepper.minValue = -1000
+        self.spectrumLowerStepper.maxValue = 1000
+        self.spectrumLowerStepper.floatValue = -100
+        
+//        self.waterfallUpperStepper.increment = 10
+//        self.waterfallUpperStepper.maxValue = -1000
+//        self.waterfallUpperStepper.floatValue = 100
+//
+//        self.waterfallLowerStepper.increment = 10
+//        self.waterfallLowerStepper.floatValue = -100
+        
+//        self.spectrumChart.max = 10000
+//        self.spectrumChart.min = -200
     }
     
     override func viewWillAppear() {
@@ -66,6 +91,28 @@ class SpectrumViewController: NSViewController {
         print("\(spectrumChart.bounds.width)")
         print("\(self.view.bounds.width)")
         // TODO: If this works, report width for samples intepolation... or maybe should we be doing this in charts?!?
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func spectrumUpperStepperChanged(_ sender: Any) {
+        self.spectrumChart.max = self.spectrumUpperStepper.floatValue
+        print("spectrumChart.max \(self.spectrumChart.max)")
+    }
+    
+    @IBAction func spectrumLowerStepperChanged(_ sender: Any) {
+        self.spectrumChart.min = self.spectrumLowerStepper.floatValue
+        print("spectrumChart.min \(self.spectrumChart.min)")
+    }
+    
+    @IBAction func waterfallUpperStepperChanged(_ sender: Any) {
+        self.waterfallChart.max = self.waterfallUpperStepper.floatValue
+        print("waterfallChart.max \(self.waterfallChart.max)")
+    }
+
+    @IBAction func waterfallLowerStepperChanged(_ sender: Any) {
+        self.waterfallChart.min = self.waterfallLowerStepper.floatValue
+        print("waterfallChart.min \(self.waterfallChart.min)")
     }
 }
 

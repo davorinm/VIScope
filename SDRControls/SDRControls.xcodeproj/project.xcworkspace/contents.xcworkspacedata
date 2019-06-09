@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DMSpectrum.xcodeproj">
+      location = "self:SDRControls.xcodeproj">
    </FileRef>
 </Workspace>

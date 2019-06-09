@@ -6,9 +6,12 @@
 //  Copyright © 2019 Davorin Mađarić. All rights reserved.
 //
 
-import AppKit
+import Foundation
 
-public final class SpectrumView: NSView {
+public final class FrequencyChartView: UIView {
+    public var min: Float!
+    public var max: Float!
+    
     private let axisLayer = CAShapeLayer()
     private let shapeLayer = CAShapeLayer()
     private let gradientLayer = CAGradientLayer()
@@ -79,23 +82,30 @@ public final class SpectrumView: NSView {
         // TODO: Option to set custom min max, floor or ceil data, also for histogram
         
         
-        if samples.count != Int(shapeLayer.bounds.width) {
-            print("samples count missaligned")
+//        if samples.count != Int(shapeLayer.bounds.width) {
+//            print("samples count missaligned \(samples.count - Int(shapeLayer.bounds.width))")
+//        }
+        
+        if min == nil {
+            min = samples.min()!
         }
         
+        if max == nil {
+            max = samples.max()!
+        }
         
-        
-        let min = samples.min()
-        let max = samples.max()
-        
+        let range = max - min
         let xScale = shapeLayer.frame.width / CGFloat(samples.count)
         
         let path = CGMutablePath()
         path.move(to: CGPoint(x: 0, y: 0))
         
         for sample in samples.enumerated() {
+            
+            let scaledValue = (sample.element - min) / range
+            
             let point = CGPoint(x: xScale * CGFloat(sample.offset),
-                                y: shapeLayer.frame.height * CGFloat(sample.element))
+                                y: shapeLayer.frame.height * CGFloat(scaledValue))
             
             path.addLine(to: point)
         }

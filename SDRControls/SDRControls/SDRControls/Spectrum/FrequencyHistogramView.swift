@@ -6,11 +6,14 @@
 //  Copyright © 2019 Davorin Madaric. All rights reserved.
 //
 
-import AppKit
+import Foundation
 import Metal
 import MetalKit
 
-public final class HistogramView: NSView {
+public final class FrequencyHistogramView: NSView {
+    public var min: Float!
+    public var max: Float!
+    
     private var metalView: MTKView!
     private var metalRender: MetalRender!
     

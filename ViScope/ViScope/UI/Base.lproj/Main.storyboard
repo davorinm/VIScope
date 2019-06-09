@@ -798,42 +798,83 @@
                                         <rect key="frame" x="0.0" y="0.0" width="649" height="270"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IeX-5A-EJv">
-                                                <rect key="frame" x="3" y="102" width="19" height="165"/>
-                                                <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="S4a-WZ-pKT"/>
-                                            </slider>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="SpectrumView" customModule="DMSpectrum">
-                                                <rect key="frame" x="25" y="105" width="619" height="160"/>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="s9b-Vo-SsL">
+                                                <rect key="frame" x="0.0" y="110" width="649" height="160"/>
+                                                <subviews>
+                                                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bFu-9T-hlh">
+                                                        <rect key="frame" x="2" y="130" width="19" height="27"/>
+                                                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="AMv-zh-DBF"/>
+                                                        <connections>
+                                                            <action selector="spectrumUpperStepperChanged:" target="YVY-D7-Mhk" id="pxM-eq-zU3"/>
+                                                        </connections>
+                                                    </stepper>
+                                                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="idb-3S-cdG">
+                                                        <rect key="frame" x="2" y="3" width="19" height="27"/>
+                                                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="ac8-8P-DdK"/>
+                                                        <connections>
+                                                            <action selector="spectrumLowerStepperChanged:" target="YVY-D7-Mhk" id="wRe-Qw-W6Z"/>
+                                                        </connections>
+                                                    </stepper>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="4zG-bH-4xS" customClass="FrequencyChartView" customModule="SDRControls">
+                                                        <rect key="frame" x="23" y="0.0" width="626" height="160"/>
+                                                    </customView>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="Mua-Ho-T2C"/>
+                                                    <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="s9b-Vo-SsL" secondAttribute="top" id="0jo-o6-rZY"/>
+                                                    <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="idb-3S-cdG" secondAttribute="trailing" constant="5" id="1mb-KI-TGf"/>
+                                                    <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="bFu-9T-hlh" secondAttribute="trailing" constant="5" id="4u9-iL-6o7"/>
+                                                    <constraint firstAttribute="height" constant="160" id="9K7-Rq-JyT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" id="EE1-lB-dKU"/>
+                                                    <constraint firstItem="bFu-9T-hlh" firstAttribute="leading" secondItem="s9b-Vo-SsL" secondAttribute="leading" constant="5" id="WNV-3I-RDE"/>
+                                                    <constraint firstItem="bFu-9T-hlh" firstAttribute="top" secondItem="s9b-Vo-SsL" secondAttribute="top" constant="5" id="b95-dr-ble"/>
+                                                    <constraint firstItem="idb-3S-cdG" firstAttribute="leading" secondItem="s9b-Vo-SsL" secondAttribute="leading" constant="5" id="hKf-eL-QqE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" id="jXy-pN-lyP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="idb-3S-cdG" secondAttribute="bottom" constant="5" id="tll-3B-Msh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="v3J-s4-wN5"/>
                                                 </constraints>
                                             </customView>
-                                            <slider horizontalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f7K-LT-w8T">
-                                                <rect key="frame" x="3" y="2" width="19" height="105"/>
-                                                <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="VH1-Go-EAv"/>
-                                            </slider>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="LXE-A6-9BI" customClass="HistogramView" customModule="DMSpectrum">
-                                                <rect key="frame" x="25" y="5" width="619" height="100"/>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="dES-xV-Yh1">
+                                                <rect key="frame" x="0.0" y="0.0" width="649" height="110"/>
+                                                <subviews>
+                                                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6ac-11-NBS">
+                                                        <rect key="frame" x="2" y="80" width="19" height="27"/>
+                                                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="ccy-oX-ufQ"/>
+                                                        <connections>
+                                                            <action selector="waterfallUpperStepperChanged:" target="YVY-D7-Mhk" id="rqi-db-koT"/>
+                                                        </connections>
+                                                    </stepper>
+                                                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2sd-TU-Xlp">
+                                                        <rect key="frame" x="2" y="3" width="19" height="27"/>
+                                                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="47A-7Q-11n"/>
+                                                        <connections>
+                                                            <action selector="waterfallLowerStepperChanged:" target="YVY-D7-Mhk" id="ih0-Bb-9XD"/>
+                                                        </connections>
+                                                    </stepper>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="LXE-A6-9BI" customClass="FrequencyHistogramView" customModule="SDRControls">
+                                                        <rect key="frame" x="23" y="0.0" width="626" height="110"/>
+                                                    </customView>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Vd3-Rf-jdn"/>
+                                                    <constraint firstItem="6ac-11-NBS" firstAttribute="top" secondItem="dES-xV-Yh1" secondAttribute="top" constant="5" id="2FH-u7-gwA"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="aEN-vJ-Iqg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2sd-TU-Xlp" secondAttribute="bottom" constant="5" id="d3A-2x-gd4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="LXE-A6-9BI" secondAttribute="bottom" id="gfa-Te-MTA"/>
+                                                    <constraint firstItem="LXE-A6-9BI" firstAttribute="top" secondItem="dES-xV-Yh1" secondAttribute="top" id="hia-sU-hWZ"/>
+                                                    <constraint firstItem="6ac-11-NBS" firstAttribute="leading" secondItem="dES-xV-Yh1" secondAttribute="leading" constant="5" id="j3L-Jc-qx7"/>
+                                                    <constraint firstItem="LXE-A6-9BI" firstAttribute="leading" secondItem="6ac-11-NBS" secondAttribute="trailing" constant="5" id="mqV-QW-njR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LXE-A6-9BI" secondAttribute="trailing" id="nPf-b7-b3I"/>
+                                                    <constraint firstItem="2sd-TU-Xlp" firstAttribute="leading" secondItem="dES-xV-Yh1" secondAttribute="leading" constant="5" id="sdN-Db-NuT"/>
                                                 </constraints>
                                             </customView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="IeX-5A-EJv" secondAttribute="top" id="41H-qe-Lyr"/>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="leading" secondItem="IeX-5A-EJv" secondAttribute="trailing" constant="5" id="7fk-cv-mkP"/>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" constant="5" id="8mB-fU-r53"/>
-                                            <constraint firstItem="f7K-LT-w8T" firstAttribute="bottom" secondItem="LXE-A6-9BI" secondAttribute="bottom" id="HuU-Gm-RGU"/>
-                                            <constraint firstItem="f7K-LT-w8T" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" constant="5" id="QOZ-5D-sGU"/>
-                                            <constraint firstItem="f7K-LT-w8T" firstAttribute="top" secondItem="LXE-A6-9BI" secondAttribute="top" id="RDQ-g1-b5w"/>
-                                            <constraint firstItem="LXE-A6-9BI" firstAttribute="top" secondItem="4zG-bH-4xS" secondAttribute="bottom" id="XRQ-nV-uUQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" constant="5" id="YPS-JY-Mcm"/>
-                                            <constraint firstItem="4zG-bH-4xS" firstAttribute="bottom" secondItem="IeX-5A-EJv" secondAttribute="bottom" id="dWR-ZF-1BE"/>
-                                            <constraint firstAttribute="trailing" secondItem="LXE-A6-9BI" secondAttribute="trailing" constant="5" id="g9a-bx-ZQ2"/>
-                                            <constraint firstItem="LXE-A6-9BI" firstAttribute="leading" secondItem="f7K-LT-w8T" secondAttribute="trailing" constant="5" id="gJl-aI-Km5"/>
-                                            <constraint firstItem="IeX-5A-EJv" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" constant="5" id="olN-zz-wNu"/>
-                                            <constraint firstAttribute="bottom" secondItem="LXE-A6-9BI" secondAttribute="bottom" constant="5" id="qqx-VL-qrM"/>
-                                            <constraint firstAttribute="trailing" secondItem="4zG-bH-4xS" secondAttribute="trailing" constant="5" id="v20-O3-5hW"/>
+                                            <constraint firstAttribute="trailing" secondItem="s9b-Vo-SsL" secondAttribute="trailing" id="ANL-ZD-sVa"/>
+                                            <constraint firstItem="s9b-Vo-SsL" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="BRZ-ou-0Al"/>
+                                            <constraint firstItem="dES-xV-Yh1" firstAttribute="leading" secondItem="ncT-FX-Re1" secondAttribute="leading" id="DU2-r3-Wp5"/>
+                                            <constraint firstItem="dES-xV-Yh1" firstAttribute="top" secondItem="s9b-Vo-SsL" secondAttribute="bottom" id="M5G-d2-jXy"/>
+                                            <constraint firstItem="s9b-Vo-SsL" firstAttribute="top" secondItem="ncT-FX-Re1" secondAttribute="top" id="MTZ-ua-tKr"/>
+                                            <constraint firstAttribute="trailing" secondItem="dES-xV-Yh1" secondAttribute="trailing" id="kSV-I2-gue"/>
+                                            <constraint firstAttribute="bottom" secondItem="dES-xV-Yh1" secondAttribute="bottom" id="yEL-kX-FBb"/>
                                         </constraints>
                                     </customView>
                                 </subviews>
@@ -851,7 +892,11 @@
                     </view>
                     <connections>
                         <outlet property="spectrumChart" destination="4zG-bH-4xS" id="Cwn-bz-Jmp"/>
+                        <outlet property="spectrumLowerStepper" destination="idb-3S-cdG" id="zPJ-9X-U1N"/>
+                        <outlet property="spectrumUpperStepper" destination="bFu-9T-hlh" id="boT-9Z-ijf"/>
                         <outlet property="waterfallChart" destination="LXE-A6-9BI" id="uNH-1F-TOB"/>
+                        <outlet property="waterfallLowerStepper" destination="2sd-TU-Xlp" id="Cz9-dG-5qJ"/>
+                        <outlet property="waterfallUpperStepper" destination="6ac-11-NBS" id="Ode-EN-Ji6"/>
                     </connections>
                 </viewController>
                 <customObject id="KL0-Bi-hTw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -866,7 +911,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="353" height="622"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="R0K-XA-3lb" customClass="SpectrumView" customModule="DMSpectrum">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="R0K-XA-3lb" customClass="FrequencyChartView" customModule="SDRControls">
                                 <rect key="frame" x="15" y="457" width="323" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="eES-4G-Nth"/>

@@ -77,16 +77,18 @@ final class FileSDRDevice: SDRDevice {
             //            }
             
             
+//            let data = self.signal(noiseAmount: 0.1, numSamples: 3000)
             
-            let data = self.play(carrierFrequency: 20000, modulatorFrequency: 200, modulatorAmplitude: 0.8)
+            
+            let data = self.play(carrierFrequency: 700000, modulatorFrequency: 15000, modulatorAmplitude: 0.8)
 //            let data = self.signal(noiseAmount: 1, numSamples: self.bufferSize)
             self.samples.raise(data)
         }
     }
     
     
-    let generatorSampleRate: Double = 200000
-    var generatorSamples = [Float](repeating: 0, count: Int(32768 * 2))
+    let generatorSampleRate: Double = 2000000
+    var generatorSamples = [Float](repeating: 0, count: Int(16384 * 2))
     
     private func play(carrierFrequency: Float32, modulatorFrequency: Float32, modulatorAmplitude: Float32) -> [Float]  {
         let unitVelocity = Float32(2.0 * Double.pi / generatorSampleRate)
@@ -108,7 +110,7 @@ final class FileSDRDevice: SDRDevice {
         return generatorSamples
     }
     
-    private func signal(noiseAmount: Float, numSamples: Int) -> [UInt8] {
+    private func signal(noiseAmount: Float, numSamples: Int) -> [Float] {
         let tau = Float.pi * 2
         
         let samples: [Float] = (0 ..< numSamples).map { i in
@@ -120,6 +122,7 @@ final class FileSDRDevice: SDRDevice {
             signal += cos(phase * 8) * 0.8
             signal += cos(phase * 16) * 1.0
             signal += cos(phase * 32) * 0.8
+            signal += cos(phase * 64) * 0.8
             
             return signal
         }
@@ -129,12 +132,7 @@ final class FileSDRDevice: SDRDevice {
             return res
         }
         
-        let s3: [UInt8] = s2.map {
-            let ddd = $0 + 5
-            return UInt8(ddd * 23)
-        }
-        
-        return s3
+        return s2
     }
     
     private func ttt() {

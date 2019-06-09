@@ -45,7 +45,7 @@ class ComplexFilterBlock {
         self.kernel = FilterCoefficients.fir(sampleRate: self.inRate, frequency: self.frequency, length: kernelLength)
         
         
-        bufferSamples = DSP.ComplexSamples(count: bufferSize)
+        bufferSamples = DSP.ComplexSamples(capacity: bufferSize)
     }
     
     // TODO: Implement buffering as in FFT
@@ -72,7 +72,7 @@ class ComplexFilterBlock {
         
         
         
-        let sourceBuffer = DSP.ComplexSamples(count: inBufferSize)
+        let sourceBuffer = DSP.ComplexSamples(capacity: inBufferSize)
         
         
         bufferSamples.move(to: sourceBuffer, count: inBufferSize)
@@ -81,7 +81,7 @@ class ComplexFilterBlock {
         
         
         // create arrays for output samples
-        let outSamples = DSP.ComplexSamples(count: outBufferSize)
+        let outSamples = DSP.ComplexSamples(capacity: outBufferSize)
         outSamples.count = outBufferSize
         
         // pack the input and output arrays into a DSPSplitComplex

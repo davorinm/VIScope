@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E66E8DF2269062300F93A46 /* TunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66E8DE2269062300F93A46 /* TunerViewController.swift */; };
 		1EAFF5B522AA8550004F6E09 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFF5B422AA8550004F6E09 /* MainViewController.swift */; };
-		1EBE49C32278656E00C1C00F /* DMSpectrum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E50C1B42277926D00764168 /* DMSpectrum.framework */; };
-		1EBE49C42278656E00C1C00F /* DMSpectrum.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1E50C1B42277926D00764168 /* DMSpectrum.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1EC7C29E22ABC544004D59DB /* SDRControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC7C29D22ABC523004D59DB /* SDRControls.framework */; };
+		1EC7C29F22ABC544004D59DB /* SDRControls.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC7C29D22ABC523004D59DB /* SDRControls.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		720233EA2265BBCC009EE218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720233E92265BBCC009EE218 /* AppDelegate.swift */; };
 		720233EE2265BBCD009EE218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720233ED2265BBCD009EE218 /* Assets.xcassets */; };
 		720233F12265BBCD009EE218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720233EF2265BBCD009EE218 /* Main.storyboard */; };
@@ -22,8 +22,6 @@
 		7293B8832268655D00820CED /* SpectrumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7293B8822268655D00820CED /* SpectrumViewController.swift */; };
 		72C79A1C2269A5D200E9A4E1 /* SDR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDR.framework */; };
 		72C79A1D2269A5D200E9A4E1 /* SDR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1B2269A5D200E9A4E1 /* SDR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		72C79A1F2269A5D200E9A4E1 /* SwiftChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */; };
-		72C79A202269A5D200E9A4E1 /* SwiftChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72E4594522706882001F123E /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4594422706882001F123E /* DeviceViewController.swift */; };
 		72E45948227068D6001F123E /* DemodulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E45946227068D6001F123E /* DemodulatorViewController.swift */; };
 		72EB3ECF2272E0FE00CDA861 /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3ECE2272E0FE00CDA861 /* DeviceViewModel.swift */; };
@@ -39,9 +37,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1EBE49C42278656E00C1C00F /* DMSpectrum.framework in Embed Frameworks */,
+				1EC7C29F22ABC544004D59DB /* SDRControls.framework in Embed Frameworks */,
 				72C79A1D2269A5D200E9A4E1 /* SDR.framework in Embed Frameworks */,
-				72C79A202269A5D200E9A4E1 /* SwiftChart.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,9 +46,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1E50C1B42277926D00764168 /* DMSpectrum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DMSpectrum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E66E8DE2269062300F93A46 /* TunerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewController.swift; sourceTree = "<group>"; };
 		1EAFF5B422AA8550004F6E09 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1EC7C29D22ABC523004D59DB /* SDRControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDRControls.framework; path = "../../../Library/Developer/Xcode/DerivedData/ViScope-gcerkagsvcxfxebogrqevuodrwnf/Build/Products/Debug/SDRControls.framework"; sourceTree = "<group>"; };
 		720233E62265BBCC009EE218 /* ViScope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViScope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		720233E92265BBCC009EE218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		720233ED2265BBCD009EE218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,9 +61,7 @@
 		727CB99F2282BC2600A45F8C /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		727CB9A22282BC6000A45F8C /* NSDraggingInfo+DraggedFileURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+DraggedFileURL.swift"; sourceTree = "<group>"; };
 		7293B8822268655D00820CED /* SpectrumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumViewController.swift; sourceTree = "<group>"; };
-		72C79A182269A5D100E9A4E1 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C79A1B2269A5D200E9A4E1 /* SDR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E4594422706882001F123E /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		72E45946227068D6001F123E /* DemodulatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemodulatorViewController.swift; sourceTree = "<group>"; };
 		72EB3ECE2272E0FE00CDA861 /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
@@ -80,9 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EBE49C32278656E00C1C00F /* DMSpectrum.framework in Frameworks */,
+				1EC7C29E22ABC544004D59DB /* SDRControls.framework in Frameworks */,
 				72C79A1C2269A5D200E9A4E1 /* SDR.framework in Frameworks */,
-				72C79A1F2269A5D200E9A4E1 /* SwiftChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,10 +131,8 @@
 		720234CD22671328009EE218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				72C79A1E2269A5D200E9A4E1 /* SwiftChart.framework */,
+				1EC7C29D22ABC523004D59DB /* SDRControls.framework */,
 				72C79A1B2269A5D200E9A4E1 /* SDR.framework */,
-				72C79A182269A5D100E9A4E1 /* Charts.framework */,
-				1E50C1B42277926D00764168 /* DMSpectrum.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

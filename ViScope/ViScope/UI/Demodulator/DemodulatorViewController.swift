@@ -8,10 +8,10 @@
 
 import AppKit
 import SDR
-import DMSpectrum
+import SDRControls
 
 class DemodulatorViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
-    @IBOutlet private weak var spectrumChart: SpectrumView!
+    @IBOutlet private weak var spectrumChart: FrequencyChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

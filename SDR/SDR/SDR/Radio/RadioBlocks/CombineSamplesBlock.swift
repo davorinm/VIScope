@@ -24,7 +24,7 @@ class CombineSamplesBlock {
     
     
     
-        return DSP.ComplexSamples(count: 4)
+        return DSP.ComplexSamples(capacity: 4)
     }
     
     

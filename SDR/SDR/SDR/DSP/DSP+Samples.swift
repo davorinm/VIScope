@@ -16,23 +16,34 @@ extension DSP {
         var real: [Float]
         var imag: [Float]
         var count: Int
+        let capacity: Int
         
-        init(count: Int) {
-            self.real = [Float](repeating: 0, count: count)
-            self.imag = [Float](repeating: 0, count: count)
+        init(capacity: Int) {
+            self.real = [Float](repeating: 0, count: capacity)
+            self.imag = [Float](repeating: 0, count: capacity)
             self.count = 0
+            self.capacity = capacity
         }
         
         func append(_ samples: DSP.ComplexSamples) {
+            if capacity - count < samples.count {
+                assertionFailure("Capacity!!!!")
+            }
+            
             vDSP_mmov(samples.real, &real + count, vDSP_Length(samples.count), 1, 0, 0)
             vDSP_mmov(samples.imag, &imag + count, vDSP_Length(samples.count), 1, 0, 0)
             count += samples.count
         }
         
         func move(to: DSP.ComplexSamples, count: Int) {
+            if to.capacity - to.count < count {
+                assertionFailure("Capacity!!!!")
+            }
+            
             // Copy
             vDSP_mmov(self.real, &to.real, vDSP_Length(count), 1, 0, 0)
             vDSP_mmov(self.imag, &to.imag, vDSP_Length(count), 1, 0, 0)
+            to.count = count
             
             // Remove copyed samples from bufferSamples
             let remainingLength = self.count - count
@@ -43,6 +54,10 @@ extension DSP {
         }
         
         func splitComplex() -> DSPSplitComplex {
+//            if count != capacity {
+//                assertionFailure()
+//            }
+            
             return DSPSplitComplex(realp: &self.real, imagp: &self.imag)
         }
     }

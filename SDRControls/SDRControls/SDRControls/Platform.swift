@@ -10,9 +10,6 @@ import Foundation
 
 #if os(iOS)
 import UIKit
-
-
-
 #endif
 
 #if os(OSX)
@@ -23,8 +20,8 @@ public typealias UIColor = NSColor
 public typealias UIEvent = NSEvent
 public typealias UITouch = NSTouch
 public typealias UIImage = NSImage
-//public typealias UIControl = NSControl
-//
+public typealias UIControl = NSControl
+
 open class UILabel: NSTextField {
     
     open var text: String? {

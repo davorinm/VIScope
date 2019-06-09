@@ -310,6 +310,7 @@
 		1E33925B226C82DF00AD052F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Davorin Madaric";
 				TargetAttributes = {
