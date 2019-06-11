@@ -15,7 +15,7 @@ class FFTBlock {
     private var bufferSamples: DSP.ComplexSamples
     
     private let fftLength: vDSP_Length
-    private var fftSamplesIn: DSP.ComplexSamples
+    private var fftSamples: DSP.ComplexSamples
     
     private let fftWindow: DSP.FFTWindow
     
@@ -79,7 +79,7 @@ class FFTBlock {
         }
         
         // Copy to fft buffer
-        bufferSamples.move(to: fftSamplesIn, count: Int(fftLength))
+        bufferSamples.move(to: fftSamples, count: Int(fftLength))
         
         // Windowing
         fftWindow.process(data: &fftSamples.real)
