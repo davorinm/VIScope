@@ -21,9 +21,7 @@ class FFTBlock {
     
     private let fftSetup: vDSP_DFT_Setup
     
-    
     private var magnitudes: [Float]
-    
     private var dbScale: Float32
     private var dbs: [Float]
     
@@ -38,7 +36,7 @@ class FFTBlock {
         bufferSamples = DSP.ComplexSamples(capacity: bufferSize)
         
         // Create fft buffer
-        fftSamplesIn = DSP.ComplexSamples(capacity: Int(fftLength))
+        fftSamples = DSP.ComplexSamples(capacity: Int(fftLength))
         
         // Create window
         fftWindow = DSP.FFTWindow(length: Int(fftLength), function: .hamming)
@@ -84,28 +82,23 @@ class FFTBlock {
         bufferSamples.move(to: fftSamplesIn, count: Int(fftLength))
         
         // Windowing
-        fftWindow.process(data: &fftSamplesIn.real)
-        fftWindow.process(data: &fftSamplesIn.imag)
+        fftWindow.process(data: &fftSamples.real)
+        fftWindow.process(data: &fftSamples.imag)
         
-        // Create output fft buffer
-        let fftSamplesOut = DSP.ComplexSamples(capacity: Int(fftLength))
-        
-        // execute DFT
-        vDSP_DFT_Execute(self.fftSetup, fftSamplesIn.real, fftSamplesIn.imag, &fftSamplesOut.real, &fftSamplesOut.imag)
-        
-        fftSamplesIn.count = 0
+        // execute fft
+        vDSP_DFT_Execute(self.fftSetup, fftSamples.real, fftSamples.imag, &fftSamples.real, &fftSamples.imag)
         
         // create DSPSPlitComplex for FFT
-        var fftComplexSamplesOut: DSPSplitComplex = fftSamplesOut.splitComplex()
+        var fftComplexSamples: DSPSplitComplex = fftSamples.splitComplex()
         
         // scale the output by 1/N
 //        var scale = 1/Float(fftLength)
 //        var zero: Float = 0
 //        var normFactor = DSPSplitComplex(realp: &scale, imagp: &zero)
-//        vDSP_zvzsml(&fftSamplesSplitComplex, 1, &normFactor, &fftSamplesSplitComplex, 1, fftLength)
+//        vDSP_zvzsml(&fftComplexSamples, 1, &normFactor, &fftComplexSamples, 1, fftLength)
         
         // Calculate magnitudes
-        vDSP_zvmags(&fftComplexSamplesOut, 1, &magnitudes, 1, fftLength)
+        vDSP_zvmags(&fftComplexSamples, 1, &magnitudes, 1, fftLength)
         
         // convert to db
         vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 1)

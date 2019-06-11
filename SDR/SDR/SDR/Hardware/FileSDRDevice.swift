@@ -86,6 +86,31 @@ final class FileSDRDevice: SDRDevice {
         }
     }
     
+    private func gen() -> [Float]  {
+        let n = self.bufferSize / 4 // Should be power of two for the FFT
+        let frequency1 = 4.0
+        let phase1 = 0.0
+        let amplitude1 = 1.0
+        let seconds = 1.0
+        let fps = Double(n)/seconds
+        
+        var sineWave = (0..<n).map {
+            amplitude1 * sin(2.0 * .pi / fps * Double($0) * frequency1 + phase1)
+        }
+        
+        var cosineWave = (0..<n).map {
+            amplitude1 * cos(2.0 * .pi / fps * Double($0) * frequency1 + phase1)
+        }
+        
+        var out: [Float] = []
+        
+        for i in 0..<n {
+            out.append(Float(sineWave[i]))
+            out.append(Float(cosineWave[i]))
+        }
+        
+        return out
+    }
     
     let generatorSampleRate: Double = 2000000
     var generatorSamples = [Float](repeating: 0, count: Int(16384 * 2))

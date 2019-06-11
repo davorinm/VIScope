@@ -36,10 +36,10 @@ extension DSP {
         }
         
         func move(to: DSP.ComplexSamples, count: Int) {
-            if to.capacity - to.count < count {
-                assertionFailure("Capacity!!!!")
-            }
-            
+//            if to.capacity - to.count < count {
+//                assertionFailure("Capacity!!!!")
+//            }
+    
             // Copy
             vDSP_mmov(self.real, &to.real, vDSP_Length(count), 1, 0, 0)
             vDSP_mmov(self.imag, &to.imag, vDSP_Length(count), 1, 0, 0)
