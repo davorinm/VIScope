@@ -22,12 +22,17 @@ class SplitBlock {
         output.count = count
         var splitOutput = output.splitComplex()
         
-        // split the real data into a complex struct
-        let samplesData = UnsafePointer<Float>(samples)
-        samplesData.withMemoryRebound(to: DSPComplex.self, capacity: count) { dspComplex in
-            vDSP_ctoz(dspComplex, 2, &splitOutput, 1, UInt(count))
-        }
+//        // split the real data into a complex struct
+//        let samplesData = UnsafePointer<Float>(samples)
+//        samplesData.withMemoryRebound(to: DSPComplex.self, capacity: count) { dspComplex in
+//            vDSP_ctoz(dspComplex, 2, &splitOutput, 1, UInt(count))
+//        }
+        var samples = samples
         
+        var zeroScaler: Float = 0.0
+        
+        vDSP_vsadd(&samples + 0, 2, &zeroScaler, &output.real, 1, vDSP_Length(count) )
+        vDSP_vsadd(&samples + 1, 2, &zeroScaler, &output.imag, 1, vDSP_Length(count) )
         
         return output
     }

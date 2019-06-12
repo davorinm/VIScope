@@ -95,7 +95,7 @@ final class RTLSDR: SDRDevice {
     private var librtlsdrPointer:       OpaquePointer?  = nil
     private var librtlsdrIndex:         UInt32          = 0
     
-    private var bufferSize:             Int          = 16384 * 2 // TODO: Check buffer size
+    private var bufferSize:             Int          = 1024 * 2 // TODO: Check buffer size
     
     private var sampleBuffer:           [UInt8]
     

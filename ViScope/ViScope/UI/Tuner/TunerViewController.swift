@@ -13,9 +13,13 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
     @IBOutlet private weak var startStopButton: NSButton!
     @IBOutlet private weak var frequencyTextField: NSTextField!
     @IBOutlet private weak var frequencySlider: NSSlider!
+    @IBOutlet private weak var frequencyStepper: NSStepper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.frequencyStepper.increment = 100000
+        
         
         SDR.selectedDevice.subscribeWithRaise(self) { [unowned self]  (device) in
             guard let device = device else {
@@ -27,6 +31,13 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
             self.frequencySlider.doubleValue = Double(device.tunedFrequency)
             
             self.frequencyTextField.stringValue = device.tunedFrequency.description
+            
+            
+            self.frequencyStepper.minValue = Double(device.minimumFrequency)
+            self.frequencyStepper.maxValue = Double(device.maximumFrequency)
+            self.frequencyStepper.doubleValue = Double(device.tunedFrequency)
+            
+            
         }
     }
     
@@ -50,8 +61,19 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
     
     @IBAction func startStopButtonPressed(_ sender: Any) {
         
-        // TODO: Toggle device
-        SDR.startDevice()
+        if SDR.selectedDevice.value?.isOpen ?? false {
+            SDR.stopDevice()
+        } else {
+            SDR.startDevice()
+        }
         
+        // TODO: Toggle device
+        
+        
+    }
+    
+    @IBAction func frequencyStepperChanged(_ sender: Any) {
+        self.frequencySlider.doubleValue = self.frequencyStepper.doubleValue
+        SDR.selectedDevice.value?.tunedFrequency = Int(frequencyStepper.doubleValue)
     }
 }

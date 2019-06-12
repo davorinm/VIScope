@@ -760,11 +760,20 @@
                                     <action selector="startStopButtonPressed:" target="2hp-nT-MNM" id="nXi-RB-n2n"/>
                                 </connections>
                             </button>
+                            <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-vI-TxZ">
+                                <rect key="frame" x="370" y="59" width="19" height="27"/>
+                                <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="SsJ-9s-cme"/>
+                                <connections>
+                                    <action selector="frequencyStepperChanged:" target="2hp-nT-MNM" id="lyH-mO-FFn"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="vrF-vI-TxZ" firstAttribute="leading" secondItem="5Op-Qx-ShY" secondAttribute="trailing" constant="8" id="3XC-VJ-gia"/>
                             <constraint firstItem="5Op-Qx-ShY" firstAttribute="top" secondItem="Ayx-fl-SL8" secondAttribute="top" constant="10" id="4d6-6p-fcO"/>
                             <constraint firstItem="5Op-Qx-ShY" firstAttribute="leading" secondItem="EQs-ez-35U" secondAttribute="trailing" constant="20" id="96q-mR-1xE"/>
                             <constraint firstItem="EQs-ez-35U" firstAttribute="leading" secondItem="Ayx-fl-SL8" secondAttribute="leading" constant="10" id="C0B-Tz-5HC"/>
+                            <constraint firstItem="vrF-vI-TxZ" firstAttribute="top" secondItem="Ayx-fl-SL8" secondAttribute="top" constant="16" id="D0G-bv-v5Y"/>
                             <constraint firstAttribute="bottom" secondItem="PaA-6g-EHK" secondAttribute="bottom" constant="10" id="EAY-TM-X30"/>
                             <constraint firstAttribute="trailing" secondItem="PaA-6g-EHK" secondAttribute="trailing" constant="10" id="Oh3-aM-BMo"/>
                             <constraint firstItem="vXO-hj-vqX" firstAttribute="top" secondItem="Ayx-fl-SL8" secondAttribute="top" constant="10" id="bMj-jq-wv0"/>
@@ -775,6 +784,7 @@
                     </view>
                     <connections>
                         <outlet property="frequencySlider" destination="PaA-6g-EHK" id="qzW-Dm-usM"/>
+                        <outlet property="frequencyStepper" destination="vrF-vI-TxZ" id="7t3-pY-ZNa"/>
                         <outlet property="frequencyTextField" destination="5Op-Qx-ShY" id="D88-rn-bRx"/>
                         <outlet property="startStopButton" destination="EQs-ez-35U" id="WfL-WW-M48"/>
                     </connections>

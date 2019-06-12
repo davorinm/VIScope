@@ -42,7 +42,13 @@ class FFTBlock {
         fftWindow = DSP.FFTWindow(length: Int(fftLength), function: .hamming)
         
         // Create setup
-        fftSetup = vDSP_DFT_zop_CreateSetup(nil, fftLength, vDSP_DFT_Direction.FORWARD)!
+        
+        
+        let fftLengthd:  vDSP_Length = vDSP_Length(log2(Float(fftPoints)))
+        let fftRadix:   FFTRadix    = FFTRadix(kFFTRadix2)
+        
+        self.fftSetup = vDSP_create_fftsetup(fftLengthd, fftRadix)!
+//        fftSetup = vDSP_DFT_zop_CreateSetup(nil, fftLength, vDSP_DFT_Direction.FORWARD)!
         
         // Create magnitudes array
         magnitudes = [Float](repeating: 0, count: Int(fftLength))
@@ -54,7 +60,7 @@ class FFTBlock {
     
     deinit {
         // Destroy setup
-        vDSP_DFT_DestroySetup(fftSetup)
+//        vDSP_DFT_DestroySetup(fftSetup)
     }
 
     func process(_ samples: DSP.ComplexSamples) -> DSP.ComplexSamples {
@@ -82,14 +88,16 @@ class FFTBlock {
         bufferSamples.move(to: fftSamples, count: Int(fftLength))
         
         // Windowing
-        fftWindow.process(data: &fftSamples.real)
-        fftWindow.process(data: &fftSamples.imag)
+//        fftWindow.process(data: &fftSamples.real)
+//        fftWindow.process(data: &fftSamples.imag)
         
         // execute fft
-        vDSP_DFT_Execute(self.fftSetup, fftSamples.real, fftSamples.imag, &fftSamples.real, &fftSamples.imag)
-        
         // create DSPSPlitComplex for FFT
         var fftComplexSamples: DSPSplitComplex = fftSamples.splitComplex()
+        
+        vDSP_fft_zip(self.fftSetup, &fftComplexSamples, vDSP_Stride(1), 10, FFTDirection(kFFTDirection_Forward))
+//        vDSP_DFT_Execute(self.fftSetup, fftSamples.real, fftSamples.imag, &fftSamples.real, &fftSamples.imag)
+        
         
         // scale the output by 1/N
 //        var scale = 1/Float(fftLength)
