@@ -24,6 +24,8 @@ public final class FrequencyChartView: UIView {
     private let shapeLayer = CAShapeLayer()
     private let gradientLayer = CAGradientLayer()
     
+    private var data: [Float] = []
+    
     public override var frame: NSRect {
         didSet {
             print("Frame did change")
@@ -85,30 +87,38 @@ public final class FrequencyChartView: UIView {
     
     // MARK: - Data
     
-    public func setData(_ samples: [Float]) {
-        // TODO: calculate min, max normalize data
-        // TODO: Option to set custom min max, floor or ceil data, also for histogram
-        
-        
-//        if samples.count != Int(shapeLayer.bounds.width) {
-//            print("samples count missaligned \(samples.count - Int(shapeLayer.bounds.width))")
-//        }
-        
+    public func setData(_ data: [Float]) {
         if min == nil {
-            min = samples.min()!
+            min = data.min()!
         }
         
         if max == nil {
-            max = samples.max()!
+            max = data.max()!
+        }
+        
+        self.data = data
+        
+        setNeedsDisplay()
+    }
+    
+    public override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        
+//        let context = NSGraphicsContext.current!.cgContext
+//        drawText(context: context)
+        
+        
+        
+        guard data.count > 0 else {
+            return
         }
         
         let range = max - min
-        let xScale = shapeLayer.frame.width / CGFloat(samples.count)
+        let xScale = shapeLayer.frame.width / CGFloat(data.count)
         
         let path = CGMutablePath()
         
-        for (i, sample) in samples.enumerated() {
-            
+        for (i, sample) in data.enumerated() {
             let scaledValue = (sample - min) / range
             
             let point = CGPoint(x: xScale * CGFloat(i),
@@ -120,6 +130,11 @@ public final class FrequencyChartView: UIView {
                 path.addLine(to: point)
             }
         }
+        
+        // TODO: Use context if needed
+//        context.beginPath()
+//        context.addPath(path)
+//        context.strokePath()
         
         shapeLayer.path = path
     }
@@ -312,6 +327,57 @@ public final class FrequencyChartView: UIView {
 //            self.addSubview(label)
 //        }
 //        UIGraphicsEndImageContext()
+//    }
+    
+//    private func drawText(context: CGContext) {
+//
+//        // 1
+//        let legendRectWidth = (barChartRect.size.width / CGFloat(fileTypes.count))
+//        let legendOriginX = barChartRect.origin.x + floor(CGFloat(index) * legendRectWidth)
+//        let legendOriginY = barChartRect.minY - 2 * Constants.marginSize
+//        let legendSquareRect = CGRect(x: legendOriginX, y: legendOriginY,
+//                                      width: Constants.barChartLegendSquareSize,
+//                                      height: Constants.barChartLegendSquareSize)
+//
+//        let legendSquarePath = CGMutablePath()
+//        legendSquarePath.addRect( legendSquareRect )
+//        context.addPath(legendSquarePath)
+//        context.setFillColor(fileTypeColors.fillColor.cgColor)
+//        context.setStrokeColor(fileTypeColors.strokeColor.cgColor)
+//        context.drawPath(using: .fillStroke)
+//
+//        // 2
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineBreakMode = .byTruncatingTail
+//        paragraphStyle.alignment = .left
+//        let nameTextAttributes = [
+//            NSFontAttributeName: NSFont.barChartLegendNameFont,
+//            NSParagraphStyleAttributeName: paragraphStyle]
+//
+//        // 3
+//        let nameTextSize = fileType.name.size(withAttributes: nameTextAttributes)
+//        let legendTextOriginX = legendSquareRect.maxX + Constants.legendTextMargin
+//        let legendTextOriginY = legendOriginY - 2 * Constants.pieChartBorderWidth
+//        let legendNameRect = CGRect(x: legendTextOriginX, y: legendTextOriginY,
+//                                    width: legendRectWidth - legendSquareRect.size.width - 2 *
+//                                        Constants.legendTextMargin,
+//                                    height: nameTextSize.height)
+//
+//        // 4
+//        fileType.name.draw(in: legendNameRect, withAttributes: nameTextAttributes)
+//
+//        // 5
+//        let bytesText = bytesFormatter.string(fromByteCount: fileTypeInfo.bytes)
+//        let bytesTextAttributes = [
+//            NSFontAttributeName: NSFont.barChartLegendSizeTextFont,
+//            NSParagraphStyleAttributeName: paragraphStyle,
+//            NSForegroundColorAttributeName: NSColor.secondaryLabelColor]
+//        let bytesTextSize = bytesText.size(withAttributes: bytesTextAttributes)
+//        let bytesTextRect = legendNameRect.offsetBy(dx: 0.0, dy: -bytesTextSize.height)
+//        bytesText.draw(in: bytesTextRect, withAttributes: bytesTextAttributes)
+//
+//        "".draw
+//
 //    }
     
     // MARK: - Layout

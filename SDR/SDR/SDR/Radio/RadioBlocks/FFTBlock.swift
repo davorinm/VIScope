@@ -82,8 +82,8 @@ class FFTBlock {
         bufferSamples.move(to: fftSamples, count: Int(fftLength))
         
         // Windowing
-        fftWindow.process(data: &fftSamples.real)
-        fftWindow.process(data: &fftSamples.imag)
+//        fftWindow.process(data: &fftSamples.real)
+//        fftWindow.process(data: &fftSamples.imag)
         
         // execute fft
         vDSP_DFT_Execute(self.fftSetup, fftSamples.real, fftSamples.imag, &fftSamples.real, &fftSamples.imag)
