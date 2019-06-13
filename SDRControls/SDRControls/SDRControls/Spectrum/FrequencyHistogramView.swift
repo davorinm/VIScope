@@ -70,12 +70,33 @@ public final class FrequencyHistogramView: UIView {
     
     // MARK: - Data
     
+    private var data2: [[Float]] = []
+    
     public func setData(_ samples: [[Float]]) {
-        data = []
+        data2 = []
         
         for sample in samples {
-            addData(sample)
+            addData2(sample)
         }
+    }
+    
+    public func addData2(_ samples: [Float]) {
+        data2.insert(samples, at: 0)
+        if data2.count > 400 {
+            data2.removeLast()
+        }
+        
+        if min == nil {
+            min = samples.min()!
+        }
+        
+        if max == nil {
+            max = samples.max()!
+        }
+        
+        let range = max - min
+    
+        // TODO: Fill code
     }
     
     public func addData(_ samples: [Float]) {
