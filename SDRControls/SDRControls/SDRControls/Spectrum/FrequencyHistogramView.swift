@@ -50,7 +50,11 @@ public final class FrequencyHistogramView: UIView {
             fatalError("Can't use Metal")
         }
         
+        
+        self.canDrawConcurrently = true
+        
         metalView = MTKView(frame: NSRect.zero, device: device)
+        metalView.canDrawConcurrently = true
         metalRender = MetalRender(device: device)
         
         metalView.delegate = metalRender
@@ -117,6 +121,10 @@ public final class FrequencyHistogramView: UIView {
     }
     
     private func processData() {
+        guard samplesData.count > 0 else {
+            return
+        }
+        
         let range = max - min
         
         // TODO: Fill code
@@ -126,7 +134,7 @@ public final class FrequencyHistogramView: UIView {
         for samples in samplesData {
             for sample in samples {
                 let scaledValue = (sample - min) / range
-                let colorValue = self.colors.colorForValue(scaledValue)
+                let colorValue = self.colors.colorForValue2(scaledValue)
                 pixelData.append(contentsOf: colorValue)
             }
         }

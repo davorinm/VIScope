@@ -57,6 +57,8 @@ public final class FrequencyChartView: UIView {
     private func setup() {
         wantsLayer = true
         
+//        self.canDrawConcurrently = true
+        
         // Chart axis layer
         axisLayer.frame = NSRect(x: 0, y: 0, width: frame.width, height: frame.height)
         axisLayer.fillColor = NSColor.clear.cgColor

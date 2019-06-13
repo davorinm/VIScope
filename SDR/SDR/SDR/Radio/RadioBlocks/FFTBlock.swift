@@ -82,8 +82,8 @@ class FFTBlock {
         bufferSamples.move(to: fftSamples, count: Int(fftLength))
         
         // Windowing
-//        fftWindow.process(data: &fftSamples.real)
-//        fftWindow.process(data: &fftSamples.imag)
+        fftWindow.process(data: &fftSamples.real)
+        fftWindow.process(data: &fftSamples.imag)
         
         // execute fft
         vDSP_DFT_Execute(self.fftSetup, fftSamples.real, fftSamples.imag, &fftSamples.real, &fftSamples.imag)
@@ -91,17 +91,20 @@ class FFTBlock {
         // create DSPSPlitComplex for FFT
         var fftComplexSamples: DSPSplitComplex = fftSamples.splitComplex()
         
-        // scale the output by 1/N
-//        var scale = 1/Float(fftLength)
-//        var zero: Float = 0
-//        var normFactor = DSPSplitComplex(realp: &scale, imagp: &zero)
-//        vDSP_zvzsml(&fftComplexSamples, 1, &normFactor, &fftComplexSamples, 1, fftLength)
-        
         // Calculate magnitudes
         vDSP_zvmags(&fftComplexSamples, 1, &magnitudes, 1, fftLength)
         
         // convert to db
         vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 1)
+        
+        // re-arrange values to match -n/2 <-> n/2\
+        // TODO: Remove if posibile
+        let halfPoint = dbs.count / 2
+        for i in 0..<halfPoint {
+            let temp             = dbs[i]
+            dbs[i]               = dbs[i + halfPoint]
+            dbs[i + halfPoint]   = temp
+        }
         
         // return data
         fftData?(dbs)
