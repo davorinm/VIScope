@@ -64,6 +64,14 @@ class SpectrumViewController: NSViewController {
         
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        let data: [Float] = (0..<500).map { Float($0) }
+        
+        self.spectrumChart.setData(data)
+    }
+    
     override func viewWillDisappear() {
         super.viewWillDisappear()
         

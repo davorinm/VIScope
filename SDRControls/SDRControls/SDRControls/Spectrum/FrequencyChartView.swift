@@ -98,16 +98,19 @@ public final class FrequencyChartView: UIView {
         let xScale = shapeLayer.frame.width / CGFloat(samples.count)
         
         let path = CGMutablePath()
-        path.move(to: CGPoint(x: 0, y: 0))
         
-        for sample in samples.enumerated() {
+        for (i, sample) in samples.enumerated() {
             
-            let scaledValue = (sample.element - min) / range
+            let scaledValue = (sample - min) / range
             
-            let point = CGPoint(x: xScale * CGFloat(sample.offset),
-                                y: shapeLayer.frame.height * CGFloat(scaledValue))
+            let point = CGPoint(x: xScale * CGFloat(i),
+                                y: shapeLayer.frame.height * CGFloat(1 - scaledValue))
             
-            path.addLine(to: point)
+            if path.isEmpty {
+                path.move(to: point)
+            } else {
+                path.addLine(to: point)
+            }
         }
         
         shapeLayer.path = path
