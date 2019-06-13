@@ -73,7 +73,7 @@ class SpectrumViewController: NSViewController {
         
         
         // TODO: Test waterfall data
-        let wData: [[Float]] = (0..<1000).map { (val) -> [Float] in
+        let wData: [[Float]] = (0..<500).map { (val) -> [Float] in
             return (0..<500).map { Float($0) }
         }
         self.waterfallChart.setData(wData)

@@ -25,27 +25,13 @@ class Colors {
     }
     
     func colorForValue(_ value: Float) -> [UInt8] {
-        
-        
-        
-        
-        
-        
         let ccc = NSColor(calibratedHue: CGFloat(value), saturation: 1, brightness: 1, alpha: 1)
-        
-        // 1 = red
-        // 0.5 = green
-        // 0 = blue
-//        vcv
         
         let r = UInt8(ccc.redComponent * 255)
         let g = UInt8(ccc.greenComponent * 255)
         let b = UInt8(ccc.blueComponent * 255)
         let a = UInt8(ccc.alphaComponent * 255)
         
-        
-        
-//        let res: UInt32 = UInt32(r << 24 | g << 16 | b << 8 | a)
         return [r, g, b, a]
     }
     

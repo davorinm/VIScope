@@ -27,8 +27,7 @@ public final class FrequencyHistogramView: UIView {
     
     private let colors: Colors = Colors()
     
-    private var data: [[UInt8]] = []
-    private var pixels: Data = Data()
+    private var samplesData: [[Float]] = []
     
     private let transformFilter = CIFilter(name: "CILanczosScaleTransform")!
     
@@ -57,7 +56,7 @@ public final class FrequencyHistogramView: UIView {
         metalView.delegate = metalRender
         
         metalView.framebufferOnly = false
-        metalView.enableSetNeedsDisplay = false
+        metalView.enableSetNeedsDisplay = true
         metalView.isPaused = true
         metalView.clearColor = MTLClearColor(red: 0, green: 0, blue: 0, alpha: 0)
         
@@ -70,66 +69,92 @@ public final class FrequencyHistogramView: UIView {
     
     // MARK: - Data
     
-    private var data2: [[Float]] = []
-    
     public func setData(_ samples: [[Float]]) {
-        data2 = []
+        samplesData = []
+        
+        if let firstSamples = samples.first {
+            if min == nil, let sampleMin = firstSamples.min() {
+                min = sampleMin
+            }
+            
+            if max == nil, let sampleMax = firstSamples.max() {
+                max = sampleMax
+            }
+        }
         
         for sample in samples {
-            addData2(sample)
-        }
-    }
-    
-    public func addData2(_ samples: [Float]) {
-        data2.insert(samples, at: 0)
-        if data2.count > 400 {
-            data2.removeLast()
+            samplesData.insert(sample, at: 0)
+            if samplesData.count > 400 {
+                samplesData.removeLast()
+            }
         }
         
-        if min == nil {
-            min = samples.min()!
-        }
-        
-        if max == nil {
-            max = samples.max()!
-        }
-        
-        let range = max - min
-    
-        // TODO: Fill code
+        setNeedsDisplay()
     }
     
     public func addData(_ samples: [Float]) {
-        // Map Double to RGBA color for sample value
-        let pixelDataTemp: [[UInt8]] = samples.map { [unowned self] (val) -> [UInt8] in
-            return self.colors.colorForValue(val)
+        if min == nil, let sampleMin = samples.min() {
+            min = sampleMin
         }
         
-        // Another pixel data single array
-        let pixelData: [UInt8] = pixelDataTemp.flatMap { $0 }
-        
-        
-        
-        
-        data.insert(pixelData, at: 0)
-        
-        if data.count > 400 {
-            data.removeLast()
+        if max == nil, let sampleMax = samples.max() {
+            max = sampleMax
         }
         
-        // Create single array
-        var fff: [UInt8] = data.flatMap { $0 }
-        pixels = Data(bytes: &fff, count: fff.count)
+        samplesData.insert(samples, at: 0)
+        if samplesData.count > 400 {
+            samplesData.removeLast()
+        }
+        
+        setNeedsDisplay()
+    }
+    
+    public override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
         
         
+        processData()
+    }
+    
+    private func processData() {
+        let range = max - min
+        
+        // TODO: Fill code
+        
+        // Create pixels data
+        var pixelData: [UInt8] = []
+        for samples in samplesData {
+            for sample in samples {
+                let scaledValue = (sample - min) / range
+                let colorValue = self.colors.colorForValue(scaledValue)
+                pixelData.append(contentsOf: colorValue)
+            }
+        }
+        
+        if pixelData.isEmpty {
+            print("pixelData error : empty")
+            return
+        }
+        
+        // Create pixels data
+        let pixels = Data(bytes: &pixelData, count: pixelData.count)
+        
+        let bytesPerRow = samplesData[0].count * 4
+        let width = samplesData[0].count
+        let height = samplesData.count
+        
+        drawImage(pixels: pixels, bytesPerRow: bytesPerRow, width: width, height: height)
+    }
+    
+    private func drawImage(pixels: Data, bytesPerRow: Int, width: Int, height: Int) {
         // Generate image
-        let imageSize = CGSize(width: data[0].count / 4, height: data.count)
+        let imageSize = CGSize(width: width, height: height)
         
         let image = CIImage(bitmapData: pixels,
-                       bytesPerRow: data[0].count,
-                       size: imageSize,
-                       format: CIFormat.RGBA8,
-                       colorSpace: CGColorSpaceCreateDeviceRGB())
+                            bytesPerRow: bytesPerRow,
+                            size: imageSize,
+                            format: CIFormat.RGBA8,
+                            colorSpace: CGColorSpaceCreateDeviceRGB())
         
         // Scale image
         let scale = metalView.drawableSize.width / imageSize.width
@@ -139,12 +164,17 @@ public final class FrequencyHistogramView: UIView {
         transformFilter.setValue(scale, forKey: kCIInputScaleKey)
         transformFilter.setValue(aspectRatio, forKey: kCIInputAspectRatioKey)
         guard let outputImage = transformFilter.value(forKey: kCIOutputImageKey) as? CIImage else {
+            print("Filter output image error")
             return
         }
         
         // Draw
         metalRender.setImage(outputImage)
-        metalView.draw()
+        
+        metalView.setNeedsDisplay(metalView.bounds)
+        
+        
+//        metalView.draw()
     }
 }
 
