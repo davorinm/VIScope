@@ -10,9 +10,17 @@ import Foundation
 import Metal
 import MetalKit
 
-public final class FrequencyHistogramView: NSView {
-    public var min: Float!
-    public var max: Float!
+public final class FrequencyHistogramView: UIView {
+    public var min: Float! {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    public var max: Float! {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     private var metalView: MTKView!
     private var metalRender: MetalRender!
@@ -61,6 +69,14 @@ public final class FrequencyHistogramView: NSView {
     }
     
     // MARK: - Data
+    
+    public func setData(_ samples: [[Float]]) {
+        data = []
+        
+        for sample in samples {
+            addData(sample)
+        }
+    }
     
     public func addData(_ samples: [Float]) {
         // Map Double to RGBA color for sample value

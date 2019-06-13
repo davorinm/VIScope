@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class FrequencyPolarView: NSView {
+public final class FrequencyPolarView: UIView {
     
     
     // MARK: - Init

@@ -9,8 +9,16 @@
 import Foundation
 
 public final class FrequencyChartView: UIView {
-    public var min: Float!
-    public var max: Float!
+    public var min: Float! {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    public var max: Float! {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     private let axisLayer = CAShapeLayer()
     private let shapeLayer = CAShapeLayer()
