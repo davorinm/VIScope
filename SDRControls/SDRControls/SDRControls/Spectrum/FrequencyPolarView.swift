@@ -10,4 +10,34 @@ import Foundation
 
 public final class FrequencyPolarView: NSView {
     
+    
+    // MARK: - Init
+    
+    public override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        
+        setup()
+    }
+    
+    required init?(coder decoder: NSCoder) {
+        super.init(coder: decoder)
+        
+        setup()
+    }
+    
+    private func setup() {
+        wantsLayer = true
+    
+    
+    
+    
+    }
+    
+    
+    public override func draw(_ dirtyRect: NSRect) {
+        
+        
+        
+    }
+    
 }

@@ -18,7 +18,7 @@ final class FileSDRDevice: SDRDevice {
     
     let maximumFrequency: Int = 1500000000
     
-    var sampleRate: Int = 0
+    var sampleRate: Int = 2000000
     
     private var bufferSize:             Int          = 16384 * 2 // TODO: Check buffer size
 
@@ -112,11 +112,10 @@ final class FileSDRDevice: SDRDevice {
         return out
     }
     
-    let generatorSampleRate: Double = 2000000
-    var generatorSamples = [Float](repeating: 0, count: Int(16384 * 2))
+    var generatorSamples = [Float](repeating: 0, count: Int(32768 * 2))
     
     private func play(carrierFrequency: Float32, modulatorFrequency: Float32, modulatorAmplitude: Float32) -> [Float]  {
-        let unitVelocity = Float32(2.0 * Double.pi / generatorSampleRate)
+        let unitVelocity = Float32(2.0 * Double.pi / Double(sampleRate))
         let carrierVelocity = carrierFrequency * unitVelocity
         let modulatorVelocity = modulatorFrequency * unitVelocity
 
