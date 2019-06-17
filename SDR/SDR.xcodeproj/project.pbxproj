@@ -48,7 +48,24 @@
 		72E4593C2270405F001F123E /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4593B2270405F001F123E /* Radio.swift */; };
 		72E4594122705593001F123E /* FFTBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E339281226C83BC00AD052F /* FFTBlock.swift */; };
 		72EB3EDF2273067900CDA861 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EB3EDE2273067900CDA861 /* LinkedList.swift */; };
+		72EBC94F22B764F10047CF71 /* SDRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBC94E22B764F10047CF71 /* SDRTests.swift */; };
+		72EBC95122B764F10047CF71 /* SDR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E339264226C82DF00AD052F /* SDR.framework */; };
+		72EBC95722B7651B0047CF71 /* FFTBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E339281226C83BC00AD052F /* FFTBlock.swift */; };
+		72EBC95922B765320047CF71 /* FFTBlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBC95822B765320047CF71 /* FFTBlockTests.swift */; };
+		72EBC95A22B7658F0047CF71 /* DSP+Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEFEDAA2291F1B000FBE07B /* DSP+Samples.swift */; };
+		72EBC95B22B765940047CF71 /* DSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0A74228568C8000A9153 /* DSP.swift */; };
+		72EBC95D22B766150047CF71 /* DSP+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBC95C22B766150047CF71 /* DSP+Map.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72EBC95222B764F10047CF71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E33925B226C82DF00AD052F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E339263226C82DF00AD052F;
+			remoteInfo = SDR;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1E10BFD6228222F900889CC4 /* Composition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
@@ -97,6 +114,11 @@
 		72E4593922703DD1001F123E /* SoftwareDefinedRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareDefinedRadio.swift; sourceTree = "<group>"; };
 		72E4593B2270405F001F123E /* Radio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radio.swift; sourceTree = "<group>"; };
 		72EB3EDE2273067900CDA861 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		72EBC94C22B764F10047CF71 /* SDRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72EBC94E22B764F10047CF71 /* SDRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRTests.swift; sourceTree = "<group>"; };
+		72EBC95022B764F10047CF71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72EBC95822B765320047CF71 /* FFTBlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFTBlockTests.swift; sourceTree = "<group>"; };
+		72EBC95C22B766150047CF71 /* DSP+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSP+Map.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +131,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		72EBC94922B764F10047CF71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72EBC95122B764F10047CF71 /* SDR.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				1E339266226C82DF00AD052F /* SDR */,
+				72EBC94D22B764F10047CF71 /* SDRTests */,
 				1E339265226C82DF00AD052F /* Products */,
 				1E339292226C840400AD052F /* Frameworks */,
 			);
@@ -125,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				1E339264226C82DF00AD052F /* SDR.framework */,
+				72EBC94C22B764F10047CF71 /* SDRTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				72CA0A74228568C8000A9153 /* DSP.swift */,
+				72EBC95C22B766150047CF71 /* DSP+Map.swift */,
 				1EEFEDAA2291F1B000FBE07B /* DSP+Samples.swift */,
 				72CA0A7C22857F23000A9153 /* DSP+Mean.swift */,
 				72CA0A7E22857FE3000A9153 /* DSP+Variance.swift */,
@@ -268,6 +301,16 @@
 			path = RadioBlocks;
 			sourceTree = "<group>";
 		};
+		72EBC94D22B764F10047CF71 /* SDRTests */ = {
+			isa = PBXGroup;
+			children = (
+				72EBC94E22B764F10047CF71 /* SDRTests.swift */,
+				72EBC95822B765320047CF71 /* FFTBlockTests.swift */,
+				72EBC95022B764F10047CF71 /* Info.plist */,
+			);
+			path = SDRTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -304,6 +347,24 @@
 			productReference = 1E339264226C82DF00AD052F /* SDR.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		72EBC94B22B764F10047CF71 /* SDRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72EBC95622B764F10047CF71 /* Build configuration list for PBXNativeTarget "SDRTests" */;
+			buildPhases = (
+				72EBC94822B764F10047CF71 /* Sources */,
+				72EBC94922B764F10047CF71 /* Frameworks */,
+				72EBC94A22B764F10047CF71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72EBC95322B764F10047CF71 /* PBXTargetDependency */,
+			);
+			name = SDRTests;
+			productName = SDRTests;
+			productReference = 72EBC94C22B764F10047CF71 /* SDRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -315,6 +376,9 @@
 				ORGANIZATIONNAME = "Davorin Madaric";
 				TargetAttributes = {
 					1E339263226C82DF00AD052F = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					72EBC94B22B764F10047CF71 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -332,6 +396,7 @@
 			projectRoot = "";
 			targets = (
 				1E339263226C82DF00AD052F /* SDR */,
+				72EBC94B22B764F10047CF71 /* SDRTests */,
 			);
 		};
 /* End PBXProject section */
@@ -342,6 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E9CD758226F312800CD679C /* SDR.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72EBC94A22B764F10047CF71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +475,7 @@
 				726A82912282DB76008926D0 /* AudioBlock.swift in Sources */,
 				1EC3B09B22A5B07F00E3467F /* PolarBlock.swift in Sources */,
 				1EBC53D4226F96BE009C02C6 /* Disposable.swift in Sources */,
+				72EBC95D22B766150047CF71 /* DSP+Map.swift in Sources */,
 				72EB3EDF2273067900CDA861 /* LinkedList.swift in Sources */,
 				727CB9A52282BF8E00A45F8C /* ComplexFilterBlock.swift in Sources */,
 				726A82952282E0FC008926D0 /* FilterCoefficients.swift in Sources */,
@@ -410,7 +483,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		72EBC94822B764F10047CF71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72EBC95922B765320047CF71 /* FFTBlockTests.swift in Sources */,
+				72EBC95722B7651B0047CF71 /* FFTBlock.swift in Sources */,
+				72EBC94F22B764F10047CF71 /* SDRTests.swift in Sources */,
+				72EBC95A22B7658F0047CF71 /* DSP+Samples.swift in Sources */,
+				72EBC95B22B765940047CF71 /* DSP.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72EBC95322B764F10047CF71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E339263226C82DF00AD052F /* SDR */;
+			targetProxy = 72EBC95222B764F10047CF71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1E33926A226C82DF00AD052F /* Debug */ = {
@@ -602,6 +695,44 @@
 			};
 			name = Release;
 		};
+		72EBC95422B764F10047CF71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SDRTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SDRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		72EBC95522B764F10047CF71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SDRTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SDRTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -619,6 +750,15 @@
 			buildConfigurations = (
 				1E33926D226C82DF00AD052F /* Debug */,
 				1E33926E226C82DF00AD052F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72EBC95622B764F10047CF71 /* Build configuration list for PBXNativeTarget "SDRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72EBC95422B764F10047CF71 /* Debug */,
+				72EBC95522B764F10047CF71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

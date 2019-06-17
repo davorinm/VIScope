@@ -356,10 +356,9 @@ final class RTLSDR: SDRDevice {
                 // convert buffer to Swift [UInt8]
                 let samples: [UInt8] = Array(bufferPointer)
                 
-                let normalizedSamples = DSP.normalize(samples)
-                
-                selfRTLSDR.samples.raise(normalizedSamples)
-                
+                // Map [UInt8] to [Float]
+                let mapedSamples = DSP.map(samples)
+                selfRTLSDR.samples.raise(mapedSamples)
                 
             }, rtlSdrContext, UInt32(0), UInt32(self.bufferSize))
         }
