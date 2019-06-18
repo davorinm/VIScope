@@ -13,6 +13,7 @@
 		1E50C1B6227793E000764168 /* FileSDRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E50C1B5227793E000764168 /* FileSDRDevice.swift */; };
 		1E569E84228866E7008971B9 /* DSP+FFTWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E569E83228866E7008971B9 /* DSP+FFTWindow.swift */; };
 		1E569E8A2288B6B1008971B9 /* SplitBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E569E892288B6B1008971B9 /* SplitBlock.swift */; };
+		1E5D42D922B9788C008C366E /* DSP+FFTWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E569E83228866E7008971B9 /* DSP+FFTWindow.swift */; };
 		1E9CD74E226F311B00CD679C /* RTLSDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CD740226F311B00CD679C /* RTLSDR.swift */; };
 		1E9CD74F226F311B00CD679C /* rtl-sdr.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9CD743226F311B00CD679C /* rtl-sdr.h */; };
 		1E9CD750226F311B00CD679C /* librtlsdr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9CD744226F311B00CD679C /* librtlsdr.a */; };
@@ -489,6 +490,7 @@
 			files = (
 				72EBC95922B765320047CF71 /* FFTBlockTests.swift in Sources */,
 				72EBC95722B7651B0047CF71 /* FFTBlock.swift in Sources */,
+				1E5D42D922B9788C008C366E /* DSP+FFTWindow.swift in Sources */,
 				72EBC94F22B764F10047CF71 /* SDRTests.swift in Sources */,
 				72EBC95A22B7658F0047CF71 /* DSP+Samples.swift in Sources */,
 				72EBC95B22B765940047CF71 /* DSP.swift in Sources */,

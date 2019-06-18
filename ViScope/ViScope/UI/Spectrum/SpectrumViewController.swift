@@ -35,7 +35,10 @@ class SpectrumViewController: NSViewController {
         // TODO: Implement better
         SDR.spectrum.data.subscribe(self) { [unowned self] (spectrum) in
             self.spectrumChart.setData(spectrum)
-//            self.waterfallChart.addData(spectrum)
+            
+            // TODO: Implement averaging window
+            // vDSP_vavlin
+            self.waterfallChart.addData(spectrum)
         }
         
         self.spectrumUpperStepper.increment = 10

@@ -10,23 +10,21 @@ import XCTest
 
 class FFTBlockTests: XCTestCase {
     
-//    override class var defaultPerformanceMetrics: [XCTPerformanceMetric] {
-//        return []
-//    }
-    
     func testFFTBlock() {
-        let sourceSamplesCount = 2^12
+        let ttt = XCTestExpectation(description: "T")
+        
+        let sourceSamplesCount = 34000
         let sourceSamples = DSP.ComplexSamples(capacity: sourceSamplesCount)
         sourceSamples.count = sourceSamplesCount
         
         let fft = FFTBlock(fftPoints: 2000)
         fft.fftData = { (samples) in
-            
+            ttt.fulfill()
         }
         
         let processedSamples = fft.process(sourceSamples)
         
-        wait(for: <#T##[XCTestExpectation]#>, timeout: <#T##TimeInterval#>)
+        wait(for: [ttt], timeout: 5)
     }
     
     func testFFTBlockPerformance() {
