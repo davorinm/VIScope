@@ -24,6 +24,7 @@ class FFTBlock {
     private var magnitudes: [Float]
     private var dbScale: Float32
     private var dbs: [Float]
+    private var dbs2: [Float]
     
     private let processQueue: DispatchQueue = DispatchQueue(label: "FFTBlock")
     
@@ -50,6 +51,7 @@ class FFTBlock {
         // Create db
         dbScale = 0.8
         dbs = [Float](repeating: 0.0, count: Int(fftLength))
+        dbs2 = [Float](repeating: 0.0, count: Int(fftLength))
     }
     
     deinit {
@@ -98,15 +100,11 @@ class FFTBlock {
         vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 1)
         
         // re-arrange values to match -n/2 <-> n/2\
-        // TODO: Remove if posibile
         let halfPoint = dbs.count / 2
-        for i in 0..<halfPoint {
-            let temp             = dbs[i]
-            dbs[i]               = dbs[i + halfPoint]
-            dbs[i + halfPoint]   = temp
-        }
+        vDSP_mmov(&dbs, &dbs2 + halfPoint, vDSP_Length(halfPoint), 1, 0, 0)
+        vDSP_mmov(&dbs + halfPoint, &dbs2, vDSP_Length(halfPoint), 1, 0, 0)
         
         // return data
-        fftData?(dbs)
+        fftData?(dbs2)
     }
 }
