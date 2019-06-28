@@ -23,6 +23,7 @@
 		1E9CD755226F311B00CD679C /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9CD74B226F311B00CD679C /* libusb-1.0.a */; };
 		1E9CD758226F312800CD679C /* SDR.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CD757226F312800CD679C /* SDR.xcconfig */; };
 		1EA6714F229DC1AC00616CC8 /* CombineSamplesBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6714E229DC1AC00616CC8 /* CombineSamplesBlock.swift */; };
+		1EA9ECC422C3814400C2EB06 /* DSP+Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9ECC322C3814400C2EB06 /* DSP+Average.swift */; };
 		1EB1AB1322A3D695001FC95C /* FMDemodulatorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1AB1222A3D695001FC95C /* FMDemodulatorBlock.swift */; };
 		1EBC53D0226F940F009C02C6 /* SDRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53CF226F940F009C02C6 /* SDRDevice.swift */; };
 		1EBC53D2226F96B6009C02C6 /* ObservableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */; };
@@ -90,6 +91,7 @@
 		1E9CD74C226F311B00CD679C /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		1E9CD757226F312800CD679C /* SDR.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SDR.xcconfig; sourceTree = "<group>"; };
 		1EA6714E229DC1AC00616CC8 /* CombineSamplesBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineSamplesBlock.swift; sourceTree = "<group>"; };
+		1EA9ECC322C3814400C2EB06 /* DSP+Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSP+Average.swift"; sourceTree = "<group>"; };
 		1EB1AB1222A3D695001FC95C /* FMDemodulatorBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMDemodulatorBlock.swift; sourceTree = "<group>"; };
 		1EBC53CF226F940F009C02C6 /* SDRDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRDevice.swift; sourceTree = "<group>"; };
 		1EBC53D1226F96B5009C02C6 /* ObservableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableEvent.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				72CA0A8222858589000A9153 /* DSP+FFT.swift */,
 				72CA0A8422858901000A9153 /* DSP+FFT2.swift */,
 				1E569E83228866E7008971B9 /* DSP+FFTWindow.swift */,
+				1EA9ECC322C3814400C2EB06 /* DSP+Average.swift */,
 			);
 			path = DSP;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				1EEFEDAB2291F1B000FBE07B /* DSP+Samples.swift in Sources */,
 				72E4593A22703DD1001F123E /* SoftwareDefinedRadio.swift in Sources */,
 				1E10BFD7228222F900889CC4 /* Composition.swift in Sources */,
+				1EA9ECC422C3814400C2EB06 /* DSP+Average.swift in Sources */,
 				72E4593C2270405F001F123E /* Radio.swift in Sources */,
 				1EBC53D2226F96B6009C02C6 /* ObservableEvent.swift in Sources */,
 				1E569E8A2288B6B1008971B9 /* SplitBlock.swift in Sources */,
