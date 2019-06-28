@@ -23,15 +23,17 @@ class Radio {
     
     let fftPoints = 1024
     
+    let fftAveraging: DSP.Average
+    
     init() {
         let inputSampleRate: Int = 2400000
         let audioSampleRate = 48000
         let localOscillator = 1000000
         
-        avgData = [Float](repeating: 0, count: fftPoints)
-
         split = SplitBlock()
         fft = FFTBlock(fftPoints: fftPoints)
+        fftAveraging = DSP.Average(length: Int(fft.fftLength))
+        
         let complexMixer = ComplexMixerBlock(sampleRate: inputSampleRate, frequency: localOscillator)
         let ifFilter = ComplexFilterBlock(sampleRateIn: inputSampleRate, sampleRateOut: 600000, cutoffFrequency: 500000, kernelLength: 300)
 //        let ifFft = FFTBlock(fftPoints: 6000)
@@ -60,26 +62,11 @@ class Radio {
         }
     }
     
-    var avgData: [Float]
-    var avgDataIndex = 0
-    
-    // TODO: Create block for averaging
     private func fftData(data: [Float]) {
-        vDSP_vadd(data, 1, avgData, 1, &avgData, 1, vDSP_Length(fftPoints))
-        avgDataIndex += 1
-        
-        if avgDataIndex >= 200 {
-            var averageddata: [Float] = [Float](repeating: 0, count: fftPoints)
-            var i: Float = Float(avgDataIndex)
-            
-            vDSP_vsdiv(avgData, 1, &i, &averageddata, 1, vDSP_Length(fftPoints))
-            
-            vDSP_vclr(&avgData, 1, vDSP_Length(fftPoints))
-            avgDataIndex = 0
-            
+        fftAveraging.process(data) { [unowned self] avgData in
             // Return on main thread
             DispatchQueue.main.async {
-                self.spectrum.data.raise(averageddata)
+                self.spectrum.data.raise(avgData)
             }
         }
     }
