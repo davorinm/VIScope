@@ -14,7 +14,7 @@ class FFTBlock {
     private let bufferSize: Int = 524288
     private var bufferSamples: DSP.ComplexSamples
     
-    private let fftLength: vDSP_Length
+    let fftLength: Int
     private var fftSamples: DSP.ComplexSamples
     
     private let fftWindow: DSP.FFTWindow
@@ -30,28 +30,28 @@ class FFTBlock {
     
     init(fftPoints: Int) {
         // Calculate fftSize
-        let log2N = vDSP_Length(log2f(Float(fftPoints)))
-        fftLength = vDSP_Length(Int(1 << log2N))
+        let log2N = Int(log2f(Float(fftPoints)))
+        fftLength = Int(1 << log2N)
         
         // Create buffer
         bufferSamples = DSP.ComplexSamples(capacity: bufferSize)
         
         // Create fft buffer
-        fftSamples = DSP.ComplexSamples(capacity: Int(fftLength))
+        fftSamples = DSP.ComplexSamples(capacity: fftLength)
         
         // Create window
-        fftWindow = DSP.FFTWindow(length: Int(fftLength), function: .hamming)
+        fftWindow = DSP.FFTWindow(length: fftLength, function: .hamming)
         
         // Create setup
-        fftSetup = vDSP_DFT_zop_CreateSetup(nil, fftLength, vDSP_DFT_Direction.FORWARD)!
+        fftSetup = vDSP_DFT_zop_CreateSetup(nil, vDSP_Length(fftLength), vDSP_DFT_Direction.FORWARD)!
         
         // Create magnitudes array
-        magnitudes = [Float](repeating: 0, count: Int(fftLength))
+        magnitudes = [Float](repeating: 0, count: fftLength)
         
         // Create db
         dbScale = 0.8
-        dbs = [Float](repeating: 0.0, count: Int(fftLength))
-        dbs2 = [Float](repeating: 0.0, count: Int(fftLength))
+        dbs = [Float](repeating: 0.0, count: fftLength)
+        dbs2 = [Float](repeating: 0.0, count: fftLength)
     }
     
     deinit {
@@ -81,7 +81,7 @@ class FFTBlock {
         }
         
         // Copy to fft buffer
-        bufferSamples.move(to: fftSamples, count: Int(fftLength))
+        bufferSamples.move(to: fftSamples, count: fftLength)
         
         // Windowing
         fftWindow.process(data: &fftSamples.real)
@@ -94,10 +94,10 @@ class FFTBlock {
         var fftComplexSamples: DSPSplitComplex = fftSamples.splitComplex()
         
         // Calculate magnitudes
-        vDSP_zvmags(&fftComplexSamples, 1, &magnitudes, 1, fftLength)
+        vDSP_zvmags(&fftComplexSamples, 1, &magnitudes, 1, vDSP_Length(fftLength))
         
         // convert to db
-        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, fftLength, 1)
+        vDSP_vdbcon(&magnitudes, 1, &dbScale, &dbs, 1, vDSP_Length(fftLength), 1)
         
         // re-arrange values to match -n/2 <-> n/2\
         let halfPoint = dbs.count / 2
