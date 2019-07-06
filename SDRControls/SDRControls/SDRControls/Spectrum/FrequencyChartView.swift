@@ -1,5 +1,5 @@
 //
-//  SpectrumView.swift
+//  FrequencyChartView.swift
 //  ViScope
 //
 //  Created by Davorin Madaric on 23/04/2019.

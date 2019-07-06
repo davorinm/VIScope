@@ -1,5 +1,5 @@
 //
-//  Hist.swift
+//  FrequencyHistogramView.swift
 //  DMSpectrum
 //
 //  Created by Davorin Madaric on 02/05/2019.
@@ -28,6 +28,7 @@ public final class FrequencyHistogramView: UIView {
     private let colors: Colors = Colors()
     
     private var samplesData: [[Float]] = []
+    private var pixelsData = Data()
     
     private let transformFilter = CIFilter(name: "CILanczosScaleTransform")!
     
@@ -49,7 +50,6 @@ public final class FrequencyHistogramView: UIView {
         guard let device = MTLCreateSystemDefaultDevice() else {
             fatalError("Can't use Metal")
         }
-        
         
         self.canDrawConcurrently = true
         
@@ -76,13 +76,15 @@ public final class FrequencyHistogramView: UIView {
     public func setData(_ samples: [[Float]]) {
         samplesData = []
         
-        if let firstSamples = samples.first {
-            if min == nil, let sampleMin = firstSamples.min() {
-                min = sampleMin
-            }
-            
-            if max == nil, let sampleMax = firstSamples.max() {
-                max = sampleMax
+        if min == nil || max == nil {
+            if let firstSamples = samples.first {
+                if min == nil, let sampleMin = firstSamples.min() {
+                    min = sampleMin
+                }
+                
+                if max == nil, let sampleMax = firstSamples.max() {
+                    max = sampleMax
+                }
             }
         }
         
@@ -93,7 +95,7 @@ public final class FrequencyHistogramView: UIView {
             }
         }
         
-        setNeedsDisplay()
+        processData()
     }
     
     public func addData(_ samples: [Float]) {
@@ -110,13 +112,6 @@ public final class FrequencyHistogramView: UIView {
             samplesData.removeLast()
         }
         
-        setNeedsDisplay()
-    }
-    
-    public override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        
-        
         processData()
     }
     
@@ -126,39 +121,33 @@ public final class FrequencyHistogramView: UIView {
         }
         
         let range = max - min
-        
-        // TODO: Fill code
+        let width = samplesData[0].count
+        let height = samplesData.count
+        let bytesPerRow = width * 4
         
         // Create pixels data
-        var pixelData: [UInt8] = []
+        let pixelsDataCapacity = bytesPerRow * height
+        pixelsData.reserveCapacity(pixelsDataCapacity)
+        pixelsData.removeAll(keepingCapacity: true)
+        
+        // Fill pixels data
         for samples in samplesData {
             for sample in samples {
                 let scaledValue = (sample - min) / range
                 let colorValue = self.colors.colorForValue2(scaledValue)
-                pixelData.append(contentsOf: colorValue)
+                pixelsData.append(contentsOf: colorValue)
             }
         }
         
-        if pixelData.isEmpty {
+        if pixelsData.isEmpty {
             print("pixelData error : empty")
             return
         }
         
-        // Create pixels data
-        let pixels = Data(bytes: &pixelData, count: pixelData.count)
-        
-        let bytesPerRow = samplesData[0].count * 4
-        let width = samplesData[0].count
-        let height = samplesData.count
-        
-        drawImage(pixels: pixels, bytesPerRow: bytesPerRow, width: width, height: height)
-    }
-    
-    private func drawImage(pixels: Data, bytesPerRow: Int, width: Int, height: Int) {
         // Generate image
         let imageSize = CGSize(width: width, height: height)
         
-        let image = CIImage(bitmapData: pixels,
+        let image = CIImage(bitmapData: pixelsData,
                             bytesPerRow: bytesPerRow,
                             size: imageSize,
                             format: CIFormat.RGBA8,
@@ -176,13 +165,11 @@ public final class FrequencyHistogramView: UIView {
             return
         }
         
-        // Draw
+        // Set image to renderer
         metalRender.setImage(outputImage)
         
+        // Draw
         metalView.setNeedsDisplay(metalView.bounds)
-        
-        
-//        metalView.draw()
     }
 }
 
@@ -194,7 +181,7 @@ private class MetalRender: NSObject, MTKViewDelegate {
     
     init?(device: MTLDevice) {
         commandQueue = device.makeCommandQueue(maxCommandBufferCount: 5)!
-        context = CIContext(mtlDevice: device, options: [CIContextOption.useSoftwareRenderer:false])
+        context = CIContext(mtlDevice: device, options: [CIContextOption.useSoftwareRenderer: false])
     
         super.init()
     }

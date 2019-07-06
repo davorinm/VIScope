@@ -14,14 +14,8 @@ class Colors {
     private let green = NSColor.green
     private let blue = NSColor.blue
     
-    private var colorMap: [(CGFloat, CGFloat, CGFloat)] = []
-    
     init() {
-        colorMap = [
-            (red.redComponent, red.greenComponent, red.blueComponent),
-            (green.redComponent, green.greenComponent, green.blueComponent),
-            (blue.redComponent, blue.greenComponent, blue.blueComponent)
-        ]
+        
     }
     
     func colorForValue(_ value: Float) -> [UInt8] {
@@ -36,7 +30,7 @@ class Colors {
     }
     
     
-    private let colorMapTemp: [(CGFloat, CGFloat, CGFloat)] = [
+    private let colorMap: [(CGFloat, CGFloat, CGFloat)] = [
         ( 0.26700401,  0.00487433,  0.32941519),
         ( 0.26851048,  0.00960483,  0.33542652),
         ( 0.26994384,  0.01462494,  0.34137895),
@@ -296,14 +290,14 @@ class Colors {
     ]
     
     func colorForValue2(_ value: Float) -> [UInt8] {
-        var index = Int(round(value * Float(colorMapTemp.count - 1)))
+        var index = Int(round(value * Float(colorMap.count - 1)))
         if index < 0 {
             index = 0
-        } else if index >= colorMapTemp.count {
-            index = colorMapTemp.count - 1
+        } else if index >= colorMap.count {
+            index = colorMap.count - 1
         }
         
-        let tuple = colorMapTemp[index]
+        let tuple = colorMap[index]
         return [UInt8(tuple.0 * 255), UInt8(tuple.1 * 255), UInt8(tuple.2 * 255), 255]
     }
 }
