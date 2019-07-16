@@ -9,16 +9,8 @@
 import Foundation
 
 
-class Colors {
-    private let red = NSColor.red
-    private let green = NSColor.green
-    private let blue = NSColor.blue
-    
-    init() {
-        
-    }
-    
-    func colorForValue(_ value: Float) -> [UInt8] {
+struct Colors {
+    static func colorForValue(_ value: Float) -> [UInt8] {
         let ccc = NSColor(calibratedHue: CGFloat(value), saturation: 1, brightness: 1, alpha: 1)
         
         let r = UInt8(ccc.redComponent * 255)
@@ -30,7 +22,7 @@ class Colors {
     }
     
     
-    private let colorMap: [(CGFloat, CGFloat, CGFloat)] = [
+    private static let colorMap: [(CGFloat, CGFloat, CGFloat)] = [
         ( 0.26700401,  0.00487433,  0.32941519),
         ( 0.26851048,  0.00960483,  0.33542652),
         ( 0.26994384,  0.01462494,  0.34137895),
@@ -289,7 +281,7 @@ class Colors {
         ( 0.99324789,  0.90615657,  0.1439362 )
     ]
     
-    func colorForValue2(_ value: Float) -> [UInt8] {
+    static func colorForValue2(_ value: Float) -> [UInt8] {
         var index = Int(round(value * Float(colorMap.count - 1)))
         if index < 0 {
             index = 0

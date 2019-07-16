@@ -37,7 +37,6 @@
 		727CB9A52282BF8E00A45F8C /* ComplexFilterBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CB9A42282BF8E00A45F8C /* ComplexFilterBlock.swift */; };
 		727CB9A72282BFFB00A45F8C /* FMSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CB9A62282BFFB00A45F8C /* FMSynthesizer.swift */; };
 		72CA0A75228568C8000A9153 /* DSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0A74228568C8000A9153 /* DSP.swift */; };
-		72CA0A7922857DF6000A9153 /* DSP+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0A7822857DF6000A9153 /* DSP+Split.swift */; };
 		72CA0A7B22857E49000A9153 /* DSP+Normalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0A7A22857E49000A9153 /* DSP+Normalize.swift */; };
 		72CA0A7D22857F23000A9153 /* DSP+Mean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0A7C22857F23000A9153 /* DSP+Mean.swift */; };
 		72CA0A7F22857FE3000A9153 /* DSP+Variance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA0A7E22857FE3000A9153 /* DSP+Variance.swift */; };
@@ -105,7 +104,6 @@
 		727CB9A42282BF8E00A45F8C /* ComplexFilterBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexFilterBlock.swift; sourceTree = "<group>"; };
 		727CB9A62282BFFB00A45F8C /* FMSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMSynthesizer.swift; sourceTree = "<group>"; };
 		72CA0A74228568C8000A9153 /* DSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSP.swift; sourceTree = "<group>"; };
-		72CA0A7822857DF6000A9153 /* DSP+Split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSP+Split.swift"; sourceTree = "<group>"; };
 		72CA0A7A22857E49000A9153 /* DSP+Normalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSP+Normalize.swift"; sourceTree = "<group>"; };
 		72CA0A7C22857F23000A9153 /* DSP+Mean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSP+Mean.swift"; sourceTree = "<group>"; };
 		72CA0A7E22857FE3000A9153 /* DSP+Variance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSP+Variance.swift"; sourceTree = "<group>"; };
@@ -270,7 +268,6 @@
 				72CA0A7C22857F23000A9153 /* DSP+Mean.swift */,
 				72CA0A7E22857FE3000A9153 /* DSP+Variance.swift */,
 				72CA0A7A22857E49000A9153 /* DSP+Normalize.swift */,
-				72CA0A7822857DF6000A9153 /* DSP+Split.swift */,
 				72CA0A802285808F000A9153 /* DSP+Deviation.swift */,
 				72CA0A8222858589000A9153 /* DSP+FFT.swift */,
 				72CA0A8422858901000A9153 /* DSP+FFT2.swift */,
@@ -459,7 +456,6 @@
 				1EBC53D2226F96B6009C02C6 /* ObservableEvent.swift in Sources */,
 				1E569E8A2288B6B1008971B9 /* SplitBlock.swift in Sources */,
 				72CA0A7D22857F23000A9153 /* DSP+Mean.swift in Sources */,
-				72CA0A7922857DF6000A9153 /* DSP+Split.swift in Sources */,
 				72CA0A75228568C8000A9153 /* DSP.swift in Sources */,
 				1EA6714F229DC1AC00616CC8 /* CombineSamplesBlock.swift in Sources */,
 				726A82932282E0E2008926D0 /* RealFilterBlock.swift in Sources */,

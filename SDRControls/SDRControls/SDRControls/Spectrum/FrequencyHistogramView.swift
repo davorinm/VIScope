@@ -24,13 +24,9 @@ public final class FrequencyHistogramView: UIView {
     
     private var metalView: MTKView!
     private var metalRender: MetalRender!
-    
-    private let colors: Colors = Colors()
-    
     private var samplesData: [[Float]] = []
-    private var pixelsData = Data()
-    
     private let transformFilter = CIFilter(name: "CILanczosScaleTransform")!
+    private let processQueue: DispatchQueue = DispatchQueue(label: "FrequencyHistogramView")
     
     // MARK: - Init
     
@@ -67,8 +63,8 @@ public final class FrequencyHistogramView: UIView {
         metalView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(metalView)
         
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[metalView]|", options: [], metrics: nil, views: ["metalView" : metalView!]))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[metalView]|", options: [], metrics: nil, views: ["metalView" : metalView!]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[metalView]-0-|", options: [], metrics: nil, views: ["metalView" : metalView!]))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[metalView]-0-|", options: [], metrics: nil, views: ["metalView" : metalView!]))
     }
     
     // MARK: - Data
@@ -90,12 +86,17 @@ public final class FrequencyHistogramView: UIView {
         
         for sample in samples {
             samplesData.insert(sample, at: 0)
-            if samplesData.count > 400 {
-                samplesData.removeLast()
-            }
         }
         
-        processData()
+        let ratio = CGFloat(samples.count) / CGFloat(metalView.frame.width)
+        let overflow = samplesData.count - Int(self.bounds.height * ratio)
+        if overflow > 0 {
+            samplesData.removeLast(overflow)
+        }
+        
+        processQueue.async {
+            self.processData()
+        }
     }
     
     public func addData(_ samples: [Float]) {
@@ -108,11 +109,16 @@ public final class FrequencyHistogramView: UIView {
         }
         
         samplesData.insert(samples, at: 0)
-        if samplesData.count > 400 {
-            samplesData.removeLast()
+        
+        let ratio = CGFloat(samples.count) / CGFloat(metalView.frame.width)
+        let overflow = samplesData.count - Int(self.bounds.height * ratio)
+        if overflow > 0 {
+            samplesData.removeLast(overflow)
         }
         
-        processData()
+        processQueue.async {
+            self.processData()
+        }
     }
     
     private func processData() {
@@ -120,22 +126,35 @@ public final class FrequencyHistogramView: UIView {
             return
         }
         
+        defer {
+            Measure.end(tag: "1")
+        }
+        
+        Measure.start(tag: "1")
+        
         let range = max - min
         let width = samplesData[0].count
         let height = samplesData.count
         let bytesPerRow = width * 4
         
-        // Create pixels data
         let pixelsDataCapacity = bytesPerRow * height
-        pixelsData.reserveCapacity(pixelsDataCapacity)
-        pixelsData.removeAll(keepingCapacity: true)
+        var pixelsData = Data(capacity: pixelsDataCapacity)
         
-        // Fill pixels data
-        for samples in samplesData {
-            for sample in samples {
-                let scaledValue = (sample - min) / range
-                let colorValue = self.colors.colorForValue2(scaledValue)
-                pixelsData.append(contentsOf: colorValue)
+//        samplesData.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) in
+//            
+//            
+//            
+//        }
+        
+        samplesData.withUnsafeBufferPointer { (buffer: UnsafeBufferPointer<[Float]>) in
+            for i in stride(from: buffer.startIndex, to: buffer.endIndex, by: 1) {
+                for j in stride(from: buffer[i].startIndex, to: buffer[i].endIndex, by: 1) {
+                    let sample = buffer[i][j]
+                    
+                    let scaledValue = (sample - min) / range
+                    let colorValue = Colors.colorForValue2(scaledValue)
+                    pixelsData.append(contentsOf: colorValue)
+                }
             }
         }
         
@@ -146,7 +165,6 @@ public final class FrequencyHistogramView: UIView {
         
         // Generate image
         let imageSize = CGSize(width: width, height: height)
-        
         let image = CIImage(bitmapData: pixelsData,
                             bytesPerRow: bytesPerRow,
                             size: imageSize,
@@ -155,11 +173,8 @@ public final class FrequencyHistogramView: UIView {
         
         // Scale image
         let scale = metalView.drawableSize.width / imageSize.width
-        let aspectRatio = 1
-        
         transformFilter.setValue(image, forKey: kCIInputImageKey)
         transformFilter.setValue(scale, forKey: kCIInputScaleKey)
-        transformFilter.setValue(aspectRatio, forKey: kCIInputAspectRatioKey)
         guard let outputImage = transformFilter.value(forKey: kCIOutputImageKey) as? CIImage else {
             print("Filter output image error")
             return
@@ -169,7 +184,9 @@ public final class FrequencyHistogramView: UIView {
         metalRender.setImage(outputImage)
         
         // Draw
-        metalView.setNeedsDisplay(metalView.bounds)
+        DispatchQueue.main.async {
+            self.metalView.setNeedsDisplay(self.metalView.bounds)
+        }
     }
 }
 

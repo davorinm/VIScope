@@ -67,20 +67,30 @@ class SpectrumViewController: NSViewController {
         
     }
     
-//    override func viewDidAppear() {
-//        super.viewDidAppear()
-//        
-//        // TODO: Test chart data
-//        let data: [Float] = (0..<500).map { Float($0) }
-//        self.spectrumChart.setData(data)
-//        
-//        
-//        // TODO: Test waterfall data
-//        let wData: [[Float]] = (0..<500).map { (val) -> [Float] in
-//            return (0..<500).map { Float($0) }
-//        }
-//        self.waterfallChart.setData(wData)
-//    }
+//    var timer: Timer!
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+//        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (ttt) in
+//            
+//            
+//            // TODO: Test chart data
+//            let data: [Float] = (0..<1024).map { Float($0) }
+//            self.spectrumChart.setData(data)
+//            
+//            
+////            // TODO: Test waterfall data
+////            let wData: [[Float]] = (0..<500).map { (val) -> [Float] in
+////                return (0..<1024).map { Float($0) }
+////            }
+////            self.waterfallChart.setData(wData)
+//            self.waterfallChart.addData(data)
+//            
+//        })
+        
+        
+    }
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
