@@ -140,19 +140,13 @@ public final class FrequencyHistogramView: UIView {
         let pixelsDataCapacity = bytesPerRow * height
         var pixelsData = Data(capacity: pixelsDataCapacity)
         
-//        samplesData.withUnsafeBytes { (buffer: UnsafeRawBufferPointer) in
-//            
-//            
-//            
-//        }
-        
         samplesData.withUnsafeBufferPointer { (buffer: UnsafeBufferPointer<[Float]>) in
             for i in stride(from: buffer.startIndex, to: buffer.endIndex, by: 1) {
                 for j in stride(from: buffer[i].startIndex, to: buffer[i].endIndex, by: 1) {
                     let sample = buffer[i][j]
                     
                     let scaledValue = (sample - min) / range
-                    let colorValue = Colors.colorForValue2(scaledValue)
+                    let colorValue = Colors.colorForValue(scaledValue)
                     pixelsData.append(contentsOf: colorValue)
                 }
             }

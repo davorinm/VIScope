@@ -8,19 +8,18 @@
 
 import Foundation
 
-
 struct Colors {
     static func colorForValue(_ value: Float) -> [UInt8] {
-        let ccc = NSColor(calibratedHue: CGFloat(value), saturation: 1, brightness: 1, alpha: 1)
+        var index = Int(round(value * Float(colorMap.count - 1)))
+        if index < 0 {
+            index = 0
+        } else if index >= colorMap.count {
+            index = colorMap.count - 1
+        }
         
-        let r = UInt8(ccc.redComponent * 255)
-        let g = UInt8(ccc.greenComponent * 255)
-        let b = UInt8(ccc.blueComponent * 255)
-        let a = UInt8(ccc.alphaComponent * 255)
-        
-        return [r, g, b, a]
+        let tuple = colorMap[index]
+        return [UInt8(tuple.0 * 255), UInt8(tuple.1 * 255), UInt8(tuple.2 * 255), 255]
     }
-    
     
     private static let colorMap: [(CGFloat, CGFloat, CGFloat)] = [
         ( 0.26700401,  0.00487433,  0.32941519),
@@ -280,16 +279,4 @@ struct Colors {
         ( 0.98386829,  0.90486726,  0.13689671),
         ( 0.99324789,  0.90615657,  0.1439362 )
     ]
-    
-    static func colorForValue2(_ value: Float) -> [UInt8] {
-        var index = Int(round(value * Float(colorMap.count - 1)))
-        if index < 0 {
-            index = 0
-        } else if index >= colorMap.count {
-            index = colorMap.count - 1
-        }
-        
-        let tuple = colorMap[index]
-        return [UInt8(tuple.0 * 255), UInt8(tuple.1 * 255), UInt8(tuple.2 * 255), 255]
-    }
 }
