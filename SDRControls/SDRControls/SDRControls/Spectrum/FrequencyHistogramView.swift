@@ -126,12 +126,6 @@ public final class FrequencyHistogramView: UIView {
             return
         }
         
-        defer {
-            Measure.end(tag: "1")
-        }
-        
-        Measure.start(tag: "1")
-        
         let range = max - min
         let width = samplesData[0].count
         let height = samplesData.count

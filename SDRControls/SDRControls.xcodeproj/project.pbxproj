@@ -15,7 +15,19 @@
 		1EC7C29922ABC334004D59DB /* FrequencyHistogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7C28E22ABC334004D59DB /* FrequencyHistogramView.swift */; };
 		1EC7C29A22ABC334004D59DB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC7C28F22ABC334004D59DB /* Colors.swift */; };
 		1EEB824122DDEF2800182168 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB824022DDEF2800182168 /* Measure.swift */; };
+		1EF6964D22E3246200EE59A9 /* SDRControlsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF6964C22E3246200EE59A9 /* SDRControlsTests.swift */; };
+		1EF6964F22E3246200EE59A9 /* SDRControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC7C27622ABC1E2004D59DB /* SDRControls.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EF6965022E3246200EE59A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EC7C26D22ABC1E2004D59DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EC7C27522ABC1E2004D59DB;
+			remoteInfo = SDRControls;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1E88595122D0C8F400A34A5F /* Data+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Array.swift"; sourceTree = "<group>"; };
@@ -28,6 +40,9 @@
 		1EC7C28E22ABC334004D59DB /* FrequencyHistogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyHistogramView.swift; sourceTree = "<group>"; };
 		1EC7C28F22ABC334004D59DB /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1EEB824022DDEF2800182168 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		1EF6964A22E3246200EE59A9 /* SDRControlsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDRControlsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EF6964C22E3246200EE59A9 /* SDRControlsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRControlsTests.swift; sourceTree = "<group>"; };
+		1EF6964E22E3246200EE59A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +53,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1EF6964722E3246200EE59A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF6964F22E3246200EE59A9 /* SDRControls.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -45,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				1EC7C27822ABC1E2004D59DB /* SDRControls */,
+				1EF6964B22E3246200EE59A9 /* SDRControlsTests */,
 				1EC7C27722ABC1E2004D59DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				1EC7C27622ABC1E2004D59DB /* SDRControls.framework */,
+				1EF6964A22E3246200EE59A9 /* SDRControlsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +114,15 @@
 			path = Spectrum;
 			sourceTree = "<group>";
 		};
+		1EF6964B22E3246200EE59A9 /* SDRControlsTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EF6964C22E3246200EE59A9 /* SDRControlsTests.swift */,
+				1EF6964E22E3246200EE59A9 /* Info.plist */,
+			);
+			path = SDRControlsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -121,16 +155,38 @@
 			productReference = 1EC7C27622ABC1E2004D59DB /* SDRControls.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		1EF6964922E3246200EE59A9 /* SDRControlsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EF6965422E3246200EE59A9 /* Build configuration list for PBXNativeTarget "SDRControlsTests" */;
+			buildPhases = (
+				1EF6964622E3246200EE59A9 /* Sources */,
+				1EF6964722E3246200EE59A9 /* Frameworks */,
+				1EF6964822E3246200EE59A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EF6965122E3246200EE59A9 /* PBXTargetDependency */,
+			);
+			name = SDRControlsTests;
+			productName = SDRControlsTests;
+			productReference = 1EF6964A22E3246200EE59A9 /* SDRControlsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1EC7C26D22ABC1E2004D59DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Davorin Madaric";
 				TargetAttributes = {
 					1EC7C27522ABC1E2004D59DB = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					1EF6964922E3246200EE59A9 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -148,12 +204,20 @@
 			projectRoot = "";
 			targets = (
 				1EC7C27522ABC1E2004D59DB /* SDRControls */,
+				1EF6964922E3246200EE59A9 /* SDRControlsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1EC7C27422ABC1E2004D59DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EF6964822E3246200EE59A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -177,7 +241,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1EF6964622E3246200EE59A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF6964D22E3246200EE59A9 /* SDRControlsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1EF6965122E3246200EE59A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EC7C27522ABC1E2004D59DB /* SDRControls */;
+			targetProxy = 1EF6965022E3246200EE59A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1EC7C27C22ABC1E2004D59DB /* Debug */ = {
@@ -351,6 +431,40 @@
 			};
 			name = Release;
 		};
+		1EF6965222E3246200EE59A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SDRControlsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SDRControlsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1EF6965322E3246200EE59A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SDRControlsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.SDRControlsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -368,6 +482,15 @@
 			buildConfigurations = (
 				1EC7C27F22ABC1E2004D59DB /* Debug */,
 				1EC7C28022ABC1E2004D59DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EF6965422E3246200EE59A9 /* Build configuration list for PBXNativeTarget "SDRControlsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EF6965222E3246200EE59A9 /* Debug */,
+				1EF6965322E3246200EE59A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
