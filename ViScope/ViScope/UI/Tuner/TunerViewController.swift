@@ -14,6 +14,8 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
     @IBOutlet private weak var frequencyTextField: NSTextField!
     @IBOutlet private weak var frequencySlider: NSSlider!
     @IBOutlet private weak var frequencyStepper: NSStepper!
+    @IBOutlet private weak var autoGainButton: NSButton!
+    @IBOutlet private weak var gainBox: NSComboBox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,5 +77,10 @@ class TunerViewController: NSViewController, NSComboBoxDelegate {
     @IBAction func frequencyStepperChanged(_ sender: Any) {
         self.frequencySlider.doubleValue = self.frequencyStepper.doubleValue
         SDR.selectedDevice.value?.tunedFrequency = Int(frequencyStepper.doubleValue)
+    }
+    
+    @IBAction func gainStepperChanged(_ sender: Any) {
+        self.frequencySlider.doubleValue = self.frequencyStepper.doubleValue
+        SDR.selectedDevice.value?.tunerGain = Int(frequencyStepper.doubleValue)
     }
 }

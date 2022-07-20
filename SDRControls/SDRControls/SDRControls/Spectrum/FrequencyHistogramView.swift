@@ -134,17 +134,26 @@ public final class FrequencyHistogramView: UIView {
         let pixelsDataCapacity = bytesPerRow * height
         var pixelsData = Data(capacity: pixelsDataCapacity)
         
-        samplesData.withUnsafeBufferPointer { (buffer: UnsafeBufferPointer<[Float]>) in
+        Measure.start(tag: "Unsafe")
+        
+        let flattened = samplesData.flatMap { $0 }
+//        flattened.forEach { (sample) in
+//            let scaledValue = (sample - min) / range
+//            let colorValue = Colors.colorForValue(scaledValue)
+//            pixelsData.append(contentsOf: colorValue)
+//        }
+
+        flattened.withUnsafeBufferPointer { (buffer: UnsafeBufferPointer<Float>) in
             for i in stride(from: buffer.startIndex, to: buffer.endIndex, by: 1) {
-                for j in stride(from: buffer[i].startIndex, to: buffer[i].endIndex, by: 1) {
-                    let sample = buffer[i][j]
-                    
-                    let scaledValue = (sample - min) / range
-                    let colorValue = Colors.colorForValue(scaledValue)
-                    pixelsData.append(contentsOf: colorValue)
-                }
+                let sample = buffer[i]
+
+                let scaledValue = (sample - min) / range
+                let colorValue = Colors.colorForValue(scaledValue)
+                pixelsData.append(contentsOf: colorValue)
             }
         }
+        
+        Measure.end(tag: "Unsafe")
         
         if pixelsData.isEmpty {
             print("pixelData error : empty")

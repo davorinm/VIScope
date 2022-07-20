@@ -767,6 +767,14 @@
                                     <action selector="frequencyStepperChanged:" target="2hp-nT-MNM" id="lyH-mO-FFn"/>
                                 </connections>
                             </stepper>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nif-IQ-VPY">
+                                <rect key="frame" x="456" y="69" width="78" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="AutoGain" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="5Hm-x1-uNy">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="vrF-vI-TxZ" firstAttribute="leading" secondItem="5Op-Qx-ShY" secondAttribute="trailing" constant="8" id="3XC-VJ-gia"/>
@@ -783,9 +791,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autoGainButton" destination="nif-IQ-VPY" id="z0y-mM-Fhu"/>
                         <outlet property="frequencySlider" destination="PaA-6g-EHK" id="qzW-Dm-usM"/>
                         <outlet property="frequencyStepper" destination="vrF-vI-TxZ" id="7t3-pY-ZNa"/>
                         <outlet property="frequencyTextField" destination="5Op-Qx-ShY" id="D88-rn-bRx"/>
+                        <outlet property="gainBox" destination="vXO-hj-vqX" id="hxq-yL-JVp"/>
                         <outlet property="startStopButton" destination="EQs-ez-35U" id="WfL-WW-M48"/>
                     </connections>
                 </viewController>

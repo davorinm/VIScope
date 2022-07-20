@@ -21,7 +21,6 @@
 		1E9CD752226F311B00CD679C /* USB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CD747226F311B00CD679C /* USB.swift */; };
 		1E9CD754226F311B00CD679C /* libusb.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E9CD74A226F311B00CD679C /* libusb.h */; };
 		1E9CD755226F311B00CD679C /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9CD74B226F311B00CD679C /* libusb-1.0.a */; };
-		1E9CD758226F312800CD679C /* SDR.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CD757226F312800CD679C /* SDR.xcconfig */; };
 		1EA6714F229DC1AC00616CC8 /* CombineSamplesBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA6714E229DC1AC00616CC8 /* CombineSamplesBlock.swift */; };
 		1EA9ECC422C3814400C2EB06 /* DSP+Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9ECC322C3814400C2EB06 /* DSP+Average.swift */; };
 		1EB1AB1322A3D695001FC95C /* FMDemodulatorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1AB1222A3D695001FC95C /* FMDemodulatorBlock.swift */; };
@@ -373,7 +372,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Davorin Madaric";
 				TargetAttributes = {
 					1E339263226C82DF00AD052F = {
@@ -390,6 +389,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 1E33925A226C82DF00AD052F;
 			productRefGroup = 1E339265226C82DF00AD052F /* Products */;
@@ -407,7 +407,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E9CD758226F312800CD679C /* SDR.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
