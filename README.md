@@ -1,7 +1,8 @@
 # ViScope
 
+App for processing and visualizing IQ data from rtl_tcp.
 
-
+### References
 
 https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/signal_extraction_from_noise
 https://developer.apple.com/documentation/accelerate/vdsp/discrete_fourier_transforms/equalizing_audio_with_vdsp
